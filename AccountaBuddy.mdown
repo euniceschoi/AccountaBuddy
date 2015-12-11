@@ -1,0 +1,73 @@
+Communication
+	-Slack, trello, kanban, Phone Numbers
+Schedule 
+	-Required hours 9am - 9 PM
+	-9 AM: check-in
+	-12 pm: check-in
+	-12:30: Lunch (mandatory) 
+	-2-5 work
+	-5:20 check-in
+	-6-7 dinner break
+	-830: check-in
+
+Technology : Rails Backend
+	-Rails backend
+	-React FrontEnd
+	-Twilio
+	-Googlemaps / Mapbox
+	-OAuth(FaceBook)
+	-Heroku
+	-chatroom : discourse? 
+
+Team Roles
+	-Eunice: Founder / Team Lead
+		-React
+		-Rails Backend
+		-FB Auth
+		-Quick problem solver
+	-Chris: Product Manager
+		-FB authentication 
+		-React
+		-JS
+		-backend
+	-Jenna: QA
+		-react
+		-foundation
+		-details
+		-debugging
+
+	-Tanya: TBD
+		-react
+		-API
+		-Rails
+		-Foundation
+		-Finding Problems
+
+
+Team Creed
+	1. Be real and speak the truth. 
+	2. Space when needed
+	3. Group dynamic is most important 
+	4. Be able to focus on finishing the product...shared goals 
+	5. Push our boundaries 
+	6. Holding someone accountable 
+
+
+Associations
+
+User
+	-has_many :friendships
+	-has_many :categories, through: :friendships
+
+Friendships
+	-belongs_to :user
+	-belongs_to :friend, classname: 'User'
+	-has_many :messages
+
+Categories
+	-has_many :friendships
+
+Messages
+	-belongs_to :user
+	-belongs_to :friendship
+	-belongs_to :friend, classname: 'User'
