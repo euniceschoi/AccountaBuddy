@@ -57,17 +57,13 @@ Associations
 
 User
 	-has_many :friendships
-	-has_many :categories, through: :friendships
+	-has_many :categories
 
 Friendships
 	-belongs_to :user
 	-belongs_to :friend, classname: 'User'
-	-has_many :messages
-
+	
 Categories
 	-has_many :friendships
-
-Messages
 	-belongs_to :user
-	-belongs_to :friendship
-	-belongs_to :friend, classname: 'User'
+
