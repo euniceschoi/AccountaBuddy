@@ -24,15 +24,15 @@ class UsersController < ApplicationController
 
   def edit
     @user = User.find(params[:id])
+  end
+
+  def update
     if current_user && current_user.id = @user.id
       @user
     else
       #put an error message here
       redirect_to root_path
     end
-  end
-
-  def update
   end
 
   def delete
