@@ -1,2 +1,28 @@
 <h1>This is the friendship show page</h1>
 <p>Users can see their past interactions with this friend, and can chat with them using the chatbox</p>
+
+<h1> Chat Between <%=current_user.name%> & <%=@friend%></h1>
+
+<div class="chatboxcontent">
+    <% @messages.each do |message| %>
+        <%= message.content %>
+        <br>
+    <% end %>
+
+    <div class="chatboxinput">
+      <%= form_for @message, remote: true, html: {id: "friendship_form_#{@friendship.id}"}, url: {action:"create", controller:"messages"} do |f| %>
+      <%= f.hidden_field :recipient_id %>
+      <%= f.hidden_field :sender_id %>
+      <%= f.hidden_field :friendship_id, value: @friendship.id %>
+      <%= f.text_field :content, class: "chatboxtextarea" %>
+
+      <div class="chat-form-btns">
+         <%= f.submit "Send"%>
+      </div>
+      <% end %>
+    </div>
+
+    <%= subscribe_to "/messages/new" %>
+
+</div>
+
