@@ -18,6 +18,7 @@ class FriendshipsController < ApplicationController
 
   def show
     @friendship = Friendship.find(params[:id])
+    @messages = @friendship.messages
 
   end
 
