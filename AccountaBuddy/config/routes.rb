@@ -5,13 +5,21 @@ Rails.application.routes.draw do
   resources :users
   resources :sessions, only: [:create, :destroy]
 
-  get 'auth/:provider/callback', to: 'sessions#create'
-  get 'auth/failure', to: redirect('/')
-  get 'signout', to: 'sessions#destroy', as: 'signout'
+  # FB
+  # get 'auth/facebook/callback', to: 'sessions#create'
+  # get 'auth/failure', to: redirect('/')
+  # get 'signout', to: 'sessions#destroy', as: 'signout'
   # You can have the root of your site routed with "root"
   root 'users#index'
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
+
+  get '/login' => 'sessions#new'
+  post '/login' => 'sessions#create'
+  get '/logout' => 'sessions#destroy'
+
+  get '/signup' => 'users#new'
+  post '/users' => 'users#create'
 
   # Example of named route that can be invoked with purchase_url(id: product.id)
   #   get 'products/:id/purchase' => 'catalog#purchase', as: :purchase
