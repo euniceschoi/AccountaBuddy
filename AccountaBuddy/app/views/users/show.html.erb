@@ -4,8 +4,16 @@
 
 <p>Friend Requests From:</p>
 <ul>
+
   <% @friend_requests.each do |friend_request| %>
+
     <li><%= friend_request.user.name %></li>
+      <%= form_tag friend_request_path(friend_request.id), method: 'put' do %>
+      <%= submit_tag "Confirm" %>
+    <% end %>
 
   <% end %>
+
 </ul>
+
+

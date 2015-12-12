@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   resources :sessions, only: [:create, :destroy]
   resources :friendships
   resources :categories
-  resources :friend_requests, only: [:create]
+  resources :friend_requests, only: [:create, :update]
   # FB
   # get 'auth/facebook/callback', to: 'sessions#create'
   # get 'auth/failure', to: redirect('/')
