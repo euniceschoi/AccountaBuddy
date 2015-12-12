@@ -7,6 +7,10 @@
 <ul>
   <% @users_in_category.each do |user| %>
     <li><%= user.username %></li>
+    <%= form_for :recipientid, :url => {:action=>"create", :controller=>"friend_requests"} do |f| %>
+    <%= f.button "Add as Friend"%>
+    <%= f.hidden_field :recipient_id, :value => user.id %>
+    <% end %>
   <% end %>
 </ul>
 

@@ -19,7 +19,7 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
-
+    @friend_requests = FriendRequest.where(recipient_id: @user.id)
   end
 
   def edit

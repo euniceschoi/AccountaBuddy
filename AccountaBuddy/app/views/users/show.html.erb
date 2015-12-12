@@ -2,3 +2,10 @@
 
 <p>Your Accountabuddies </p>
 
+<p>Friend Requests From:</p>
+<ul>
+  <% @friend_requests.each do |friend_request| %>
+    <li><%= friend_request.user.name %></li>
+
+  <% end %>
+</ul>
