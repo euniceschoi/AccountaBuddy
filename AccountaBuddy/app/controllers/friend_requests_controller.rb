@@ -12,7 +12,9 @@ class FriendRequestsController < ApplicationController
   def update
     @friend_request = FriendRequest.find(params[:id])
     @friend_request.update(friends: true)
-    @friendship = Friendship.new(user_params)
+    @friendship = Friendship.new(user_id: current_user.id, friend_id: @friend_request.user_id)
+    @inverse_friendship = Friendship.new(user_id: @friend_request.user_id, friend_id: current_user.id)
+    @inverse_friendship.save
     if @friendship.save
       redirect_to user_path(friendship.id)
     else
