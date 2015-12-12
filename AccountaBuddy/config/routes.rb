@@ -9,6 +9,7 @@ Rails.application.routes.draw do
   # get 'auth/facebook/callback', to: 'sessions#create'
   # get 'auth/failure', to: redirect('/')
   # get 'signout', to: 'sessions#destroy', as: 'signout'
+  resources :friendships
   # You can have the root of your site routed with "root"
   root 'users#index'
   # Example of regular route:
