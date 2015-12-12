@@ -4,20 +4,21 @@
 <h1> Chat: </h1>
 
 <div class="chatboxcontent">
-    <% if @messages.any? %>
-        <%= @messages %>
-    <% else %>
-      No messages
+    <% @messages.each do |message| %>
+        <%= message.content %>
     <% end %>
 
     <div class="chatboxinput">
-      <%= form_for :message, url: {action:"create", controller:"messages"} do |f| %>
+      <%= form_for :message, remote: false, html: {id: "friendship_form_#{@friendship.id}"}, url: {action:"create", controller:"messages"} do |f| %>
       <%= f.hidden_field :recipient_id %>
       <%= f.hidden_field :sender_id %>
-      <%= f.hidden_field :friendship_id %>
-      <%= f.text_field :content %>
-      <%= f.submit "Send" %>
-    <% end %>
+      <%= f.hidden_field :friendship_id, value: @friendship.id %>
+      <%= f.text_field :content, class: "chatboxtextarea" %>
+
+      <div class="chat-form-btns">
+         <%= f.submit "Send"%>
+      </div>
+      <% end %>
     </div>
 
 </div>

@@ -8,9 +8,11 @@ class MessagesController < ApplicationController
   end
 
   def create
-    @message = Message.new(message_params)
+    @friendship = Friendship.find(params[:message][:friendship_id])
+
+    @message = Message.new(content: params[:message][:content], friendship_id: @friendship.id, sender_id: current_user.id, recipient_id: @friendship.friend_id)
     if @message.save
-      # redirect_to friendship_path(:friendship_id)
+      redirect_to friendship_path(@friendship.id)
     else
 
 
