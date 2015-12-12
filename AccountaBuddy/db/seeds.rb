@@ -1,19 +1,3 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rake db:seed (or created alongside the db with db:setup).
-#
-# Examples:
-#
-#   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
-#   Mayor.create(name: 'Emanuel', city: cities.first)
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rake db:seed (or created alongside the db with db:setup).
-#
-# Examples:
-#
-#   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
-#   Mayor.create(name: 'Emanuel', city: cities.first)
-
-
 User.delete_all
 Friendship.delete_all
 Category.delete_all
@@ -40,7 +24,7 @@ end
 # 		if (user.id != user_category.user_id) &&
 
 # 	end
-# end		
+# end
 
 # users.each do |userlist|
 # 	users.each do |user|
@@ -48,7 +32,7 @@ end
 # 			friendships = Friendship.create!(user_id: user.id, friend_id: userlist.id, category_id: user.user_categories.find(category_id))
 # 		end
 # 	end
-# end		
+# end
 
 #find_or_create_by
 # && (user_categories.user_id.category_id == userlist.user_categories.category_id)

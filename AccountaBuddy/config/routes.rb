@@ -4,12 +4,12 @@ Rails.application.routes.draw do
 
   resources :users
   resources :sessions, only: [:create, :destroy]
-
+  resources :friendships
+  resources :categories
   # FB
   # get 'auth/facebook/callback', to: 'sessions#create'
   # get 'auth/failure', to: redirect('/')
   # get 'signout', to: 'sessions#destroy', as: 'signout'
-  resources :friendships
   # You can have the root of your site routed with "root"
   root 'users#index'
   # Example of regular route:
@@ -26,7 +26,6 @@ Rails.application.routes.draw do
   #   get 'products/:id/purchase' => 'catalog#purchase', as: :purchase
 
   # Example resource route (maps HTTP verbs to controller actions automatically):
-  resources :categories
 
   # Example resource route with options:
   #   resources :products do
