@@ -1,9 +1,17 @@
 <h1>Your Category</h1>
 
-<p><%= @category.name %></p> 
+<p><%= @category.name %></p>
 
+<!-- putting all people in this category here for now -->
+<!-- implementing add friend button -->
+<ul>
+  <% @users_in_category.each do |user| %>
+    <li><%= user.username %></li>
+  <% end %>
+</ul>
 
 <!-- map -->
+<!--
 <head>
 <meta charset=utf-8 />
 <title>Geolocation</title>
@@ -82,4 +90,4 @@ map.on('locationerror', function() {
     geolocate.innerHTML = 'Position could not be found';
 });
 </script>
-</body>
+</body> -->
