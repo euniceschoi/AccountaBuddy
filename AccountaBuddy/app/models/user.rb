@@ -1,6 +1,7 @@
 
 
 class User < ActiveRecord::Base
+  # attr_accessible :address, :latitude, :longitude
 
   has_many :friendships
   has_many :friends, :through => :friendships
@@ -11,6 +12,9 @@ class User < ActiveRecord::Base
   has_many :categories, :through => :user_categories
 
   has_secure_password
+  
+  geocoded_by :address
+  after_validation :geocode, :if => :address_changed?
 
 
 

@@ -1,7 +1,15 @@
 class UsersController < ApplicationController
 
   def index
-    @users = User.all
+    if params[:search].present?
+      @users = User.near(params[:search], 25)
+    else
+      @users = User.all 
+    end 
+    respond_to do |format|
+      format.html
+      format.json { render json: @geojson }  # respond with the created JSON object
+    end
   end
 
   def new
@@ -41,7 +49,7 @@ class UsersController < ApplicationController
   private
 
   def user_params
-    params.require(:user).permit(:name, :username, :email, :password, :password_confirmation)
+    params.require(:user).permit(:name, :username, :email, :password, :password_confirmation, :address, :latitude, :longitude)
   end
 
 end
