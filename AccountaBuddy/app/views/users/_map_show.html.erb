@@ -4,7 +4,7 @@
 <head>
   <meta charset=utf-8 />
   <title>Geolocation</title>
-  <meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />  
+  <meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
   <script src='https://api.mapbox.com/mapbox.js/v2.2.3/mapbox.js'></script>
   <link href='https://api.mapbox.com/mapbox.js/v2.2.3/mapbox.css' rel='stylesheet' />
   <style>
@@ -17,7 +17,7 @@
 <div id='map'></div>
 <a href='#' id='geolocate' class='ui-button'>Find me</a>
 <script>
-L.mapbox.accessToken = 'pk.eyJ1IjoidG9wZ2lybGNvZGVyIiwiYSI6ImNpaTFjbWpsbzAwNmR0OW0wanV0ODhhbG8ifQ.s3OXNvl03YPkCTQp61GTVg';
+L.mapbox.accessToken = "<%= ENV['MAPBOX_TOKEN'] %>";
 var geolocate = document.getElementById('geolocate');
 var map = L.mapbox.map('map', 'mapbox.streets');
 var myLayer = L.mapbox.featureLayer().addTo(map);
