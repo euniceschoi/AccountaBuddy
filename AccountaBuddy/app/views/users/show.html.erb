@@ -1,12 +1,21 @@
 <h1>Your Profile</h1>
 
-<p>Your Accountabuddies </p>
+<p>Your Accountabuddies: </p>
+<ul>
+  <% @accountabuddies.each do |accountabuddy| %>
+    <li>
+        <%= accountabuddy.friend.name %>
+        <%= link_to "See Friendship", friendship_path(accountabuddy.id) %>
+    </li>
+  <% end %>
+</ul>
 
 <p>Your Friends:</p>
 <ul>
-  <% @user.friendships.each do |friendship| %>
+  <% @just_friends.each do |friendship| %>
     <li>
       <%= friendship.friend.name %>
+      <%= link_to "See Friendship", friendship_path(friendship.id)%>
     </li>
   <% end %>
 </ul>
