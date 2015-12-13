@@ -18,8 +18,9 @@
 <script>
 L.mapbox.accessToken = "<%= ENV['MAPBOX_TOKEN'] %>";
 var geolocate = document.getElementById('geolocate');
-var map = L.mapbox.map('map', 'mapbox.streets');
+var map = L.mapbox.map('map', 'mapbox.streets').setView([37.7570841,-122.00], 12);
 var myLayer = L.mapbox.featureLayer().addTo(map);
+
 
 var geoJson = [];
 <% @users.each do |user| %>
@@ -27,12 +28,15 @@ var geoJson = [];
       type: 'Feature',
       geometry: {
       type: 'Point',
-      coordinates: [<%= user.longitude %>, <%= user.latitude %>]
+      coordinates: [<%= user.longitude %>, <%= user.latitude %>],
       },
       properties: {
         'marker-color': '#00607d',
-        'marker-symbol': 'circle',
-        'marker-size': 'medium'
+        'marker-symbol': 'star',
+        'marker-size': 'medium',
+        'name': '<%=user.username%>',
+        'url': "/users/"+ "<%=user.id%>"
+
       }
     });
 <% end %>
@@ -44,8 +48,8 @@ myLayer.on('layeradd', function(e) {
   feature = marker.feature;
     // Create custom popup content
     var popupContent =  '<a target="_blank" class="popup" href="' + feature.properties.url + '">' +
-    '<img src="' + feature.properties.image + '" />' +
-    feature.properties.city +
+    '<img src="' + feature.properties.image + '" />' + "  " +
+    feature.properties.name +
     '</a>';
     // http://leafletjs.com/reference.html#popup
     marker.bindPopup(popupContent,{
