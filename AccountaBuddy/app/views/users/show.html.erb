@@ -1,28 +1,34 @@
-<h1>Your Profile</h1>
+<div class="innards">
+  <div class="bg"> </div>
+  <h1 class="innards-header">Hello <%= @user.name %>!</h1>
+  <h2 class="innards-header-2"> What goals will you vanquish today?<h2>
+  <img class="profile-image" src="<%= asset_path( 'eunice-tea.jpg' ) %>">
 
-<p>Your Accountabuddies </p>
+  <p>Your Accountabuddies </p>
 
-<p>Your Friends:</p>
-<ul>
-  <% @user.friendships.each do |friendship| %>
-    <li>
-      <%= friendship.friend.name %>
-    </li>
-  <% end %>
-</ul>
+  <p>Your Friends:</p>
+  <ul>
+    <% @user.friendships.each do |friendship| %>
+      <li>
+        <%= friendship.friend.name %>
+      </li>
+    <% end %>
+  </ul>
 
-<p>Friend Requests From:</p>
-<ul>
+  <p>Friend Requests From:</p>
+  <ul>
 
-  <% @friend_requests.each do |friend_request| %>
+    <% @friend_requests.each do |friend_request| %>
 
-    <li><%= friend_request.user.name %></li>
-      <%= form_tag friend_request_path(friend_request.id), method: 'put' do %>
-      <%= submit_tag "Confirm" %>
+      <li><%= friend_request.user.name %></li>
+        <%= form_tag friend_request_path(friend_request.id), method: 'put' do %>
+        <%= submit_tag "Confirm" %>
+      <% end %>
+
     <% end %>
 
-  <% end %>
-
-</ul>
+  </ul>
+ 
+</div>
 
 

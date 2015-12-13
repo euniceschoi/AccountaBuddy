@@ -10,8 +10,24 @@
  * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
  * file per style scope.
  *
- *= require_tree .
  *= require_self
+ *= require_tree .
  *= require foundation_and_overrides
 
  */
+
+.innards {
+	z-index: 1;
+	width: 900px;
+	position: relative;
+}
+
+.innards .bg {
+	z-index: -1;
+	margin: 0px auto;
+	margin-top: 25px;
+	opacity: .5;
+	background-color: #2befbb;
+	position: absolute;
+}
+

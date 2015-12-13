@@ -2,7 +2,10 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+@import url(https://fonts.googleapis.com/css?family=Alegreya+Sans:900);
 
+
+//the background images for the splash page
 img.bg {
   /* Set rules to fill background */
   min-height: 100%;
@@ -26,17 +29,20 @@ img.bg {
 
 }
 
+//styling for the users#index
+
 .nav-bar-home{
-	margin-top: 65px;
+	margin-top: 45px;
 	margin-left: 125px;
 	margin-bottom: 5px;
 	position: absolute;
-	font-size: 5em;
+	font-size: 6em;
 
 }
 
 .nav-bar-home a{
 	color: #1c8975;
+	font-family: 'Alegreya Sans', sans-serif;
 	font-weight: bold;
 	-webkit-text-stroke: 1.5px #32c99e;
 }
@@ -129,5 +135,14 @@ img.bg {
 
 	}
 }
+
+//styling for user#show
+
+.profile-image {
+	width: 90px;
+
+}
+
+
 
 
