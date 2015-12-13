@@ -1,28 +1,41 @@
-<h1>Your Profile</h1>
 
-<p>Your Accountabuddies </p>
+<div class="innards">
+  <div class="bg"> </div>
+  <h1 class="innards-header">Hello <%= @user.name %>!</h1>
+  <h2 class="innards-header-2"> What goals will you vanquish today?<h2>
+  <img class="profile-image" src="<%= asset_path( 'eunice-tea.jpg' ) %>">
 
-<p>Your Friends:</p>
+<p>Your Accountabuddies: </p>
 <ul>
-  <% @user.friendships.each do |friendship| %>
+  <% @accountabuddies.each do |accountabuddy| %>
     <li>
-      <%= friendship.friend.name %>
+        <%= accountabuddy.friend.name %>
+        <%= link_to "See Friendship", friendship_path(accountabuddy.id) %>
     </li>
   <% end %>
 </ul>
 
-<p>Friend Requests From:</p>
+<p>Your Friends:</p>
 <ul>
+  <% @just_friends.each do |friendship| %>
+    <li>
+      <%= friendship.friend.name %>
+      <%= link_to "See Friendship", friendship_path(friendship.id)%>
+    </li>
+  <% end %>
+</ul>
 
-  <% @friend_requests.each do |friend_request| %>
+    <% @friend_requests.each do |friend_request| %>
 
-    <li><%= friend_request.user.name %></li>
-      <%= form_tag friend_request_path(friend_request.id), method: 'put' do %>
-      <%= submit_tag "Confirm" %>
+      <li><%= friend_request.user.name %></li>
+        <%= form_tag friend_request_path(friend_request.id), method: 'put' do %>
+        <%= submit_tag "Confirm" %>
+      <% end %>
+
     <% end %>
 
-  <% end %>
-
-</ul>
+  </ul>
+ 
+</div>
 
 <%= render 'map_show' %>

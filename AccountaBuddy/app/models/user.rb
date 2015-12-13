@@ -10,6 +10,8 @@ class User < ActiveRecord::Base
   has_many :user_categories
   has_many :friend_requests
   has_many :categories, :through => :user_categories
+  has_many :conversations, foreign_key: :sender_id
+  has_many :conversations, foreign_key: :recipient_id
 
   has_secure_password
   

@@ -19,6 +19,17 @@ class FriendshipsController < ApplicationController
   def show
     @friendship = Friendship.find(params[:id])
 
+    @conversation = Conversation.find_by(sender_id: @friendship.user_id, recipient_id: @friendship.friend_id ) || Conversation.find_by(recipient_id: @friendship.user_id, sender_id: @friendship.friend_id)
+    p "*" * 60
+    p @conversation
+    # @message =Message.new
+    @friend = User.find(@friendship.friend_id)
+    if @conversation && @conversation.messages
+      @messages = @conversation.messages.order("created_at ASC")
+    else
+      # .order("created_at DESC").all
+    end
+
   end
 
   def edit

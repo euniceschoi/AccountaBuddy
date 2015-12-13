@@ -4,7 +4,7 @@ class CreateFriendships < ActiveRecord::Migration
       t.references :user
       t.integer :friend_id
       t.references :category
-      t.boolean :accountabuddy
+      t.boolean :accountabuddy, default: false
       t.string :messages, array: true, default: []
 
       t.timestamps null: false
