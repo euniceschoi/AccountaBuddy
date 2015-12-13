@@ -1,7 +1,15 @@
 class UsersController < ApplicationController
 
   def index
-    @users = User.all
+    if params[:search].present?
+      @users = User.near(params[:search], 25)
+    else
+      @users = User.all
+    end
+    respond_to do |format|
+      format.html
+      format.json { render json: @geojson }  # respond with the created JSON object
+    end
   end
 
   def new
@@ -22,6 +30,7 @@ class UsersController < ApplicationController
     @accountabuddies = @user.friendships.where(accountabuddy:true)
     @just_friends= @user.friendships.where(accountabuddy:false)
     @friend_requests = FriendRequest.where(recipient_id: @user.id, friends: false)
+    @pending_requests = FriendRequest.where(user_id: @user.id, friends:false)
   end
 
   def edit
@@ -43,7 +52,7 @@ class UsersController < ApplicationController
   private
 
   def user_params
-    params.require(:user).permit(:name, :username, :email, :password, :password_confirmation)
+    params.require(:user).permit(:name, :username, :email, :password, :password_confirmation, :address, :latitude, :longitude)
   end
 
 end

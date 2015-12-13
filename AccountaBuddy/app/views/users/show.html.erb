@@ -5,6 +5,7 @@
   <h2 class="innards-header-2"> What goals will you vanquish today?<h2>
   <img class="profile-image" src="<%= asset_path( 'eunice-tea.jpg' ) %>">
 
+<%= link_to "Start a New Goal!", categories_path %>
 <p>Your Accountabuddies: </p>
 <ul>
   <% @accountabuddies.each do |accountabuddy| %>
@@ -25,17 +26,24 @@
   <% end %>
 </ul>
 
+<p>Pending Friend Requests To:</p>
+  <% @pending_requests.each do |pending_request| %>
+    <li><%= pending_request.recipient.name %></li>
+  <% end %>
+
+<p>Friend Requests From:</p>
+
     <% @friend_requests.each do |friend_request| %>
 
       <li><%= friend_request.user.name %></li>
         <%= form_tag friend_request_path(friend_request.id), method: 'put' do %>
-        <%= submit_tag "Confirm" %>
+        <%= submit_tag "Accept" %>
       <% end %>
 
     <% end %>
 
   </ul>
- 
+
 </div>
-
-
+<!--
+<%#= render 'map_show' %> -->
