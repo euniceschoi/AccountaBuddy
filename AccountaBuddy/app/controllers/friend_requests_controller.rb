@@ -2,10 +2,11 @@ class FriendRequestsController < ApplicationController
   def create
     p params
     @friend_request = FriendRequest.new(user_id: current_user.id, recipient_id: params[:recipientid][:recipient_id])
+    @category = params[:recipientid][:category_id].to_i
     if @friend_request.save
-      redirect_to '/'
+      redirect_to user_path(current_user.id)
     else
-      redirect '/categories/1'
+      redirect categories_path(@category)
     end
   end
 
