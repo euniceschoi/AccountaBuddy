@@ -4,8 +4,8 @@ class UsersController < ApplicationController
     if params[:search].present?
       @users = User.near(params[:search], 25)
     else
-      @users = User.all 
-    end 
+      @users = User.all
+    end
     respond_to do |format|
       format.html
       format.json { render json: @geojson }  # respond with the created JSON object
@@ -30,6 +30,7 @@ class UsersController < ApplicationController
     @accountabuddies = @user.friendships.where(accountabuddy:true)
     @just_friends= @user.friendships.where(accountabuddy:false)
     @friend_requests = FriendRequest.where(recipient_id: @user.id, friends: false)
+    @pending_requests = FriendRequest.where(user_id: @user.id, friends:false)
   end
 
   def edit

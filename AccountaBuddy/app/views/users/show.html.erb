@@ -26,14 +26,18 @@
   <% end %>
 </ul>
 
+<p>Pending Friend Requests To:</p>
+  <% @pending_requests.each do |pending_request| %>
+    <li><%= pending_request.recipient.name %></li>
+  <% end %>
+
 <p>Friend Requests From:</p>
 
     <% @friend_requests.each do |friend_request| %>
 
       <li><%= friend_request.user.name %></li>
-        <%= form_for friend_request_path(friend_request.id), method: 'put' do |f|%>
-
-        <%= f.button "Accept" %>
+        <%= form_tag friend_request_path(friend_request.id), method: 'put' do %>
+        <%= submit_tag "Accept" %>
       <% end %>
 
     <% end %>
