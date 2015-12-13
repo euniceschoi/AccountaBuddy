@@ -1,22 +1,29 @@
+
 <div class="innards">
   <div class="bg"> </div>
   <h1 class="innards-header">Hello <%= @user.name %>!</h1>
   <h2 class="innards-header-2"> What goals will you vanquish today?<h2>
   <img class="profile-image" src="<%= asset_path( 'eunice-tea.jpg' ) %>">
 
-  <p>Your Accountabuddies </p>
+<p>Your Accountabuddies: </p>
+<ul>
+  <% @accountabuddies.each do |accountabuddy| %>
+    <li>
+        <%= accountabuddy.friend.name %>
+        <%= link_to "See Friendship", friendship_path(accountabuddy.id) %>
+    </li>
+  <% end %>
+</ul>
 
-  <p>Your Friends:</p>
-  <ul>
-    <% @user.friendships.each do |friendship| %>
-      <li>
-        <%= friendship.friend.name %>
-      </li>
-    <% end %>
-  </ul>
-
-  <p>Friend Requests From:</p>
-  <ul>
+<p>Your Friends:</p>
+<ul>
+  <% @just_friends.each do |friendship| %>
+    <li>
+      <%= friendship.friend.name %>
+      <%= link_to "See Friendship", friendship_path(friendship.id)%>
+    </li>
+  <% end %>
+</ul>
 
     <% @friend_requests.each do |friend_request| %>
 

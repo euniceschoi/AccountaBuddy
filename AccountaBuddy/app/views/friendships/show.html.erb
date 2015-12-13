@@ -1,2 +1,33 @@
 <h1>This is the friendship show page</h1>
 <p>Users can see their past interactions with this friend, and can chat with them using the chatbox</p>
+
+<h3>You have been friends with <%= @friend.name %> since <%= @friendship.created_at %> </h3>
+<h1>Your conversation with <%= @friend.name %>:</h1>
+
+<div id="makethisscrollable">
+<% if @messages %>
+  <% @messages.each do |message| %>
+    <div>
+      <%= message.body %>
+      - <%= message.user.name %>
+      - <%= message.created_at %>
+    </div>
+  <%end %>
+<% end %>
+
+</div>
+
+
+<%= flash[:error] %>
+<div>
+<%= form_for :message, url: '/messages' do |f| %>
+  <%= f.text_field :body, :size => "60x12"%>
+  <% if @conversation %>
+  <%= f.hidden_field :conversation, value: @conversation.id  %>
+  <% end %>
+  <%= f.hidden_field :friendship, value: @friendship.id %>
+  <%= f.submit "Send" %>
+<% end %>
+</div>
+
+<%= link_to "Back to Profile", user_path(current_user.id) %>

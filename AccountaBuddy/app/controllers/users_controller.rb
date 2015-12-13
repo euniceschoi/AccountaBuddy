@@ -19,6 +19,8 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
+    @accountabuddies = @user.friendships.where(accountabuddy:true)
+    @just_friends= @user.friendships.where(accountabuddy:false)
     @friend_requests = FriendRequest.where(recipient_id: @user.id, friends: false)
   end
 
