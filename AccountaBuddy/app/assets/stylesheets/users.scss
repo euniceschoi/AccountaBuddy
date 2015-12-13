@@ -1,3 +1,147 @@
 // Place all the styles related to the users controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+@import url(https://fonts.googleapis.com/css?family=Alegreya+Sans:900);
+
+
+//the background images for the splash page
+img.bg {
+  /* Set rules to fill background */
+  min-height: 100%;
+  min-width: 1024px;
+	
+  /* Set up proportionate scaling */
+  width: 100%;
+  height: auto;
+	
+  /* Set up positioning */
+  position: fixed;
+  top: -5;
+  left: 0;
+}
+
+@media screen and (max-width: 1024px) { /* Specific to this particular image */
+  img.bg {
+    left: 50%;
+    margin-left: -512px;   /* 50% */
+  }
+
+}
+
+//styling for the users#index
+
+.nav-bar-home{
+	margin-top: 45px;
+	margin-left: 125px;
+	margin-bottom: 5px;
+	position: absolute;
+	font-size: 6em;
+
+}
+
+.nav-bar-home a{
+	color: #1c8975;
+	font-family: 'Alegreya Sans', sans-serif;
+	font-weight: bold;
+	-webkit-text-stroke: 1.5px #32c99e;
+}
+
+
+.nav-bar-user{
+	position: absolute;
+	font-size: 2.5em;
+	margin-left: 420px;
+	margin-top: 150px;
+}
+
+.nav-bar-user a{
+	color: #2d7f98
+}
+
+.splash-box {
+	width: 700px;
+	height: 500px;
+	padding: 40px;
+	background-color: white;
+	position: absolute;
+	border-radius: 5px;
+	opacity: .80;
+}
+
+#splash-box-1{
+	margin-top: 250px;
+	margin-left: 75px;
+}
+
+#splash-box-2{
+	margin-top: 1200px;
+	margin-left: 200px;
+	width: 1000px;
+	height: 700px;
+	text-align: right;
+}
+
+#splash-box-3{
+	margin-top: 3400px;
+	margin-left: 700px;
+}
+
+@media screen and (max-width: 400px){
+	.nav-bar-home {
+		margin-left: 30px;
+		margin-top: 10px;
+		font-size: 2em;
+	}
+
+	.nav-bar-user{
+		font-size: 1.2em;
+		margin-left: 65px;
+		margin-top: 50px;
+	}
+
+	.splash-box {
+		width: 200px;
+		height: 700px;
+		padding: 10px;
+		margin-top: 100px;
+	}
+
+	.splash-box h3{
+		font-size: .9em;
+		text-align: center;
+	}
+
+	.splash-box p{
+		display: none;
+	}
+
+	#splash-box-1 {
+		margin-top: 100px;
+		height: 250px;
+	}
+
+	#splash-box-2 {
+		margin-top: 375px;
+		margin-left: 75px;
+		width: 200px;
+		height: 250px;
+	}
+
+	#splash-box-3 {
+		margin-top: 650px;
+		margin-left: 75px;
+		height: 300px;
+
+	}
+}
+
+//styling for user#show
+
+.profile-image {
+	width: 100px;
+}
+
+
+
+
