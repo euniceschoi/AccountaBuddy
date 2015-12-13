@@ -1,3 +1,4 @@
+<%= render 'layouts/navigation' %>
 <h1>Your Category</h1>
 
 <p><%= @category.name %></p>
@@ -14,10 +15,11 @@
     <% end %>
   <% end %>
 </ul>
+
 <div>
-  SHOW MAP HERE
-  <%#= render 'map_show' %>
+  <%= render 'map_index' %>
 </div>
+
 
 
 
