@@ -23,15 +23,12 @@ class FriendshipsController < ApplicationController
     p "*" * 60
     p @conversation
     # @message =Message.new
-    # @friend = User.find(@friendship.friend_id)
-    # # if @conversation2 && @conversation2.messages
-    # #   @messages = @conversation2.messages.order("created_at ASC")
-    # if
-    #  @conversation1 && @conversation1.messages
-    #   @messages = @conversation1.messages.order("created_at ASC")
-    # else
-    #   # .order("created_at DESC").all
-    # end
+    @friend = User.find(@friendship.friend_id)
+    if @conversation && @conversation.messages
+      @messages = @conversation.messages.order("created_at ASC")
+    else
+      # .order("created_at DESC").all
+    end
 
   end
 
