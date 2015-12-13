@@ -1,9 +1,35 @@
-<h1> Accountabuddy </h1>
 
-<%= form_tag '/login' do %>
 
-  Email: <%= text_field_tag :email %>
-  Password: <%= password_field_tag :password %>
-  <%= submit_tag "Submit" %>
+<%= render 'user_index_header' %>
+<div class="splash-box" id="splash-box-1">
+	<h3>We're All About the Buddy System.</h3>
+	<p> <b>*THE TEXT BELOW IS PLAGIARIZED AND MUST BE REVISED*</b>
+	<br>
+	Research solidly backs up this two-is-better-than-one proposition. People are more likely to stick with a health routine over time and to show up for health related activities, such as fitness classes, if they are part of a formal group or partnership.
+	<br><br>
+	<%= form_tag '/login' do %>
 
-<% end %>
+	  Email: <%= text_field_tag :email %>
+	  Password: <%= password_field_tag :password %>
+	  <%= submit_tag "Submit" %>
+
+	<% end %>
+
+	</p>
+</div>
+
+<div class="splash-box" id="splash-box-2">
+	<h3>Text for the second splash box</h3>
+	<p> Fap knausgaard humblebrag offal, hammock distillery pug swag mlkshk locavore street art celiac chambray paleo. Chartreuse freegan forage mlkshk dreamcatcher heirloom, meh retro tacos cray plaid cliche mustache. Ennui tousled cronut wolf chillwave. Wolf small batch street art, 8-bit everyday carry shabby chic humblebrag roof party fanny pack forage hella vice bespoke. Readymade waistcoat asymmetrical, thundercats marfa ennui stumptown DIY kickstarter gentrify next level skateboard vinyl umami. Pour-over knausgaard cornhole hoodie meggings fap. Migas vice stumptown venmo, tumblr XOXO knausgaard.</p>
+</div>
+
+<div class="splash-box" id="splash-box-3">
+	<h3>Text for the third splash box</h3>
+
+</div>
+<img id="splash-image" src="<%= asset_path( 'guns-splash.jpg' ) %>">
+<img id="splash-image" src="<%= asset_path( 'posing-splash.jpg' ) %>">
+<img id="splash-image" src="<%= asset_path( 'running-splash.jpg' ) %>">
+
+
+
