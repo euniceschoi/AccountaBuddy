@@ -41,10 +41,10 @@ ActiveRecord::Schema.define(version: 20151212235949) do
     t.integer  "user_id"
     t.integer  "friend_id"
     t.integer  "category_id"
-    t.boolean  "accountabuddy"
-    t.string   "messages",      default: [],              array: true
-    t.datetime "created_at",                 null: false
-    t.datetime "updated_at",                 null: false
+    t.boolean  "accountabuddy", default: false
+    t.string   "messages",      default: [],                 array: true
+    t.datetime "created_at",                    null: false
+    t.datetime "updated_at",                    null: false
   end
 
   create_table "messages", force: :cascade do |t|
