@@ -12,25 +12,31 @@
       <% end %>
         <div class="row">
           <ul class="large-block-grid-4" id="user-badges">
+            
+
             <% if current_user %>
-              <% if @user == current_user.id %>
-                <% @badges.each do |badge| %>
+              <% if @accountabuddy_relationship == true %>
+               <% @badges.each do |badge| %>
                   <li> <img class="badge-image" src="<%= asset_path(badge.badge_image_link) %>">
                   <p> <%= badge.points %> victories</p>
-                      <%= link_to "Endorse!", badge_path(badge.id), method: 'put' %>
-                    <% else %>
-                    <% end %>
+                      <%= link_to "Endorse!", badge_path(badge.id), method: 'put' %>        
                   </li>
                 <% end %>
-              <% elsif %> 
+              <% elsif @inverse_accountabuddy_relationship %>
+                   <% @badges.each do |badge| %>
+                  <li> <img class="badge-image" src="<%= asset_path(badge.badge_image_link) %>">
+                  <p> <%= badge.points %> victories</p>
+                      <%= link_to "Endorse!", badge_path(badge.id), method: 'put' %>        
+                  </li>
+                <% end %>                    
               <% else %>
                 <% @badges.each do |badge| %>
                   <li> <img class="badge-image" src="<%= asset_path(badge.badge_image_link) %>">
                   <p> <%= badge.points %> victories</p>
                   </li>
                 <% end %>
-              <% end %>
-            <% end %>
+              <% end %>  
+            <% end %>       
           </ul>
         </div>
     </div>
@@ -83,4 +89,4 @@
       </ul>
 </div>
 
-<%= render 'map_show' %>
+
