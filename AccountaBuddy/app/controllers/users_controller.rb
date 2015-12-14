@@ -56,6 +56,8 @@ class UsersController < ApplicationController
   def update
     if current_user && current_user.id = @user.id
       @user
+      @user.latitude = e.latlng.lat  
+      @user.longitude = e.latlng.lng
     else
       #put an error message here
       redirect_to root_path

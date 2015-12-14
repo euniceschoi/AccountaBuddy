@@ -1,3 +1,22 @@
+
+
+================
+TO DO: 12.14.15
+================
+- Adding comments to endorsements
+- Map: 
+-- Hover: 
+--- 3. Add 'About' 
+--- Add 'Image'
+--- Show where I am and categories in relation to me
+--- 2. If the user is a current user, color pin red
+--- 1. Geocoder address to longitude latitude 
+
+
+Add friends
+Add acoountabuddies
+
+
 $(document).ready ->
 
 map = L.mapbox.map('map', 'your-map-id').setView([45.52086, -122.679523], 14)
