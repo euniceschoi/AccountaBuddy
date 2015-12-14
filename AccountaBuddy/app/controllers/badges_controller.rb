@@ -6,7 +6,11 @@ class BadgesController < ApplicationController
 
   def update
     @badge = Badge.find(params[:id])
-    @badge.update
+    p @badge
+    @badge.update(points: @badge.points.to_i + 1 )
+    p @badge
+    @badge.save
+    redirect_to user_path(@badge.user.id)
   end
 
 end
