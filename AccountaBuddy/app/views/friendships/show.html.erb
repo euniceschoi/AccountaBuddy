@@ -8,10 +8,10 @@
 
 <h1>Your conversation with <%= @friend.name %>:</h1>
 
-<div id="makethisscrollable">
+<div id="messages">
 <% if @messages %>
   <% @messages.each do |message| %>
-    <div>
+    <div id="specific-message">
       <%= message.body %>
       - <%= message.user.name %>
       - <%= message.created_at %>
@@ -23,7 +23,7 @@
 
 
 <%= flash[:error] %>
-<div>
+<div id="send-messages">
 <%= form_for :message, url: '/messages' do |f| %>
   <%= f.text_field :body, :size => "60x12"%>
   <% if @conversation %>
