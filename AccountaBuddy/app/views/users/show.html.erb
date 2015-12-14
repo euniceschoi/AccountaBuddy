@@ -1,9 +1,15 @@
 
 <%= render 'layouts/navigation' %>
 <div class="innards">
-   <img class="profile-image" src="<%= asset_path( 'eunice-tea.jpg' ) %>">
-    <h1 class="innards-header">Hello <%= @user.name %>!</h1>
-    <h2 class="innards-header-2"> What goals will you vanquish today?<h2>
+  <div class="row">
+    <div class="medium-4-columns">
+      <img class="profile-image" src="<%= asset_path( 'eunice-tea.jpg' ) %>">
+    </div>
+    <div class="medium-8-columns">
+      <h1 class="innards-header">Hello <%= @user.name %>!</h1>
+      <h2 class="innards-header-2"> What goals will you vanquish today?<h2>
+    </div>
+  </div>
  
 
 <h1> About:</h1>
