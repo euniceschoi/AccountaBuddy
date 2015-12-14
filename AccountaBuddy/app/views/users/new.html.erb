@@ -1,4 +1,4 @@
-<%= render 'layouts/navigation' %>
+
 
 <h1>Signup!</h1>
 
@@ -6,6 +6,9 @@
   Name: <%= f.text_field :name %>
   Username: <%= f.text_field :username %>
   Email: <%= f.text_field :email %>
+  Quick Description: <%= f.text_field :about_me %>
+  Birthdate: <%= f.text_field :birthdate %>
+  Gender: <%= f.text_field :gender %>
   Password: <%= f.password_field :password %>
   Password Confirmation: <%= f.password_field :password_confirmation %>
   <%= f.submit "Submit" %>

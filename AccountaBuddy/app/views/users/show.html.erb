@@ -5,7 +5,24 @@
   <h2 class="innards-header-2"> What goals will you vanquish today?<h2>
   <img class="profile-image" src="<%= asset_path( 'eunice-tea.jpg' ) %>">
 
+<h1> About:</h1>
+  <ul>
+    <li><%= @user.gender %></li>
+    <li><%= @user.about_me %></li>
+  </ul>
+
 <%= link_to "Start a New Goal!", categories_path %>
+
+<h3> Badges:</h3>
+<ul>
+<% @badges.each do |badge| %>
+  <li> <%= badge.name %> </li>
+  <p> <%= badge.description %> </p>
+  <p> <%= badge.points %></p>
+  <%= link_to "Endorse!", badge_path(badge.id), method: 'put' %>
+<% end %>
+</ul>
+
 <p>Your Accountabuddies: </p>
 <ul>
   <% @accountabuddies.each do |accountabuddy| %>
