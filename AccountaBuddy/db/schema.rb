@@ -42,7 +42,6 @@ ActiveRecord::Schema.define(version: 20151213233948) do
   create_table "friend_requests", force: :cascade do |t|
     t.integer  "user_id"
     t.integer  "recipient_id"
-    t.integer  "category_id"
     t.boolean  "friends",      default: false
     t.datetime "created_at",                   null: false
     t.datetime "updated_at",                   null: false

@@ -18,6 +18,16 @@
 
 $(function(){ $(document).foundation(); });
 
+$('.curtains').curtain();
+$(function () {
+    $('.curtains').curtain({
+        scrollSpeed: 400
+    });
+});
+$(function () {
+    $.scrollUp();
+});
+
 $(document).ready(function(){
   sendMessageListener();
 });
@@ -44,3 +54,4 @@ var sendMessageListener = function() {
     })
   })
 }
+
