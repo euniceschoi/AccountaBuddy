@@ -8,8 +8,8 @@
 
 <h1>Your conversation with <%= @friend.name %>:</h1>
 
-<div id="messages">
 <% if @messages %>
+<ul id="messages">
   <% @messages.each do |message| %>
     <div id="specific-message">
       <%= message.body %>
@@ -17,15 +17,15 @@
       - <%= message.created_at %>
     </div>
   <%end %>
+</ul>
 <% end %>
 
-</div>
 
 
 <%= flash[:error] %>
 <div id="send-messages">
 <%= form_for :message, url: '/messages' do |f| %>
-  <%= f.text_field :body, :size => "60x12"%>
+  <%= f.text_field :body, :size => "60x12", id:"message-input-box"%>
   <% if @conversation %>
   <%= f.hidden_field :conversation, value: @conversation.id  %>
   <% end %>

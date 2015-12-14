@@ -44,7 +44,8 @@ var sendMessageListener = function() {
       data: messageData
     });
     request.done(function(response){
-      $(response).appendTo('#messages')
+      $(response).appendTo('#messages');
+      $("#message-input-box").val("");
       console.log("YES!")
       console.log(response)
     });
