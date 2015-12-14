@@ -1,49 +1,54 @@
+<div>
+	<ol class="curtains">
+		<li class="cover">
 
-<ol class="curtains">
-<li class="cover"><img class="splash-image" src="<%= asset_path( 'paddleboarding-splash.jpg' ) %>">
+			<%= render 'user_index_header' %>
+			<div class="splash-box" id="splash-box-1">
+				<h3>We're All About the Buddy System.</h3>
+				<p> <b>*THE TEXT BELOW IS PLAGIARIZED AND MUST BE REVISED*</b>
+				<br>
+				Research solidly backs up this two-is-better-than-one proposition. People are more likely to stick with a health routine over time and to show up for health related activities, such as fitness classes, if they are part of a formal group or partnership.
+				<br><br>
+				<%= form_tag '/login' do %>
 
-	<%= render 'user_index_header' %>
-	<div class="splash-box" id="splash-box-1">
-		<h3>We're All About the Buddy System.</h3>
-		<p> <b>*THE TEXT BELOW IS PLAGIARIZED AND MUST BE REVISED*</b>
-		<br>
-		Research solidly backs up this two-is-better-than-one proposition. People are more likely to stick with a health routine over time and to show up for health related activities, such as fitness classes, if they are part of a formal group or partnership.
-		<br><br>
-		<%= form_tag '/login' do %>
+				  Email: <%= text_field_tag :email %>
+				  Password: <%= password_field_tag :password %>
+				  <%= submit_tag "Submit" %>
 
-		  Email: <%= text_field_tag :email %>
-		  Password: <%= password_field_tag :password %>
-		  <%= submit_tag "Submit" %>
+				<% end %>
 
-		<% end %>
+				</p>
+			</div>
+			<img class="splash-image" src="<%= asset_path( 'paddleboarding-splash.jpg' ) %>">
+		</li>
+		<li class="cover">
+			<div class="splash-box" id="splash-box-2">
+				<h3>Text for the second splash box</h3>
+				<p> Fap knausgaard humblebrag offal, hammock distillery pug swag mlkshk locavore street art celiac chambray paleo. Chartreuse freegan forage mlkshk dreamcatcher heirloom, meh retro tacos cray plaid cliche mustache. Ennui tousled cronut wolf chillwave. Wolf small batch street art, 8-bit everyday carry shabby chic humblebrag roof party fanny pack forage hella vice bespoke. Readymade waistcoat asymmetrical, thundercats marfa ennui stumptown DIY kickstarter gentrify next level skateboard vinyl umami. Pour-over knausgaard cornhole hoodie meggings fap. Migas vice stumptown venmo, tumblr XOXO knausgaard.</p>
 
-		</p>
-	</div>
-</li>
-<li class="cover"><img class="splash-image" src="<%= asset_path( 'green-splash.jpg' ) %>">
-	<div class="splash-box" id="splash-box-2">
-		<h3>Text for the second splash box</h3>
-		<p> Fap knausgaard humblebrag offal, hammock distillery pug swag mlkshk locavore street art celiac chambray paleo. Chartreuse freegan forage mlkshk dreamcatcher heirloom, meh retro tacos cray plaid cliche mustache. Ennui tousled cronut wolf chillwave. Wolf small batch street art, 8-bit everyday carry shabby chic humblebrag roof party fanny pack forage hella vice bespoke. Readymade waistcoat asymmetrical, thundercats marfa ennui stumptown DIY kickstarter gentrify next level skateboard vinyl umami. Pour-over knausgaard cornhole hoodie meggings fap. Migas vice stumptown venmo, tumblr XOXO knausgaard.</p>
+				<p> Green juice kinfolk kitsch everyday carry, aesthetic skateboard pork belly selfies brunch intelligentsia organic fap mustache drinking vinegar echo park. 3 wolf moon chicharrones swag pug cardigan tote bag raw denim, master cleanse jean shorts marfa helvetica skateboard DIY thundercats. Austin knausgaard celiac, humblebrag godard aesthetic mustache echo park actually health goth bushwick bitters meditation raw denim. 90's whatever gluten-free seitan, asymmetrical farm-to-table aesthetic next level art party tofu taxidermy cardigan viral. Blog master cleanse four dollar toast, kitsch letterpress occupy sriracha deep v sustainable raw denim. Flannel banjo chambray, bitters taxidermy cray paleo salvia put a bird on it farm-to-table. Tacos cold-pressed fashion axe salvia narwhal banjo.</p>
 
-		<p> Green juice kinfolk kitsch everyday carry, aesthetic skateboard pork belly selfies brunch intelligentsia organic fap mustache drinking vinegar echo park. 3 wolf moon chicharrones swag pug cardigan tote bag raw denim, master cleanse jean shorts marfa helvetica skateboard DIY thundercats. Austin knausgaard celiac, humblebrag godard aesthetic mustache echo park actually health goth bushwick bitters meditation raw denim. 90's whatever gluten-free seitan, asymmetrical farm-to-table aesthetic next level art party tofu taxidermy cardigan viral. Blog master cleanse four dollar toast, kitsch letterpress occupy sriracha deep v sustainable raw denim. Flannel banjo chambray, bitters taxidermy cray paleo salvia put a bird on it farm-to-table. Tacos cold-pressed fashion axe salvia narwhal banjo.</p>
+				<p> Keytar plaid photo booth celiac four loko kitsch. Knausgaard sriracha stumptown fashion axe, humblebrag pinterest mustache retro umami marfa kombucha fingerstache plaid. Kickstarter pitchfork street art chambray, pork belly mustache sustainable tousled dreamcatcher keytar. Put a bird on it church-key cred squid hoodie. Plaid cred blog yuccie, tilde paleo etsy lo-fi sriracha. Leggings affogato raw denim, tattooed intelligentsia pop-up mumblecore kale chips. 3 wolf moon meh church-key, blog knausgaard taxidermy +1 four dollar toast everyday carry disrupt you probably haven't heard of them shabby chic art party kogi.</p>
+			</div>
+			<img class="splash-image" src="<%= asset_path( 'green-splash.jpg' ) %>">
+		</li>
+		<li class="cover">
+			<div class="splash-box" id="splash-box-3">
+				<h3>Text for the third splash box</h3>
+				<p>Chambray tacos craft beer wolf. Chia green juice 3 wolf moon, stumptown neutra small batch 8-bit banjo letterpress tote bag farm-to-table vinyl umami next level yuccie. Vegan pour-over tacos, tattooed before they sold out yuccie master cleanse DIY bitters post-ironic tousled offal tote bag neutra. Meh drinking vinegar typewriter viral. Pitchfork flannel umami, cornhole pabst quinoa XOXO readymade put a bird on it ennui. Letterpress direct trade yr, skateboard godard quinoa drinking vinegar tousled viral etsy schlitz jean shorts. Try-hard fap disrupt, vice listicle chambray blue bottle affogato deep v 3 wolf moon echo park sriracha semiotics.</p>
 
-		<p> Keytar plaid photo booth celiac four loko kitsch. Knausgaard sriracha stumptown fashion axe, humblebrag pinterest mustache retro umami marfa kombucha fingerstache plaid. Kickstarter pitchfork street art chambray, pork belly mustache sustainable tousled dreamcatcher keytar. Put a bird on it church-key cred squid hoodie. Plaid cred blog yuccie, tilde paleo etsy lo-fi sriracha. Leggings affogato raw denim, tattooed intelligentsia pop-up mumblecore kale chips. 3 wolf moon meh church-key, blog knausgaard taxidermy +1 four dollar toast everyday carry disrupt you probably haven't heard of them shabby chic art party kogi.</p>
-	</div>
-</li>
-<li class="cover"><img class="splash-image" src="<%= asset_path( 'shoes-splash.jpg' ) %>">
-<div class="splash-box" id="splash-box-3">
-	<h3>Text for the third splash box</h3>
-	<p>Chambray tacos craft beer wolf. Chia green juice 3 wolf moon, stumptown neutra small batch 8-bit banjo letterpress tote bag farm-to-table vinyl umami next level yuccie. Vegan pour-over tacos, tattooed before they sold out yuccie master cleanse DIY bitters post-ironic tousled offal tote bag neutra. Meh drinking vinegar typewriter viral. Pitchfork flannel umami, cornhole pabst quinoa XOXO readymade put a bird on it ennui. Letterpress direct trade yr, skateboard godard quinoa drinking vinegar tousled viral etsy schlitz jean shorts. Try-hard fap disrupt, vice listicle chambray blue bottle affogato deep v 3 wolf moon echo park sriracha semiotics.</p>
+				<p>Banh mi waistcoat irony pop-up bespoke. Everyday carry franzen whatever chia butcher. Taxidermy PBR&B narwhal, four dollar toast plaid pickled schlitz yuccie. Yuccie normcore jean shorts literally. Fap irony kombucha letterpress. Ennui sriracha four loko twee tilde helvetica. Sriracha tilde cornhole, gluten-free authentic austin tousled wayfarers try-hard freegan kinfolk selvage marfa.</p>
 
-	<p>Banh mi waistcoat irony pop-up bespoke. Everyday carry franzen whatever chia butcher. Taxidermy PBR&B narwhal, four dollar toast plaid pickled schlitz yuccie. Yuccie normcore jean shorts literally. Fap irony kombucha letterpress. Ennui sriracha four loko twee tilde helvetica. Sriracha tilde cornhole, gluten-free authentic austin tousled wayfarers try-hard freegan kinfolk selvage marfa.</p>
-
+			</div>
+			<img class="splash-image" src="<%= asset_path( 'shoes-splash.jpg' ) %>">
+		</li>
+		<li class="cover"><img class="splash-image" src="<%= asset_path( 'blue-splash.jpg' ) %>"></li>
+		<li class="cover"><img class="splash-image" src="<%= asset_path( 'teens-splash.jpg' ) %>"></li>
+		<li class="cover"><img class="splash-image" src="<%= asset_path( 'greenapplegreen-splash.jpg' ) %>"></li>
+		<li class="cover"><img class="splash-image" src="<%= asset_path( 'jackie-tobman-photography.jpg' ) %>"></li>
+	</ol>
+	<div id="scrollUp"></div>
 </div>
-</li>
-<li class="cover"><img class="splash-image" src="<%= asset_path( 'blue-splash.jpg' ) %>"></li>
-<li class="cover"><img class="splash-image" src="<%= asset_path( 'teens-splash.jpg' ) %>"></li>
-<li class="cover"><img class="splash-image" src="<%= asset_path( 'greenapplegreen-splash.jpg' ) %>"></li>
-<li class="cover"><img class="splash-image" src="<%= asset_path( 'jackie-tobman-photography.jpg' ) %>"></li>
-</ol>
 
 
 

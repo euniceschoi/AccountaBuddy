@@ -19,15 +19,10 @@ img.bg {
   position: fixed;
   top: -5;
   left: 0;
+
+  z-index: -1;
 }
 
-@media screen and (max-width: 1024px) { /* Specific to this particular image */
-  img.bg {
-    left: 50%;
-    margin-left: -512px;   /* 50% */
-  }
-
-}
 
 //styling for the users#index
 
@@ -75,66 +70,19 @@ img.bg {
 }
 
 #splash-box-2{
-	margin-top: 1200px;
+	margin-top: 100px;
 	margin-left: 200px;
 	width: 1000px;
-	height: 700px;
+	height: 600px;
 	text-align: right;
 }
 
 #splash-box-3{
-	margin-top: 3400px;
+	margin-top: 100px;
 	margin-left: 700px;
 }
 
-@media screen and (max-width: 400px){
-	.nav-bar-home {
-		margin-left: 30px;
-		margin-top: 10px;
-		font-size: 2em;
-	}
 
-	.nav-bar-user{
-		font-size: 1.2em;
-		margin-left: 65px;
-		margin-top: 50px;
-	}
-
-	.splash-box {
-		width: 200px;
-		height: 700px;
-		padding: 10px;
-		margin-top: 100px;
-	}
-
-	.splash-box h3{
-		font-size: .9em;
-		text-align: center;
-	}
-
-	.splash-box p{
-		display: none;
-	}
-
-	#splash-box-1 {
-		margin-top: 100px;
-		height: 250px;
-	}
-
-	#splash-box-2 {
-		margin-top: 375px;
-		margin-left: 75px;
-		width: 200px;
-		height: 250px;
-	}
-
-	#splash-box-3 {
-		margin-top: 650px;
-		margin-left: 75px;
-		height: 300px;
-
-	}
-}
 
 //styling for user#show
 
@@ -142,6 +90,39 @@ img.bg {
 	width: 100px;
 }
 
+/* Tab style */
+#scrollUp {
+    bottom: 0;
+    right: 30px;
+    width: 80px;
+    height: 90px;
+    margin-bottom: -10px;
+    padding: 10px 5px;
+    font: 14px/20px sans-serif;
+    font-weight: bold;
+    text-align: center;
+    text-decoration: none;
+    text-shadow: 0 1px 0 #fff;
+    color: #a6a48f;
+    -webkit-box-shadow: 0 0 2px 1px rgba(0, 0, 0, 0.2);
+    -moz-box-shadow: 0 0 2px 1px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 0 2px 1px rgba(0, 0, 0, 0.2);
+    background-color: #a6a48f;
+    background-image: -moz-linear-gradient(top, #EBEBEB, #DEDEDE);
+    background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#EBEBEB), to(#DEDEDE));
+    background-image: -webkit-linear-gradient(top, #EBEBEB, #DEDEDE);
+    background-image: -o-linear-gradient(top, #EBEBEB, #DEDEDE);
+    background-image: linear-gradient(to bottom, #EBEBEB, #DEDEDE);
+    background-repeat: repeat-x;
+    -webkit-transition: margin-bottom 150ms linear;
+    -moz-transition: margin-bottom 150ms linear;
+    -o-transition: margin-bottom 150ms linear;
+    transition: margin-bottom 150ms linear;
+}
+
+#scrollUp:hover {
+    margin-bottom: 0;
+}
 
 
 

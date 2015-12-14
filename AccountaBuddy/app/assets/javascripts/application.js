@@ -23,3 +23,6 @@ $(function () {
         scrollSpeed: 400
     });
 });
+$(function () {
+    $.scrollUp();
+});
