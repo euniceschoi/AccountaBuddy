@@ -1,4 +1,5 @@
-class FriendRequestsController < ApplicationController
+class FriendRequestsController < ApplicationController 
+
   def create
     p params
     @category_id = params[:recipientid][:category_id].to_i
