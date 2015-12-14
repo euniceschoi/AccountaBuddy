@@ -2,35 +2,52 @@
    <%= render 'layouts/navigation' %>
 </div>
 <div class="innards">
-    <h1 class="innards-header">Hello <%= @user.name %>!</h1>
-    <h2 class="innards-header-2"> What goals will you vanquish today?<h2>
-    <img class="profile-image" src="<%= asset_path( 'eunice-tea.jpg' ) %>">
+  <h1 class="innards-header">Hello <%= @user.name %>!</h1>
+  <h2 class="innards-header-2"> What goals will you vanquish today?<h2>
+  <img class="profile-image" src="<%= asset_path( 'eunice-tea.jpg' ) %>">
 
-    <%= link_to "Start a New Goal!", categories_path %>
-    <p>Your Accountabuddies: </p>
-    <ul>
-      <% @accountabuddies.each do |accountabuddy| %>
-        <li>
-            <%= accountabuddy.friend.name %>
-            <%= link_to "See Friendship", friendship_path(accountabuddy.id) %>
-        </li>
-      <% end %>
-    </ul>
+<h1> About:</h1>
+  <ul>
+    <li><%= @user.gender %></li>
+    <li><%= @user.about_me %></li>
+  </ul>
 
-    <p>Your Friends:</p>
-    <ul>
-      <% @just_friends.each do |friendship| %>
-        <li>
-          <%= friendship.friend.name %>
-          <%= link_to "See Friendship", friendship_path(friendship.id)%>
-        </li>
-      <% end %>
-    </ul>
+<%= link_to "Start a New Goal!", categories_path %>
 
-    <p>Pending Friend Requests To:</p>
-      <% @pending_requests.each do |pending_request| %>
-        <li><%= pending_request.recipient.name %></li>
-      <% end %>
+<h3> Badges:</h3>
+<ul>
+<% @badges.each do |badge| %>
+  <li> <%= badge.name %> </li>
+  <p> <%= badge.description %> </p>
+  <p> <%= badge.points %></p>
+  <%= link_to "Endorse!", badge_path(badge.id), method: 'put' %>
+<% end %>
+</ul>
+
+<p>Your Accountabuddies: </p>
+<ul>
+  <% @accountabuddies.each do |accountabuddy| %>
+    <li>
+        <%= accountabuddy.friend.name %>
+        <%= link_to "See Friendship", friendship_path(accountabuddy.id) %>
+    </li>
+  <% end %>
+</ul>
+
+<p>Your Friends:</p>
+<ul>
+  <% @just_friends.each do |friendship| %>
+    <li>
+      <%= friendship.friend.name %>
+      <%= link_to "See Friendship", friendship_path(friendship.id)%>
+    </li>
+  <% end %>
+</ul>
+
+<p>Pending Friend Requests To:</p>
+  <% @pending_requests.each do |pending_request| %>
+    <li><%= pending_request.recipient.name %></li>
+  <% end %>
 
     <p>Friend Requests From:</p>
 

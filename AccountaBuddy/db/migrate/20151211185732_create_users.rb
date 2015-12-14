@@ -8,6 +8,9 @@ class CreateUsers < ActiveRecord::Migration
       t.float :longitude
       t.float :latitude
       t.string :address
+      t.text :about_me
+      t.string :birthdate
+      t.string :gender
       t.timestamps null: false
     end
   end
