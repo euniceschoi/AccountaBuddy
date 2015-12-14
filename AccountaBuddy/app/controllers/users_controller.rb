@@ -46,6 +46,7 @@ class UsersController < ApplicationController
     @friend_requests = FriendRequest.where(recipient_id: @user.id, friends: false)
     @pending_requests = FriendRequest.where(user_id: @user.id, friends:false)
     @badges = @user.badges
+    @friendship = Friendship.find_by(user_id: current_user.id , friend_id: @user.id)
   end
 
   def edit
