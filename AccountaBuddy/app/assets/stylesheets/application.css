@@ -17,17 +17,19 @@
  */
 
 .innards {
-	z-index: 1;
+	margin: 0px auto;
+	margin-top: 30px;
 	width: 900px;
-	position: relative;
+	height: 600px;
+	background-color: rgba(112, 194, 179, 0.5);
+	padding: 50px;
+	box-shadow: 8px 8px 5px #75968d;
+	border-radius: 5px;
 }
 
-.innards .bg {
-	z-index: -1;
-	margin: 0px auto;
-	margin-top: 25px;
-	opacity: .5;
-	background-color: #2befbb;
-	position: absolute;
+#nav-bar {
+	wideth: 900px;
 }
+
+
 
