@@ -17,3 +17,9 @@
 //= require_tree .
 
 $(function(){ $(document).foundation(); });
+$('.curtains').curtain();
+$(function () {
+    $('.curtains').curtain({
+        scrollSpeed: 400
+    });
+});
