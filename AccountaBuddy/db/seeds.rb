@@ -6,18 +6,18 @@ UserCategory.delete_all
 Friendship.delete_all
 
 users = User.create!([
-	{name: "Eunice", username: "eunice", longitude: -122, latitude: 37.77, email: 'eunice@gmail.com', password: '1234'},
-	{name: "Chris", username: "koske", longitude: -122, latitude: 37.68, email: 'koske@gmail.com', password: '1234'},
-	{name: "Jenna", username: "jenna", longitude: -122, latitude: 37.54, email: 'jenna@gmail.com', password: '1234'},
-	{name: "Tanya", username: "tanya", longitude: -122, latitude: 37.32, email: 'tanya@gmail.com', password: '1234'},
-	{name: "Mary", username: "mary", longitude: -122, latitude: 37.75, email: 'mary@gmail.com', password: '1234'},
-	{name: "Jupiter", username: "jupiter", longitude: -122, latitude: 37.79, email: 'jupiter@gmail.com', password: '1234'},
-	{name: "Chris", username: "chris", longitude: -122, latitude: 37.42, email: 'chris@gmail.com', password: '1234'},
-	{name: "Nathan", username: "nathan", longitude: -122, latitude: 37.48, email: 'nathan@gmail.com', password: '1234'},
-	{name: "Shawn", username: "shawn", longitude: -122, latitude: 37.59, email: 'shawn@gmail.com', password: '1234'},
-	{name: "Mike", username: "mike", longitude: -122, latitude: 37.80, email: 'mike@gmail.com', password: '1234'},
-	{name: "Paul", username: "paul", longitude: -122, latitude: 37.35, email: 'paul@gmail.com', password: '1234'},
-	{name: "Rosslyn", username: "rosslyn", longitude: -122, latitude: 37.72, email: 'rosslyn@gmail.com', password: '1234'}])
+	{name: "Eunice", username: "eunice", longitude: -122, latitude: 37.77, email: 'eunice@gmail.com', password: '123456', about_me: "I'm happy!", gender: "female"},
+	{name: "Chris", username: "koske", longitude: -122, latitude: 37.68, email: 'koske@gmail.com', password: '123456', about_me: "I'm optimistic!", gender: "male"},
+	{name: "Jenna", username: "jenna", longitude: -122, latitude: 37.54, email: 'jenna@gmail.com', password: '123456', about_me: "I'm creative!", gender: "female"},
+	{name: "Tanya", username: "tanya", longitude: -122, latitude: 37.32, email: 'tanya@gmail.com', password: '123456', about_me: "I'm joyful!", gender: "female"},
+	{name: "Mary", username: "mary", longitude: -122, latitude: 37.75, email: 'mary@gmail.com', password: '123456', about_me: "I'm energetic!", gender: "female"},
+	{name: "Jupiter", username: "jupiter", longitude: -122, latitude: 37.79, email: 'jupiter@gmail.com', password: '123456', about_me: "I'm communicative!", gender: "male"},
+	{name: "Chris", username: "chris", longitude: -122, latitude: 37.42, email: 'chris@gmail.com', password: '123456', about_me: "I'm kind!", gender: "male"},
+	{name: "Nathan", username: "nathan", longitude: -122, latitude: 37.48, email: 'nathan@gmail.com', password: '123456', about_me: "I'm thoughtful!", gender: "male"},
+	{name: "Shawn", username: "shawn", longitude: -122, latitude: 37.59, email: 'shawn@gmail.com', password: '123456', about_me: "I'm sensitive!", gender: "male"},
+	{name: "Mike", username: "mike", longitude: -122, latitude: 37.80, email: 'mike@gmail.com', password: '123456', about_me: "I'm direct!", gender: "male"},
+	{name: "Paul", username: "paul", longitude: -122, latitude: 37.35, email: 'paul@gmail.com', password: '123456', about_me: "I'm mischievous!", gender: "male"},
+	{name: "Rosslyn", username: "rosslyn", longitude: -122, latitude: 37.72, email: 'rosslyn@gmail.com', password: '123456', about_me: "I'm a cuddler!", gender: "female"}])
 
 categories = Category.create!([
 	{name: "Fitness"},

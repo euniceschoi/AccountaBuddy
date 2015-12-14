@@ -17,7 +17,7 @@
 <div id='map'></div>
 <a href='#' id='geolocate' class='ui-button'>Find me</a>
 <script>
-L.mapbox.accessToken = "<%= ENV['MAPBOX_TOKEN'] %>";
+L.mapbox.accessToken = 'pk.eyJ1IjoidG9wZ2lybGNvZGVyIiwiYSI6ImNpaTZqOXJhdTAxb2p0b2tmZThoMHpjMm0ifQ.R9Flgvg9aIBq1S1_qVlMbw';
 var geolocate = document.getElementById('geolocate');
 var map = L.mapbox.map('map', 'mapbox.streets');
 var myLayer = L.mapbox.featureLayer().addTo(map);
@@ -49,6 +49,12 @@ map.on('locationfound', function(e) {
     });
     // And hide the geolocation button
     geolocate.parentNode.removeChild(geolocate);
+$.ajax({
+            url: '/users',
+           
+            }).done(function( msg ) {
+              alert( "Data Saved: " + [e.latlng.lng, e.latlng.lat] );
+            });    
 });
 // If the user chooses not to allow their location to be shared, display an error message.
 map.on('locationerror', function() {
