@@ -24,6 +24,15 @@ categories = Category.create!([
 	{name: "Diet"}])
 
 
+badges = Badge.create!([
+	{name: "Fitness", description: "You're a fitness superstar!"},
+	{name: "Diet", description: "You're a Diet superstar!"},
+	{name: "Hobbies", description: "You're a Hobbies superstar! "},
+	{name: "Education", description: "You're a Education superstar!"},
+
+	])
+
+
 user_categories = UserCategory.create!([
 	{user_id: 1, category_id: 1},
 	{user_id: 2, category_id: 1},

@@ -11,10 +11,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151212235949) do
+ActiveRecord::Schema.define(version: 20151213233948) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "badges", force: :cascade do |t|
+    t.string   "name"
+    t.integer  "points",           default: 0
+    t.text     "description"
+    t.integer  "user_id"
+    t.string   "badge_image_link"
+    t.datetime "created_at",                   null: false
+    t.datetime "updated_at",                   null: false
+  end
 
   create_table "categories", force: :cascade do |t|
     t.string   "name"
@@ -71,6 +81,9 @@ ActiveRecord::Schema.define(version: 20151212235949) do
     t.float    "longitude"
     t.float    "latitude"
     t.string   "address"
+    t.text     "about_me"
+    t.string   "birthdate"
+    t.string   "gender"
     t.datetime "created_at",      null: false
     t.datetime "updated_at",      null: false
   end

@@ -12,9 +12,10 @@ class User < ActiveRecord::Base
   has_many :categories, :through => :user_categories
   has_many :conversations, foreign_key: :sender_id
   has_many :conversations, foreign_key: :recipient_id
+  has_many :badges
 
   has_secure_password
-  
+
   geocoded_by :address
   after_validation :geocode, :if => :address_changed?
 

@@ -33,11 +33,17 @@ class FriendshipsController < ApplicationController
   end
 
   def edit
-    @friendship = Friendship.find(params[:id])
   end
 
   def update
-  		#something here to change accountabuddy status
+    p params
+      @friendship = Friendship.find(params[:id])
+  		@friendship.update(accountabuddy: true)
+      if @friendship.save
+        redirect_to user_path(current_user.id)
+      else
+        redirect_to friendship_path(friendship.id)
+      end
   end
 
   def delete
