@@ -1,0 +1,23 @@
+#map {
+  position:absolute;
+  left:25%;
+  width:75%;
+  margin-top:3%;
+  top:0;bottom:0;
+  height:90%;
+}
+
+#side-bar{
+  position:absolute;
+  width:25%;
+  height:90%;
+  margin-top: 3%;
+  top:0;left:0;
+  overflow:hidden;
+  border-right:1px solid rgba(0,0,0,0.25);
+}
+
+#listing {
+  height:90%;
+  overflow:auto;
+}

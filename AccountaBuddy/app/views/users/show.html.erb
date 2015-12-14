@@ -13,7 +13,7 @@
             <h3> Badges:</h3>
               <ul>
               <% @badges.each do |badge| %>
-                <li> <%= badge.name %> </li>
+                <li> <img class="badge-image" src="<%= asset_path(badge.badge_image_link) %>"> </li>
                 <p> <%= badge.description %> </p>
                 <p> <%= badge.points %></p>
                 <%= link_to "Endorse!", badge_path(badge.id), method: 'put' %>
@@ -23,8 +23,6 @@
         </div>
     </div>
   </div>
-
- 
 
 <h1> About:</h1>
   <ul>

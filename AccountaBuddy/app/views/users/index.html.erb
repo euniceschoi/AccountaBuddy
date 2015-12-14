@@ -9,6 +9,7 @@
 				<br>
 				Research solidly backs up this two-is-better-than-one proposition. People are more likely to stick with a health routine over time and to show up for health related activities, such as fitness classes, if they are part of a formal group or partnership.
 				<br><br>
+				<%= flash[:error] %>
 				<%= form_tag '/login' do %>
 
 				  Email: <%= text_field_tag :email %>
