@@ -5,8 +5,16 @@
 
   <h3>You have been friends with <%= @friend.name %> since <%= @friendship.created_at %> </h3>
 
-  <%= link_to "Become Accountabuddies!", friendship_path(@friendship.id), method: 'put' %>
-
+  <%= flash[:error] %>
+  <% if @friendship.accountabuddy == false %>
+  <%= form_for :recipient, :url => {:action=>"create", :controller=>"accountabuddy_requests"} do |f| %>
+    <%= f.button "Become Accountabuddies with "+ @friend.name %>
+    <%= f.hidden_field :friendship_id, value: @friendship.id %>
+    <%= f.hidden_field :recipient_id, value: @friend.id %>
+    <% end %>
+    <% else %>
+      Friendship Status: Accountabuddies
+    <% end %>
   <h1>Your conversation with <%= @friend.name %>:</h1>
 
 <% if @messages %>

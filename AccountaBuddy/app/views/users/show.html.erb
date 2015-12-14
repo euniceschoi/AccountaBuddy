@@ -42,6 +42,18 @@
   <% end %>
 </ul>
 
+<p>Accountabuddy Requests From:</p>
+  <% if @accountabuddy_requests %>
+        <% @accountabuddy_requests.each do |request| %>
+
+          <li><%= request.user.name %></li>
+            <%= form_tag accountabuddy_request_path(request.id), method: 'put' do %>
+            <%= submit_tag "Accept" %>
+          <% end %>
+
+        <% end %>
+  <% end %>
+
 <p>Your Friends:</p>
 <ul>
   <% @just_friends.each do |friendship| %>
