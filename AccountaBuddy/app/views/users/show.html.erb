@@ -2,15 +2,39 @@
 <%= render 'layouts/navigation' %>
 <div class="innards">
   <div class="row">
-    <div class="medium-4-columns">
+    <div class="large-4 columns">
       <img class="profile-image" src="<%= asset_path( 'eunice-tea.jpg' ) %>">
     </div>
-    <div class="medium-8-columns">
-      <h1 class="innards-header">Hello <%= @user.name %>!</h1>
-      <h2 class="innards-header-2"> What goals will you vanquish today?<h2>
+    <div class="large-8 columns">
+      <% if @user == current_user  %>
+      <p id="user-show-header">Hello <%= @user.name %>!</p>
+      <p id="user-show-header-2"> What goals will you vanquish today?<p>
+      <% end %>
+        <div class="row">
+          <ul class="large-block-grid-4" id="user-badges">
+            <% if current_user %>
+              <% if @user == current_user.id %>
+                <% @badges.each do |badge| %>
+                  <li> <img class="badge-image" src="<%= asset_path(badge.badge_image_link) %>">
+                  <p> <%= badge.points %> victories</p>
+                      <%= link_to "Endorse!", badge_path(badge.id), method: 'put' %>
+                    <% else %>
+                    <% end %>
+                  </li>
+                <% end %>
+              <% elsif %> 
+              <% else %>
+                <% @badges.each do |badge| %>
+                  <li> <img class="badge-image" src="<%= asset_path(badge.badge_image_link) %>">
+                  <p> <%= badge.points %> victories</p>
+                  </li>
+                <% end %>
+              <% end %>
+            <% end %>
+          </ul>
+        </div>
     </div>
   </div>
-
 
 <h1> About:</h1>
   <ul>
@@ -19,16 +43,6 @@
   </ul>
 
 <%= link_to "Start a New Goal!", categories_path %>
-
-<h3> Badges:</h3>
-<ul>
-<% @badges.each do |badge| %>
-  <li> <img class="badge-image" src="<%= asset_path(badge.badge_image_link) %>"> </li>
-  <p> <%= badge.description %> </p>
-  <p> <%= badge.points %></p>
-  <%= link_to "Endorse!", badge_path(badge.id), method: 'put' %>
-<% end %>
-</ul>
 
 <p>Your Accountabuddies: </p>
 <ul>
