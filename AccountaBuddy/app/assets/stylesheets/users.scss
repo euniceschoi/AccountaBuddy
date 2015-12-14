@@ -85,7 +85,25 @@ img.bg {
 //styling for user#show
 
 .profile-image {
-	width: 100px;
+	width: 200px;
+  border: white 10px solid;
+}
+
+
+#user-show-header{
+  font-size: 5em;
+  color: #266c81;
+  
+  
+}
+#user-show-header-2{
+  font-style: italic;
+  font-family: tahoma;
+  font-size: 1.6em;
+  text-align: right;
+  margin-top: -50px;
+  margin-right: 40px;
+  color: #498f87;
 }
 
 /* Tab style */
