@@ -17,9 +17,21 @@ class UsersController < ApplicationController
 
   def create
     @user = User.new(user_params)
+    # @badge1 = Badge.new(name: "Fitness", description: "You're a fitness superstar!", user_id: @user.id)
+    # @badge2 = Badge.new(name: "Diet", description: "You're a Diet superstar!", user_id: @user.id)
+    # @badge3 = Badge.new(name: "Hobbies", description: "You're a Hobbies superstar!", user_id: @user.id)
+    # @badge4 = Badge.new(name: "Education", description: "You're a Education superstar!", user_id: @user.id)
     if @user.save
-      session[:user_id] = @user.id
-      redirect_to user_path(@user.id)
+      @badge1 = Badge.new(name: "Fitness", description: "You're a fitness superstar!", user_id: @user.id)
+      @badge2 = Badge.new(name: "Diet", description: "You're a Diet superstar!", user_id: @user.id)
+      @badge3 = Badge.new(name: "Hobbies", description: "You're a Hobbies superstar!", user_id: @user.id)
+      @badge4 = Badge.new(name: "Education", description: "You're a Education superstar!", user_id: @user.id)
+        if @badge1.save && @badge2.save && @badge3.save && @badge4.save
+          session[:user_id] = @user.id
+          redirect_to user_path(@user.id)
+        else
+          redirect to '/signup'
+        end
     else
       redirect to '/signup'
     end
@@ -31,6 +43,7 @@ class UsersController < ApplicationController
     @just_friends= @user.friendships.where(accountabuddy:false)
     @friend_requests = FriendRequest.where(recipient_id: @user.id, friends: false)
     @pending_requests = FriendRequest.where(user_id: @user.id, friends:false)
+    @badges = @user.badges
   end
 
   def edit
@@ -52,7 +65,7 @@ class UsersController < ApplicationController
   private
 
   def user_params
-    params.require(:user).permit(:name, :username, :email, :password, :password_confirmation, :address, :latitude, :longitude)
+    params.require(:user).permit(:name, :username, :email, :password, :password_confirmation, :address, :latitude, :longitude, :about_me, :birthdate, :gender)
   end
 
 end
