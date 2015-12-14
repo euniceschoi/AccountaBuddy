@@ -6,20 +6,18 @@
       <img class="profile-image" src="<%= asset_path( 'eunice-tea.jpg' ) %>">
     </div>
     <div class="large-8 columns">
+      <% if @user == current_user  %>
       <p id="user-show-header">Hello <%= @user.name %>!</p>
       <p id="user-show-header-2"> What goals will you vanquish today?<p>
+      <% end %>
         <div class="row">
-          <div class="large-12 columns">
-            <h3> Badges:</h3>
-              <ul>
-              <% @badges.each do |badge| %>
-                <li> <img class="badge-image" src="<%= asset_path(badge.badge_image_link) %>"> </li>
-                <p> <%= badge.description %> </p>
-                <p> <%= badge.points %></p>
-                <%= link_to "Endorse!", badge_path(badge.id), method: 'put' %>
+          <ul class="large-block-grid-4" id="user-badges">
+                <% @badges.each do |badge| %>
+                <li> <img class="badge-image" src="<%= asset_path(badge.badge_image_link) %>">
+                <p> <%= badge.points %> victories</p>
+                <% if @accountabuddies == true %> <%= link_to "Endorse!", badge_path(badge.id), method: 'put' %> <% end %> </li>
               <% end %>
-              </ul>
-          </div>
+          </ul>
         </div>
     </div>
   </div>

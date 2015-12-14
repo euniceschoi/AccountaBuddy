@@ -91,7 +91,7 @@ img.bg {
 
 
 #user-show-header{
-  font-size: 5em;
+  font-size: 4em;
   color: #266c81;
   
   
@@ -101,9 +101,18 @@ img.bg {
   font-family: tahoma;
   font-size: 1.6em;
   text-align: right;
-  margin-top: -50px;
+  margin-top: -40px;
   margin-right: 40px;
   color: #498f87;
+}
+
+#user-badges li{
+  list-style-type: none;
+  width: 120px;
+}
+
+#user-badges p{
+font-size: 1.2em
 }
 
 /* Tab style */
