@@ -1,12 +1,14 @@
 <%= render 'layouts/navigation' %>
-<h1>Listing categories</h1>
-<table>
-  <tr>
-    <th>Category</th>
-  </tr>
-  <% @categories.each do |category| %>
-    <tr>
-      <td><%=link_to "#{category.name}", category_path(category.id) %></td>
-    </tr>
-  <% end %>
-</table>
+<div class="innards">
+	<h1>Listing categories</h1>
+	<table>
+	  <tr>
+	    <th>Category</th>
+	  </tr>
+	  <% @categories.each do |category| %>
+	    <tr>
+	      <td><%=link_to "#{category.name}", category_path(category.id) %></td>
+	    </tr>
+	  <% end %>
+	</table>
+</div>
