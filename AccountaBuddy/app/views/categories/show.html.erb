@@ -1,8 +1,10 @@
 <%= render 'layouts/navigation' %>
+<div id="side-bar">
 <h1>Your Category</h1>
 
 <p><%= @category.name %></p>
 
+<div id="listing">
 <!-- putting all people in this category here for now -->
 <!-- implementing add friend button -->
 <ul>
@@ -15,9 +17,11 @@
     <% end %>
   <% end %>
 </ul>
+</div>
+</div>
 
-<div>
-  <%#= render 'map_index' %>
+<div id="map">
+  <%= render 'map_index' %>
 </div>
 
 
