@@ -10,26 +10,57 @@
  * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
  * file per style scope.
  *
- *= require_self
  *= require_tree .
+ *= require_self
  *= require foundation_and_overrides
 
  */
 
+body {
+ 	background-color: #c4d1da;
+ }
+
 .innards {
 	margin: 0px auto;
-	margin-top: 30px;
 	width: 900px;
-	height: 600px;
-	background-color: rgba(112, 194, 179, 0.5);
+	height: auto;
+	background-color: rgba(255, 255, 255, .7);
 	padding: 50px;
-	box-shadow: 8px 8px 5px #75968d;
-	border-radius: 5px;
+
 }
 
-#nav-bar {
-	wideth: 900px;
+#home-nav-bar a{
+	font-family: 'Alegreya Sans', sans-serif;
+}
+
+nav.top-bar{
+	background-color: rgb(50, 161, 129);
+	margin-bottom: 10px;
+
+}
+
+nav.top-bar a{
+	font-size: 1.7em;
+}
+
+.top-bar-section li:not(.has-form) a:not(.button):hover{
+	background-color: rgb(50, 161, 129);
+} 
+
+.top-bar-section li:not(.has-form) a:not(.button) {
+  background-color: rgb(50, 161, 129);
+}
+
+.top-bar-section .dropdown li:hover:not(.has-form):not(.active) > a:not(.button){
+	 background-color: rgb(50, 161, 129);
+}
+
+.top-bar-section .dropdown li:not(.has-form):not(.active) > a:not(.button){
+	 background-color: rgb(50, 161, 129);
 }
 
 
+.map-show{
+	width: 100px;
+}
 

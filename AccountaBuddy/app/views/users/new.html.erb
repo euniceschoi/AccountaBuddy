@@ -1,6 +1,9 @@
+<div id="signup-container">
+	<div class="innards">
+
+		<h1>Signup!</h1>
 
 
-<h1>Signup!</h1>
 
 <%= form_for :user, url: '/users' do |f| %>
   Name: <%= f.text_field :name %>
@@ -14,3 +17,7 @@
   <%= f.submit "Submit" %>
 
 <% end %>
+
+	</div>
+</div>
+
