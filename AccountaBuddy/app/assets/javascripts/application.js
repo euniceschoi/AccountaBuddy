@@ -17,3 +17,30 @@
 //= require_tree .
 
 $(function(){ $(document).foundation(); });
+
+$(document).ready(function(){
+  sendMessageListener();
+});
+
+
+
+var sendMessageListener = function() {
+  $('body').on('submit', '#send-messages', function(event){
+    event.preventDefault();
+    var messageData = $(this).children().serialize();
+    var request = $.ajax({
+      url: '/messages',
+      method: 'POST',
+      data: messageData
+    });
+    request.done(function(response){
+      $(response).appendTo('#messages')
+      console.log("YES!")
+      console.log(response)
+    });
+    request.fail(function(response){
+      console.log('shit')
+      console.log(response)
+    })
+  })
+}
