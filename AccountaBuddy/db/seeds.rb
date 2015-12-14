@@ -7,7 +7,7 @@ Friendship.delete_all
 
 users = User.create!([
 	{name: "Eunice", username: "eunice", longitude: -122, latitude: 37.77, email: 'eunice@gmail.com', password: '1234'},
-	{name: "Chris", username: "chris", longitude: -122, latitude: 37.68, email: 'chris@gmail.com', password: '1234'},
+	{name: "Chris", username: "koske", longitude: -122, latitude: 37.68, email: 'koske@gmail.com', password: '1234'},
 	{name: "Jenna", username: "jenna", longitude: -122, latitude: 37.54, email: 'jenna@gmail.com', password: '1234'},
 	{name: "Tanya", username: "tanya", longitude: -122, latitude: 37.32, email: 'tanya@gmail.com', password: '1234'},
 	{name: "Mary", username: "mary", longitude: -122, latitude: 37.75, email: 'mary@gmail.com', password: '1234'},

@@ -18,6 +18,9 @@ class User < ActiveRecord::Base
 
   geocoded_by :address
   after_validation :geocode, :if => :address_changed?
+  validates_presence_of :name, :username, :email, :password_digest, :about_me, :gender, :birthdate
+  validates_uniqueness_of :username, :email
+  validates_length_of :password_digest, :in => 6..20
 
 
 
