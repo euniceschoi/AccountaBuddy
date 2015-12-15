@@ -18,7 +18,7 @@
 <script>
 L.mapbox.accessToken = "<%= ENV['MAPBOX_TOKEN'] %>";
 var geolocate = document.getElementById('geolocate');
-var map = L.mapbox.map('map', 'mapbox.streets').setView([37.7570841,-122.00], 12);
+var map = L.mapbox.map('map', 'mapbox.streets').setView([<%= current_user.latitude.to_f %> , <%= current_user.longitude.to_f %>], 15);
 var myLayer = L.mapbox.featureLayer().addTo(map);
 
 

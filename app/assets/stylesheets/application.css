@@ -46,7 +46,7 @@ nav.top-bar a{
 
 .top-bar-section li:not(.has-form) a:not(.button):hover{
 	background-color: rgb(50, 161, 129);
-} 
+}
 
 .top-bar-section li:not(.has-form) a:not(.button) {
   background-color: rgb(50, 161, 129);
@@ -65,6 +65,13 @@ nav.top-bar a{
 	width: 100px;
 }
 
+#map{
+	display: none;
+}
+
+#geolocate{
+	display: none;
+}
 
 
 

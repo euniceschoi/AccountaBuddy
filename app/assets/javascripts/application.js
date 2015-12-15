@@ -1,4 +1,4 @@
-// This is a manifest file that'll be compiled into application.js, which will include all the files
+
 // listed below.
 //
 // Any JavaScript/Coffee file within this directory, lib/assets/javascripts, vendor/assets/javascripts,
@@ -13,7 +13,7 @@
 //= require jquery
 //= require jquery_ujs
 //= require foundation
-//= require turbolinks
+// require turbolinks
 //= require_tree .
 
 $(function(){ $(document).foundation(); });
@@ -30,6 +30,7 @@ $(function () {
 
 $(document).ready(function(){
   sendMessageListener();
+  userSubmitListener();
 });
 
 
@@ -54,5 +55,65 @@ var sendMessageListener = function() {
       console.log(response)
     })
   })
+}
+
+var userSubmitListener = function() {
+  $('body').on('submit', '#user-signedit-form', function(event){
+    debugger
+    event.preventDefault();
+    var userFormData = $(this).children().serialize();
+    $(".user-signedit-box").hide();
+
+
+    $("#map").css('display', 'block');
+    $("#geolocate").css('display', 'block')
+    $("#geolocate").on('click', function(event){
+      event.preventDefault();
+      event.stopPropagation();
+      var map = L.mapbox.map('map', 'mapbox.streets');
+      var locate = map.locate();
+      var myLayer = L.mapbox.featureLayer().addTo(map);
+
+      console.log(event)
+      console.log(locate)
+      map.on('locationfound', function(event){
+        map.fitBounds(event.bounds);
+        myLayer.setGeoJSON({
+          type: 'Feature',
+            geometry: {
+            type: 'Point',
+            coordinates: [event.latlng.lng, event.latlng.lat]
+        },
+        properties: {
+            'title': 'Here I am!',
+            'marker-color': '#ff8888',
+            'marker-symbol': 'star'
+        }
+    });
+    // And hide the geolocation button
+    $("#geolocate").hide();
+    var userCoordinates = {longitude: event.latlng.lng, latitude: event.latlng.lat}
+
+    var request = $.ajax({
+      url: '/users',
+      type: "POST",
+      data: userFormData + "&longitude=" + event.latlng.lng + "&latitude=" + event.latlng.lat,
+      dataType: 'JSON'
+    })
+    request.done
+
+
+
+      })
+    })
+    //click find me
+    //create a variable and grab the coordinates from the find me button
+    //make the ajax request to the post route for users
+    //two sets of data in a object
+
+
+
+  })
+
 }
 
