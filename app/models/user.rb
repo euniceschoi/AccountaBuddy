@@ -1,7 +1,6 @@
 
 
 class User < ActiveRecord::Base
-  # attr_accessible :address, :latitude, :longitude
 
   has_many :friendships
   has_many :friends, :through => :friendships
@@ -18,12 +17,15 @@ class User < ActiveRecord::Base
   has_secure_password
 
   geocoded_by :address
-  after_validation :geocode, :if => :address_changed?
+  reverse_geocoded_by :latitude, :longitude  #, :address => :location
+  after_validation :reverse_geocode  # auto-fetch address
+  # after_validation :geocode, :if => :address_changed?
   validates_presence_of :name, :username, :email, :password, :about_me, :gender
   validates_uniqueness_of :username, :email
   validates_length_of :password, :in => 6..20
 
 
+  
 
   # def self.create_with_omniauth(auth)
   #   create! do |user|

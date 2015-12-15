@@ -1,5 +1,5 @@
 <h1>All User Locations</h1>
-<%= form_tag users_path, :method => :get do %>
+<%= form_tag user_path, :method => :get do %>
 	<p>
 		<%= text_field_tag :search, params[:search] %>
 		<%= submit_tag "Search Near", :name => nil %>
@@ -7,12 +7,14 @@
 <% end %>
 <table>
 	<tr>
+		<th>Username</th>
 		<th>Address</th>
 		<th>Latitude</th>
 		<th>Longitude</th>
 	</tr>
 	<% for user in @users %>
 	<tr>
+		<td><%= user.username %></td>
 		<td><%= user.address %></td>
 		<td><%= user.latitude %></td>
 		<td><%= user.longitude %></td>

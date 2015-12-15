@@ -90,6 +90,7 @@ ActiveRecord::Schema.define(version: 20151214190534) do
     t.float    "latitude"
     t.string   "address"
     t.text     "about_me"
+    t.string   "birthdate"
     t.string   "gender"
     t.datetime "created_at",      null: false
     t.datetime "updated_at",      null: false
