@@ -91,9 +91,10 @@ img.bg {
 
 
 #user-show-header{
-  font-size: 4em;
+  font-size: 3.5em;
   color: #266c81;
   font-weight: bold;
+
   
 }
 #user-show-header-2{
@@ -131,10 +132,13 @@ font-size: 1.2em
   margin: 0px auto;
   padding-bottom: 50px;
   width: 700px;
-  background-color: rgba(255, 255, 255, .8);
+  background-color: rgba(255, 255, 255, .9);
   padding-right: 75px;
   padding-left: 75px;
   border-radius: 10px;
+  -webkit-box-shadow: 7px 8px 18px 0px rgba(12, 85, 98, 1);
+  -moz-box-shadow:    7px 8px 18px 0px rgba(12, 85, 98, 1);
+  box-shadow:         7px 8px 18px 0px rgba(12, 85, 98, 1);
 
 }
 
@@ -144,6 +148,7 @@ font-size: 1.2em
   color: #1c8975;
   -webkit-text-stroke: 1px white;
   font-size: 5em;
+  text-shadow: 2px 2px 2px rgba(150, 150, 150, 0.49);
 
 }
 
