@@ -9196,3 +9196,433 @@ Started GET "/assets/diet-badge-2224c9e22b97b52595531e8427e16fc04d3849b17f27fd02
 
 
 Started GET "/assets/fitness-badge-c75ef24dded71d330139482d07fb304f12a38d9e61945224a237845859b6e239.png" for ::1 at 2015-12-14 20:26:30 -0800
+
+
+Started GET "/users/15" for ::1 at 2015-12-14 20:30:29 -0800
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"15"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 15]]
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 15]]
+  Rendered layouts/_navigation.html.erb (0.4ms)
+  [1m[36mBadge Load (0.3ms)[0m  [1mSELECT "badges".* FROM "badges" WHERE "badges"."user_id" = $1  ORDER BY "badges"."id" ASC[0m  [["user_id", 15]]
+  [1m[35mFriendship Load (0.3ms)[0m  SELECT "friendships".* FROM "friendships" WHERE "friendships"."user_id" = $1 AND "friendships"."accountabuddy" = $2  [["user_id", 15], ["accountabuddy", "t"]]
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 14]]
+  [1m[35mAccountabuddyRequest Load (0.2ms)[0m  SELECT "accountabuddy_requests".* FROM "accountabuddy_requests" WHERE "accountabuddy_requests"."recipient_id" = $1  [["recipient_id", 15]]
+  [1m[36mFriendship Load (0.2ms)[0m  [1mSELECT  "friendships".* FROM "friendships" WHERE "friendships"."id" = $1 LIMIT 1[0m  [["id", 51]]
+  [1m[35mFriendship Load (0.2ms)[0m  SELECT "friendships".* FROM "friendships" WHERE "friendships"."user_id" = $1 AND "friendships"."accountabuddy" = $2  [["user_id", 15], ["accountabuddy", "f"]]
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 16]]
+  [1m[35mFriendRequest Load (0.1ms)[0m  SELECT "friend_requests".* FROM "friend_requests" WHERE "friend_requests"."user_id" = $1 AND "friend_requests"."friends" = $2  [["user_id", 15], ["friends", "f"]]
+  [1m[36mFriendRequest Load (0.1ms)[0m  [1mSELECT "friend_requests".* FROM "friend_requests" WHERE "friend_requests"."recipient_id" = $1 AND "friend_requests"."friends" = $2[0m  [["recipient_id", 15], ["friends", "f"]]
+  Rendered users/show.html.erb within layouts/application (24.4ms)
+Completed 200 OK in 367ms (Views: 361.5ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/assets/accountabuddy_requests.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-12-14 20:30:29 -0800
+
+
+Started GET "/assets/friend_requests.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-12-14 20:30:29 -0800
+
+
+Started GET "/assets/foundation_and_overrides.self-f78deadc141f9646da4c61367614daa68f8a114055991d5674d8047b9a8247f7.css?body=1" for ::1 at 2015-12-14 20:30:29 -0800
+
+
+Started GET "/assets/categories.self-f93c1c382bb434b2e7320f07f2f82fbfc317184fd43ad8a21e329a5818bbcad5.css?body=1" for ::1 at 2015-12-14 20:30:29 -0800
+
+
+Started GET "/assets/badges.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-12-14 20:30:29 -0800
+
+
+Started GET "/assets/curtain.self-928bfa886689b15bd31b09e76d8aced46c87f449904e48e704741702c11df316.css?body=1" for ::1 at 2015-12-14 20:30:30 -0800
+
+
+Started GET "/assets/friendships.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-12-14 20:30:30 -0800
+
+
+Started GET "/assets/maps.self-10fb87e1dc49da732fb07264ead8e9e7900ee05c3686b590e6868a100fd2a30d.css?body=1" for ::1 at 2015-12-14 20:30:30 -0800
+
+
+Started GET "/assets/messages.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-12-14 20:30:30 -0800
+
+
+Started GET "/assets/sessions.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-12-14 20:30:30 -0800
+
+
+Started GET "/assets/user_categories.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-12-14 20:30:30 -0800
+
+
+Started GET "/assets/users.self-3d09025df700f12d908e253cda808669bc6d98d3ec791f82c9f4797b7d2dcae7.css?body=1" for ::1 at 2015-12-14 20:30:30 -0800
+
+
+Started GET "/assets/application.self-89afab8dd3d27e002f1f80a1480f5733346aafac402dde7432079057dd93078f.css?body=1" for ::1 at 2015-12-14 20:30:30 -0800
+
+
+Started GET "/assets/vendor/modernizr.self-74da3245def7569da28115667be6a85a2ad97464abe707c9829c46d8975597bc.js?body=1" for ::1 at 2015-12-14 20:30:30 -0800
+
+
+Started GET "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1" for ::1 at 2015-12-14 20:30:30 -0800
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for ::1 at 2015-12-14 20:30:30 -0800
+
+
+Started GET "/assets/foundation/foundation.self-98616d4fb376f824aeb7c868e05e747b97176a864c7da854779ed398828df78f.js?body=1" for ::1 at 2015-12-14 20:30:30 -0800
+
+
+Started GET "/assets/foundation/foundation.abide.self-670a9b56e37b4b434f79686b8a9862222173d68ec823b20565340e0e87627ca4.js?body=1" for ::1 at 2015-12-14 20:30:30 -0800
+
+
+Started GET "/assets/foundation/foundation.accordion.self-02a179f7efde1facecf8a814cae32112c36800ce3d66bafc00c807a56d7b8d46.js?body=1" for ::1 at 2015-12-14 20:30:30 -0800
+
+
+Started GET "/assets/foundation/foundation.alert.self-631e4c4124bd543574c5a7f4d5d8b59fdf350f6c11d6201ba8a872e8a0f203b0.js?body=1" for ::1 at 2015-12-14 20:30:30 -0800
+
+
+Started GET "/assets/foundation/foundation.clearing.self-96397aa6b2d39ff61e9b4ce8486a9f716f9072f2011f1dc99f94a96b381b3830.js?body=1" for ::1 at 2015-12-14 20:30:30 -0800
+
+
+Started GET "/assets/foundation/foundation.dropdown.self-3e70f72040b183d09b673307b08d1d688a5572c6c8cbb222755945e70ccbb05e.js?body=1" for ::1 at 2015-12-14 20:30:30 -0800
+
+
+Started GET "/assets/foundation/foundation.interchange.self-c6d033cdd9e7fd3f29c067eb7b9ee564f7a6b542650d2ca530ae1e3c529a3c35.js?body=1" for ::1 at 2015-12-14 20:30:30 -0800
+
+
+Started GET "/assets/foundation/foundation.magellan.self-1fcf75780d5b4db5e97c267810e7c9a5e19a9f0d7b67a2d167074d7cff1d6a70.js?body=1" for ::1 at 2015-12-14 20:30:30 -0800
+
+
+Started GET "/assets/foundation/foundation.equalizer.self-1889be5dfd0e56321a9a6d5fe9d4a94b04602c158f3e4d58419b967c255b999f.js?body=1" for ::1 at 2015-12-14 20:30:30 -0800
+
+
+Started GET "/assets/foundation/foundation.joyride.self-1f6b19104e2439f1e4353444cb6fb9f7f308563556f167c2154ca3108eb7f77e.js?body=1" for ::1 at 2015-12-14 20:30:30 -0800
+
+
+Started GET "/assets/foundation/foundation.offcanvas.self-2f34a4b91e1e958aefbde46004d6186ee82e018fe95634214749799141339810.js?body=1" for ::1 at 2015-12-14 20:30:30 -0800
+
+
+Started GET "/assets/foundation/foundation.orbit.self-ba7d30fe424df83b5bc8bc5bb67ea90608759c6eb8212d1475d52b09db0bcd0f.js?body=1" for ::1 at 2015-12-14 20:30:30 -0800
+
+
+Started GET "/assets/foundation/foundation.reveal.self-5a83316675f14b52f582d67c053ae7977827a5b06459d7e8f5556cbedfba1d0d.js?body=1" for ::1 at 2015-12-14 20:30:30 -0800
+
+
+Started GET "/assets/foundation/foundation.slider.self-686e8b14e01aeb75ec0980de90956540d2b245324fc58e8c25debafc60300b96.js?body=1" for ::1 at 2015-12-14 20:30:30 -0800
+
+
+Started GET "/assets/foundation/foundation.tab.self-9b2bd1afa5715ce8f154fa008d0aab44500763e9b336a6d4e5bca96437176a74.js?body=1" for ::1 at 2015-12-14 20:30:30 -0800
+
+
+Started GET "/assets/foundation/foundation.tooltip.self-dae1db2297f90064e1a8ae7b02b175ca613cc6a2d190aaed548f6ef853f4b46d.js?body=1" for ::1 at 2015-12-14 20:30:30 -0800
+
+
+Started GET "/assets/foundation/foundation.topbar.self-fa6260890f9f59c821128d066bcfaa18665c816022bafd398d937c367d5e39b7.js?body=1" for ::1 at 2015-12-14 20:30:30 -0800
+
+
+Started GET "/assets/foundation.self-abe4ee7a105042f73b12b1f1a28788522d2f253445a475a94ab4d6e1f7b0ec52.js?body=1" for ::1 at 2015-12-14 20:30:30 -0800
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2015-12-14 20:30:30 -0800
+
+
+Started GET "/assets/accountabuddy_requests.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-12-14 20:30:30 -0800
+
+
+Started GET "/assets/badges.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-12-14 20:30:30 -0800
+
+
+Started GET "/assets/curtain.self-03cedba756c2ea28b832bb6cb8c319e5954ea1495621342287edfc1657932778.js?body=1" for ::1 at 2015-12-14 20:30:30 -0800
+
+
+Started GET "/assets/friend_requests.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-12-14 20:30:30 -0800
+
+
+Started GET "/assets/friendships.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-12-14 20:30:30 -0800
+
+
+Started GET "/assets/messages.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-12-14 20:30:30 -0800
+
+
+Started GET "/assets/scroll_up.self-c3b7cbf89f2df9e2397e11ac3708fffb90c66ae2a5139623696d21e0d7ef68aa.js?body=1" for ::1 at 2015-12-14 20:30:30 -0800
+
+
+Started GET "/assets/sessions.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-12-14 20:30:30 -0800
+
+
+Started GET "/assets/user_categories.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-12-14 20:30:30 -0800
+
+
+Started GET "/assets/users.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-12-14 20:30:30 -0800
+
+
+Started GET "/assets/application.self-a15dad4aa95cf08ba9eff41f8898e4f14ae00c5bd8a2be5e6212c7991c0dc2b3.js?body=1" for ::1 at 2015-12-14 20:30:30 -0800
+
+
+Started GET "/assets/eunice-tea-ee241d6a1f2d386ff0a23143f8b36880360ff57a6aca592018e7c7f9efb98f15.jpg" for ::1 at 2015-12-14 20:30:30 -0800
+
+
+Started GET "/assets/hobbies-badge-30f9f4ae16a6073180f1f551a7aa9baf64f865dfb3383a73cb47056024d2f11d.png" for ::1 at 2015-12-14 20:30:30 -0800
+
+
+Started GET "/assets/fitness-badge-c75ef24dded71d330139482d07fb304f12a38d9e61945224a237845859b6e239.png" for ::1 at 2015-12-14 20:30:30 -0800
+
+
+Started GET "/assets/education-badge-28ceefea53459159a2e25eea72456f41772da86120f27f77c865c6d11a790ea6.png" for ::1 at 2015-12-14 20:30:30 -0800
+
+
+Started GET "/assets/diet-badge-2224c9e22b97b52595531e8427e16fc04d3849b17f27fd02a1b6b83958b8fc7a.png" for ::1 at 2015-12-14 20:30:30 -0800
+
+
+Started GET "/friendships/49" for ::1 at 2015-12-14 20:30:44 -0800
+Processing by FriendshipsController#show as HTML
+  Parameters: {"id"=>"49"}
+  [1m[35mFriendship Load (0.2ms)[0m  SELECT  "friendships".* FROM "friendships" WHERE "friendships"."id" = $1 LIMIT 1  [["id", 49]]
+  [1m[36mConversation Load (0.2ms)[0m  [1mSELECT  "conversations".* FROM "conversations" WHERE "conversations"."sender_id" = $1 AND "conversations"."recipient_id" = $2 LIMIT 1[0m  [["sender_id", 15], ["recipient_id", 14]]
+  [1m[35mConversation Load (0.1ms)[0m  SELECT  "conversations".* FROM "conversations" WHERE "conversations"."recipient_id" = $1 AND "conversations"."sender_id" = $2 LIMIT 1  [["recipient_id", 15], ["sender_id", 14]]
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 14]]
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 15]]
+  Rendered layouts/_navigation.html.erb (1.0ms)
+  Rendered friendships/show.html.erb within layouts/application (2.6ms)
+Completed 200 OK in 335ms (Views: 331.9ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/users/14" for ::1 at 2015-12-14 20:30:48 -0800
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"14"}
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 14]]
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 15]]
+  [1m[36mFriendship Load (0.2ms)[0m  [1mSELECT  "friendships".* FROM "friendships" WHERE "friendships"."user_id" = $1 AND "friendships"."friend_id" = $2 LIMIT 1[0m  [["user_id", 15], ["friend_id", 14]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "friendships".* FROM "friendships" WHERE "friendships"."user_id" = $1 AND "friendships"."friend_id" = $2 LIMIT 1  [["user_id", 15], ["friend_id", 14]]
+  [1m[36mFriendship Load (0.2ms)[0m  [1mSELECT  "friendships".* FROM "friendships" WHERE "friendships"."friend_id" = $1 AND "friendships"."user_id" = $2 LIMIT 1[0m  [["friend_id", 15], ["user_id", 14]]
+  Rendered layouts/_navigation.html.erb (0.6ms)
+  [1m[35mBadge Load (0.3ms)[0m  SELECT "badges".* FROM "badges" WHERE "badges"."user_id" = $1  ORDER BY "badges"."id" ASC  [["user_id", 14]]
+  [1m[36mFriendship Load (0.2ms)[0m  [1mSELECT "friendships".* FROM "friendships" WHERE "friendships"."user_id" = $1 AND "friendships"."accountabuddy" = $2[0m  [["user_id", 14], ["accountabuddy", "t"]]
+  [1m[35mAccountabuddyRequest Load (0.2ms)[0m  SELECT "accountabuddy_requests".* FROM "accountabuddy_requests" WHERE "accountabuddy_requests"."recipient_id" = $1  [["recipient_id", 14]]
+  [1m[36mFriendship Load (0.2ms)[0m  [1mSELECT  "friendships".* FROM "friendships" WHERE "friendships"."id" = $1 LIMIT 1[0m  [["id", 47]]
+  [1m[35mFriendship Load (0.2ms)[0m  SELECT  "friendships".* FROM "friendships" WHERE "friendships"."id" = $1 LIMIT 1  [["id", 49]]
+  [1m[36mFriendship Load (0.1ms)[0m  [1mSELECT "friendships".* FROM "friendships" WHERE "friendships"."user_id" = $1 AND "friendships"."accountabuddy" = $2[0m  [["user_id", 14], ["accountabuddy", "f"]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 13]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 15]]
+  [1m[35mFriendRequest Load (0.2ms)[0m  SELECT "friend_requests".* FROM "friend_requests" WHERE "friend_requests"."user_id" = $1 AND "friend_requests"."friends" = $2  [["user_id", 14], ["friends", "f"]]
+  [1m[36mFriendRequest Load (0.1ms)[0m  [1mSELECT "friend_requests".* FROM "friend_requests" WHERE "friend_requests"."recipient_id" = $1 AND "friend_requests"."friends" = $2[0m  [["recipient_id", 14], ["friends", "f"]]
+  Rendered users/show.html.erb within layouts/application (19.5ms)
+Completed 200 OK in 361ms (Views: 351.3ms | ActiveRecord: 2.7ms)
+
+
+Started PUT "/badges/9" for ::1 at 2015-12-14 20:30:53 -0800
+Processing by BadgesController#update as HTML
+  Parameters: {"authenticity_token"=>"PnFmId9KJhxNs4fwhb1kOm2sW9JFZLwn//FTOC6zg5HqSs3blz7TRIJqVR6Eu3AZTJQ4D4Ud9hys5tDcnJyr+Q==", "id"=>"9"}
+  [1m[35mBadge Load (0.2ms)[0m  SELECT  "badges".* FROM "badges" WHERE "badges"."id" = $1 LIMIT 1  [["id", 9]]
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  UPDATE "badges" SET "points" = $1, "updated_at" = $2 WHERE "badges"."id" = $3  [["points", 1], ["updated_at", "2015-12-15 04:30:53.034081"], ["id", 9]]
+  [1m[36m (1.5ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mCOMMIT[0m
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 14]]
+Redirected to http://localhost:3000/users/14
+Completed 302 Found in 8ms (ActiveRecord: 2.6ms)
+
+
+Started GET "/users/14" for ::1 at 2015-12-14 20:30:53 -0800
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"14"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 14]]
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 15]]
+  [1m[36mFriendship Load (0.4ms)[0m  [1mSELECT  "friendships".* FROM "friendships" WHERE "friendships"."user_id" = $1 AND "friendships"."friend_id" = $2 LIMIT 1[0m  [["user_id", 15], ["friend_id", 14]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "friendships".* FROM "friendships" WHERE "friendships"."user_id" = $1 AND "friendships"."friend_id" = $2 LIMIT 1  [["user_id", 15], ["friend_id", 14]]
+  [1m[36mFriendship Load (0.2ms)[0m  [1mSELECT  "friendships".* FROM "friendships" WHERE "friendships"."friend_id" = $1 AND "friendships"."user_id" = $2 LIMIT 1[0m  [["friend_id", 15], ["user_id", 14]]
+  Rendered layouts/_navigation.html.erb (0.3ms)
+  [1m[35mBadge Load (0.3ms)[0m  SELECT "badges".* FROM "badges" WHERE "badges"."user_id" = $1  ORDER BY "badges"."id" ASC  [["user_id", 14]]
+  [1m[36mFriendship Load (0.3ms)[0m  [1mSELECT "friendships".* FROM "friendships" WHERE "friendships"."user_id" = $1 AND "friendships"."accountabuddy" = $2[0m  [["user_id", 14], ["accountabuddy", "t"]]
+  [1m[35mAccountabuddyRequest Load (0.2ms)[0m  SELECT "accountabuddy_requests".* FROM "accountabuddy_requests" WHERE "accountabuddy_requests"."recipient_id" = $1  [["recipient_id", 14]]
+  [1m[36mFriendship Load (0.2ms)[0m  [1mSELECT  "friendships".* FROM "friendships" WHERE "friendships"."id" = $1 LIMIT 1[0m  [["id", 47]]
+  [1m[35mFriendship Load (0.1ms)[0m  SELECT  "friendships".* FROM "friendships" WHERE "friendships"."id" = $1 LIMIT 1  [["id", 49]]
+  [1m[36mFriendship Load (0.1ms)[0m  [1mSELECT "friendships".* FROM "friendships" WHERE "friendships"."user_id" = $1 AND "friendships"."accountabuddy" = $2[0m  [["user_id", 14], ["accountabuddy", "f"]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 13]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 15]]
+  [1m[35mFriendRequest Load (0.2ms)[0m  SELECT "friend_requests".* FROM "friend_requests" WHERE "friend_requests"."user_id" = $1 AND "friend_requests"."friends" = $2  [["user_id", 14], ["friends", "f"]]
+  [1m[36mFriendRequest Load (0.1ms)[0m  [1mSELECT "friend_requests".* FROM "friend_requests" WHERE "friend_requests"."recipient_id" = $1 AND "friend_requests"."friends" = $2[0m  [["recipient_id", 14], ["friends", "f"]]
+  Rendered users/show.html.erb within layouts/application (18.4ms)
+Completed 200 OK in 349ms (Views: 342.3ms | ActiveRecord: 2.7ms)
+
+
+Started PUT "/badges/9" for ::1 at 2015-12-14 20:30:54 -0800
+Processing by BadgesController#update as HTML
+  Parameters: {"authenticity_token"=>"rFzqrS1CfLBtEwnh+ytzToJWbcFdZbX6pYhu/kz7KsB4Z0FXZTaJ6KLK2w/6LWdto24OHJ0c/8H2n+0a/tQCqA==", "id"=>"9"}
+  [1m[35mBadge Load (0.2ms)[0m  SELECT  "badges".* FROM "badges" WHERE "badges"."id" = $1 LIMIT 1  [["id", 9]]
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  UPDATE "badges" SET "points" = $1, "updated_at" = $2 WHERE "badges"."id" = $3  [["points", 2], ["updated_at", "2015-12-15 04:30:54.246767"], ["id", 9]]
+  [1m[36m (1.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mCOMMIT[0m
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 14]]
+Redirected to http://localhost:3000/users/14
+Completed 302 Found in 8ms (ActiveRecord: 2.4ms)
+
+
+Started GET "/users/14" for ::1 at 2015-12-14 20:30:54 -0800
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"14"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 14]]
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 15]]
+  [1m[36mFriendship Load (0.4ms)[0m  [1mSELECT  "friendships".* FROM "friendships" WHERE "friendships"."user_id" = $1 AND "friendships"."friend_id" = $2 LIMIT 1[0m  [["user_id", 15], ["friend_id", 14]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "friendships".* FROM "friendships" WHERE "friendships"."user_id" = $1 AND "friendships"."friend_id" = $2 LIMIT 1  [["user_id", 15], ["friend_id", 14]]
+  [1m[36mFriendship Load (0.2ms)[0m  [1mSELECT  "friendships".* FROM "friendships" WHERE "friendships"."friend_id" = $1 AND "friendships"."user_id" = $2 LIMIT 1[0m  [["friend_id", 15], ["user_id", 14]]
+  Rendered layouts/_navigation.html.erb (0.3ms)
+  [1m[35mBadge Load (0.3ms)[0m  SELECT "badges".* FROM "badges" WHERE "badges"."user_id" = $1  ORDER BY "badges"."id" ASC  [["user_id", 14]]
+  [1m[36mFriendship Load (0.2ms)[0m  [1mSELECT "friendships".* FROM "friendships" WHERE "friendships"."user_id" = $1 AND "friendships"."accountabuddy" = $2[0m  [["user_id", 14], ["accountabuddy", "t"]]
+  [1m[35mAccountabuddyRequest Load (0.4ms)[0m  SELECT "accountabuddy_requests".* FROM "accountabuddy_requests" WHERE "accountabuddy_requests"."recipient_id" = $1  [["recipient_id", 14]]
+  [1m[36mFriendship Load (0.4ms)[0m  [1mSELECT  "friendships".* FROM "friendships" WHERE "friendships"."id" = $1 LIMIT 1[0m  [["id", 47]]
+  [1m[35mFriendship Load (0.3ms)[0m  SELECT  "friendships".* FROM "friendships" WHERE "friendships"."id" = $1 LIMIT 1  [["id", 49]]
+  [1m[36mFriendship Load (0.4ms)[0m  [1mSELECT "friendships".* FROM "friendships" WHERE "friendships"."user_id" = $1 AND "friendships"."accountabuddy" = $2[0m  [["user_id", 14], ["accountabuddy", "f"]]
+  [1m[35mUser Load (0.4ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 13]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 15]]
+  [1m[35mFriendRequest Load (0.3ms)[0m  SELECT "friend_requests".* FROM "friend_requests" WHERE "friend_requests"."user_id" = $1 AND "friend_requests"."friends" = $2  [["user_id", 14], ["friends", "f"]]
+  [1m[36mFriendRequest Load (0.3ms)[0m  [1mSELECT "friend_requests".* FROM "friend_requests" WHERE "friend_requests"."recipient_id" = $1 AND "friend_requests"."friends" = $2[0m  [["recipient_id", 14], ["friends", "f"]]
+  Rendered users/show.html.erb within layouts/application (24.7ms)
+Completed 200 OK in 265ms (Views: 256.9ms | ActiveRecord: 4.0ms)
+
+
+Started PUT "/badges/9" for ::1 at 2015-12-14 20:30:55 -0800
+Processing by BadgesController#update as HTML
+  Parameters: {"authenticity_token"=>"Z5zPSGxwvi0LYiy73i3l7jshg+09T5qUPlvFPqLMLGCzp2SyJARLdcS7/lXfK/HNGhngMP020K9tTEbaEOMECA==", "id"=>"9"}
+  [1m[35mBadge Load (0.3ms)[0m  SELECT  "badges".* FROM "badges" WHERE "badges"."id" = $1 LIMIT 1  [["id", 9]]
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  UPDATE "badges" SET "points" = $1, "updated_at" = $2 WHERE "badges"."id" = $3  [["points", 3], ["updated_at", "2015-12-15 04:30:55.087040"], ["id", 9]]
+  [1m[36m (0.5ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mCOMMIT[0m
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 14]]
+Redirected to http://localhost:3000/users/14
+Completed 302 Found in 6ms (ActiveRecord: 1.5ms)
+
+
+Started GET "/users/14" for ::1 at 2015-12-14 20:30:55 -0800
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"14"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 14]]
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 15]]
+  [1m[36mFriendship Load (0.2ms)[0m  [1mSELECT  "friendships".* FROM "friendships" WHERE "friendships"."user_id" = $1 AND "friendships"."friend_id" = $2 LIMIT 1[0m  [["user_id", 15], ["friend_id", 14]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "friendships".* FROM "friendships" WHERE "friendships"."user_id" = $1 AND "friendships"."friend_id" = $2 LIMIT 1  [["user_id", 15], ["friend_id", 14]]
+  [1m[36mFriendship Load (0.1ms)[0m  [1mSELECT  "friendships".* FROM "friendships" WHERE "friendships"."friend_id" = $1 AND "friendships"."user_id" = $2 LIMIT 1[0m  [["friend_id", 15], ["user_id", 14]]
+  Rendered layouts/_navigation.html.erb (0.3ms)
+  [1m[35mBadge Load (0.3ms)[0m  SELECT "badges".* FROM "badges" WHERE "badges"."user_id" = $1  ORDER BY "badges"."id" ASC  [["user_id", 14]]
+  [1m[36mFriendship Load (0.2ms)[0m  [1mSELECT "friendships".* FROM "friendships" WHERE "friendships"."user_id" = $1 AND "friendships"."accountabuddy" = $2[0m  [["user_id", 14], ["accountabuddy", "t"]]
+  [1m[35mAccountabuddyRequest Load (0.3ms)[0m  SELECT "accountabuddy_requests".* FROM "accountabuddy_requests" WHERE "accountabuddy_requests"."recipient_id" = $1  [["recipient_id", 14]]
+  [1m[36mFriendship Load (0.3ms)[0m  [1mSELECT  "friendships".* FROM "friendships" WHERE "friendships"."id" = $1 LIMIT 1[0m  [["id", 47]]
+  [1m[35mFriendship Load (0.3ms)[0m  SELECT  "friendships".* FROM "friendships" WHERE "friendships"."id" = $1 LIMIT 1  [["id", 49]]
+  [1m[36mFriendship Load (0.4ms)[0m  [1mSELECT "friendships".* FROM "friendships" WHERE "friendships"."user_id" = $1 AND "friendships"."accountabuddy" = $2[0m  [["user_id", 14], ["accountabuddy", "f"]]
+  [1m[35mUser Load (0.4ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 13]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 15]]
+  [1m[35mFriendRequest Load (0.2ms)[0m  SELECT "friend_requests".* FROM "friend_requests" WHERE "friend_requests"."user_id" = $1 AND "friend_requests"."friends" = $2  [["user_id", 14], ["friends", "f"]]
+  [1m[36mFriendRequest Load (0.2ms)[0m  [1mSELECT "friend_requests".* FROM "friend_requests" WHERE "friend_requests"."recipient_id" = $1 AND "friend_requests"."friends" = $2[0m  [["recipient_id", 14], ["friends", "f"]]
+  Rendered users/show.html.erb within layouts/application (23.5ms)
+Completed 200 OK in 365ms (Views: 358.2ms | ActiveRecord: 3.3ms)
+
+
+Started PUT "/badges/9" for ::1 at 2015-12-14 20:30:55 -0800
+Processing by BadgesController#update as HTML
+  Parameters: {"authenticity_token"=>"iktM9EKVv/rk6GrQvfGwwRXd49iFtI2f736rUNesZCJecOcOCuFKoisxuD6896TiNOWABUXNx6S8aSi0ZYNMSg==", "id"=>"9"}
+  [1m[35mBadge Load (0.2ms)[0m  SELECT  "badges".* FROM "badges" WHERE "badges"."id" = $1 LIMIT 1  [["id", 9]]
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  UPDATE "badges" SET "points" = $1, "updated_at" = $2 WHERE "badges"."id" = $3  [["points", 4], ["updated_at", "2015-12-15 04:30:56.000047"], ["id", 9]]
+  [1m[36m (1.2ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mCOMMIT[0m
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 14]]
+Redirected to http://localhost:3000/users/14
+Completed 302 Found in 8ms (ActiveRecord: 2.3ms)
+
+
+Started GET "/users/14" for ::1 at 2015-12-14 20:30:56 -0800
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"14"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 14]]
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 15]]
+  [1m[36mFriendship Load (0.4ms)[0m  [1mSELECT  "friendships".* FROM "friendships" WHERE "friendships"."user_id" = $1 AND "friendships"."friend_id" = $2 LIMIT 1[0m  [["user_id", 15], ["friend_id", 14]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "friendships".* FROM "friendships" WHERE "friendships"."user_id" = $1 AND "friendships"."friend_id" = $2 LIMIT 1  [["user_id", 15], ["friend_id", 14]]
+  [1m[36mFriendship Load (0.4ms)[0m  [1mSELECT  "friendships".* FROM "friendships" WHERE "friendships"."friend_id" = $1 AND "friendships"."user_id" = $2 LIMIT 1[0m  [["friend_id", 15], ["user_id", 14]]
+  Rendered layouts/_navigation.html.erb (0.3ms)
+  [1m[35mBadge Load (0.4ms)[0m  SELECT "badges".* FROM "badges" WHERE "badges"."user_id" = $1  ORDER BY "badges"."id" ASC  [["user_id", 14]]
+  [1m[36mFriendship Load (0.3ms)[0m  [1mSELECT "friendships".* FROM "friendships" WHERE "friendships"."user_id" = $1 AND "friendships"."accountabuddy" = $2[0m  [["user_id", 14], ["accountabuddy", "t"]]
+  [1m[35mAccountabuddyRequest Load (0.3ms)[0m  SELECT "accountabuddy_requests".* FROM "accountabuddy_requests" WHERE "accountabuddy_requests"."recipient_id" = $1  [["recipient_id", 14]]
+  [1m[36mFriendship Load (0.3ms)[0m  [1mSELECT  "friendships".* FROM "friendships" WHERE "friendships"."id" = $1 LIMIT 1[0m  [["id", 47]]
+  [1m[35mFriendship Load (0.3ms)[0m  SELECT  "friendships".* FROM "friendships" WHERE "friendships"."id" = $1 LIMIT 1  [["id", 49]]
+  [1m[36mFriendship Load (0.2ms)[0m  [1mSELECT "friendships".* FROM "friendships" WHERE "friendships"."user_id" = $1 AND "friendships"."accountabuddy" = $2[0m  [["user_id", 14], ["accountabuddy", "f"]]
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 13]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 15]]
+  [1m[35mFriendRequest Load (0.2ms)[0m  SELECT "friend_requests".* FROM "friend_requests" WHERE "friend_requests"."user_id" = $1 AND "friend_requests"."friends" = $2  [["user_id", 14], ["friends", "f"]]
+  [1m[36mFriendRequest Load (0.2ms)[0m  [1mSELECT "friend_requests".* FROM "friend_requests" WHERE "friend_requests"."recipient_id" = $1 AND "friend_requests"."friends" = $2[0m  [["recipient_id", 14], ["friends", "f"]]
+  Rendered users/show.html.erb within layouts/application (25.2ms)
+Completed 200 OK in 359ms (Views: 351.5ms | ActiveRecord: 3.5ms)
+
+
+Started PUT "/badges/9" for ::1 at 2015-12-14 20:30:56 -0800
+Processing by BadgesController#update as HTML
+  Parameters: {"authenticity_token"=>"+wyHuz01AsWDaH/7LW4oCBoi5htfm5WPHRy0TT+cFF8vNyxBdUH3nUyxrRUsaDwrOxqFxp/i37ROCzepjbM8Nw==", "id"=>"9"}
+  [1m[35mBadge Load (0.2ms)[0m  SELECT  "badges".* FROM "badges" WHERE "badges"."id" = $1 LIMIT 1  [["id", 9]]
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  UPDATE "badges" SET "points" = $1, "updated_at" = $2 WHERE "badges"."id" = $3  [["points", 5], ["updated_at", "2015-12-15 04:30:56.935091"], ["id", 9]]
+  [1m[36m (0.5ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mCOMMIT[0m
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 14]]
+Redirected to http://localhost:3000/users/14
+Completed 302 Found in 7ms (ActiveRecord: 1.4ms)
+
+
+Started GET "/users/14" for ::1 at 2015-12-14 20:30:56 -0800
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"14"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 14]]
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 15]]
+  [1m[36mFriendship Load (0.4ms)[0m  [1mSELECT  "friendships".* FROM "friendships" WHERE "friendships"."user_id" = $1 AND "friendships"."friend_id" = $2 LIMIT 1[0m  [["user_id", 15], ["friend_id", 14]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "friendships".* FROM "friendships" WHERE "friendships"."user_id" = $1 AND "friendships"."friend_id" = $2 LIMIT 1  [["user_id", 15], ["friend_id", 14]]
+  [1m[36mFriendship Load (0.2ms)[0m  [1mSELECT  "friendships".* FROM "friendships" WHERE "friendships"."friend_id" = $1 AND "friendships"."user_id" = $2 LIMIT 1[0m  [["friend_id", 15], ["user_id", 14]]
+  Rendered layouts/_navigation.html.erb (0.3ms)
+  [1m[35mBadge Load (0.4ms)[0m  SELECT "badges".* FROM "badges" WHERE "badges"."user_id" = $1  ORDER BY "badges"."id" ASC  [["user_id", 14]]
+  [1m[36mFriendship Load (0.3ms)[0m  [1mSELECT "friendships".* FROM "friendships" WHERE "friendships"."user_id" = $1 AND "friendships"."accountabuddy" = $2[0m  [["user_id", 14], ["accountabuddy", "t"]]
+  [1m[35mAccountabuddyRequest Load (0.2ms)[0m  SELECT "accountabuddy_requests".* FROM "accountabuddy_requests" WHERE "accountabuddy_requests"."recipient_id" = $1  [["recipient_id", 14]]
+  [1m[36mFriendship Load (0.3ms)[0m  [1mSELECT  "friendships".* FROM "friendships" WHERE "friendships"."id" = $1 LIMIT 1[0m  [["id", 47]]
+  [1m[35mFriendship Load (0.3ms)[0m  SELECT  "friendships".* FROM "friendships" WHERE "friendships"."id" = $1 LIMIT 1  [["id", 49]]
+  [1m[36mFriendship Load (0.3ms)[0m  [1mSELECT "friendships".* FROM "friendships" WHERE "friendships"."user_id" = $1 AND "friendships"."accountabuddy" = $2[0m  [["user_id", 14], ["accountabuddy", "f"]]
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 13]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 15]]
+  [1m[35mFriendRequest Load (0.2ms)[0m  SELECT "friend_requests".* FROM "friend_requests" WHERE "friend_requests"."user_id" = $1 AND "friend_requests"."friends" = $2  [["user_id", 14], ["friends", "f"]]
+  [1m[36mFriendRequest Load (0.2ms)[0m  [1mSELECT "friend_requests".* FROM "friend_requests" WHERE "friend_requests"."recipient_id" = $1 AND "friend_requests"."friends" = $2[0m  [["recipient_id", 14], ["friends", "f"]]
+  Rendered users/show.html.erb within layouts/application (29.1ms)
+Completed 200 OK in 419ms (Views: 411.4ms | ActiveRecord: 3.5ms)
+
+
+Started PUT "/badges/9" for ::1 at 2015-12-14 20:30:57 -0800
+Processing by BadgesController#update as HTML
+  Parameters: {"authenticity_token"=>"7pviYrPU7WJ8xJTiBx3xaT73Rfm8ClGnugNV0mowa8I6oEmY+6AYOrMdRgwGG+VKH88mJHxzG5zpFNY22B9Dqg==", "id"=>"9"}
+  [1m[35mBadge Load (0.2ms)[0m  SELECT  "badges".* FROM "badges" WHERE "badges"."id" = $1 LIMIT 1  [["id", 9]]
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  UPDATE "badges" SET "points" = $1, "updated_at" = $2 WHERE "badges"."id" = $3  [["points", 6], ["updated_at", "2015-12-15 04:30:57.919543"], ["id", 9]]
+  [1m[36m (1.2ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mCOMMIT[0m
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 14]]
+Redirected to http://localhost:3000/users/14
+Completed 302 Found in 8ms (ActiveRecord: 2.2ms)
+
+
+Started GET "/users/14" for ::1 at 2015-12-14 20:30:57 -0800
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"14"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 14]]
+  [1m[35mUser Load (0.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 15]]
+  [1m[36mFriendship Load (0.4ms)[0m  [1mSELECT  "friendships".* FROM "friendships" WHERE "friendships"."user_id" = $1 AND "friendships"."friend_id" = $2 LIMIT 1[0m  [["user_id", 15], ["friend_id", 14]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "friendships".* FROM "friendships" WHERE "friendships"."user_id" = $1 AND "friendships"."friend_id" = $2 LIMIT 1  [["user_id", 15], ["friend_id", 14]]
+  [1m[36mFriendship Load (0.2ms)[0m  [1mSELECT  "friendships".* FROM "friendships" WHERE "friendships"."friend_id" = $1 AND "friendships"."user_id" = $2 LIMIT 1[0m  [["friend_id", 15], ["user_id", 14]]
+  Rendered layouts/_navigation.html.erb (0.3ms)
+  [1m[35mBadge Load (0.2ms)[0m  SELECT "badges".* FROM "badges" WHERE "badges"."user_id" = $1  ORDER BY "badges"."id" ASC  [["user_id", 14]]
+  [1m[36mFriendship Load (0.2ms)[0m  [1mSELECT "friendships".* FROM "friendships" WHERE "friendships"."user_id" = $1 AND "friendships"."accountabuddy" = $2[0m  [["user_id", 14], ["accountabuddy", "t"]]
+  [1m[35mAccountabuddyRequest Load (0.3ms)[0m  SELECT "accountabuddy_requests".* FROM "accountabuddy_requests" WHERE "accountabuddy_requests"."recipient_id" = $1  [["recipient_id", 14]]
+  [1m[36mFriendship Load (0.3ms)[0m  [1mSELECT  "friendships".* FROM "friendships" WHERE "friendships"."id" = $1 LIMIT 1[0m  [["id", 47]]
+  [1m[35mFriendship Load (0.4ms)[0m  SELECT  "friendships".* FROM "friendships" WHERE "friendships"."id" = $1 LIMIT 1  [["id", 49]]
+  [1m[36mFriendship Load (0.5ms)[0m  [1mSELECT "friendships".* FROM "friendships" WHERE "friendships"."user_id" = $1 AND "friendships"."accountabuddy" = $2[0m  [["user_id", 14], ["accountabuddy", "f"]]
+  [1m[35mUser Load (0.4ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 13]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 15]]
+  [1m[35mFriendRequest Load (0.3ms)[0m  SELECT "friend_requests".* FROM "friend_requests" WHERE "friend_requests"."user_id" = $1 AND "friend_requests"."friends" = $2  [["user_id", 14], ["friends", "f"]]
+  [1m[36mFriendRequest Load (0.3ms)[0m  [1mSELECT "friend_requests".* FROM "friend_requests" WHERE "friend_requests"."recipient_id" = $1 AND "friend_requests"."friends" = $2[0m  [["recipient_id", 14], ["friends", "f"]]
+  Rendered users/show.html.erb within layouts/application (25.9ms)
+Completed 200 OK in 433ms (Views: 424.3ms | ActiveRecord: 3.9ms)
