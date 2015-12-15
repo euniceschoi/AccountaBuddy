@@ -15,7 +15,7 @@ class UsersController < ApplicationController
   def new
   end
 
-  def create
+  def create    
     p "*" * 50
     @user = User.new(user_params)
     # @badge1 = Badge.new(name: "Fitness", description: "You're a fitness superstar!", user_id: @user.id)
@@ -57,7 +57,35 @@ class UsersController < ApplicationController
         @inverse_accountabuddy_relationship = @inverse_friendship.accountabuddy
       else
       end
-    end
+    end  
+    # VERY IMPORTANT DONT DELETE
+    # # LOGIC FOR _location_show
+    # if current_user && current_user.id = @user.id
+    #   address = request.location
+    #   @user.update(address: address)
+    #   if @user.save(validate: false)
+    #     respond_to do |format|
+    #       format.html
+    #       format.json { render json: @user }
+    #     end
+    #   else
+    #     @user.errors.full_messages
+    #     respond_to do |format|
+    #       format.html
+    #       format.json { render json: @user.errors }
+    #     end
+    #   end  
+    # end
+    # # LOGIC FOR _location_all
+    # if params[:search].present?
+    #   @users = User.near(params[:search], 25)
+    # else
+    #   @users = User.all
+    # end
+    # respond_to do |format|
+    #   format.html
+    #   format.json { render json: @user }  # respond with the created JSON object
+    # end
   end
 
   def edit
