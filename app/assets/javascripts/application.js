@@ -94,12 +94,13 @@ var userSubmitListener = function() {
     $("#geolocate").hide();
     var userCoordinates = {longitude: event.latlng.lng, latitude: event.latlng.lat}
 
-    $.ajax({
+    var request = $.ajax({
       url: '/users',
       type: "POST",
       data: userFormData + "&longitude=" + event.latlng.lng + "&latitude=" + event.latlng.lat,
       dataType: 'JSON'
     })
+    request.done
 
 
 

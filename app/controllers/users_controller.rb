@@ -27,7 +27,7 @@ class UsersController < ApplicationController
       @badge4 = Badge.new(name: "Education", description: "You're a Education superstar!", user_id: @user.id, badge_image_link:"education-badge.png")
         if @badge1.save && @badge2.save && @badge3.save && @badge4.save
           session[:user_id] = @user.id
-          redirect_to user_path(@user.id)
+          {user_id: @user.id}.to
         else
           flash[:error] = "Signup was unsuccessful. Please try again."
           redirect_to '/signup'
