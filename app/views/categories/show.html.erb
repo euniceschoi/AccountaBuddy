@@ -7,6 +7,10 @@
 	<p><%= @category.name %></p>
   <%= flash[:error] %>
 
+
+
+
+
   <% if @user_category != true%>
   <%= form_for :category, :url => {:action=>"create", :controller=>"user_categories"} do |f| %>
     <%= f.button "Subscribe to " + @category.name + " so others can find me!" %>
