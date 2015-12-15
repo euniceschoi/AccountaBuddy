@@ -61,11 +61,49 @@ var userSubmitListener = function() {
   $('body').on('submit', '#user-signedit-form', function(event){
     event.preventDefault();
     var userFormData = $(this).children().serialize();
-    $(".user-signedit-container").hide();
-    debugger
+    $(".user-signedit-box").hide();
+
 
     $("#map").css('display', 'block');
     $("#geolocate").css('display', 'block')
+    $("#geolocate").on('click', function(event){
+      event.preventDefault();
+      event.stopPropagation();
+      var map = L.mapbox.map('map', 'mapbox.streets');
+      var locate = map.locate();
+      var myLayer = L.mapbox.featureLayer().addTo(map);
+
+      console.log(event)
+      console.log(locate)
+      map.on('locationfound', function(event){
+        map.fitBounds(event.bounds);
+        myLayer.setGeoJSON({
+          type: 'Feature',
+            geometry: {
+            type: 'Point',
+            coordinates: [event.latlng.lng, event.latlng.lat]
+        },
+        properties: {
+            'title': 'Here I am!',
+            'marker-color': '#ff8888',
+            'marker-symbol': 'star'
+        }
+    });
+    // And hide the geolocation button
+    $("#geolocate").hide();
+    var userCoordinates = {longitude: event.latlng.lng, latitude: event.latlng.lat}
+
+    $.ajax({
+      url: '/users',
+      type: "POST",
+      data: {userData: userFormData, userLocation: userCoordinates},
+      dataType: 'JSON'
+    })
+
+
+
+      })
+    })
     //click find me
     //create a variable and grab the coordinates from the find me button
     //make the ajax request to the post route for users

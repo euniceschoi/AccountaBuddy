@@ -18,37 +18,37 @@
 <a href='#' id='geolocate' class='ui-button'>Find me</a>
 <script>
 L.mapbox.accessToken = 'pk.eyJ1IjoidG9wZ2lybGNvZGVyIiwiYSI6ImNpaTZqOXJhdTAxb2p0b2tmZThoMHpjMm0ifQ.R9Flgvg9aIBq1S1_qVlMbw';
-var geolocate = document.getElementById('geolocate');
-var map = L.mapbox.map('map', 'mapbox.streets');
-var myLayer = L.mapbox.featureLayer().addTo(map);
+// var geolocate = document.getElementById('geolocate');
+// var map = L.mapbox.map('map', 'mapbox.streets');
+// var myLayer = L.mapbox.featureLayer().addTo(map);
 
-if (!navigator.geolocation) {
-    geolocate.innerHTML = 'Geolocation is not available';
-} else {
-    geolocate.onclick = function (e) {
-        e.preventDefault();
-        e.stopPropagation();
-        map.locate();
-        console.log(e);
-    };
-}
-// Once we've got a position, zoom and center the map on it, and add a single marker.
-map.on('locationfound', function(e) {
-    map.fitBounds(e.bounds);
-    myLayer.setGeoJSON({
-        type: 'Feature',
-        geometry: {
-            type: 'Point',
-            coordinates: [e.latlng.lng, e.latlng.lat]
-        },
-        properties: {
-            'title': 'Here I am!',
-            'marker-color': '#ff8888',
-            'marker-symbol': 'star'
-        }
-    });
-    // And hide the geolocation button
-    geolocate.parentNode.removeChild(geolocate);
+// if (!navigator.geolocation) {
+//     geolocate.innerHTML = 'Geolocation is not available';
+// } else {
+//     geolocate.onclick = function (e) {
+//         e.preventDefault();
+//         e.stopPropagation();
+//         map.locate();
+//         console.log(e);
+//     };
+// }
+// // Once we've got a position, zoom and center the map on it, and add a single marker.
+// map.on('locationfound', function(e) {
+//     map.fitBounds(e.bounds);
+//     myLayer.setGeoJSON({
+//         type: 'Feature',
+    //     geometry: {
+    //         type: 'Point',
+    //         coordinates: [e.latlng.lng, e.latlng.lat]
+    //     },
+    //     properties: {
+    //         'title': 'Here I am!',
+    //         'marker-color': '#ff8888',
+    //         'marker-symbol': 'star'
+    //     }
+    // });
+    // // And hide the geolocation button
+    // geolocate.parentNode.removeChild(geolocate);
 
     // $.ajax({
     //     url: '/users/' + '<%#= @user.id %>',
@@ -58,11 +58,11 @@ map.on('locationfound', function(e) {
     // }).done(function( msg ) {
     //     alert( "Data Saved: " + [e.latlng.lng, e.latlng.lat] );
     // });
-});
+// });
 // If the user chooses not to allow their location to be shared, display an error message.
-map.on('locationerror', function() {
-    geolocate.innerHTML = 'Position could not be found';
-});
+// map.on('locationerror', function() {
+//     geolocate.innerHTML = 'Position could not be found';
+// });
 </script>
 </body>
 </html>
