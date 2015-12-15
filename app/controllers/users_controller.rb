@@ -16,6 +16,7 @@ class UsersController < ApplicationController
   end
 
   def create
+    p "*" * 50
     @user = User.new(user_params)
     # @badge1 = Badge.new(name: "Fitness", description: "You're a fitness superstar!", user_id: @user.id)
     # @badge2 = Badge.new(name: "Diet", description: "You're a Diet superstar!", user_id: @user.id)
@@ -65,22 +66,22 @@ class UsersController < ApplicationController
 
   def update
     @user = User.find(params[:id])
-    if current_user && current_user.id = @user.id 
+    if current_user && current_user.id = @user.id
       longitude = params["user_location"][0].to_f
       latitude = params["user_location"][1].to_f
       @user.update_attributes(latitude: latitude, longitude: longitude)
       if @user.save(validate: false)
         respond_to do |format|
           format.html
-          format.json { render json: @user } 
+          format.json { render json: @user }
         end
       else
         @user.errors.full_messages
         respond_to do |format|
           format.html
-          format.json { render json: @user.errors } 
+          format.json { render json: @user.errors }
         end
-      end  
+      end
     else
       redirect_to root_path
     end
@@ -92,7 +93,7 @@ class UsersController < ApplicationController
   private
 
   def user_params
-    params.require(:user).permit(:name, :username, :email, :password, :password_confirmation, :address, :latitude, :longitude, :about_me, :birthdate, :gender)
+    params.require(:user).permit(:name, :username, :email, :password, :password_confirmation, :address, :latitude, :longitude, :about_me, :gender)
   end
 
 end
