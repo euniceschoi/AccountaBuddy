@@ -25554,3 +25554,9 @@ Processing by UsersController#index as HTML
   Rendered users/_user_index_header.html.erb (0.2ms)
   Rendered users/index.html.erb within layouts/application (10.9ms)
 Completed 200 OK in 133ms (Views: 131.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/signup" for ::1 at 2015-12-14 23:13:01 -0800
+Processing by UsersController#new as HTML
+  Rendered users/new.html.erb within layouts/application (9.2ms)
+Completed 200 OK in 405ms (Views: 400.8ms | ActiveRecord: 0.0ms)
