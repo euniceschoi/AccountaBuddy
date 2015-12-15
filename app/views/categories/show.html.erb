@@ -5,11 +5,8 @@
 	<h1>Your Category</h1>
 
 	<p><%= @category.name %></p>
+
   <%= flash[:error] %>
-
-
-
-
 
   <% if @user_category != true%>
   <%= form_for :category, :url => {:action=>"create", :controller=>"user_categories"} do |f| %>
@@ -18,6 +15,7 @@
     <%= f.hidden_field :user_id, value: current_user.id %>
   <% end %>
   <% end %>
+
 
 <div id="listing">
 <!-- putting all people in this category here for now -->
@@ -35,8 +33,8 @@
 </div>
 </div>
 
-<div id="map">
-  <%= render 'map_index' %>
+<!-- <div id="map"> -->
+  <%= render 'map_index_all' %>
 </div>
 
 

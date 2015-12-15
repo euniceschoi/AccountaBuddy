@@ -64,12 +64,24 @@ class UsersController < ApplicationController
   end
 
   def update
-    if current_user && current_user.id = @user.id
-      @user
-      @user.latitude = e.latlng.lat
-      @user.longitude = e.latlng.lng
+    @user = User.find(params[:id])
+    if current_user && current_user.id = @user.id 
+      longitude = params["user_location"][0].to_f
+      latitude = params["user_location"][1].to_f
+      @user.update_attributes(latitude: latitude, longitude: longitude)
+      if @user.save(validate: false)
+        respond_to do |format|
+          format.html
+          format.json { render json: @user } 
+        end
+      else
+        @user.errors.full_messages
+        respond_to do |format|
+          format.html
+          format.json { render json: @user.errors } 
+        end
+      end  
     else
-      #put an error message here
       redirect_to root_path
     end
   end
