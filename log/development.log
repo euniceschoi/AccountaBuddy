@@ -4599,3 +4599,2727 @@ ActiveRecord::RecordNotFound (Couldn't find User with 'id'=undefined):
   Rendered /Users/Eunice/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
   Rendered /Users/Eunice/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.5ms)
   Rendered /Users/Eunice/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (149.0ms)
+
+
+Started GET "/" for ::1 at 2015-12-15 11:04:50 -0800
+  [1m[36mActiveRecord::SchemaMigration Load (0.7ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by UsersController#index as HTML
+  [1m[35mUser Load (1.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 17]]
+  Rendered users/_user_index_header.html.erb (32.5ms)
+  Rendered users/index.html.erb within layouts/application (250.3ms)
+Completed 200 OK in 1119ms (Views: 1068.3ms | ActiveRecord: 6.1ms)
+
+
+Started GET "/assets/application.self-e28cce9a81f1e77d7551dc9bbab1f59d5a8a8c0c2ddc120ca55a133b4406adf6.js?body=1" for ::1 at 2015-12-15 11:04:52 -0800
+
+
+Started GET "/logout" for ::1 at 2015-12-15 11:05:11 -0800
+Processing by SessionsController#destroy as HTML
+Redirected to http://localhost:3000/
+Completed 302 Found in 2ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2015-12-15 11:05:11 -0800
+Processing by UsersController#index as HTML
+  Rendered users/_user_index_header.html.erb (0.1ms)
+  Rendered users/index.html.erb within layouts/application (13.2ms)
+Completed 200 OK in 250ms (Views: 249.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/signup" for ::1 at 2015-12-15 11:05:13 -0800
+Processing by UsersController#new as HTML
+  Rendered users/new.html.erb within layouts/application (18.1ms)
+Completed 200 OK in 257ms (Views: 255.7ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users" for ::1 at 2015-12-15 11:05:36 -0800
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"RnLzo2oaghovqz0TWqUUjW0owN94cLIbttXLYbkf12gqnSQfsOmb/fFGOW5F55n5CIcKZb2zIRh2kUge3tNjig==", "user"=>{"name"=>"", "username"=>"", "email"=>"", "about_me"=>"", "gender"=>"Female", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Submit"}
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mUser Exists (1.0ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."username" = '' LIMIT 1
+  [1m[36mUser Exists (0.4ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = '' LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  ROLLBACK
+Redirected to http://localhost:3000/signup
+Completed 302 Found in 41ms (ActiveRecord: 1.7ms)
+
+
+Started GET "/signup" for ::1 at 2015-12-15 11:05:36 -0800
+Processing by UsersController#new as HTML
+  Rendered users/new.html.erb within layouts/application (2.8ms)
+Completed 200 OK in 296ms (Views: 295.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/signup" for ::1 at 2015-12-15 11:06:00 -0800
+Processing by UsersController#new as HTML
+  Rendered users/new.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 437ms (Views: 436.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/categories.self-73a7ce4aabb5f9df39ea79190fcf3d82255e180c39399bb24101c132bf5cda0c.css?body=1" for ::1 at 2015-12-15 11:06:01 -0800
+
+
+Started GET "/assets/accountabuddy_requests.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-12-15 11:06:01 -0800
+
+
+Started GET "/assets/badges.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-12-15 11:06:01 -0800
+
+
+Started GET "/assets/curtain.self-928bfa886689b15bd31b09e76d8aced46c87f449904e48e704741702c11df316.css?body=1" for ::1 at 2015-12-15 11:06:01 -0800
+
+
+Started GET "/assets/foundation_and_overrides.self-c3c39f50116a4bccd8a1cc38f1ace9e8cc5c1a84277983889437231b0d272cec.css?body=1" for ::1 at 2015-12-15 11:06:01 -0800
+
+
+Started GET "/assets/friend_requests.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-12-15 11:06:01 -0800
+
+
+Started GET "/assets/friendships.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-12-15 11:06:01 -0800
+
+
+Started GET "/assets/maps.self-a0b79f9c07da57fe12d6866db226828f61234d06192e46bb6bbb4cc57d4646d5.css?body=1" for ::1 at 2015-12-15 11:06:01 -0800
+
+
+Started GET "/assets/messages.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-12-15 11:06:01 -0800
+
+
+Started GET "/assets/sessions.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-12-15 11:06:01 -0800
+
+
+Started GET "/assets/user_categories.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-12-15 11:06:01 -0800
+
+
+Started GET "/assets/users.self-a2c7c262797be25e5171dc6d8c1f0be011aff22df93baed2a28539a232f7f852.css?body=1" for ::1 at 2015-12-15 11:06:01 -0800
+
+
+Started GET "/assets/application.self-a288552b8f3049270b1dfe038d6a3067580ba472708e9db48e02d6e80b6ffde8.css?body=1" for ::1 at 2015-12-15 11:06:01 -0800
+
+
+Started GET "/assets/vendor/modernizr.self-74da3245def7569da28115667be6a85a2ad97464abe707c9829c46d8975597bc.js?body=1" for ::1 at 2015-12-15 11:06:01 -0800
+
+
+Started GET "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1" for ::1 at 2015-12-15 11:06:01 -0800
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for ::1 at 2015-12-15 11:06:01 -0800
+
+
+Started GET "/assets/foundation/foundation.self-98616d4fb376f824aeb7c868e05e747b97176a864c7da854779ed398828df78f.js?body=1" for ::1 at 2015-12-15 11:06:01 -0800
+
+
+Started GET "/assets/foundation/foundation.abide.self-670a9b56e37b4b434f79686b8a9862222173d68ec823b20565340e0e87627ca4.js?body=1" for ::1 at 2015-12-15 11:06:01 -0800
+
+
+Started GET "/assets/foundation/foundation.accordion.self-02a179f7efde1facecf8a814cae32112c36800ce3d66bafc00c807a56d7b8d46.js?body=1" for ::1 at 2015-12-15 11:06:01 -0800
+
+
+Started GET "/assets/foundation/foundation.alert.self-631e4c4124bd543574c5a7f4d5d8b59fdf350f6c11d6201ba8a872e8a0f203b0.js?body=1" for ::1 at 2015-12-15 11:06:01 -0800
+
+
+Started GET "/assets/foundation/foundation.clearing.self-96397aa6b2d39ff61e9b4ce8486a9f716f9072f2011f1dc99f94a96b381b3830.js?body=1" for ::1 at 2015-12-15 11:06:01 -0800
+
+
+Started GET "/assets/foundation/foundation.dropdown.self-3e70f72040b183d09b673307b08d1d688a5572c6c8cbb222755945e70ccbb05e.js?body=1" for ::1 at 2015-12-15 11:06:01 -0800
+
+
+Started GET "/assets/foundation/foundation.equalizer.self-1889be5dfd0e56321a9a6d5fe9d4a94b04602c158f3e4d58419b967c255b999f.js?body=1" for ::1 at 2015-12-15 11:06:01 -0800
+
+
+Started GET "/assets/foundation/foundation.interchange.self-c6d033cdd9e7fd3f29c067eb7b9ee564f7a6b542650d2ca530ae1e3c529a3c35.js?body=1" for ::1 at 2015-12-15 11:06:01 -0800
+
+
+Started GET "/assets/foundation/foundation.joyride.self-1f6b19104e2439f1e4353444cb6fb9f7f308563556f167c2154ca3108eb7f77e.js?body=1" for ::1 at 2015-12-15 11:06:01 -0800
+
+
+Started GET "/assets/foundation/foundation.magellan.self-1fcf75780d5b4db5e97c267810e7c9a5e19a9f0d7b67a2d167074d7cff1d6a70.js?body=1" for ::1 at 2015-12-15 11:06:01 -0800
+
+
+Started GET "/assets/foundation/foundation.offcanvas.self-2f34a4b91e1e958aefbde46004d6186ee82e018fe95634214749799141339810.js?body=1" for ::1 at 2015-12-15 11:06:01 -0800
+
+
+Started GET "/assets/foundation/foundation.orbit.self-ba7d30fe424df83b5bc8bc5bb67ea90608759c6eb8212d1475d52b09db0bcd0f.js?body=1" for ::1 at 2015-12-15 11:06:01 -0800
+
+
+Started GET "/assets/foundation/foundation.reveal.self-5a83316675f14b52f582d67c053ae7977827a5b06459d7e8f5556cbedfba1d0d.js?body=1" for ::1 at 2015-12-15 11:06:01 -0800
+
+
+Started GET "/assets/foundation/foundation.slider.self-686e8b14e01aeb75ec0980de90956540d2b245324fc58e8c25debafc60300b96.js?body=1" for ::1 at 2015-12-15 11:06:01 -0800
+
+
+Started GET "/assets/foundation/foundation.tab.self-9b2bd1afa5715ce8f154fa008d0aab44500763e9b336a6d4e5bca96437176a74.js?body=1" for ::1 at 2015-12-15 11:06:01 -0800
+
+
+Started GET "/assets/foundation/foundation.tooltip.self-dae1db2297f90064e1a8ae7b02b175ca613cc6a2d190aaed548f6ef853f4b46d.js?body=1" for ::1 at 2015-12-15 11:06:01 -0800
+
+
+Started GET "/assets/foundation/foundation.topbar.self-fa6260890f9f59c821128d066bcfaa18665c816022bafd398d937c367d5e39b7.js?body=1" for ::1 at 2015-12-15 11:06:01 -0800
+
+
+Started GET "/assets/foundation.self-abe4ee7a105042f73b12b1f1a28788522d2f253445a475a94ab4d6e1f7b0ec52.js?body=1" for ::1 at 2015-12-15 11:06:01 -0800
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2015-12-15 11:06:01 -0800
+
+
+Started GET "/assets/accountabuddy_requests.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-12-15 11:06:01 -0800
+
+
+Started GET "/assets/badges.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-12-15 11:06:01 -0800
+
+
+Started GET "/assets/curtain.self-03cedba756c2ea28b832bb6cb8c319e5954ea1495621342287edfc1657932778.js?body=1" for ::1 at 2015-12-15 11:06:01 -0800
+
+
+Started GET "/assets/friend_requests.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-12-15 11:06:01 -0800
+
+
+Started GET "/assets/friendships.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-12-15 11:06:01 -0800
+
+
+Started GET "/assets/messages.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-12-15 11:06:01 -0800
+
+
+Started GET "/assets/scroll_up.self-c3b7cbf89f2df9e2397e11ac3708fffb90c66ae2a5139623696d21e0d7ef68aa.js?body=1" for ::1 at 2015-12-15 11:06:01 -0800
+
+
+Started GET "/assets/sessions.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-12-15 11:06:01 -0800
+
+
+Started GET "/assets/user_categories.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-12-15 11:06:01 -0800
+
+
+Started GET "/assets/users.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-12-15 11:06:01 -0800
+
+
+Started GET "/assets/application.self-81913a991e6e408456fe9af05a7f20a16f6eaf4516a1a8f3e0dfe3d4fa942212.js?body=1" for ::1 at 2015-12-15 11:06:01 -0800
+
+
+Started GET "/signup" for ::1 at 2015-12-15 11:07:09 -0800
+Processing by UsersController#new as HTML
+  Rendered users/new.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 427ms (Views: 426.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/badges.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-12-15 11:07:10 -0800
+
+
+Started GET "/assets/categories.self-73a7ce4aabb5f9df39ea79190fcf3d82255e180c39399bb24101c132bf5cda0c.css?body=1" for ::1 at 2015-12-15 11:07:10 -0800
+
+
+Started GET "/assets/curtain.self-928bfa886689b15bd31b09e76d8aced46c87f449904e48e704741702c11df316.css?body=1" for ::1 at 2015-12-15 11:07:10 -0800
+
+
+Started GET "/assets/foundation_and_overrides.self-c3c39f50116a4bccd8a1cc38f1ace9e8cc5c1a84277983889437231b0d272cec.css?body=1" for ::1 at 2015-12-15 11:07:10 -0800
+
+
+Started GET "/assets/friend_requests.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-12-15 11:07:10 -0800
+
+
+Started GET "/assets/friendships.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-12-15 11:07:10 -0800
+
+
+Started GET "/assets/maps.self-a0b79f9c07da57fe12d6866db226828f61234d06192e46bb6bbb4cc57d4646d5.css?body=1" for ::1 at 2015-12-15 11:07:10 -0800
+
+
+Started GET "/assets/messages.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-12-15 11:07:10 -0800
+
+
+Started GET "/assets/accountabuddy_requests.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-12-15 11:07:10 -0800
+
+
+Started GET "/assets/sessions.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-12-15 11:07:10 -0800
+
+
+Started GET "/assets/user_categories.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-12-15 11:07:10 -0800
+
+
+Started GET "/assets/users.self-a2c7c262797be25e5171dc6d8c1f0be011aff22df93baed2a28539a232f7f852.css?body=1" for ::1 at 2015-12-15 11:07:10 -0800
+
+
+Started GET "/assets/application.self-a288552b8f3049270b1dfe038d6a3067580ba472708e9db48e02d6e80b6ffde8.css?body=1" for ::1 at 2015-12-15 11:07:10 -0800
+
+
+Started GET "/assets/vendor/modernizr.self-74da3245def7569da28115667be6a85a2ad97464abe707c9829c46d8975597bc.js?body=1" for ::1 at 2015-12-15 11:07:10 -0800
+
+
+Started GET "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1" for ::1 at 2015-12-15 11:07:10 -0800
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for ::1 at 2015-12-15 11:07:10 -0800
+
+
+Started GET "/assets/foundation/foundation.self-98616d4fb376f824aeb7c868e05e747b97176a864c7da854779ed398828df78f.js?body=1" for ::1 at 2015-12-15 11:07:10 -0800
+
+
+Started GET "/assets/foundation/foundation.abide.self-670a9b56e37b4b434f79686b8a9862222173d68ec823b20565340e0e87627ca4.js?body=1" for ::1 at 2015-12-15 11:07:10 -0800
+
+
+Started GET "/assets/foundation/foundation.accordion.self-02a179f7efde1facecf8a814cae32112c36800ce3d66bafc00c807a56d7b8d46.js?body=1" for ::1 at 2015-12-15 11:07:10 -0800
+
+
+Started GET "/assets/foundation/foundation.alert.self-631e4c4124bd543574c5a7f4d5d8b59fdf350f6c11d6201ba8a872e8a0f203b0.js?body=1" for ::1 at 2015-12-15 11:07:10 -0800
+
+
+Started GET "/assets/foundation/foundation.clearing.self-96397aa6b2d39ff61e9b4ce8486a9f716f9072f2011f1dc99f94a96b381b3830.js?body=1" for ::1 at 2015-12-15 11:07:10 -0800
+
+
+Started GET "/assets/foundation/foundation.dropdown.self-3e70f72040b183d09b673307b08d1d688a5572c6c8cbb222755945e70ccbb05e.js?body=1" for ::1 at 2015-12-15 11:07:10 -0800
+
+
+Started GET "/assets/foundation/foundation.equalizer.self-1889be5dfd0e56321a9a6d5fe9d4a94b04602c158f3e4d58419b967c255b999f.js?body=1" for ::1 at 2015-12-15 11:07:10 -0800
+
+
+Started GET "/assets/foundation/foundation.interchange.self-c6d033cdd9e7fd3f29c067eb7b9ee564f7a6b542650d2ca530ae1e3c529a3c35.js?body=1" for ::1 at 2015-12-15 11:07:10 -0800
+
+
+Started GET "/assets/foundation/foundation.joyride.self-1f6b19104e2439f1e4353444cb6fb9f7f308563556f167c2154ca3108eb7f77e.js?body=1" for ::1 at 2015-12-15 11:07:10 -0800
+
+
+Started GET "/assets/foundation/foundation.magellan.self-1fcf75780d5b4db5e97c267810e7c9a5e19a9f0d7b67a2d167074d7cff1d6a70.js?body=1" for ::1 at 2015-12-15 11:07:10 -0800
+
+
+Started GET "/assets/foundation/foundation.offcanvas.self-2f34a4b91e1e958aefbde46004d6186ee82e018fe95634214749799141339810.js?body=1" for ::1 at 2015-12-15 11:07:10 -0800
+
+
+Started GET "/assets/foundation/foundation.orbit.self-ba7d30fe424df83b5bc8bc5bb67ea90608759c6eb8212d1475d52b09db0bcd0f.js?body=1" for ::1 at 2015-12-15 11:07:10 -0800
+
+
+Started GET "/assets/foundation/foundation.reveal.self-5a83316675f14b52f582d67c053ae7977827a5b06459d7e8f5556cbedfba1d0d.js?body=1" for ::1 at 2015-12-15 11:07:10 -0800
+
+
+Started GET "/assets/foundation/foundation.slider.self-686e8b14e01aeb75ec0980de90956540d2b245324fc58e8c25debafc60300b96.js?body=1" for ::1 at 2015-12-15 11:07:10 -0800
+
+
+Started GET "/assets/foundation/foundation.tab.self-9b2bd1afa5715ce8f154fa008d0aab44500763e9b336a6d4e5bca96437176a74.js?body=1" for ::1 at 2015-12-15 11:07:10 -0800
+
+
+Started GET "/assets/foundation/foundation.tooltip.self-dae1db2297f90064e1a8ae7b02b175ca613cc6a2d190aaed548f6ef853f4b46d.js?body=1" for ::1 at 2015-12-15 11:07:10 -0800
+
+
+Started GET "/assets/foundation/foundation.topbar.self-fa6260890f9f59c821128d066bcfaa18665c816022bafd398d937c367d5e39b7.js?body=1" for ::1 at 2015-12-15 11:07:10 -0800
+
+
+Started GET "/assets/foundation.self-abe4ee7a105042f73b12b1f1a28788522d2f253445a475a94ab4d6e1f7b0ec52.js?body=1" for ::1 at 2015-12-15 11:07:10 -0800
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2015-12-15 11:07:10 -0800
+
+
+Started GET "/assets/accountabuddy_requests.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-12-15 11:07:10 -0800
+
+
+Started GET "/assets/badges.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-12-15 11:07:10 -0800
+
+
+Started GET "/assets/curtain.self-03cedba756c2ea28b832bb6cb8c319e5954ea1495621342287edfc1657932778.js?body=1" for ::1 at 2015-12-15 11:07:10 -0800
+
+
+Started GET "/assets/friend_requests.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-12-15 11:07:10 -0800
+
+
+Started GET "/assets/friendships.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-12-15 11:07:10 -0800
+
+
+Started GET "/assets/scroll_up.self-c3b7cbf89f2df9e2397e11ac3708fffb90c66ae2a5139623696d21e0d7ef68aa.js?body=1" for ::1 at 2015-12-15 11:07:10 -0800
+
+
+Started GET "/assets/messages.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-12-15 11:07:10 -0800
+
+
+Started GET "/assets/user_categories.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-12-15 11:07:10 -0800
+
+
+Started GET "/assets/sessions.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-12-15 11:07:10 -0800
+
+
+Started GET "/assets/application.self-26c774a11f164068671a1e413e203e35839f68ec821f540bb8726eb44e28a75e.js?body=1" for ::1 at 2015-12-15 11:07:10 -0800
+
+
+Started GET "/assets/users.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-12-15 11:07:10 -0800
+
+
+Started GET "/signup" for ::1 at 2015-12-15 11:09:29 -0800
+Processing by UsersController#new as HTML
+  Rendered users/new.html.erb within layouts/application (3.4ms)
+Completed 200 OK in 499ms (Views: 498.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/badges.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-12-15 11:09:29 -0800
+
+
+Started GET "/assets/categories.self-73a7ce4aabb5f9df39ea79190fcf3d82255e180c39399bb24101c132bf5cda0c.css?body=1" for ::1 at 2015-12-15 11:09:29 -0800
+
+
+Started GET "/assets/accountabuddy_requests.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-12-15 11:09:29 -0800
+
+
+Started GET "/assets/foundation_and_overrides.self-c3c39f50116a4bccd8a1cc38f1ace9e8cc5c1a84277983889437231b0d272cec.css?body=1" for ::1 at 2015-12-15 11:09:29 -0800
+
+
+Started GET "/assets/curtain.self-928bfa886689b15bd31b09e76d8aced46c87f449904e48e704741702c11df316.css?body=1" for ::1 at 2015-12-15 11:09:29 -0800
+
+
+Started GET "/assets/friend_requests.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-12-15 11:09:29 -0800
+
+
+Started GET "/assets/friendships.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-12-15 11:09:29 -0800
+
+
+Started GET "/assets/maps.self-a0b79f9c07da57fe12d6866db226828f61234d06192e46bb6bbb4cc57d4646d5.css?body=1" for ::1 at 2015-12-15 11:09:29 -0800
+
+
+Started GET "/assets/messages.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-12-15 11:09:29 -0800
+
+
+Started GET "/assets/user_categories.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-12-15 11:09:29 -0800
+
+
+Started GET "/assets/sessions.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-12-15 11:09:29 -0800
+
+
+Started GET "/assets/users.self-a2c7c262797be25e5171dc6d8c1f0be011aff22df93baed2a28539a232f7f852.css?body=1" for ::1 at 2015-12-15 11:09:29 -0800
+
+
+Started GET "/assets/application.self-a288552b8f3049270b1dfe038d6a3067580ba472708e9db48e02d6e80b6ffde8.css?body=1" for ::1 at 2015-12-15 11:09:29 -0800
+
+
+Started GET "/assets/vendor/modernizr.self-74da3245def7569da28115667be6a85a2ad97464abe707c9829c46d8975597bc.js?body=1" for ::1 at 2015-12-15 11:09:29 -0800
+
+
+Started GET "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1" for ::1 at 2015-12-15 11:09:29 -0800
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for ::1 at 2015-12-15 11:09:29 -0800
+
+
+Started GET "/assets/foundation/foundation.self-98616d4fb376f824aeb7c868e05e747b97176a864c7da854779ed398828df78f.js?body=1" for ::1 at 2015-12-15 11:09:29 -0800
+
+
+Started GET "/assets/foundation/foundation.abide.self-670a9b56e37b4b434f79686b8a9862222173d68ec823b20565340e0e87627ca4.js?body=1" for ::1 at 2015-12-15 11:09:29 -0800
+
+
+Started GET "/assets/foundation/foundation.accordion.self-02a179f7efde1facecf8a814cae32112c36800ce3d66bafc00c807a56d7b8d46.js?body=1" for ::1 at 2015-12-15 11:09:29 -0800
+
+
+Started GET "/assets/foundation/foundation.alert.self-631e4c4124bd543574c5a7f4d5d8b59fdf350f6c11d6201ba8a872e8a0f203b0.js?body=1" for ::1 at 2015-12-15 11:09:29 -0800
+
+
+Started GET "/assets/foundation/foundation.clearing.self-96397aa6b2d39ff61e9b4ce8486a9f716f9072f2011f1dc99f94a96b381b3830.js?body=1" for ::1 at 2015-12-15 11:09:29 -0800
+
+
+Started GET "/assets/foundation/foundation.dropdown.self-3e70f72040b183d09b673307b08d1d688a5572c6c8cbb222755945e70ccbb05e.js?body=1" for ::1 at 2015-12-15 11:09:30 -0800
+
+
+Started GET "/assets/foundation/foundation.equalizer.self-1889be5dfd0e56321a9a6d5fe9d4a94b04602c158f3e4d58419b967c255b999f.js?body=1" for ::1 at 2015-12-15 11:09:30 -0800
+
+
+Started GET "/assets/foundation/foundation.interchange.self-c6d033cdd9e7fd3f29c067eb7b9ee564f7a6b542650d2ca530ae1e3c529a3c35.js?body=1" for ::1 at 2015-12-15 11:09:30 -0800
+
+
+Started GET "/assets/foundation/foundation.joyride.self-1f6b19104e2439f1e4353444cb6fb9f7f308563556f167c2154ca3108eb7f77e.js?body=1" for ::1 at 2015-12-15 11:09:30 -0800
+
+
+Started GET "/assets/foundation/foundation.magellan.self-1fcf75780d5b4db5e97c267810e7c9a5e19a9f0d7b67a2d167074d7cff1d6a70.js?body=1" for ::1 at 2015-12-15 11:09:30 -0800
+
+
+Started GET "/assets/foundation/foundation.offcanvas.self-2f34a4b91e1e958aefbde46004d6186ee82e018fe95634214749799141339810.js?body=1" for ::1 at 2015-12-15 11:09:30 -0800
+
+
+Started GET "/assets/foundation/foundation.orbit.self-ba7d30fe424df83b5bc8bc5bb67ea90608759c6eb8212d1475d52b09db0bcd0f.js?body=1" for ::1 at 2015-12-15 11:09:30 -0800
+
+
+Started GET "/assets/foundation/foundation.reveal.self-5a83316675f14b52f582d67c053ae7977827a5b06459d7e8f5556cbedfba1d0d.js?body=1" for ::1 at 2015-12-15 11:09:30 -0800
+
+
+Started GET "/assets/foundation/foundation.slider.self-686e8b14e01aeb75ec0980de90956540d2b245324fc58e8c25debafc60300b96.js?body=1" for ::1 at 2015-12-15 11:09:30 -0800
+
+
+Started GET "/assets/foundation/foundation.tab.self-9b2bd1afa5715ce8f154fa008d0aab44500763e9b336a6d4e5bca96437176a74.js?body=1" for ::1 at 2015-12-15 11:09:30 -0800
+
+
+Started GET "/assets/foundation/foundation.tooltip.self-dae1db2297f90064e1a8ae7b02b175ca613cc6a2d190aaed548f6ef853f4b46d.js?body=1" for ::1 at 2015-12-15 11:09:30 -0800
+
+
+Started GET "/assets/foundation/foundation.topbar.self-fa6260890f9f59c821128d066bcfaa18665c816022bafd398d937c367d5e39b7.js?body=1" for ::1 at 2015-12-15 11:09:30 -0800
+
+
+Started GET "/assets/foundation.self-abe4ee7a105042f73b12b1f1a28788522d2f253445a475a94ab4d6e1f7b0ec52.js?body=1" for ::1 at 2015-12-15 11:09:30 -0800
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2015-12-15 11:09:30 -0800
+
+
+Started GET "/assets/accountabuddy_requests.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-12-15 11:09:30 -0800
+
+
+Started GET "/assets/badges.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-12-15 11:09:30 -0800
+
+
+Started GET "/assets/curtain.self-03cedba756c2ea28b832bb6cb8c319e5954ea1495621342287edfc1657932778.js?body=1" for ::1 at 2015-12-15 11:09:30 -0800
+
+
+Started GET "/assets/friend_requests.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-12-15 11:09:30 -0800
+
+
+Started GET "/assets/friendships.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-12-15 11:09:30 -0800
+
+
+Started GET "/assets/messages.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-12-15 11:09:30 -0800
+
+
+Started GET "/assets/scroll_up.self-c3b7cbf89f2df9e2397e11ac3708fffb90c66ae2a5139623696d21e0d7ef68aa.js?body=1" for ::1 at 2015-12-15 11:09:30 -0800
+
+
+Started GET "/assets/sessions.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-12-15 11:09:30 -0800
+
+
+Started GET "/assets/user_categories.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-12-15 11:09:30 -0800
+
+
+Started GET "/assets/users.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-12-15 11:09:30 -0800
+
+
+Started GET "/assets/application.self-97f54d65508d098cfa48e5c36f583b6202b332a240a4ac40cb3e2a8cd301a5eb.js?body=1" for ::1 at 2015-12-15 11:09:30 -0800
+
+
+Started POST "/users" for ::1 at 2015-12-15 11:09:54 -0800
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Ga57j7paVKjLgik9lFqxt6Hp5KOQAYO8Ox3DukbdwBJ1QawzYKlNTxVvLUCLGDzDxEYuGVXCEL/7WUDFIRF08A==", "user"=>{"name"=>"afjdaj;", "username"=>"k;ldfjkl;aj", "email"=>"kldfadkl;f", "about_me"=>"fkladk;lf", "gender"=>"Female", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Submit"}
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mUser Exists (0.3ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."username" = 'k;ldfjkl;aj' LIMIT 1
+  [1m[36mUser Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = 'kldfadkl;f' LIMIT 1[0m
+  [1m[35mSQL (8.4ms)[0m  INSERT INTO "users" ("name", "username", "email", "password_digest", "about_me", "gender", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"  [["name", "afjdaj;"], ["username", "k;ldfjkl;aj"], ["email", "kldfadkl;f"], ["password_digest", "$2a$10$NZPlDMTxZAnHkz1rt06wpOTJ1qHPWoXMWhrhmb/eNsPvjQ.BheXVC"], ["about_me", "fkladk;lf"], ["gender", "Female"], ["created_at", "2015-12-15 19:09:54.275371"], ["updated_at", "2015-12-15 19:09:54.275371"]]
+  [1m[36m (2.1ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "badges" ("name", "description", "user_id", "badge_image_link", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Fitness"], ["description", "You're a fitness superstar!"], ["user_id", 18], ["badge_image_link", "fitness-badge.png"], ["created_at", "2015-12-15 19:09:54.308152"], ["updated_at", "2015-12-15 19:09:54.308152"]]
+  [1m[35m (6.5ms)[0m  COMMIT
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "badges" ("name", "description", "user_id", "badge_image_link", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"  [["name", "Diet"], ["description", "You're a Diet superstar!"], ["user_id", 18], ["badge_image_link", "diet-badge.png"], ["created_at", "2015-12-15 19:09:54.317500"], ["updated_at", "2015-12-15 19:09:54.317500"]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "badges" ("name", "description", "user_id", "badge_image_link", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Hobbies"], ["description", "You're a Hobbies superstar!"], ["user_id", 18], ["badge_image_link", "hobbies-badge.png"], ["created_at", "2015-12-15 19:09:54.320053"], ["updated_at", "2015-12-15 19:09:54.320053"]]
+  [1m[35m (0.4ms)[0m  COMMIT
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "badges" ("name", "description", "user_id", "badge_image_link", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"  [["name", "Education"], ["description", "You're a Education superstar!"], ["user_id", 18], ["badge_image_link", "education-badge.png"], ["created_at", "2015-12-15 19:09:54.322756"], ["updated_at", "2015-12-15 19:09:54.322756"]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+Redirected to http://localhost:3000/users/18
+Completed 302 Found in 183ms (ActiveRecord: 23.7ms)
+
+
+Started GET "/users/18" for ::1 at 2015-12-15 11:09:54 -0800
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"18"}
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 18]]
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 18]]
+  Rendered layouts/_navigation.html.erb (1.2ms)
+  [1m[35mBadge Load (0.6ms)[0m  SELECT "badges".* FROM "badges" WHERE "badges"."user_id" = $1  ORDER BY "badges"."id" ASC  [["user_id", 18]]
+  [1m[36mFriendship Load (0.7ms)[0m  [1mSELECT "friendships".* FROM "friendships" WHERE "friendships"."user_id" = $1 AND "friendships"."accountabuddy" = $2[0m  [["user_id", 18], ["accountabuddy", "t"]]
+  [1m[35mAccountabuddyRequest Load (0.4ms)[0m  SELECT "accountabuddy_requests".* FROM "accountabuddy_requests" WHERE "accountabuddy_requests"."recipient_id" = $1  [["recipient_id", 18]]
+  [1m[36mFriendship Load (0.3ms)[0m  [1mSELECT "friendships".* FROM "friendships" WHERE "friendships"."user_id" = $1 AND "friendships"."accountabuddy" = $2[0m  [["user_id", 18], ["accountabuddy", "f"]]
+  [1m[35mFriendRequest Load (0.6ms)[0m  SELECT "friend_requests".* FROM "friend_requests" WHERE "friend_requests"."user_id" = $1 AND "friend_requests"."friends" = $2  [["user_id", 18], ["friends", "f"]]
+  [1m[36mFriendRequest Load (0.4ms)[0m  [1mSELECT "friend_requests".* FROM "friend_requests" WHERE "friend_requests"."recipient_id" = $1 AND "friend_requests"."friends" = $2[0m  [["recipient_id", 18], ["friends", "f"]]
+  Rendered users/show.html.erb within layouts/application (52.0ms)
+Completed 200 OK in 379ms (Views: 321.7ms | ActiveRecord: 8.4ms)
+
+
+Started GET "/logout" for ::1 at 2015-12-15 11:10:13 -0800
+Processing by SessionsController#destroy as HTML
+Redirected to http://localhost:3000/
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2015-12-15 11:10:13 -0800
+Processing by UsersController#index as HTML
+  Rendered users/_user_index_header.html.erb (0.3ms)
+  Rendered users/index.html.erb within layouts/application (27.2ms)
+Completed 200 OK in 289ms (Views: 288.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/signup" for ::1 at 2015-12-15 11:10:16 -0800
+Processing by UsersController#new as HTML
+  Rendered users/new.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 250ms (Views: 249.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/signup" for ::1 at 2015-12-15 11:11:43 -0800
+Processing by UsersController#new as HTML
+  Rendered users/new.html.erb within layouts/application (2.1ms)
+Completed 200 OK in 342ms (Views: 341.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/accountabuddy_requests.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-12-15 11:11:43 -0800
+
+
+Started GET "/assets/badges.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-12-15 11:11:43 -0800
+
+
+Started GET "/assets/curtain.self-928bfa886689b15bd31b09e76d8aced46c87f449904e48e704741702c11df316.css?body=1" for ::1 at 2015-12-15 11:11:43 -0800
+
+
+Started GET "/assets/categories.self-73a7ce4aabb5f9df39ea79190fcf3d82255e180c39399bb24101c132bf5cda0c.css?body=1" for ::1 at 2015-12-15 11:11:43 -0800
+
+
+Started GET "/assets/friend_requests.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-12-15 11:11:43 -0800
+
+
+Started GET "/assets/foundation_and_overrides.self-c3c39f50116a4bccd8a1cc38f1ace9e8cc5c1a84277983889437231b0d272cec.css?body=1" for ::1 at 2015-12-15 11:11:43 -0800
+
+
+Started GET "/assets/friendships.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-12-15 11:11:44 -0800
+
+
+Started GET "/assets/messages.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-12-15 11:11:44 -0800
+
+
+Started GET "/assets/maps.self-a0b79f9c07da57fe12d6866db226828f61234d06192e46bb6bbb4cc57d4646d5.css?body=1" for ::1 at 2015-12-15 11:11:44 -0800
+
+
+Started GET "/assets/sessions.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-12-15 11:11:44 -0800
+
+
+Started GET "/assets/user_categories.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-12-15 11:11:44 -0800
+
+
+Started GET "/assets/users.self-a2c7c262797be25e5171dc6d8c1f0be011aff22df93baed2a28539a232f7f852.css?body=1" for ::1 at 2015-12-15 11:11:44 -0800
+
+
+Started GET "/assets/application.self-a288552b8f3049270b1dfe038d6a3067580ba472708e9db48e02d6e80b6ffde8.css?body=1" for ::1 at 2015-12-15 11:11:44 -0800
+
+
+Started GET "/assets/vendor/modernizr.self-74da3245def7569da28115667be6a85a2ad97464abe707c9829c46d8975597bc.js?body=1" for ::1 at 2015-12-15 11:11:44 -0800
+
+
+Started GET "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1" for ::1 at 2015-12-15 11:11:44 -0800
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for ::1 at 2015-12-15 11:11:44 -0800
+
+
+Started GET "/assets/foundation/foundation.self-98616d4fb376f824aeb7c868e05e747b97176a864c7da854779ed398828df78f.js?body=1" for ::1 at 2015-12-15 11:11:44 -0800
+
+
+Started GET "/assets/foundation/foundation.abide.self-670a9b56e37b4b434f79686b8a9862222173d68ec823b20565340e0e87627ca4.js?body=1" for ::1 at 2015-12-15 11:11:44 -0800
+
+
+Started GET "/assets/foundation/foundation.accordion.self-02a179f7efde1facecf8a814cae32112c36800ce3d66bafc00c807a56d7b8d46.js?body=1" for ::1 at 2015-12-15 11:11:44 -0800
+
+
+Started GET "/assets/foundation/foundation.alert.self-631e4c4124bd543574c5a7f4d5d8b59fdf350f6c11d6201ba8a872e8a0f203b0.js?body=1" for ::1 at 2015-12-15 11:11:44 -0800
+
+
+Started GET "/assets/foundation/foundation.clearing.self-96397aa6b2d39ff61e9b4ce8486a9f716f9072f2011f1dc99f94a96b381b3830.js?body=1" for ::1 at 2015-12-15 11:11:44 -0800
+
+
+Started GET "/assets/foundation/foundation.dropdown.self-3e70f72040b183d09b673307b08d1d688a5572c6c8cbb222755945e70ccbb05e.js?body=1" for ::1 at 2015-12-15 11:11:44 -0800
+
+
+Started GET "/assets/foundation/foundation.equalizer.self-1889be5dfd0e56321a9a6d5fe9d4a94b04602c158f3e4d58419b967c255b999f.js?body=1" for ::1 at 2015-12-15 11:11:44 -0800
+
+
+Started GET "/assets/foundation/foundation.interchange.self-c6d033cdd9e7fd3f29c067eb7b9ee564f7a6b542650d2ca530ae1e3c529a3c35.js?body=1" for ::1 at 2015-12-15 11:11:44 -0800
+
+
+Started GET "/assets/foundation/foundation.joyride.self-1f6b19104e2439f1e4353444cb6fb9f7f308563556f167c2154ca3108eb7f77e.js?body=1" for ::1 at 2015-12-15 11:11:44 -0800
+
+
+Started GET "/assets/foundation/foundation.magellan.self-1fcf75780d5b4db5e97c267810e7c9a5e19a9f0d7b67a2d167074d7cff1d6a70.js?body=1" for ::1 at 2015-12-15 11:11:44 -0800
+
+
+Started GET "/assets/foundation/foundation.offcanvas.self-2f34a4b91e1e958aefbde46004d6186ee82e018fe95634214749799141339810.js?body=1" for ::1 at 2015-12-15 11:11:44 -0800
+
+
+Started GET "/assets/foundation/foundation.reveal.self-5a83316675f14b52f582d67c053ae7977827a5b06459d7e8f5556cbedfba1d0d.js?body=1" for ::1 at 2015-12-15 11:11:44 -0800
+
+
+Started GET "/assets/foundation/foundation.orbit.self-ba7d30fe424df83b5bc8bc5bb67ea90608759c6eb8212d1475d52b09db0bcd0f.js?body=1" for ::1 at 2015-12-15 11:11:44 -0800
+
+
+Started GET "/assets/foundation/foundation.slider.self-686e8b14e01aeb75ec0980de90956540d2b245324fc58e8c25debafc60300b96.js?body=1" for ::1 at 2015-12-15 11:11:44 -0800
+
+
+Started GET "/assets/foundation/foundation.tab.self-9b2bd1afa5715ce8f154fa008d0aab44500763e9b336a6d4e5bca96437176a74.js?body=1" for ::1 at 2015-12-15 11:11:44 -0800
+
+
+Started GET "/assets/foundation/foundation.tooltip.self-dae1db2297f90064e1a8ae7b02b175ca613cc6a2d190aaed548f6ef853f4b46d.js?body=1" for ::1 at 2015-12-15 11:11:44 -0800
+
+
+Started GET "/assets/foundation/foundation.topbar.self-fa6260890f9f59c821128d066bcfaa18665c816022bafd398d937c367d5e39b7.js?body=1" for ::1 at 2015-12-15 11:11:44 -0800
+
+
+Started GET "/assets/foundation.self-abe4ee7a105042f73b12b1f1a28788522d2f253445a475a94ab4d6e1f7b0ec52.js?body=1" for ::1 at 2015-12-15 11:11:44 -0800
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2015-12-15 11:11:44 -0800
+
+
+Started GET "/assets/accountabuddy_requests.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-12-15 11:11:44 -0800
+
+
+Started GET "/assets/badges.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-12-15 11:11:44 -0800
+
+
+Started GET "/assets/curtain.self-03cedba756c2ea28b832bb6cb8c319e5954ea1495621342287edfc1657932778.js?body=1" for ::1 at 2015-12-15 11:11:44 -0800
+
+
+Started GET "/assets/friend_requests.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-12-15 11:11:44 -0800
+
+
+Started GET "/assets/friendships.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-12-15 11:11:44 -0800
+
+
+Started GET "/assets/messages.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-12-15 11:11:44 -0800
+
+
+Started GET "/assets/scroll_up.self-c3b7cbf89f2df9e2397e11ac3708fffb90c66ae2a5139623696d21e0d7ef68aa.js?body=1" for ::1 at 2015-12-15 11:11:44 -0800
+
+
+Started GET "/assets/user_categories.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-12-15 11:11:44 -0800
+
+
+Started GET "/assets/sessions.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-12-15 11:11:44 -0800
+
+
+Started GET "/assets/users.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-12-15 11:11:44 -0800
+
+
+Started GET "/assets/application.self-97f54d65508d098cfa48e5c36f583b6202b332a240a4ac40cb3e2a8cd301a5eb.js?body=1" for ::1 at 2015-12-15 11:11:44 -0800
+
+
+Started GET "/signup" for ::1 at 2015-12-15 11:12:29 -0800
+Processing by UsersController#new as HTML
+  Rendered users/new.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 271ms (Views: 270.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/accountabuddy_requests.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-12-15 11:12:29 -0800
+
+
+Started GET "/assets/badges.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-12-15 11:12:29 -0800
+
+
+Started GET "/assets/categories.self-73a7ce4aabb5f9df39ea79190fcf3d82255e180c39399bb24101c132bf5cda0c.css?body=1" for ::1 at 2015-12-15 11:12:29 -0800
+
+
+Started GET "/assets/curtain.self-928bfa886689b15bd31b09e76d8aced46c87f449904e48e704741702c11df316.css?body=1" for ::1 at 2015-12-15 11:12:29 -0800
+
+
+Started GET "/assets/foundation_and_overrides.self-c3c39f50116a4bccd8a1cc38f1ace9e8cc5c1a84277983889437231b0d272cec.css?body=1" for ::1 at 2015-12-15 11:12:29 -0800
+
+
+Started GET "/assets/friend_requests.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-12-15 11:12:29 -0800
+
+
+Started GET "/assets/friendships.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-12-15 11:12:29 -0800
+
+
+Started GET "/assets/maps.self-a0b79f9c07da57fe12d6866db226828f61234d06192e46bb6bbb4cc57d4646d5.css?body=1" for ::1 at 2015-12-15 11:12:29 -0800
+
+
+Started GET "/assets/messages.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-12-15 11:12:30 -0800
+
+
+Started GET "/assets/sessions.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-12-15 11:12:30 -0800
+
+
+Started GET "/assets/user_categories.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-12-15 11:12:30 -0800
+
+
+Started GET "/assets/users.self-a2c7c262797be25e5171dc6d8c1f0be011aff22df93baed2a28539a232f7f852.css?body=1" for ::1 at 2015-12-15 11:12:30 -0800
+
+
+Started GET "/assets/application.self-a288552b8f3049270b1dfe038d6a3067580ba472708e9db48e02d6e80b6ffde8.css?body=1" for ::1 at 2015-12-15 11:12:30 -0800
+
+
+Started GET "/assets/vendor/modernizr.self-74da3245def7569da28115667be6a85a2ad97464abe707c9829c46d8975597bc.js?body=1" for ::1 at 2015-12-15 11:12:30 -0800
+
+
+Started GET "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1" for ::1 at 2015-12-15 11:12:30 -0800
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for ::1 at 2015-12-15 11:12:30 -0800
+
+
+Started GET "/assets/foundation/foundation.self-98616d4fb376f824aeb7c868e05e747b97176a864c7da854779ed398828df78f.js?body=1" for ::1 at 2015-12-15 11:12:30 -0800
+
+
+Started GET "/assets/foundation/foundation.abide.self-670a9b56e37b4b434f79686b8a9862222173d68ec823b20565340e0e87627ca4.js?body=1" for ::1 at 2015-12-15 11:12:30 -0800
+
+
+Started GET "/assets/foundation/foundation.accordion.self-02a179f7efde1facecf8a814cae32112c36800ce3d66bafc00c807a56d7b8d46.js?body=1" for ::1 at 2015-12-15 11:12:30 -0800
+
+
+Started GET "/assets/foundation/foundation.alert.self-631e4c4124bd543574c5a7f4d5d8b59fdf350f6c11d6201ba8a872e8a0f203b0.js?body=1" for ::1 at 2015-12-15 11:12:30 -0800
+
+
+Started GET "/assets/foundation/foundation.clearing.self-96397aa6b2d39ff61e9b4ce8486a9f716f9072f2011f1dc99f94a96b381b3830.js?body=1" for ::1 at 2015-12-15 11:12:30 -0800
+
+
+Started GET "/assets/foundation/foundation.dropdown.self-3e70f72040b183d09b673307b08d1d688a5572c6c8cbb222755945e70ccbb05e.js?body=1" for ::1 at 2015-12-15 11:12:30 -0800
+
+
+Started GET "/assets/foundation/foundation.equalizer.self-1889be5dfd0e56321a9a6d5fe9d4a94b04602c158f3e4d58419b967c255b999f.js?body=1" for ::1 at 2015-12-15 11:12:30 -0800
+
+
+Started GET "/assets/foundation/foundation.interchange.self-c6d033cdd9e7fd3f29c067eb7b9ee564f7a6b542650d2ca530ae1e3c529a3c35.js?body=1" for ::1 at 2015-12-15 11:12:30 -0800
+
+
+Started GET "/assets/foundation/foundation.joyride.self-1f6b19104e2439f1e4353444cb6fb9f7f308563556f167c2154ca3108eb7f77e.js?body=1" for ::1 at 2015-12-15 11:12:30 -0800
+
+
+Started GET "/assets/foundation/foundation.magellan.self-1fcf75780d5b4db5e97c267810e7c9a5e19a9f0d7b67a2d167074d7cff1d6a70.js?body=1" for ::1 at 2015-12-15 11:12:30 -0800
+
+
+Started GET "/assets/foundation/foundation.offcanvas.self-2f34a4b91e1e958aefbde46004d6186ee82e018fe95634214749799141339810.js?body=1" for ::1 at 2015-12-15 11:12:30 -0800
+
+
+Started GET "/assets/foundation/foundation.orbit.self-ba7d30fe424df83b5bc8bc5bb67ea90608759c6eb8212d1475d52b09db0bcd0f.js?body=1" for ::1 at 2015-12-15 11:12:30 -0800
+
+
+Started GET "/assets/foundation/foundation.reveal.self-5a83316675f14b52f582d67c053ae7977827a5b06459d7e8f5556cbedfba1d0d.js?body=1" for ::1 at 2015-12-15 11:12:30 -0800
+
+
+Started GET "/assets/foundation/foundation.slider.self-686e8b14e01aeb75ec0980de90956540d2b245324fc58e8c25debafc60300b96.js?body=1" for ::1 at 2015-12-15 11:12:30 -0800
+
+
+Started GET "/assets/foundation/foundation.tab.self-9b2bd1afa5715ce8f154fa008d0aab44500763e9b336a6d4e5bca96437176a74.js?body=1" for ::1 at 2015-12-15 11:12:30 -0800
+
+
+Started GET "/assets/foundation/foundation.tooltip.self-dae1db2297f90064e1a8ae7b02b175ca613cc6a2d190aaed548f6ef853f4b46d.js?body=1" for ::1 at 2015-12-15 11:12:30 -0800
+
+
+Started GET "/assets/foundation/foundation.topbar.self-fa6260890f9f59c821128d066bcfaa18665c816022bafd398d937c367d5e39b7.js?body=1" for ::1 at 2015-12-15 11:12:30 -0800
+
+
+Started GET "/assets/foundation.self-abe4ee7a105042f73b12b1f1a28788522d2f253445a475a94ab4d6e1f7b0ec52.js?body=1" for ::1 at 2015-12-15 11:12:30 -0800
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2015-12-15 11:12:30 -0800
+
+
+Started GET "/assets/accountabuddy_requests.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-12-15 11:12:30 -0800
+
+
+Started GET "/assets/badges.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-12-15 11:12:30 -0800
+
+
+Started GET "/assets/curtain.self-03cedba756c2ea28b832bb6cb8c319e5954ea1495621342287edfc1657932778.js?body=1" for ::1 at 2015-12-15 11:12:30 -0800
+
+
+Started GET "/assets/friend_requests.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-12-15 11:12:30 -0800
+
+
+Started GET "/assets/friendships.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-12-15 11:12:30 -0800
+
+
+Started GET "/assets/messages.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-12-15 11:12:30 -0800
+
+
+Started GET "/assets/scroll_up.self-c3b7cbf89f2df9e2397e11ac3708fffb90c66ae2a5139623696d21e0d7ef68aa.js?body=1" for ::1 at 2015-12-15 11:12:30 -0800
+
+
+Started GET "/assets/sessions.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-12-15 11:12:30 -0800
+
+
+Started GET "/assets/users.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-12-15 11:12:30 -0800
+
+
+Started GET "/assets/user_categories.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-12-15 11:12:30 -0800
+
+
+Started GET "/assets/application.self-26c774a11f164068671a1e413e203e35839f68ec821f540bb8726eb44e28a75e.js?body=1" for ::1 at 2015-12-15 11:12:30 -0800
+
+
+Started GET "/signup" for ::1 at 2015-12-15 11:15:07 -0800
+Processing by UsersController#new as HTML
+  Rendered users/new.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 463ms (Views: 462.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/accountabuddy_requests.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-12-15 11:15:08 -0800
+
+
+Started GET "/assets/badges.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-12-15 11:15:08 -0800
+
+
+Started GET "/assets/categories.self-73a7ce4aabb5f9df39ea79190fcf3d82255e180c39399bb24101c132bf5cda0c.css?body=1" for ::1 at 2015-12-15 11:15:08 -0800
+
+
+Started GET "/assets/curtain.self-928bfa886689b15bd31b09e76d8aced46c87f449904e48e704741702c11df316.css?body=1" for ::1 at 2015-12-15 11:15:08 -0800
+
+
+Started GET "/assets/foundation_and_overrides.self-c3c39f50116a4bccd8a1cc38f1ace9e8cc5c1a84277983889437231b0d272cec.css?body=1" for ::1 at 2015-12-15 11:15:08 -0800
+
+
+Started GET "/assets/friend_requests.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-12-15 11:15:08 -0800
+
+
+Started GET "/assets/friendships.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-12-15 11:15:08 -0800
+
+
+Started GET "/assets/maps.self-a0b79f9c07da57fe12d6866db226828f61234d06192e46bb6bbb4cc57d4646d5.css?body=1" for ::1 at 2015-12-15 11:15:08 -0800
+
+
+Started GET "/assets/messages.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-12-15 11:15:08 -0800
+
+
+Started GET "/assets/sessions.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-12-15 11:15:08 -0800
+
+
+Started GET "/assets/user_categories.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-12-15 11:15:08 -0800
+
+
+Started GET "/assets/users.self-a2c7c262797be25e5171dc6d8c1f0be011aff22df93baed2a28539a232f7f852.css?body=1" for ::1 at 2015-12-15 11:15:08 -0800
+
+
+Started GET "/assets/application.self-a288552b8f3049270b1dfe038d6a3067580ba472708e9db48e02d6e80b6ffde8.css?body=1" for ::1 at 2015-12-15 11:15:08 -0800
+
+
+Started GET "/assets/vendor/modernizr.self-74da3245def7569da28115667be6a85a2ad97464abe707c9829c46d8975597bc.js?body=1" for ::1 at 2015-12-15 11:15:08 -0800
+
+
+Started GET "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1" for ::1 at 2015-12-15 11:15:08 -0800
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for ::1 at 2015-12-15 11:15:08 -0800
+
+
+Started GET "/assets/foundation/foundation.self-98616d4fb376f824aeb7c868e05e747b97176a864c7da854779ed398828df78f.js?body=1" for ::1 at 2015-12-15 11:15:08 -0800
+
+
+Started GET "/assets/foundation/foundation.abide.self-670a9b56e37b4b434f79686b8a9862222173d68ec823b20565340e0e87627ca4.js?body=1" for ::1 at 2015-12-15 11:15:08 -0800
+
+
+Started GET "/assets/foundation/foundation.accordion.self-02a179f7efde1facecf8a814cae32112c36800ce3d66bafc00c807a56d7b8d46.js?body=1" for ::1 at 2015-12-15 11:15:08 -0800
+
+
+Started GET "/assets/foundation/foundation.alert.self-631e4c4124bd543574c5a7f4d5d8b59fdf350f6c11d6201ba8a872e8a0f203b0.js?body=1" for ::1 at 2015-12-15 11:15:08 -0800
+
+
+Started GET "/assets/foundation/foundation.clearing.self-96397aa6b2d39ff61e9b4ce8486a9f716f9072f2011f1dc99f94a96b381b3830.js?body=1" for ::1 at 2015-12-15 11:15:08 -0800
+
+
+Started GET "/assets/foundation/foundation.dropdown.self-3e70f72040b183d09b673307b08d1d688a5572c6c8cbb222755945e70ccbb05e.js?body=1" for ::1 at 2015-12-15 11:15:08 -0800
+
+
+Started GET "/assets/foundation/foundation.equalizer.self-1889be5dfd0e56321a9a6d5fe9d4a94b04602c158f3e4d58419b967c255b999f.js?body=1" for ::1 at 2015-12-15 11:15:08 -0800
+
+
+Started GET "/assets/foundation/foundation.interchange.self-c6d033cdd9e7fd3f29c067eb7b9ee564f7a6b542650d2ca530ae1e3c529a3c35.js?body=1" for ::1 at 2015-12-15 11:15:08 -0800
+
+
+Started GET "/assets/foundation/foundation.joyride.self-1f6b19104e2439f1e4353444cb6fb9f7f308563556f167c2154ca3108eb7f77e.js?body=1" for ::1 at 2015-12-15 11:15:08 -0800
+
+
+Started GET "/assets/foundation/foundation.magellan.self-1fcf75780d5b4db5e97c267810e7c9a5e19a9f0d7b67a2d167074d7cff1d6a70.js?body=1" for ::1 at 2015-12-15 11:15:08 -0800
+
+
+Started GET "/assets/foundation/foundation.offcanvas.self-2f34a4b91e1e958aefbde46004d6186ee82e018fe95634214749799141339810.js?body=1" for ::1 at 2015-12-15 11:15:08 -0800
+
+
+Started GET "/assets/foundation/foundation.orbit.self-ba7d30fe424df83b5bc8bc5bb67ea90608759c6eb8212d1475d52b09db0bcd0f.js?body=1" for ::1 at 2015-12-15 11:15:08 -0800
+
+
+Started GET "/assets/foundation/foundation.reveal.self-5a83316675f14b52f582d67c053ae7977827a5b06459d7e8f5556cbedfba1d0d.js?body=1" for ::1 at 2015-12-15 11:15:08 -0800
+
+
+Started GET "/assets/foundation/foundation.slider.self-686e8b14e01aeb75ec0980de90956540d2b245324fc58e8c25debafc60300b96.js?body=1" for ::1 at 2015-12-15 11:15:08 -0800
+
+
+Started GET "/assets/foundation/foundation.tab.self-9b2bd1afa5715ce8f154fa008d0aab44500763e9b336a6d4e5bca96437176a74.js?body=1" for ::1 at 2015-12-15 11:15:08 -0800
+
+
+Started GET "/assets/foundation/foundation.tooltip.self-dae1db2297f90064e1a8ae7b02b175ca613cc6a2d190aaed548f6ef853f4b46d.js?body=1" for ::1 at 2015-12-15 11:15:08 -0800
+
+
+Started GET "/assets/foundation/foundation.topbar.self-fa6260890f9f59c821128d066bcfaa18665c816022bafd398d937c367d5e39b7.js?body=1" for ::1 at 2015-12-15 11:15:08 -0800
+
+
+Started GET "/assets/foundation.self-abe4ee7a105042f73b12b1f1a28788522d2f253445a475a94ab4d6e1f7b0ec52.js?body=1" for ::1 at 2015-12-15 11:15:08 -0800
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2015-12-15 11:15:08 -0800
+
+
+Started GET "/assets/accountabuddy_requests.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-12-15 11:15:08 -0800
+
+
+Started GET "/assets/badges.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-12-15 11:15:08 -0800
+
+
+Started GET "/assets/curtain.self-03cedba756c2ea28b832bb6cb8c319e5954ea1495621342287edfc1657932778.js?body=1" for ::1 at 2015-12-15 11:15:08 -0800
+
+
+Started GET "/assets/friend_requests.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-12-15 11:15:08 -0800
+
+
+Started GET "/assets/friendships.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-12-15 11:15:08 -0800
+
+
+Started GET "/assets/scroll_up.self-c3b7cbf89f2df9e2397e11ac3708fffb90c66ae2a5139623696d21e0d7ef68aa.js?body=1" for ::1 at 2015-12-15 11:15:08 -0800
+
+
+Started GET "/assets/messages.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-12-15 11:15:08 -0800
+
+
+Started GET "/assets/user_categories.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-12-15 11:15:08 -0800
+
+
+Started GET "/assets/sessions.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-12-15 11:15:08 -0800
+
+
+Started GET "/assets/users.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-12-15 11:15:08 -0800
+
+
+Started GET "/assets/application.self-1ae33fb892190188fbf4837dba7c2c160fac8e23ff4801bec6636827fec50b61.js?body=1" for ::1 at 2015-12-15 11:15:08 -0800
+
+
+Started GET "/signup" for ::1 at 2015-12-15 11:15:17 -0800
+Processing by UsersController#new as HTML
+  Rendered users/new.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 255ms (Views: 254.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/badges.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-12-15 11:15:18 -0800
+
+
+Started GET "/assets/friend_requests.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-12-15 11:15:18 -0800
+
+
+Started GET "/assets/curtain.self-928bfa886689b15bd31b09e76d8aced46c87f449904e48e704741702c11df316.css?body=1" for ::1 at 2015-12-15 11:15:18 -0800
+
+
+Started GET "/assets/accountabuddy_requests.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-12-15 11:15:18 -0800
+
+
+Started GET "/assets/foundation_and_overrides.self-c3c39f50116a4bccd8a1cc38f1ace9e8cc5c1a84277983889437231b0d272cec.css?body=1" for ::1 at 2015-12-15 11:15:18 -0800
+
+
+Started GET "/assets/categories.self-73a7ce4aabb5f9df39ea79190fcf3d82255e180c39399bb24101c132bf5cda0c.css?body=1" for ::1 at 2015-12-15 11:15:18 -0800
+
+
+Started GET "/assets/friendships.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-12-15 11:15:18 -0800
+
+
+Started GET "/assets/maps.self-a0b79f9c07da57fe12d6866db226828f61234d06192e46bb6bbb4cc57d4646d5.css?body=1" for ::1 at 2015-12-15 11:15:18 -0800
+
+
+Started GET "/assets/sessions.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-12-15 11:15:18 -0800
+
+
+Started GET "/assets/messages.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-12-15 11:15:18 -0800
+
+
+Started GET "/assets/users.self-a2c7c262797be25e5171dc6d8c1f0be011aff22df93baed2a28539a232f7f852.css?body=1" for ::1 at 2015-12-15 11:15:18 -0800
+
+
+Started GET "/assets/user_categories.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-12-15 11:15:18 -0800
+
+
+Started GET "/assets/application.self-a288552b8f3049270b1dfe038d6a3067580ba472708e9db48e02d6e80b6ffde8.css?body=1" for ::1 at 2015-12-15 11:15:18 -0800
+
+
+Started GET "/assets/vendor/modernizr.self-74da3245def7569da28115667be6a85a2ad97464abe707c9829c46d8975597bc.js?body=1" for ::1 at 2015-12-15 11:15:18 -0800
+
+
+Started GET "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1" for ::1 at 2015-12-15 11:15:18 -0800
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for ::1 at 2015-12-15 11:15:18 -0800
+
+
+Started GET "/assets/foundation/foundation.self-98616d4fb376f824aeb7c868e05e747b97176a864c7da854779ed398828df78f.js?body=1" for ::1 at 2015-12-15 11:15:18 -0800
+
+
+Started GET "/assets/foundation/foundation.abide.self-670a9b56e37b4b434f79686b8a9862222173d68ec823b20565340e0e87627ca4.js?body=1" for ::1 at 2015-12-15 11:15:18 -0800
+
+
+Started GET "/assets/foundation/foundation.accordion.self-02a179f7efde1facecf8a814cae32112c36800ce3d66bafc00c807a56d7b8d46.js?body=1" for ::1 at 2015-12-15 11:15:18 -0800
+
+
+Started GET "/assets/foundation/foundation.alert.self-631e4c4124bd543574c5a7f4d5d8b59fdf350f6c11d6201ba8a872e8a0f203b0.js?body=1" for ::1 at 2015-12-15 11:15:18 -0800
+
+
+Started GET "/assets/foundation/foundation.clearing.self-96397aa6b2d39ff61e9b4ce8486a9f716f9072f2011f1dc99f94a96b381b3830.js?body=1" for ::1 at 2015-12-15 11:15:18 -0800
+
+
+Started GET "/assets/foundation/foundation.dropdown.self-3e70f72040b183d09b673307b08d1d688a5572c6c8cbb222755945e70ccbb05e.js?body=1" for ::1 at 2015-12-15 11:15:18 -0800
+
+
+Started GET "/assets/foundation/foundation.equalizer.self-1889be5dfd0e56321a9a6d5fe9d4a94b04602c158f3e4d58419b967c255b999f.js?body=1" for ::1 at 2015-12-15 11:15:18 -0800
+
+
+Started GET "/assets/foundation/foundation.interchange.self-c6d033cdd9e7fd3f29c067eb7b9ee564f7a6b542650d2ca530ae1e3c529a3c35.js?body=1" for ::1 at 2015-12-15 11:15:18 -0800
+
+
+Started GET "/assets/foundation/foundation.joyride.self-1f6b19104e2439f1e4353444cb6fb9f7f308563556f167c2154ca3108eb7f77e.js?body=1" for ::1 at 2015-12-15 11:15:18 -0800
+
+
+Started GET "/assets/foundation/foundation.magellan.self-1fcf75780d5b4db5e97c267810e7c9a5e19a9f0d7b67a2d167074d7cff1d6a70.js?body=1" for ::1 at 2015-12-15 11:15:18 -0800
+
+
+Started GET "/assets/foundation/foundation.offcanvas.self-2f34a4b91e1e958aefbde46004d6186ee82e018fe95634214749799141339810.js?body=1" for ::1 at 2015-12-15 11:15:18 -0800
+
+
+Started GET "/assets/foundation/foundation.orbit.self-ba7d30fe424df83b5bc8bc5bb67ea90608759c6eb8212d1475d52b09db0bcd0f.js?body=1" for ::1 at 2015-12-15 11:15:18 -0800
+
+
+Started GET "/assets/foundation/foundation.reveal.self-5a83316675f14b52f582d67c053ae7977827a5b06459d7e8f5556cbedfba1d0d.js?body=1" for ::1 at 2015-12-15 11:15:18 -0800
+
+
+Started GET "/assets/foundation/foundation.slider.self-686e8b14e01aeb75ec0980de90956540d2b245324fc58e8c25debafc60300b96.js?body=1" for ::1 at 2015-12-15 11:15:18 -0800
+
+
+Started GET "/assets/foundation/foundation.tab.self-9b2bd1afa5715ce8f154fa008d0aab44500763e9b336a6d4e5bca96437176a74.js?body=1" for ::1 at 2015-12-15 11:15:18 -0800
+
+
+Started GET "/assets/foundation/foundation.tooltip.self-dae1db2297f90064e1a8ae7b02b175ca613cc6a2d190aaed548f6ef853f4b46d.js?body=1" for ::1 at 2015-12-15 11:15:18 -0800
+
+
+Started GET "/assets/foundation/foundation.topbar.self-fa6260890f9f59c821128d066bcfaa18665c816022bafd398d937c367d5e39b7.js?body=1" for ::1 at 2015-12-15 11:15:18 -0800
+
+
+Started GET "/assets/foundation.self-abe4ee7a105042f73b12b1f1a28788522d2f253445a475a94ab4d6e1f7b0ec52.js?body=1" for ::1 at 2015-12-15 11:15:18 -0800
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2015-12-15 11:15:18 -0800
+
+
+Started GET "/assets/accountabuddy_requests.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-12-15 11:15:18 -0800
+
+
+Started GET "/assets/badges.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-12-15 11:15:18 -0800
+
+
+Started GET "/assets/curtain.self-03cedba756c2ea28b832bb6cb8c319e5954ea1495621342287edfc1657932778.js?body=1" for ::1 at 2015-12-15 11:15:18 -0800
+
+
+Started GET "/assets/friend_requests.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-12-15 11:15:18 -0800
+
+
+Started GET "/assets/friendships.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-12-15 11:15:18 -0800
+
+
+Started GET "/assets/messages.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-12-15 11:15:18 -0800
+
+
+Started GET "/assets/sessions.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-12-15 11:15:18 -0800
+
+
+Started GET "/assets/user_categories.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-12-15 11:15:18 -0800
+
+
+Started GET "/assets/users.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-12-15 11:15:18 -0800
+
+
+Started GET "/assets/scroll_up.self-c3b7cbf89f2df9e2397e11ac3708fffb90c66ae2a5139623696d21e0d7ef68aa.js?body=1" for ::1 at 2015-12-15 11:15:18 -0800
+
+
+Started GET "/assets/application.self-1ae33fb892190188fbf4837dba7c2c160fac8e23ff4801bec6636827fec50b61.js?body=1" for ::1 at 2015-12-15 11:15:18 -0800
+
+
+Started GET "/signup" for ::1 at 2015-12-15 11:16:36 -0800
+Processing by UsersController#new as HTML
+  Rendered users/new.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 453ms (Views: 452.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/accountabuddy_requests.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-12-15 11:16:36 -0800
+
+
+Started GET "/assets/badges.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-12-15 11:16:36 -0800
+
+
+Started GET "/assets/foundation_and_overrides.self-c3c39f50116a4bccd8a1cc38f1ace9e8cc5c1a84277983889437231b0d272cec.css?body=1" for ::1 at 2015-12-15 11:16:36 -0800
+
+
+Started GET "/assets/curtain.self-928bfa886689b15bd31b09e76d8aced46c87f449904e48e704741702c11df316.css?body=1" for ::1 at 2015-12-15 11:16:36 -0800
+
+
+Started GET "/assets/categories.self-73a7ce4aabb5f9df39ea79190fcf3d82255e180c39399bb24101c132bf5cda0c.css?body=1" for ::1 at 2015-12-15 11:16:36 -0800
+
+
+Started GET "/assets/friend_requests.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-12-15 11:16:36 -0800
+
+
+Started GET "/assets/friendships.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-12-15 11:16:36 -0800
+
+
+Started GET "/assets/sessions.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-12-15 11:16:36 -0800
+
+
+Started GET "/assets/maps.self-a0b79f9c07da57fe12d6866db226828f61234d06192e46bb6bbb4cc57d4646d5.css?body=1" for ::1 at 2015-12-15 11:16:36 -0800
+
+
+Started GET "/assets/user_categories.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-12-15 11:16:36 -0800
+
+
+Started GET "/assets/messages.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-12-15 11:16:36 -0800
+
+
+Started GET "/assets/users.self-a2c7c262797be25e5171dc6d8c1f0be011aff22df93baed2a28539a232f7f852.css?body=1" for ::1 at 2015-12-15 11:16:36 -0800
+
+
+Started GET "/assets/application.self-a288552b8f3049270b1dfe038d6a3067580ba472708e9db48e02d6e80b6ffde8.css?body=1" for ::1 at 2015-12-15 11:16:36 -0800
+
+
+Started GET "/assets/vendor/modernizr.self-74da3245def7569da28115667be6a85a2ad97464abe707c9829c46d8975597bc.js?body=1" for ::1 at 2015-12-15 11:16:36 -0800
+
+
+Started GET "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1" for ::1 at 2015-12-15 11:16:36 -0800
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for ::1 at 2015-12-15 11:16:37 -0800
+
+
+Started GET "/assets/foundation/foundation.self-98616d4fb376f824aeb7c868e05e747b97176a864c7da854779ed398828df78f.js?body=1" for ::1 at 2015-12-15 11:16:37 -0800
+
+
+Started GET "/assets/foundation/foundation.abide.self-670a9b56e37b4b434f79686b8a9862222173d68ec823b20565340e0e87627ca4.js?body=1" for ::1 at 2015-12-15 11:16:37 -0800
+
+
+Started GET "/assets/foundation/foundation.accordion.self-02a179f7efde1facecf8a814cae32112c36800ce3d66bafc00c807a56d7b8d46.js?body=1" for ::1 at 2015-12-15 11:16:37 -0800
+
+
+Started GET "/assets/foundation/foundation.alert.self-631e4c4124bd543574c5a7f4d5d8b59fdf350f6c11d6201ba8a872e8a0f203b0.js?body=1" for ::1 at 2015-12-15 11:16:37 -0800
+
+
+Started GET "/assets/foundation/foundation.clearing.self-96397aa6b2d39ff61e9b4ce8486a9f716f9072f2011f1dc99f94a96b381b3830.js?body=1" for ::1 at 2015-12-15 11:16:37 -0800
+
+
+Started GET "/assets/foundation/foundation.dropdown.self-3e70f72040b183d09b673307b08d1d688a5572c6c8cbb222755945e70ccbb05e.js?body=1" for ::1 at 2015-12-15 11:16:37 -0800
+
+
+Started GET "/assets/foundation/foundation.equalizer.self-1889be5dfd0e56321a9a6d5fe9d4a94b04602c158f3e4d58419b967c255b999f.js?body=1" for ::1 at 2015-12-15 11:16:37 -0800
+
+
+Started GET "/assets/foundation/foundation.interchange.self-c6d033cdd9e7fd3f29c067eb7b9ee564f7a6b542650d2ca530ae1e3c529a3c35.js?body=1" for ::1 at 2015-12-15 11:16:37 -0800
+
+
+Started GET "/assets/foundation/foundation.joyride.self-1f6b19104e2439f1e4353444cb6fb9f7f308563556f167c2154ca3108eb7f77e.js?body=1" for ::1 at 2015-12-15 11:16:37 -0800
+
+
+Started GET "/assets/foundation/foundation.magellan.self-1fcf75780d5b4db5e97c267810e7c9a5e19a9f0d7b67a2d167074d7cff1d6a70.js?body=1" for ::1 at 2015-12-15 11:16:37 -0800
+
+
+Started GET "/assets/foundation/foundation.offcanvas.self-2f34a4b91e1e958aefbde46004d6186ee82e018fe95634214749799141339810.js?body=1" for ::1 at 2015-12-15 11:16:37 -0800
+
+
+Started GET "/assets/foundation/foundation.orbit.self-ba7d30fe424df83b5bc8bc5bb67ea90608759c6eb8212d1475d52b09db0bcd0f.js?body=1" for ::1 at 2015-12-15 11:16:37 -0800
+
+
+Started GET "/assets/foundation/foundation.reveal.self-5a83316675f14b52f582d67c053ae7977827a5b06459d7e8f5556cbedfba1d0d.js?body=1" for ::1 at 2015-12-15 11:16:37 -0800
+
+
+Started GET "/assets/foundation/foundation.slider.self-686e8b14e01aeb75ec0980de90956540d2b245324fc58e8c25debafc60300b96.js?body=1" for ::1 at 2015-12-15 11:16:37 -0800
+
+
+Started GET "/assets/foundation/foundation.tab.self-9b2bd1afa5715ce8f154fa008d0aab44500763e9b336a6d4e5bca96437176a74.js?body=1" for ::1 at 2015-12-15 11:16:37 -0800
+
+
+Started GET "/assets/foundation/foundation.tooltip.self-dae1db2297f90064e1a8ae7b02b175ca613cc6a2d190aaed548f6ef853f4b46d.js?body=1" for ::1 at 2015-12-15 11:16:37 -0800
+
+
+Started GET "/assets/foundation/foundation.topbar.self-fa6260890f9f59c821128d066bcfaa18665c816022bafd398d937c367d5e39b7.js?body=1" for ::1 at 2015-12-15 11:16:37 -0800
+
+
+Started GET "/assets/foundation.self-abe4ee7a105042f73b12b1f1a28788522d2f253445a475a94ab4d6e1f7b0ec52.js?body=1" for ::1 at 2015-12-15 11:16:37 -0800
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2015-12-15 11:16:37 -0800
+
+
+Started GET "/assets/accountabuddy_requests.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-12-15 11:16:37 -0800
+
+
+Started GET "/assets/badges.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-12-15 11:16:37 -0800
+
+
+Started GET "/assets/curtain.self-03cedba756c2ea28b832bb6cb8c319e5954ea1495621342287edfc1657932778.js?body=1" for ::1 at 2015-12-15 11:16:37 -0800
+
+
+Started GET "/assets/friend_requests.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-12-15 11:16:37 -0800
+
+
+Started GET "/assets/friendships.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-12-15 11:16:37 -0800
+
+
+Started GET "/assets/messages.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-12-15 11:16:37 -0800
+
+
+Started GET "/assets/scroll_up.self-c3b7cbf89f2df9e2397e11ac3708fffb90c66ae2a5139623696d21e0d7ef68aa.js?body=1" for ::1 at 2015-12-15 11:16:37 -0800
+
+
+Started GET "/assets/sessions.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-12-15 11:16:37 -0800
+
+
+Started GET "/assets/user_categories.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-12-15 11:16:37 -0800
+
+
+Started GET "/assets/users.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-12-15 11:16:37 -0800
+
+
+Started GET "/assets/application.self-c0b5ab9c6742f7d2621dae717ba378e1affacf1d212439355cd2b39599494b7d.js?body=1" for ::1 at 2015-12-15 11:16:37 -0800
+
+
+Started GET "/signup" for ::1 at 2015-12-15 11:23:05 -0800
+Processing by UsersController#new as HTML
+  Rendered users/new.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 460ms (Views: 458.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/categories.self-73a7ce4aabb5f9df39ea79190fcf3d82255e180c39399bb24101c132bf5cda0c.css?body=1" for ::1 at 2015-12-15 11:23:06 -0800
+
+
+Started GET "/assets/badges.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-12-15 11:23:06 -0800
+
+
+Started GET "/assets/accountabuddy_requests.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-12-15 11:23:06 -0800
+
+
+Started GET "/assets/friendships.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-12-15 11:23:06 -0800
+
+
+Started GET "/assets/maps.self-a0b79f9c07da57fe12d6866db226828f61234d06192e46bb6bbb4cc57d4646d5.css?body=1" for ::1 at 2015-12-15 11:23:06 -0800
+
+
+Started GET "/assets/curtain.self-928bfa886689b15bd31b09e76d8aced46c87f449904e48e704741702c11df316.css?body=1" for ::1 at 2015-12-15 11:23:06 -0800
+
+
+Started GET "/assets/foundation_and_overrides.self-c3c39f50116a4bccd8a1cc38f1ace9e8cc5c1a84277983889437231b0d272cec.css?body=1" for ::1 at 2015-12-15 11:23:06 -0800
+
+
+Started GET "/assets/messages.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-12-15 11:23:06 -0800
+
+
+Started GET "/assets/friend_requests.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-12-15 11:23:06 -0800
+
+
+Started GET "/assets/sessions.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-12-15 11:23:06 -0800
+
+
+Started GET "/assets/user_categories.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-12-15 11:23:06 -0800
+
+
+Started GET "/assets/users.self-a2c7c262797be25e5171dc6d8c1f0be011aff22df93baed2a28539a232f7f852.css?body=1" for ::1 at 2015-12-15 11:23:06 -0800
+
+
+Started GET "/assets/application.self-a288552b8f3049270b1dfe038d6a3067580ba472708e9db48e02d6e80b6ffde8.css?body=1" for ::1 at 2015-12-15 11:23:06 -0800
+
+
+Started GET "/assets/vendor/modernizr.self-74da3245def7569da28115667be6a85a2ad97464abe707c9829c46d8975597bc.js?body=1" for ::1 at 2015-12-15 11:23:06 -0800
+
+
+Started GET "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1" for ::1 at 2015-12-15 11:23:06 -0800
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for ::1 at 2015-12-15 11:23:06 -0800
+
+
+Started GET "/assets/foundation/foundation.self-98616d4fb376f824aeb7c868e05e747b97176a864c7da854779ed398828df78f.js?body=1" for ::1 at 2015-12-15 11:23:06 -0800
+
+
+Started GET "/assets/foundation/foundation.abide.self-670a9b56e37b4b434f79686b8a9862222173d68ec823b20565340e0e87627ca4.js?body=1" for ::1 at 2015-12-15 11:23:06 -0800
+
+
+Started GET "/assets/foundation/foundation.accordion.self-02a179f7efde1facecf8a814cae32112c36800ce3d66bafc00c807a56d7b8d46.js?body=1" for ::1 at 2015-12-15 11:23:06 -0800
+
+
+Started GET "/assets/foundation/foundation.alert.self-631e4c4124bd543574c5a7f4d5d8b59fdf350f6c11d6201ba8a872e8a0f203b0.js?body=1" for ::1 at 2015-12-15 11:23:06 -0800
+
+
+Started GET "/assets/foundation/foundation.clearing.self-96397aa6b2d39ff61e9b4ce8486a9f716f9072f2011f1dc99f94a96b381b3830.js?body=1" for ::1 at 2015-12-15 11:23:06 -0800
+
+
+Started GET "/assets/foundation/foundation.dropdown.self-3e70f72040b183d09b673307b08d1d688a5572c6c8cbb222755945e70ccbb05e.js?body=1" for ::1 at 2015-12-15 11:23:06 -0800
+
+
+Started GET "/assets/foundation/foundation.equalizer.self-1889be5dfd0e56321a9a6d5fe9d4a94b04602c158f3e4d58419b967c255b999f.js?body=1" for ::1 at 2015-12-15 11:23:06 -0800
+
+
+Started GET "/assets/foundation/foundation.interchange.self-c6d033cdd9e7fd3f29c067eb7b9ee564f7a6b542650d2ca530ae1e3c529a3c35.js?body=1" for ::1 at 2015-12-15 11:23:06 -0800
+
+
+Started GET "/assets/foundation/foundation.joyride.self-1f6b19104e2439f1e4353444cb6fb9f7f308563556f167c2154ca3108eb7f77e.js?body=1" for ::1 at 2015-12-15 11:23:06 -0800
+
+
+Started GET "/assets/foundation/foundation.magellan.self-1fcf75780d5b4db5e97c267810e7c9a5e19a9f0d7b67a2d167074d7cff1d6a70.js?body=1" for ::1 at 2015-12-15 11:23:06 -0800
+
+
+Started GET "/assets/foundation/foundation.offcanvas.self-2f34a4b91e1e958aefbde46004d6186ee82e018fe95634214749799141339810.js?body=1" for ::1 at 2015-12-15 11:23:06 -0800
+
+
+Started GET "/assets/foundation/foundation.orbit.self-ba7d30fe424df83b5bc8bc5bb67ea90608759c6eb8212d1475d52b09db0bcd0f.js?body=1" for ::1 at 2015-12-15 11:23:06 -0800
+
+
+Started GET "/assets/foundation/foundation.reveal.self-5a83316675f14b52f582d67c053ae7977827a5b06459d7e8f5556cbedfba1d0d.js?body=1" for ::1 at 2015-12-15 11:23:06 -0800
+
+
+Started GET "/assets/foundation/foundation.slider.self-686e8b14e01aeb75ec0980de90956540d2b245324fc58e8c25debafc60300b96.js?body=1" for ::1 at 2015-12-15 11:23:06 -0800
+
+
+Started GET "/assets/foundation/foundation.tab.self-9b2bd1afa5715ce8f154fa008d0aab44500763e9b336a6d4e5bca96437176a74.js?body=1" for ::1 at 2015-12-15 11:23:06 -0800
+
+
+Started GET "/assets/foundation/foundation.tooltip.self-dae1db2297f90064e1a8ae7b02b175ca613cc6a2d190aaed548f6ef853f4b46d.js?body=1" for ::1 at 2015-12-15 11:23:06 -0800
+
+
+Started GET "/assets/foundation/foundation.topbar.self-fa6260890f9f59c821128d066bcfaa18665c816022bafd398d937c367d5e39b7.js?body=1" for ::1 at 2015-12-15 11:23:06 -0800
+
+
+Started GET "/assets/foundation.self-abe4ee7a105042f73b12b1f1a28788522d2f253445a475a94ab4d6e1f7b0ec52.js?body=1" for ::1 at 2015-12-15 11:23:06 -0800
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2015-12-15 11:23:06 -0800
+
+
+Started GET "/assets/accountabuddy_requests.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-12-15 11:23:06 -0800
+
+
+Started GET "/assets/badges.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-12-15 11:23:06 -0800
+
+
+Started GET "/assets/curtain.self-03cedba756c2ea28b832bb6cb8c319e5954ea1495621342287edfc1657932778.js?body=1" for ::1 at 2015-12-15 11:23:06 -0800
+
+
+Started GET "/assets/friend_requests.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-12-15 11:23:06 -0800
+
+
+Started GET "/assets/friendships.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-12-15 11:23:06 -0800
+
+
+Started GET "/assets/messages.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-12-15 11:23:06 -0800
+
+
+Started GET "/assets/scroll_up.self-c3b7cbf89f2df9e2397e11ac3708fffb90c66ae2a5139623696d21e0d7ef68aa.js?body=1" for ::1 at 2015-12-15 11:23:06 -0800
+
+
+Started GET "/assets/sessions.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-12-15 11:23:06 -0800
+
+
+Started GET "/assets/user_categories.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-12-15 11:23:06 -0800
+
+
+Started GET "/assets/users.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-12-15 11:23:06 -0800
+
+
+Started GET "/assets/application.self-3d2bb72b9546092a6ba3241dea45501f1b15e25b22ecdf1657fe93fbb2bf078e.js?body=1" for ::1 at 2015-12-15 11:23:06 -0800
+
+
+Started GET "/signup" for ::1 at 2015-12-15 11:23:22 -0800
+Processing by UsersController#new as HTML
+  Rendered users/new.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 472ms (Views: 471.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/accountabuddy_requests.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-12-15 11:23:23 -0800
+
+
+Started GET "/assets/badges.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-12-15 11:23:23 -0800
+
+
+Started GET "/assets/curtain.self-928bfa886689b15bd31b09e76d8aced46c87f449904e48e704741702c11df316.css?body=1" for ::1 at 2015-12-15 11:23:23 -0800
+
+
+Started GET "/assets/categories.self-73a7ce4aabb5f9df39ea79190fcf3d82255e180c39399bb24101c132bf5cda0c.css?body=1" for ::1 at 2015-12-15 11:23:23 -0800
+
+
+Started GET "/assets/friend_requests.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-12-15 11:23:23 -0800
+
+
+Started GET "/assets/foundation_and_overrides.self-c3c39f50116a4bccd8a1cc38f1ace9e8cc5c1a84277983889437231b0d272cec.css?body=1" for ::1 at 2015-12-15 11:23:23 -0800
+
+
+Started GET "/assets/friendships.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-12-15 11:23:23 -0800
+
+
+Started GET "/assets/maps.self-a0b79f9c07da57fe12d6866db226828f61234d06192e46bb6bbb4cc57d4646d5.css?body=1" for ::1 at 2015-12-15 11:23:23 -0800
+
+
+Started GET "/assets/sessions.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-12-15 11:23:23 -0800
+
+
+Started GET "/assets/messages.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-12-15 11:23:23 -0800
+
+
+Started GET "/assets/user_categories.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-12-15 11:23:23 -0800
+
+
+Started GET "/assets/users.self-a2c7c262797be25e5171dc6d8c1f0be011aff22df93baed2a28539a232f7f852.css?body=1" for ::1 at 2015-12-15 11:23:23 -0800
+
+
+Started GET "/assets/application.self-a288552b8f3049270b1dfe038d6a3067580ba472708e9db48e02d6e80b6ffde8.css?body=1" for ::1 at 2015-12-15 11:23:23 -0800
+
+
+Started GET "/assets/vendor/modernizr.self-74da3245def7569da28115667be6a85a2ad97464abe707c9829c46d8975597bc.js?body=1" for ::1 at 2015-12-15 11:23:23 -0800
+
+
+Started GET "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1" for ::1 at 2015-12-15 11:23:23 -0800
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for ::1 at 2015-12-15 11:23:23 -0800
+
+
+Started GET "/assets/foundation/foundation.self-98616d4fb376f824aeb7c868e05e747b97176a864c7da854779ed398828df78f.js?body=1" for ::1 at 2015-12-15 11:23:23 -0800
+
+
+Started GET "/assets/foundation/foundation.abide.self-670a9b56e37b4b434f79686b8a9862222173d68ec823b20565340e0e87627ca4.js?body=1" for ::1 at 2015-12-15 11:23:23 -0800
+
+
+Started GET "/assets/foundation/foundation.accordion.self-02a179f7efde1facecf8a814cae32112c36800ce3d66bafc00c807a56d7b8d46.js?body=1" for ::1 at 2015-12-15 11:23:23 -0800
+
+
+Started GET "/assets/foundation/foundation.alert.self-631e4c4124bd543574c5a7f4d5d8b59fdf350f6c11d6201ba8a872e8a0f203b0.js?body=1" for ::1 at 2015-12-15 11:23:23 -0800
+
+
+Started GET "/assets/foundation/foundation.clearing.self-96397aa6b2d39ff61e9b4ce8486a9f716f9072f2011f1dc99f94a96b381b3830.js?body=1" for ::1 at 2015-12-15 11:23:23 -0800
+
+
+Started GET "/assets/foundation/foundation.dropdown.self-3e70f72040b183d09b673307b08d1d688a5572c6c8cbb222755945e70ccbb05e.js?body=1" for ::1 at 2015-12-15 11:23:23 -0800
+
+
+Started GET "/assets/foundation/foundation.equalizer.self-1889be5dfd0e56321a9a6d5fe9d4a94b04602c158f3e4d58419b967c255b999f.js?body=1" for ::1 at 2015-12-15 11:23:23 -0800
+
+
+Started GET "/assets/foundation/foundation.interchange.self-c6d033cdd9e7fd3f29c067eb7b9ee564f7a6b542650d2ca530ae1e3c529a3c35.js?body=1" for ::1 at 2015-12-15 11:23:23 -0800
+
+
+Started GET "/assets/foundation/foundation.joyride.self-1f6b19104e2439f1e4353444cb6fb9f7f308563556f167c2154ca3108eb7f77e.js?body=1" for ::1 at 2015-12-15 11:23:23 -0800
+
+
+Started GET "/assets/foundation/foundation.magellan.self-1fcf75780d5b4db5e97c267810e7c9a5e19a9f0d7b67a2d167074d7cff1d6a70.js?body=1" for ::1 at 2015-12-15 11:23:23 -0800
+
+
+Started GET "/assets/foundation/foundation.offcanvas.self-2f34a4b91e1e958aefbde46004d6186ee82e018fe95634214749799141339810.js?body=1" for ::1 at 2015-12-15 11:23:23 -0800
+
+
+Started GET "/assets/foundation/foundation.orbit.self-ba7d30fe424df83b5bc8bc5bb67ea90608759c6eb8212d1475d52b09db0bcd0f.js?body=1" for ::1 at 2015-12-15 11:23:23 -0800
+
+
+Started GET "/assets/foundation/foundation.reveal.self-5a83316675f14b52f582d67c053ae7977827a5b06459d7e8f5556cbedfba1d0d.js?body=1" for ::1 at 2015-12-15 11:23:23 -0800
+
+
+Started GET "/assets/foundation/foundation.slider.self-686e8b14e01aeb75ec0980de90956540d2b245324fc58e8c25debafc60300b96.js?body=1" for ::1 at 2015-12-15 11:23:23 -0800
+
+
+Started GET "/assets/foundation/foundation.tab.self-9b2bd1afa5715ce8f154fa008d0aab44500763e9b336a6d4e5bca96437176a74.js?body=1" for ::1 at 2015-12-15 11:23:23 -0800
+
+
+Started GET "/assets/foundation/foundation.tooltip.self-dae1db2297f90064e1a8ae7b02b175ca613cc6a2d190aaed548f6ef853f4b46d.js?body=1" for ::1 at 2015-12-15 11:23:23 -0800
+
+
+Started GET "/assets/foundation/foundation.topbar.self-fa6260890f9f59c821128d066bcfaa18665c816022bafd398d937c367d5e39b7.js?body=1" for ::1 at 2015-12-15 11:23:23 -0800
+
+
+Started GET "/assets/foundation.self-abe4ee7a105042f73b12b1f1a28788522d2f253445a475a94ab4d6e1f7b0ec52.js?body=1" for ::1 at 2015-12-15 11:23:23 -0800
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2015-12-15 11:23:23 -0800
+
+
+Started GET "/assets/accountabuddy_requests.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-12-15 11:23:23 -0800
+
+
+Started GET "/assets/badges.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-12-15 11:23:23 -0800
+
+
+Started GET "/assets/curtain.self-03cedba756c2ea28b832bb6cb8c319e5954ea1495621342287edfc1657932778.js?body=1" for ::1 at 2015-12-15 11:23:23 -0800
+
+
+Started GET "/assets/friendships.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-12-15 11:23:23 -0800
+
+
+Started GET "/assets/friend_requests.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-12-15 11:23:23 -0800
+
+
+Started GET "/assets/messages.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-12-15 11:23:23 -0800
+
+
+Started GET "/assets/scroll_up.self-c3b7cbf89f2df9e2397e11ac3708fffb90c66ae2a5139623696d21e0d7ef68aa.js?body=1" for ::1 at 2015-12-15 11:23:23 -0800
+
+
+Started GET "/assets/sessions.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-12-15 11:23:23 -0800
+
+
+Started GET "/assets/user_categories.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-12-15 11:23:23 -0800
+
+
+Started GET "/assets/users.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-12-15 11:23:23 -0800
+
+
+Started GET "/assets/application.self-9a9af2f10d1ad92087cf442427b4fde938358f4c75f0a3bc2f1f7d3a8ec7b3d1.js?body=1" for ::1 at 2015-12-15 11:23:23 -0800
+
+
+Started GET "/signup" for ::1 at 2015-12-15 11:30:19 -0800
+Processing by UsersController#new as HTML
+  Rendered users/new.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 482ms (Views: 481.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/accountabuddy_requests.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-12-15 11:30:20 -0800
+
+
+Started GET "/assets/badges.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-12-15 11:30:20 -0800
+
+
+Started GET "/assets/curtain.self-928bfa886689b15bd31b09e76d8aced46c87f449904e48e704741702c11df316.css?body=1" for ::1 at 2015-12-15 11:30:20 -0800
+
+
+Started GET "/assets/categories.self-73a7ce4aabb5f9df39ea79190fcf3d82255e180c39399bb24101c132bf5cda0c.css?body=1" for ::1 at 2015-12-15 11:30:20 -0800
+
+
+Started GET "/assets/foundation_and_overrides.self-c3c39f50116a4bccd8a1cc38f1ace9e8cc5c1a84277983889437231b0d272cec.css?body=1" for ::1 at 2015-12-15 11:30:20 -0800
+
+
+Started GET "/assets/friend_requests.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-12-15 11:30:20 -0800
+
+
+Started GET "/assets/friendships.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-12-15 11:30:20 -0800
+
+
+Started GET "/assets/maps.self-a0b79f9c07da57fe12d6866db226828f61234d06192e46bb6bbb4cc57d4646d5.css?body=1" for ::1 at 2015-12-15 11:30:20 -0800
+
+
+Started GET "/assets/messages.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-12-15 11:30:20 -0800
+
+
+Started GET "/assets/sessions.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-12-15 11:30:20 -0800
+
+
+Started GET "/assets/user_categories.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-12-15 11:30:20 -0800
+
+
+Started GET "/assets/users.self-a2c7c262797be25e5171dc6d8c1f0be011aff22df93baed2a28539a232f7f852.css?body=1" for ::1 at 2015-12-15 11:30:20 -0800
+
+
+Started GET "/assets/application.self-a288552b8f3049270b1dfe038d6a3067580ba472708e9db48e02d6e80b6ffde8.css?body=1" for ::1 at 2015-12-15 11:30:20 -0800
+
+
+Started GET "/assets/vendor/modernizr.self-74da3245def7569da28115667be6a85a2ad97464abe707c9829c46d8975597bc.js?body=1" for ::1 at 2015-12-15 11:30:20 -0800
+
+
+Started GET "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1" for ::1 at 2015-12-15 11:30:20 -0800
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for ::1 at 2015-12-15 11:30:20 -0800
+
+
+Started GET "/assets/foundation/foundation.self-98616d4fb376f824aeb7c868e05e747b97176a864c7da854779ed398828df78f.js?body=1" for ::1 at 2015-12-15 11:30:20 -0800
+
+
+Started GET "/assets/foundation/foundation.abide.self-670a9b56e37b4b434f79686b8a9862222173d68ec823b20565340e0e87627ca4.js?body=1" for ::1 at 2015-12-15 11:30:20 -0800
+
+
+Started GET "/assets/foundation/foundation.accordion.self-02a179f7efde1facecf8a814cae32112c36800ce3d66bafc00c807a56d7b8d46.js?body=1" for ::1 at 2015-12-15 11:30:20 -0800
+
+
+Started GET "/assets/foundation/foundation.alert.self-631e4c4124bd543574c5a7f4d5d8b59fdf350f6c11d6201ba8a872e8a0f203b0.js?body=1" for ::1 at 2015-12-15 11:30:20 -0800
+
+
+Started GET "/assets/foundation/foundation.clearing.self-96397aa6b2d39ff61e9b4ce8486a9f716f9072f2011f1dc99f94a96b381b3830.js?body=1" for ::1 at 2015-12-15 11:30:20 -0800
+
+
+Started GET "/assets/foundation/foundation.dropdown.self-3e70f72040b183d09b673307b08d1d688a5572c6c8cbb222755945e70ccbb05e.js?body=1" for ::1 at 2015-12-15 11:30:20 -0800
+
+
+Started GET "/assets/foundation/foundation.equalizer.self-1889be5dfd0e56321a9a6d5fe9d4a94b04602c158f3e4d58419b967c255b999f.js?body=1" for ::1 at 2015-12-15 11:30:20 -0800
+
+
+Started GET "/assets/foundation/foundation.interchange.self-c6d033cdd9e7fd3f29c067eb7b9ee564f7a6b542650d2ca530ae1e3c529a3c35.js?body=1" for ::1 at 2015-12-15 11:30:20 -0800
+
+
+Started GET "/assets/foundation/foundation.joyride.self-1f6b19104e2439f1e4353444cb6fb9f7f308563556f167c2154ca3108eb7f77e.js?body=1" for ::1 at 2015-12-15 11:30:20 -0800
+
+
+Started GET "/assets/foundation/foundation.magellan.self-1fcf75780d5b4db5e97c267810e7c9a5e19a9f0d7b67a2d167074d7cff1d6a70.js?body=1" for ::1 at 2015-12-15 11:30:20 -0800
+
+
+Started GET "/assets/foundation/foundation.offcanvas.self-2f34a4b91e1e958aefbde46004d6186ee82e018fe95634214749799141339810.js?body=1" for ::1 at 2015-12-15 11:30:20 -0800
+
+
+Started GET "/assets/foundation/foundation.orbit.self-ba7d30fe424df83b5bc8bc5bb67ea90608759c6eb8212d1475d52b09db0bcd0f.js?body=1" for ::1 at 2015-12-15 11:30:20 -0800
+
+
+Started GET "/assets/foundation/foundation.reveal.self-5a83316675f14b52f582d67c053ae7977827a5b06459d7e8f5556cbedfba1d0d.js?body=1" for ::1 at 2015-12-15 11:30:20 -0800
+
+
+Started GET "/assets/foundation/foundation.slider.self-686e8b14e01aeb75ec0980de90956540d2b245324fc58e8c25debafc60300b96.js?body=1" for ::1 at 2015-12-15 11:30:20 -0800
+
+
+Started GET "/assets/foundation/foundation.tab.self-9b2bd1afa5715ce8f154fa008d0aab44500763e9b336a6d4e5bca96437176a74.js?body=1" for ::1 at 2015-12-15 11:30:20 -0800
+
+
+Started GET "/assets/foundation/foundation.tooltip.self-dae1db2297f90064e1a8ae7b02b175ca613cc6a2d190aaed548f6ef853f4b46d.js?body=1" for ::1 at 2015-12-15 11:30:20 -0800
+
+
+Started GET "/assets/foundation/foundation.topbar.self-fa6260890f9f59c821128d066bcfaa18665c816022bafd398d937c367d5e39b7.js?body=1" for ::1 at 2015-12-15 11:30:20 -0800
+
+
+Started GET "/assets/foundation.self-abe4ee7a105042f73b12b1f1a28788522d2f253445a475a94ab4d6e1f7b0ec52.js?body=1" for ::1 at 2015-12-15 11:30:20 -0800
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2015-12-15 11:30:20 -0800
+
+
+Started GET "/assets/accountabuddy_requests.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-12-15 11:30:20 -0800
+
+
+Started GET "/assets/badges.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-12-15 11:30:20 -0800
+
+
+Started GET "/assets/curtain.self-03cedba756c2ea28b832bb6cb8c319e5954ea1495621342287edfc1657932778.js?body=1" for ::1 at 2015-12-15 11:30:20 -0800
+
+
+Started GET "/assets/friend_requests.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-12-15 11:30:20 -0800
+
+
+Started GET "/assets/friendships.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-12-15 11:30:20 -0800
+
+
+Started GET "/assets/messages.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-12-15 11:30:20 -0800
+
+
+Started GET "/assets/scroll_up.self-c3b7cbf89f2df9e2397e11ac3708fffb90c66ae2a5139623696d21e0d7ef68aa.js?body=1" for ::1 at 2015-12-15 11:30:20 -0800
+
+
+Started GET "/assets/sessions.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-12-15 11:30:20 -0800
+
+
+Started GET "/assets/user_categories.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-12-15 11:30:20 -0800
+
+
+Started GET "/assets/users.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-12-15 11:30:20 -0800
+
+
+Started GET "/assets/application.self-dd488ffef22e259c6541b86d9925f97882f68ac29885846167a5bea9959626c9.js?body=1" for ::1 at 2015-12-15 11:30:20 -0800
+
+
+Started GET "/signup" for ::1 at 2015-12-15 11:31:50 -0800
+Processing by UsersController#new as HTML
+  Rendered users/new.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 471ms (Views: 470.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/accountabuddy_requests.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-12-15 11:31:51 -0800
+
+
+Started GET "/assets/badges.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-12-15 11:31:51 -0800
+
+
+Started GET "/assets/categories.self-73a7ce4aabb5f9df39ea79190fcf3d82255e180c39399bb24101c132bf5cda0c.css?body=1" for ::1 at 2015-12-15 11:31:51 -0800
+
+
+Started GET "/assets/curtain.self-928bfa886689b15bd31b09e76d8aced46c87f449904e48e704741702c11df316.css?body=1" for ::1 at 2015-12-15 11:31:51 -0800
+
+
+Started GET "/assets/foundation_and_overrides.self-c3c39f50116a4bccd8a1cc38f1ace9e8cc5c1a84277983889437231b0d272cec.css?body=1" for ::1 at 2015-12-15 11:31:51 -0800
+
+
+Started GET "/assets/friend_requests.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-12-15 11:31:51 -0800
+
+
+Started GET "/assets/maps.self-a0b79f9c07da57fe12d6866db226828f61234d06192e46bb6bbb4cc57d4646d5.css?body=1" for ::1 at 2015-12-15 11:31:51 -0800
+
+
+Started GET "/assets/friendships.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-12-15 11:31:51 -0800
+
+
+Started GET "/assets/messages.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-12-15 11:31:51 -0800
+
+
+Started GET "/assets/sessions.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-12-15 11:31:51 -0800
+
+
+Started GET "/assets/user_categories.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-12-15 11:31:51 -0800
+
+
+Started GET "/assets/users.self-a2c7c262797be25e5171dc6d8c1f0be011aff22df93baed2a28539a232f7f852.css?body=1" for ::1 at 2015-12-15 11:31:51 -0800
+
+
+Started GET "/assets/application.self-a288552b8f3049270b1dfe038d6a3067580ba472708e9db48e02d6e80b6ffde8.css?body=1" for ::1 at 2015-12-15 11:31:51 -0800
+
+
+Started GET "/assets/vendor/modernizr.self-74da3245def7569da28115667be6a85a2ad97464abe707c9829c46d8975597bc.js?body=1" for ::1 at 2015-12-15 11:31:51 -0800
+
+
+Started GET "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1" for ::1 at 2015-12-15 11:31:51 -0800
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for ::1 at 2015-12-15 11:31:51 -0800
+
+
+Started GET "/assets/foundation/foundation.self-98616d4fb376f824aeb7c868e05e747b97176a864c7da854779ed398828df78f.js?body=1" for ::1 at 2015-12-15 11:31:51 -0800
+
+
+Started GET "/assets/foundation/foundation.abide.self-670a9b56e37b4b434f79686b8a9862222173d68ec823b20565340e0e87627ca4.js?body=1" for ::1 at 2015-12-15 11:31:51 -0800
+
+
+Started GET "/assets/foundation/foundation.accordion.self-02a179f7efde1facecf8a814cae32112c36800ce3d66bafc00c807a56d7b8d46.js?body=1" for ::1 at 2015-12-15 11:31:51 -0800
+
+
+Started GET "/assets/foundation/foundation.alert.self-631e4c4124bd543574c5a7f4d5d8b59fdf350f6c11d6201ba8a872e8a0f203b0.js?body=1" for ::1 at 2015-12-15 11:31:51 -0800
+
+
+Started GET "/assets/foundation/foundation.clearing.self-96397aa6b2d39ff61e9b4ce8486a9f716f9072f2011f1dc99f94a96b381b3830.js?body=1" for ::1 at 2015-12-15 11:31:51 -0800
+
+
+Started GET "/assets/foundation/foundation.dropdown.self-3e70f72040b183d09b673307b08d1d688a5572c6c8cbb222755945e70ccbb05e.js?body=1" for ::1 at 2015-12-15 11:31:51 -0800
+
+
+Started GET "/assets/foundation/foundation.equalizer.self-1889be5dfd0e56321a9a6d5fe9d4a94b04602c158f3e4d58419b967c255b999f.js?body=1" for ::1 at 2015-12-15 11:31:51 -0800
+
+
+Started GET "/assets/foundation/foundation.interchange.self-c6d033cdd9e7fd3f29c067eb7b9ee564f7a6b542650d2ca530ae1e3c529a3c35.js?body=1" for ::1 at 2015-12-15 11:31:51 -0800
+
+
+Started GET "/assets/foundation/foundation.joyride.self-1f6b19104e2439f1e4353444cb6fb9f7f308563556f167c2154ca3108eb7f77e.js?body=1" for ::1 at 2015-12-15 11:31:51 -0800
+
+
+Started GET "/assets/foundation/foundation.magellan.self-1fcf75780d5b4db5e97c267810e7c9a5e19a9f0d7b67a2d167074d7cff1d6a70.js?body=1" for ::1 at 2015-12-15 11:31:51 -0800
+
+
+Started GET "/assets/foundation/foundation.offcanvas.self-2f34a4b91e1e958aefbde46004d6186ee82e018fe95634214749799141339810.js?body=1" for ::1 at 2015-12-15 11:31:51 -0800
+
+
+Started GET "/assets/foundation/foundation.orbit.self-ba7d30fe424df83b5bc8bc5bb67ea90608759c6eb8212d1475d52b09db0bcd0f.js?body=1" for ::1 at 2015-12-15 11:31:51 -0800
+
+
+Started GET "/assets/foundation/foundation.reveal.self-5a83316675f14b52f582d67c053ae7977827a5b06459d7e8f5556cbedfba1d0d.js?body=1" for ::1 at 2015-12-15 11:31:51 -0800
+
+
+Started GET "/assets/foundation/foundation.slider.self-686e8b14e01aeb75ec0980de90956540d2b245324fc58e8c25debafc60300b96.js?body=1" for ::1 at 2015-12-15 11:31:51 -0800
+
+
+Started GET "/assets/foundation/foundation.tab.self-9b2bd1afa5715ce8f154fa008d0aab44500763e9b336a6d4e5bca96437176a74.js?body=1" for ::1 at 2015-12-15 11:31:51 -0800
+
+
+Started GET "/assets/foundation/foundation.tooltip.self-dae1db2297f90064e1a8ae7b02b175ca613cc6a2d190aaed548f6ef853f4b46d.js?body=1" for ::1 at 2015-12-15 11:31:51 -0800
+
+
+Started GET "/assets/foundation/foundation.topbar.self-fa6260890f9f59c821128d066bcfaa18665c816022bafd398d937c367d5e39b7.js?body=1" for ::1 at 2015-12-15 11:31:51 -0800
+
+
+Started GET "/assets/foundation.self-abe4ee7a105042f73b12b1f1a28788522d2f253445a475a94ab4d6e1f7b0ec52.js?body=1" for ::1 at 2015-12-15 11:31:51 -0800
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2015-12-15 11:31:51 -0800
+
+
+Started GET "/assets/accountabuddy_requests.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-12-15 11:31:51 -0800
+
+
+Started GET "/assets/badges.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-12-15 11:31:51 -0800
+
+
+Started GET "/assets/curtain.self-03cedba756c2ea28b832bb6cb8c319e5954ea1495621342287edfc1657932778.js?body=1" for ::1 at 2015-12-15 11:31:51 -0800
+
+
+Started GET "/assets/friend_requests.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-12-15 11:31:51 -0800
+
+
+Started GET "/assets/friendships.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-12-15 11:31:51 -0800
+
+
+Started GET "/assets/messages.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-12-15 11:31:51 -0800
+
+
+Started GET "/assets/scroll_up.self-c3b7cbf89f2df9e2397e11ac3708fffb90c66ae2a5139623696d21e0d7ef68aa.js?body=1" for ::1 at 2015-12-15 11:31:51 -0800
+
+
+Started GET "/assets/sessions.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-12-15 11:31:51 -0800
+
+
+Started GET "/assets/user_categories.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-12-15 11:31:51 -0800
+
+
+Started GET "/assets/users.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-12-15 11:31:51 -0800
+
+
+Started GET "/assets/application.self-3ec5c9b340454a1014e9281c4d90a14e98b218940a914373b51acbf33104c9a1.js?body=1" for ::1 at 2015-12-15 11:31:51 -0800
+
+
+Started GET "/signup" for ::1 at 2015-12-15 11:32:22 -0800
+Processing by UsersController#new as HTML
+  Rendered users/new.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 439ms (Views: 438.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/accountabuddy_requests.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-12-15 11:32:22 -0800
+
+
+Started GET "/assets/badges.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-12-15 11:32:22 -0800
+
+
+Started GET "/assets/categories.self-73a7ce4aabb5f9df39ea79190fcf3d82255e180c39399bb24101c132bf5cda0c.css?body=1" for ::1 at 2015-12-15 11:32:22 -0800
+
+
+Started GET "/assets/curtain.self-928bfa886689b15bd31b09e76d8aced46c87f449904e48e704741702c11df316.css?body=1" for ::1 at 2015-12-15 11:32:22 -0800
+
+
+Started GET "/assets/foundation_and_overrides.self-c3c39f50116a4bccd8a1cc38f1ace9e8cc5c1a84277983889437231b0d272cec.css?body=1" for ::1 at 2015-12-15 11:32:22 -0800
+
+
+Started GET "/assets/friend_requests.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-12-15 11:32:22 -0800
+
+
+Started GET "/assets/friendships.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-12-15 11:32:22 -0800
+
+
+Started GET "/assets/maps.self-a0b79f9c07da57fe12d6866db226828f61234d06192e46bb6bbb4cc57d4646d5.css?body=1" for ::1 at 2015-12-15 11:32:22 -0800
+
+
+Started GET "/assets/messages.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-12-15 11:32:22 -0800
+
+
+Started GET "/assets/sessions.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-12-15 11:32:22 -0800
+
+
+Started GET "/assets/user_categories.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-12-15 11:32:22 -0800
+
+
+Started GET "/assets/users.self-a2c7c262797be25e5171dc6d8c1f0be011aff22df93baed2a28539a232f7f852.css?body=1" for ::1 at 2015-12-15 11:32:22 -0800
+
+
+Started GET "/assets/application.self-a288552b8f3049270b1dfe038d6a3067580ba472708e9db48e02d6e80b6ffde8.css?body=1" for ::1 at 2015-12-15 11:32:22 -0800
+
+
+Started GET "/assets/vendor/modernizr.self-74da3245def7569da28115667be6a85a2ad97464abe707c9829c46d8975597bc.js?body=1" for ::1 at 2015-12-15 11:32:22 -0800
+
+
+Started GET "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1" for ::1 at 2015-12-15 11:32:22 -0800
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for ::1 at 2015-12-15 11:32:23 -0800
+
+
+Started GET "/assets/foundation/foundation.self-98616d4fb376f824aeb7c868e05e747b97176a864c7da854779ed398828df78f.js?body=1" for ::1 at 2015-12-15 11:32:23 -0800
+
+
+Started GET "/assets/foundation/foundation.abide.self-670a9b56e37b4b434f79686b8a9862222173d68ec823b20565340e0e87627ca4.js?body=1" for ::1 at 2015-12-15 11:32:23 -0800
+
+
+Started GET "/assets/foundation/foundation.accordion.self-02a179f7efde1facecf8a814cae32112c36800ce3d66bafc00c807a56d7b8d46.js?body=1" for ::1 at 2015-12-15 11:32:23 -0800
+
+
+Started GET "/assets/foundation/foundation.alert.self-631e4c4124bd543574c5a7f4d5d8b59fdf350f6c11d6201ba8a872e8a0f203b0.js?body=1" for ::1 at 2015-12-15 11:32:23 -0800
+
+
+Started GET "/assets/foundation/foundation.clearing.self-96397aa6b2d39ff61e9b4ce8486a9f716f9072f2011f1dc99f94a96b381b3830.js?body=1" for ::1 at 2015-12-15 11:32:23 -0800
+
+
+Started GET "/assets/foundation/foundation.dropdown.self-3e70f72040b183d09b673307b08d1d688a5572c6c8cbb222755945e70ccbb05e.js?body=1" for ::1 at 2015-12-15 11:32:23 -0800
+
+
+Started GET "/assets/foundation/foundation.equalizer.self-1889be5dfd0e56321a9a6d5fe9d4a94b04602c158f3e4d58419b967c255b999f.js?body=1" for ::1 at 2015-12-15 11:32:23 -0800
+
+
+Started GET "/assets/foundation/foundation.interchange.self-c6d033cdd9e7fd3f29c067eb7b9ee564f7a6b542650d2ca530ae1e3c529a3c35.js?body=1" for ::1 at 2015-12-15 11:32:23 -0800
+
+
+Started GET "/assets/foundation/foundation.joyride.self-1f6b19104e2439f1e4353444cb6fb9f7f308563556f167c2154ca3108eb7f77e.js?body=1" for ::1 at 2015-12-15 11:32:23 -0800
+
+
+Started GET "/assets/foundation/foundation.magellan.self-1fcf75780d5b4db5e97c267810e7c9a5e19a9f0d7b67a2d167074d7cff1d6a70.js?body=1" for ::1 at 2015-12-15 11:32:23 -0800
+
+
+Started GET "/assets/foundation/foundation.offcanvas.self-2f34a4b91e1e958aefbde46004d6186ee82e018fe95634214749799141339810.js?body=1" for ::1 at 2015-12-15 11:32:23 -0800
+
+
+Started GET "/assets/foundation/foundation.orbit.self-ba7d30fe424df83b5bc8bc5bb67ea90608759c6eb8212d1475d52b09db0bcd0f.js?body=1" for ::1 at 2015-12-15 11:32:23 -0800
+
+
+Started GET "/assets/foundation/foundation.slider.self-686e8b14e01aeb75ec0980de90956540d2b245324fc58e8c25debafc60300b96.js?body=1" for ::1 at 2015-12-15 11:32:23 -0800
+
+
+Started GET "/assets/foundation/foundation.reveal.self-5a83316675f14b52f582d67c053ae7977827a5b06459d7e8f5556cbedfba1d0d.js?body=1" for ::1 at 2015-12-15 11:32:23 -0800
+
+
+Started GET "/assets/foundation/foundation.tab.self-9b2bd1afa5715ce8f154fa008d0aab44500763e9b336a6d4e5bca96437176a74.js?body=1" for ::1 at 2015-12-15 11:32:23 -0800
+
+
+Started GET "/assets/foundation/foundation.tooltip.self-dae1db2297f90064e1a8ae7b02b175ca613cc6a2d190aaed548f6ef853f4b46d.js?body=1" for ::1 at 2015-12-15 11:32:23 -0800
+
+
+Started GET "/assets/foundation/foundation.topbar.self-fa6260890f9f59c821128d066bcfaa18665c816022bafd398d937c367d5e39b7.js?body=1" for ::1 at 2015-12-15 11:32:23 -0800
+
+
+Started GET "/assets/foundation.self-abe4ee7a105042f73b12b1f1a28788522d2f253445a475a94ab4d6e1f7b0ec52.js?body=1" for ::1 at 2015-12-15 11:32:23 -0800
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2015-12-15 11:32:23 -0800
+
+
+Started GET "/assets/accountabuddy_requests.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-12-15 11:32:23 -0800
+
+
+Started GET "/assets/badges.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-12-15 11:32:23 -0800
+
+
+Started GET "/assets/curtain.self-03cedba756c2ea28b832bb6cb8c319e5954ea1495621342287edfc1657932778.js?body=1" for ::1 at 2015-12-15 11:32:23 -0800
+
+
+Started GET "/assets/friend_requests.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-12-15 11:32:23 -0800
+
+
+Started GET "/assets/friendships.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-12-15 11:32:23 -0800
+
+
+Started GET "/assets/messages.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-12-15 11:32:23 -0800
+
+
+Started GET "/assets/scroll_up.self-c3b7cbf89f2df9e2397e11ac3708fffb90c66ae2a5139623696d21e0d7ef68aa.js?body=1" for ::1 at 2015-12-15 11:32:23 -0800
+
+
+Started GET "/assets/sessions.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-12-15 11:32:23 -0800
+
+
+Started GET "/assets/user_categories.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-12-15 11:32:23 -0800
+
+
+Started GET "/assets/users.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-12-15 11:32:23 -0800
+
+
+Started GET "/assets/application.self-232790e63280af8f0406d655683d6e4b21f1ea22f119e8f9c9096e1c378e5d08.js?body=1" for ::1 at 2015-12-15 11:32:23 -0800
+
+
+Started GET "/signup" for ::1 at 2015-12-15 11:36:31 -0800
+Processing by UsersController#new as HTML
+  Rendered users/new.html.erb within layouts/application (31.0ms)
+Completed 500 Internal Server Error in 40ms (ActiveRecord: 0.0ms)
+
+ActionView::Template::Error (undefined local variable or method `map_show' for #<#<Class:0x007fec65129a68>:0x007fec68c6e970>):
+    69: 
+    70: 	</div>
+    71: </div>
+    72: <%= render map_show %>
+  app/views/users/new.html.erb:72:in `_app_views_users_new_html_erb__524653358444424183_70326673435000'
+
+
+  Rendered /Users/Eunice/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_source.erb (11.7ms)
+  Rendered /Users/Eunice/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.9ms)
+  Rendered /Users/Eunice/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.7ms)
+  Rendered /Users/Eunice/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (96.7ms)
+  Rendered /Users/Eunice/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.5ms)
+  Rendered /Users/Eunice/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/Eunice/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/Eunice/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/Eunice/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (81.8ms)
+  Rendered /Users/Eunice/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.7ms)
+  Rendered /Users/Eunice/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.7ms)
+  Rendered /Users/Eunice/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (170.6ms)
+
+
+Started GET "/signup" for ::1 at 2015-12-15 11:37:31 -0800
+Processing by UsersController#new as HTML
+  Rendered users/_map_show.html.erb (4.3ms)
+  Rendered users/new.html.erb within layouts/application (15.0ms)
+Completed 500 Internal Server Error in 22ms (ActiveRecord: 0.0ms)
+
+ActionView::Template::Error (undefined method `id' for nil:NilClass):
+    51:     geolocate.parentNode.removeChild(geolocate);
+    52:     
+    53:     $.ajax({
+    54:         url: '/users/' + '<%= @user.id %>',
+    55:         type: 'PUT',
+    56:         data: {user_location: [e.latlng.lng, e.latlng.lat]},
+    57:         dataType: 'JSON',
+  app/views/users/_map_show.html.erb:54:in `_app_views_users__map_show_html_erb___2661641946905492592_70326660244660'
+  app/views/users/new.html.erb:72:in `_app_views_users_new_html_erb__524653358444424183_70326673497340'
+
+
+  Rendered /Users/Eunice/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_source.erb (7.1ms)
+  Rendered /Users/Eunice/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.8ms)
+  Rendered /Users/Eunice/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.9ms)
+  Rendered /Users/Eunice/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (66.7ms)
+  Rendered /Users/Eunice/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.6ms)
+  Rendered /Users/Eunice/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/Eunice/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/Eunice/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/Eunice/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (55.1ms)
+  Rendered /Users/Eunice/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/Eunice/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/Eunice/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (127.3ms)
+
+
+Started GET "/signup" for ::1 at 2015-12-15 11:38:07 -0800
+Processing by UsersController#new as HTML
+  Rendered users/_map_show.html.erb (2.3ms)
+  Rendered users/new.html.erb within layouts/application (4.2ms)
+Completed 500 Internal Server Error in 10ms (ActiveRecord: 0.0ms)
+
+ActionView::Template::Error (undefined method `id' for nil:NilClass):
+    51:     geolocate.parentNode.removeChild(geolocate);
+    52:     
+    53:     $.ajax({
+    54:         url: '/users/' + '<%= @user.id %>',
+    55:         type: 'PUT',
+    56:         data: {user_location: [e.latlng.lng, e.latlng.lat]},
+    57:         dataType: 'JSON',
+  app/views/users/_map_show.html.erb:54:in `_app_views_users__map_show_html_erb___2661641946905492592_70326660244660'
+  app/views/users/new.html.erb:72:in `_app_views_users_new_html_erb__524653358444424183_70326673497340'
+
+
+  Rendered /Users/Eunice/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_source.erb (11.7ms)
+  Rendered /Users/Eunice/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.6ms)
+  Rendered /Users/Eunice/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.9ms)
+  Rendered /Users/Eunice/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (77.2ms)
+  Rendered /Users/Eunice/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.5ms)
+  Rendered /Users/Eunice/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/Eunice/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/Eunice/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/Eunice/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (62.2ms)
+  Rendered /Users/Eunice/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/Eunice/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/Eunice/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (139.7ms)
+
+
+Started GET "/signup" for ::1 at 2015-12-15 11:38:34 -0800
+Processing by UsersController#new as HTML
+  Rendered users/_map_show.html.erb (3.4ms)
+  Rendered users/new.html.erb within layouts/application (6.2ms)
+Completed 500 Internal Server Error in 15ms (ActiveRecord: 0.0ms)
+
+ActionView::Template::Error (undefined method `id' for nil:NilClass):
+    51:     geolocate.parentNode.removeChild(geolocate);
+    52: 
+    53:     // $.ajax({
+    54:     //     url: '/users/' + '<%= @user.id %>',
+    55:     //     type: 'PUT',
+    56:     //     data: {user_location: [e.latlng.lng, e.latlng.lat]},
+    57:     //     dataType: 'JSON',
+  app/views/users/_map_show.html.erb:54:in `_app_views_users__map_show_html_erb___2661641946905492592_70326660496800'
+  app/views/users/new.html.erb:72:in `_app_views_users_new_html_erb__524653358444424183_70326673497340'
+
+
+  Rendered /Users/Eunice/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_source.erb (9.9ms)
+  Rendered /Users/Eunice/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (5.0ms)
+  Rendered /Users/Eunice/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.3ms)
+  Rendered /Users/Eunice/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (86.7ms)
+  Rendered /Users/Eunice/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.5ms)
+  Rendered /Users/Eunice/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/Eunice/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.6ms)
+  Rendered /Users/Eunice/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.7ms)
+  Rendered /Users/Eunice/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (85.7ms)
+  Rendered /Users/Eunice/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/Eunice/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/Eunice/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (165.6ms)
+
+
+Started GET "/signup" for ::1 at 2015-12-15 11:38:55 -0800
+Processing by UsersController#new as HTML
+  Rendered users/_map_show.html.erb (0.8ms)
+  Rendered users/new.html.erb within layouts/application (3.7ms)
+Completed 200 OK in 390ms (Views: 389.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/accountabuddy_requests.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-12-15 11:38:56 -0800
+
+
+Started GET "/assets/badges.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-12-15 11:38:56 -0800
+
+
+Started GET "/assets/categories.self-73a7ce4aabb5f9df39ea79190fcf3d82255e180c39399bb24101c132bf5cda0c.css?body=1" for ::1 at 2015-12-15 11:38:56 -0800
+
+
+Started GET "/assets/curtain.self-928bfa886689b15bd31b09e76d8aced46c87f449904e48e704741702c11df316.css?body=1" for ::1 at 2015-12-15 11:38:56 -0800
+
+
+Started GET "/assets/friendships.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-12-15 11:38:56 -0800
+
+
+Started GET "/assets/foundation_and_overrides.self-c3c39f50116a4bccd8a1cc38f1ace9e8cc5c1a84277983889437231b0d272cec.css?body=1" for ::1 at 2015-12-15 11:38:56 -0800
+
+
+Started GET "/assets/friend_requests.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-12-15 11:38:56 -0800
+
+
+Started GET "/assets/maps.self-a0b79f9c07da57fe12d6866db226828f61234d06192e46bb6bbb4cc57d4646d5.css?body=1" for ::1 at 2015-12-15 11:38:56 -0800
+
+
+Started GET "/assets/messages.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-12-15 11:38:56 -0800
+
+
+Started GET "/assets/sessions.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-12-15 11:38:56 -0800
+
+
+Started GET "/assets/user_categories.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-12-15 11:38:56 -0800
+
+
+Started GET "/assets/users.self-a2c7c262797be25e5171dc6d8c1f0be011aff22df93baed2a28539a232f7f852.css?body=1" for ::1 at 2015-12-15 11:38:56 -0800
+
+
+Started GET "/assets/application.self-355600b7c4aa686b8d6ec27b7bec487b0599966c6e3e5f35fd71f9242989e92a.css?body=1" for ::1 at 2015-12-15 11:38:56 -0800
+
+
+Started GET "/assets/vendor/modernizr.self-74da3245def7569da28115667be6a85a2ad97464abe707c9829c46d8975597bc.js?body=1" for ::1 at 2015-12-15 11:38:56 -0800
+
+
+Started GET "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1" for ::1 at 2015-12-15 11:38:56 -0800
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for ::1 at 2015-12-15 11:38:56 -0800
+
+
+Started GET "/assets/foundation/foundation.self-98616d4fb376f824aeb7c868e05e747b97176a864c7da854779ed398828df78f.js?body=1" for ::1 at 2015-12-15 11:38:56 -0800
+
+
+Started GET "/assets/foundation/foundation.abide.self-670a9b56e37b4b434f79686b8a9862222173d68ec823b20565340e0e87627ca4.js?body=1" for ::1 at 2015-12-15 11:38:56 -0800
+
+
+Started GET "/assets/foundation/foundation.accordion.self-02a179f7efde1facecf8a814cae32112c36800ce3d66bafc00c807a56d7b8d46.js?body=1" for ::1 at 2015-12-15 11:38:56 -0800
+
+
+Started GET "/assets/foundation/foundation.alert.self-631e4c4124bd543574c5a7f4d5d8b59fdf350f6c11d6201ba8a872e8a0f203b0.js?body=1" for ::1 at 2015-12-15 11:38:56 -0800
+
+
+Started GET "/assets/foundation/foundation.clearing.self-96397aa6b2d39ff61e9b4ce8486a9f716f9072f2011f1dc99f94a96b381b3830.js?body=1" for ::1 at 2015-12-15 11:38:56 -0800
+
+
+Started GET "/assets/foundation/foundation.dropdown.self-3e70f72040b183d09b673307b08d1d688a5572c6c8cbb222755945e70ccbb05e.js?body=1" for ::1 at 2015-12-15 11:38:56 -0800
+
+
+Started GET "/assets/foundation/foundation.equalizer.self-1889be5dfd0e56321a9a6d5fe9d4a94b04602c158f3e4d58419b967c255b999f.js?body=1" for ::1 at 2015-12-15 11:38:56 -0800
+
+
+Started GET "/assets/foundation/foundation.interchange.self-c6d033cdd9e7fd3f29c067eb7b9ee564f7a6b542650d2ca530ae1e3c529a3c35.js?body=1" for ::1 at 2015-12-15 11:38:56 -0800
+
+
+Started GET "/assets/foundation/foundation.joyride.self-1f6b19104e2439f1e4353444cb6fb9f7f308563556f167c2154ca3108eb7f77e.js?body=1" for ::1 at 2015-12-15 11:38:56 -0800
+
+
+Started GET "/assets/foundation/foundation.magellan.self-1fcf75780d5b4db5e97c267810e7c9a5e19a9f0d7b67a2d167074d7cff1d6a70.js?body=1" for ::1 at 2015-12-15 11:38:56 -0800
+
+
+Started GET "/assets/foundation/foundation.offcanvas.self-2f34a4b91e1e958aefbde46004d6186ee82e018fe95634214749799141339810.js?body=1" for ::1 at 2015-12-15 11:38:56 -0800
+
+
+Started GET "/assets/foundation/foundation.orbit.self-ba7d30fe424df83b5bc8bc5bb67ea90608759c6eb8212d1475d52b09db0bcd0f.js?body=1" for ::1 at 2015-12-15 11:38:56 -0800
+
+
+Started GET "/assets/foundation/foundation.reveal.self-5a83316675f14b52f582d67c053ae7977827a5b06459d7e8f5556cbedfba1d0d.js?body=1" for ::1 at 2015-12-15 11:38:56 -0800
+
+
+Started GET "/assets/foundation/foundation.slider.self-686e8b14e01aeb75ec0980de90956540d2b245324fc58e8c25debafc60300b96.js?body=1" for ::1 at 2015-12-15 11:38:56 -0800
+
+
+Started GET "/assets/foundation/foundation.tab.self-9b2bd1afa5715ce8f154fa008d0aab44500763e9b336a6d4e5bca96437176a74.js?body=1" for ::1 at 2015-12-15 11:38:56 -0800
+
+
+Started GET "/assets/foundation/foundation.tooltip.self-dae1db2297f90064e1a8ae7b02b175ca613cc6a2d190aaed548f6ef853f4b46d.js?body=1" for ::1 at 2015-12-15 11:38:56 -0800
+
+
+Started GET "/assets/foundation/foundation.topbar.self-fa6260890f9f59c821128d066bcfaa18665c816022bafd398d937c367d5e39b7.js?body=1" for ::1 at 2015-12-15 11:38:56 -0800
+
+
+Started GET "/assets/foundation.self-abe4ee7a105042f73b12b1f1a28788522d2f253445a475a94ab4d6e1f7b0ec52.js?body=1" for ::1 at 2015-12-15 11:38:56 -0800
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2015-12-15 11:38:56 -0800
+
+
+Started GET "/assets/accountabuddy_requests.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-12-15 11:38:56 -0800
+
+
+Started GET "/assets/badges.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-12-15 11:38:56 -0800
+
+
+Started GET "/assets/curtain.self-03cedba756c2ea28b832bb6cb8c319e5954ea1495621342287edfc1657932778.js?body=1" for ::1 at 2015-12-15 11:38:56 -0800
+
+
+Started GET "/assets/friend_requests.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-12-15 11:38:56 -0800
+
+
+Started GET "/assets/friendships.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-12-15 11:38:56 -0800
+
+
+Started GET "/assets/messages.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-12-15 11:38:56 -0800
+
+
+Started GET "/assets/scroll_up.self-c3b7cbf89f2df9e2397e11ac3708fffb90c66ae2a5139623696d21e0d7ef68aa.js?body=1" for ::1 at 2015-12-15 11:38:57 -0800
+
+
+Started GET "/assets/sessions.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-12-15 11:38:57 -0800
+
+
+Started GET "/assets/user_categories.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-12-15 11:38:57 -0800
+
+
+Started GET "/assets/users.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-12-15 11:38:57 -0800
+
+
+Started GET "/assets/application.self-232790e63280af8f0406d655683d6e4b21f1ea22f119e8f9c9096e1c378e5d08.js?body=1" for ::1 at 2015-12-15 11:38:57 -0800
+
+
+Started GET "/signup" for ::1 at 2015-12-15 11:43:26 -0800
+Processing by UsersController#new as HTML
+  Rendered users/_map_show.html.erb (0.1ms)
+  Rendered users/new.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 597ms (Views: 596.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/badges.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-12-15 11:43:27 -0800
+
+
+Started GET "/assets/accountabuddy_requests.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-12-15 11:43:27 -0800
+
+
+Started GET "/assets/curtain.self-928bfa886689b15bd31b09e76d8aced46c87f449904e48e704741702c11df316.css?body=1" for ::1 at 2015-12-15 11:43:27 -0800
+
+
+Started GET "/assets/friendships.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-12-15 11:43:27 -0800
+
+
+Started GET "/assets/foundation_and_overrides.self-c3c39f50116a4bccd8a1cc38f1ace9e8cc5c1a84277983889437231b0d272cec.css?body=1" for ::1 at 2015-12-15 11:43:27 -0800
+
+
+Started GET "/assets/categories.self-73a7ce4aabb5f9df39ea79190fcf3d82255e180c39399bb24101c132bf5cda0c.css?body=1" for ::1 at 2015-12-15 11:43:27 -0800
+
+
+Started GET "/assets/friend_requests.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-12-15 11:43:27 -0800
+
+
+Started GET "/assets/maps.self-a0b79f9c07da57fe12d6866db226828f61234d06192e46bb6bbb4cc57d4646d5.css?body=1" for ::1 at 2015-12-15 11:43:27 -0800
+
+
+Started GET "/assets/messages.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-12-15 11:43:27 -0800
+
+
+Started GET "/assets/sessions.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-12-15 11:43:27 -0800
+
+
+Started GET "/assets/user_categories.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-12-15 11:43:27 -0800
+
+
+Started GET "/assets/users.self-a2c7c262797be25e5171dc6d8c1f0be011aff22df93baed2a28539a232f7f852.css?body=1" for ::1 at 2015-12-15 11:43:27 -0800
+
+
+Started GET "/assets/application.self-53df0510da7038481a9225d205a746d058b54fb87e7952e75cbea8a58bd9022b.css?body=1" for ::1 at 2015-12-15 11:43:27 -0800
+
+
+Started GET "/assets/vendor/modernizr.self-74da3245def7569da28115667be6a85a2ad97464abe707c9829c46d8975597bc.js?body=1" for ::1 at 2015-12-15 11:43:27 -0800
+
+
+Started GET "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1" for ::1 at 2015-12-15 11:43:27 -0800
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for ::1 at 2015-12-15 11:43:27 -0800
+
+
+Started GET "/assets/foundation/foundation.self-98616d4fb376f824aeb7c868e05e747b97176a864c7da854779ed398828df78f.js?body=1" for ::1 at 2015-12-15 11:43:27 -0800
+
+
+Started GET "/assets/foundation/foundation.abide.self-670a9b56e37b4b434f79686b8a9862222173d68ec823b20565340e0e87627ca4.js?body=1" for ::1 at 2015-12-15 11:43:27 -0800
+
+
+Started GET "/assets/foundation/foundation.accordion.self-02a179f7efde1facecf8a814cae32112c36800ce3d66bafc00c807a56d7b8d46.js?body=1" for ::1 at 2015-12-15 11:43:27 -0800
+
+
+Started GET "/assets/foundation/foundation.alert.self-631e4c4124bd543574c5a7f4d5d8b59fdf350f6c11d6201ba8a872e8a0f203b0.js?body=1" for ::1 at 2015-12-15 11:43:27 -0800
+
+
+Started GET "/assets/foundation/foundation.clearing.self-96397aa6b2d39ff61e9b4ce8486a9f716f9072f2011f1dc99f94a96b381b3830.js?body=1" for ::1 at 2015-12-15 11:43:27 -0800
+
+
+Started GET "/assets/foundation/foundation.dropdown.self-3e70f72040b183d09b673307b08d1d688a5572c6c8cbb222755945e70ccbb05e.js?body=1" for ::1 at 2015-12-15 11:43:27 -0800
+
+
+Started GET "/assets/foundation/foundation.equalizer.self-1889be5dfd0e56321a9a6d5fe9d4a94b04602c158f3e4d58419b967c255b999f.js?body=1" for ::1 at 2015-12-15 11:43:27 -0800
+
+
+Started GET "/assets/foundation/foundation.interchange.self-c6d033cdd9e7fd3f29c067eb7b9ee564f7a6b542650d2ca530ae1e3c529a3c35.js?body=1" for ::1 at 2015-12-15 11:43:27 -0800
+
+
+Started GET "/assets/foundation/foundation.joyride.self-1f6b19104e2439f1e4353444cb6fb9f7f308563556f167c2154ca3108eb7f77e.js?body=1" for ::1 at 2015-12-15 11:43:27 -0800
+
+
+Started GET "/assets/foundation/foundation.magellan.self-1fcf75780d5b4db5e97c267810e7c9a5e19a9f0d7b67a2d167074d7cff1d6a70.js?body=1" for ::1 at 2015-12-15 11:43:27 -0800
+
+
+Started GET "/assets/foundation/foundation.offcanvas.self-2f34a4b91e1e958aefbde46004d6186ee82e018fe95634214749799141339810.js?body=1" for ::1 at 2015-12-15 11:43:27 -0800
+
+
+Started GET "/assets/foundation/foundation.orbit.self-ba7d30fe424df83b5bc8bc5bb67ea90608759c6eb8212d1475d52b09db0bcd0f.js?body=1" for ::1 at 2015-12-15 11:43:27 -0800
+
+
+Started GET "/assets/foundation/foundation.reveal.self-5a83316675f14b52f582d67c053ae7977827a5b06459d7e8f5556cbedfba1d0d.js?body=1" for ::1 at 2015-12-15 11:43:27 -0800
+
+
+Started GET "/assets/foundation/foundation.slider.self-686e8b14e01aeb75ec0980de90956540d2b245324fc58e8c25debafc60300b96.js?body=1" for ::1 at 2015-12-15 11:43:27 -0800
+
+
+Started GET "/assets/foundation/foundation.tab.self-9b2bd1afa5715ce8f154fa008d0aab44500763e9b336a6d4e5bca96437176a74.js?body=1" for ::1 at 2015-12-15 11:43:27 -0800
+
+
+Started GET "/assets/foundation/foundation.tooltip.self-dae1db2297f90064e1a8ae7b02b175ca613cc6a2d190aaed548f6ef853f4b46d.js?body=1" for ::1 at 2015-12-15 11:43:27 -0800
+
+
+Started GET "/assets/foundation/foundation.topbar.self-fa6260890f9f59c821128d066bcfaa18665c816022bafd398d937c367d5e39b7.js?body=1" for ::1 at 2015-12-15 11:43:27 -0800
+
+
+Started GET "/assets/foundation.self-abe4ee7a105042f73b12b1f1a28788522d2f253445a475a94ab4d6e1f7b0ec52.js?body=1" for ::1 at 2015-12-15 11:43:27 -0800
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2015-12-15 11:43:27 -0800
+
+
+Started GET "/assets/accountabuddy_requests.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-12-15 11:43:27 -0800
+
+
+Started GET "/assets/badges.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-12-15 11:43:27 -0800
+
+
+Started GET "/assets/curtain.self-03cedba756c2ea28b832bb6cb8c319e5954ea1495621342287edfc1657932778.js?body=1" for ::1 at 2015-12-15 11:43:27 -0800
+
+
+Started GET "/assets/friend_requests.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-12-15 11:43:27 -0800
+
+
+Started GET "/assets/friendships.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-12-15 11:43:27 -0800
+
+
+Started GET "/assets/messages.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-12-15 11:43:27 -0800
+
+
+Started GET "/assets/scroll_up.self-c3b7cbf89f2df9e2397e11ac3708fffb90c66ae2a5139623696d21e0d7ef68aa.js?body=1" for ::1 at 2015-12-15 11:43:27 -0800
+
+
+Started GET "/assets/sessions.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-12-15 11:43:27 -0800
+
+
+Started GET "/assets/user_categories.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-12-15 11:43:28 -0800
+
+
+Started GET "/assets/users.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-12-15 11:43:28 -0800
+
+
+Started GET "/assets/application.self-e0f248057c7f11e2cc2c83b244d389d4af40f3df36a06d4398f31ec1033d0824.js?body=1" for ::1 at 2015-12-15 11:43:28 -0800
+
+
+Started GET "/signup" for ::1 at 2015-12-15 11:43:46 -0800
+Processing by UsersController#new as HTML
+  Rendered users/_map_show.html.erb (0.0ms)
+  Rendered users/new.html.erb within layouts/application (2.2ms)
+Completed 200 OK in 262ms (Views: 261.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/accountabuddy_requests.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-12-15 11:43:47 -0800
+
+
+Started GET "/assets/categories.self-73a7ce4aabb5f9df39ea79190fcf3d82255e180c39399bb24101c132bf5cda0c.css?body=1" for ::1 at 2015-12-15 11:43:47 -0800
+
+
+Started GET "/assets/badges.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-12-15 11:43:47 -0800
+
+
+Started GET "/assets/curtain.self-928bfa886689b15bd31b09e76d8aced46c87f449904e48e704741702c11df316.css?body=1" for ::1 at 2015-12-15 11:43:47 -0800
+
+
+Started GET "/assets/friend_requests.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-12-15 11:43:47 -0800
+
+
+Started GET "/assets/foundation_and_overrides.self-c3c39f50116a4bccd8a1cc38f1ace9e8cc5c1a84277983889437231b0d272cec.css?body=1" for ::1 at 2015-12-15 11:43:47 -0800
+
+
+Started GET "/assets/friendships.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-12-15 11:43:47 -0800
+
+
+Started GET "/assets/messages.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-12-15 11:43:47 -0800
+
+
+Started GET "/assets/maps.self-a0b79f9c07da57fe12d6866db226828f61234d06192e46bb6bbb4cc57d4646d5.css?body=1" for ::1 at 2015-12-15 11:43:47 -0800
+
+
+Started GET "/assets/sessions.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-12-15 11:43:47 -0800
+
+
+Started GET "/assets/user_categories.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-12-15 11:43:47 -0800
+
+
+Started GET "/assets/users.self-a2c7c262797be25e5171dc6d8c1f0be011aff22df93baed2a28539a232f7f852.css?body=1" for ::1 at 2015-12-15 11:43:47 -0800
+
+
+Started GET "/assets/application.self-53df0510da7038481a9225d205a746d058b54fb87e7952e75cbea8a58bd9022b.css?body=1" for ::1 at 2015-12-15 11:43:47 -0800
+
+
+Started GET "/assets/vendor/modernizr.self-74da3245def7569da28115667be6a85a2ad97464abe707c9829c46d8975597bc.js?body=1" for ::1 at 2015-12-15 11:43:47 -0800
+
+
+Started GET "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1" for ::1 at 2015-12-15 11:43:47 -0800
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for ::1 at 2015-12-15 11:43:47 -0800
+
+
+Started GET "/assets/foundation/foundation.self-98616d4fb376f824aeb7c868e05e747b97176a864c7da854779ed398828df78f.js?body=1" for ::1 at 2015-12-15 11:43:47 -0800
+
+
+Started GET "/assets/foundation/foundation.abide.self-670a9b56e37b4b434f79686b8a9862222173d68ec823b20565340e0e87627ca4.js?body=1" for ::1 at 2015-12-15 11:43:47 -0800
+
+
+Started GET "/assets/foundation/foundation.accordion.self-02a179f7efde1facecf8a814cae32112c36800ce3d66bafc00c807a56d7b8d46.js?body=1" for ::1 at 2015-12-15 11:43:47 -0800
+
+
+Started GET "/assets/foundation/foundation.alert.self-631e4c4124bd543574c5a7f4d5d8b59fdf350f6c11d6201ba8a872e8a0f203b0.js?body=1" for ::1 at 2015-12-15 11:43:47 -0800
+
+
+Started GET "/assets/foundation/foundation.clearing.self-96397aa6b2d39ff61e9b4ce8486a9f716f9072f2011f1dc99f94a96b381b3830.js?body=1" for ::1 at 2015-12-15 11:43:47 -0800
+
+
+Started GET "/assets/foundation/foundation.dropdown.self-3e70f72040b183d09b673307b08d1d688a5572c6c8cbb222755945e70ccbb05e.js?body=1" for ::1 at 2015-12-15 11:43:47 -0800
+
+
+Started GET "/assets/foundation/foundation.equalizer.self-1889be5dfd0e56321a9a6d5fe9d4a94b04602c158f3e4d58419b967c255b999f.js?body=1" for ::1 at 2015-12-15 11:43:47 -0800
+
+
+Started GET "/assets/foundation/foundation.joyride.self-1f6b19104e2439f1e4353444cb6fb9f7f308563556f167c2154ca3108eb7f77e.js?body=1" for ::1 at 2015-12-15 11:43:47 -0800
+
+
+Started GET "/assets/foundation/foundation.interchange.self-c6d033cdd9e7fd3f29c067eb7b9ee564f7a6b542650d2ca530ae1e3c529a3c35.js?body=1" for ::1 at 2015-12-15 11:43:47 -0800
+
+
+Started GET "/assets/foundation/foundation.magellan.self-1fcf75780d5b4db5e97c267810e7c9a5e19a9f0d7b67a2d167074d7cff1d6a70.js?body=1" for ::1 at 2015-12-15 11:43:47 -0800
+
+
+Started GET "/assets/foundation/foundation.offcanvas.self-2f34a4b91e1e958aefbde46004d6186ee82e018fe95634214749799141339810.js?body=1" for ::1 at 2015-12-15 11:43:47 -0800
+
+
+Started GET "/assets/foundation/foundation.orbit.self-ba7d30fe424df83b5bc8bc5bb67ea90608759c6eb8212d1475d52b09db0bcd0f.js?body=1" for ::1 at 2015-12-15 11:43:47 -0800
+
+
+Started GET "/assets/foundation/foundation.reveal.self-5a83316675f14b52f582d67c053ae7977827a5b06459d7e8f5556cbedfba1d0d.js?body=1" for ::1 at 2015-12-15 11:43:47 -0800
+
+
+Started GET "/assets/foundation/foundation.slider.self-686e8b14e01aeb75ec0980de90956540d2b245324fc58e8c25debafc60300b96.js?body=1" for ::1 at 2015-12-15 11:43:47 -0800
+
+
+Started GET "/assets/foundation/foundation.tab.self-9b2bd1afa5715ce8f154fa008d0aab44500763e9b336a6d4e5bca96437176a74.js?body=1" for ::1 at 2015-12-15 11:43:47 -0800
+
+
+Started GET "/assets/foundation/foundation.tooltip.self-dae1db2297f90064e1a8ae7b02b175ca613cc6a2d190aaed548f6ef853f4b46d.js?body=1" for ::1 at 2015-12-15 11:43:47 -0800
+
+
+Started GET "/assets/foundation/foundation.topbar.self-fa6260890f9f59c821128d066bcfaa18665c816022bafd398d937c367d5e39b7.js?body=1" for ::1 at 2015-12-15 11:43:47 -0800
+
+
+Started GET "/assets/foundation.self-abe4ee7a105042f73b12b1f1a28788522d2f253445a475a94ab4d6e1f7b0ec52.js?body=1" for ::1 at 2015-12-15 11:43:47 -0800
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2015-12-15 11:43:47 -0800
+
+
+Started GET "/assets/accountabuddy_requests.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-12-15 11:43:47 -0800
+
+
+Started GET "/assets/badges.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-12-15 11:43:47 -0800
+
+
+Started GET "/assets/curtain.self-03cedba756c2ea28b832bb6cb8c319e5954ea1495621342287edfc1657932778.js?body=1" for ::1 at 2015-12-15 11:43:47 -0800
+
+
+Started GET "/assets/friend_requests.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-12-15 11:43:47 -0800
+
+
+Started GET "/assets/friendships.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-12-15 11:43:47 -0800
+
+
+Started GET "/assets/messages.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-12-15 11:43:47 -0800
+
+
+Started GET "/assets/scroll_up.self-c3b7cbf89f2df9e2397e11ac3708fffb90c66ae2a5139623696d21e0d7ef68aa.js?body=1" for ::1 at 2015-12-15 11:43:47 -0800
+
+
+Started GET "/assets/sessions.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-12-15 11:43:47 -0800
+
+
+Started GET "/assets/user_categories.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-12-15 11:43:47 -0800
+
+
+Started GET "/assets/users.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-12-15 11:43:47 -0800
+
+
+Started GET "/assets/application.self-e0f248057c7f11e2cc2c83b244d389d4af40f3df36a06d4398f31ec1033d0824.js?body=1" for ::1 at 2015-12-15 11:43:47 -0800
+
+
+Started GET "/" for ::1 at 2015-12-15 11:44:20 -0800
+Processing by UsersController#index as HTML
+  Rendered users/_user_index_header.html.erb (0.4ms)
+  Rendered users/index.html.erb within layouts/application (28.5ms)
+Completed 200 OK in 482ms (Views: 480.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2015-12-15 11:44:20 -0800
+Processing by UsersController#index as HTML
+  Rendered users/_user_index_header.html.erb (0.1ms)
+  Rendered users/index.html.erb within layouts/application (20.8ms)
+Completed 200 OK in 319ms (Views: 318.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.self-78e21ca868bd2c157d660e52d8d3353c1372e48fddc791d537f8af66a55707e5.js?body=1" for ::1 at 2015-12-15 11:44:21 -0800
+
+
+Started GET "/signup" for ::1 at 2015-12-15 11:44:23 -0800
+Processing by UsersController#new as HTML
+  Rendered users/_map_show.html.erb (0.8ms)
+  Rendered users/new.html.erb within layouts/application (7.3ms)
+Completed 200 OK in 270ms (Views: 269.5ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users" for ::1 at 2015-12-15 11:44:27 -0800
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"nN2+lUqZBl0NuK1MjlwuXTWrdKf0o3VVNQYQeIbb6YDwMmkpkGofutNVqTGRHqMpUAS+HTFg5lb1QpMH4RddYg==", "user"=>{"name"=>"", "username"=>"", "email"=>"", "about_me"=>"", "gender"=>"Female", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Submit"}
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mUser Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."username" = '' LIMIT 1[0m
+  [1m[35mUser Exists (0.2ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = '' LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+Redirected to http://localhost:3000/signup
+Completed 302 Found in 10ms (ActiveRecord: 0.8ms)
+
+
+Started GET "/signup" for ::1 at 2015-12-15 11:44:27 -0800
+Processing by UsersController#new as HTML
+  Rendered users/_map_show.html.erb (0.0ms)
+  Rendered users/new.html.erb within layouts/application (2.6ms)
+Completed 200 OK in 274ms (Views: 273.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/signup" for ::1 at 2015-12-15 11:44:39 -0800
+Processing by UsersController#new as HTML
+  Rendered users/_map_show.html.erb (0.0ms)
+  Rendered users/new.html.erb within layouts/application (2.2ms)
+Completed 200 OK in 331ms (Views: 330.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/accountabuddy_requests.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-12-15 11:44:40 -0800
+
+
+Started GET "/assets/badges.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-12-15 11:44:40 -0800
+
+
+Started GET "/assets/categories.self-73a7ce4aabb5f9df39ea79190fcf3d82255e180c39399bb24101c132bf5cda0c.css?body=1" for ::1 at 2015-12-15 11:44:40 -0800
+
+
+Started GET "/assets/curtain.self-928bfa886689b15bd31b09e76d8aced46c87f449904e48e704741702c11df316.css?body=1" for ::1 at 2015-12-15 11:44:40 -0800
+
+
+Started GET "/assets/friendships.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-12-15 11:44:40 -0800
+
+
+Started GET "/assets/foundation_and_overrides.self-c3c39f50116a4bccd8a1cc38f1ace9e8cc5c1a84277983889437231b0d272cec.css?body=1" for ::1 at 2015-12-15 11:44:40 -0800
+
+
+Started GET "/assets/friend_requests.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-12-15 11:44:40 -0800
+
+
+Started GET "/assets/maps.self-a0b79f9c07da57fe12d6866db226828f61234d06192e46bb6bbb4cc57d4646d5.css?body=1" for ::1 at 2015-12-15 11:44:40 -0800
+
+
+Started GET "/assets/messages.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-12-15 11:44:40 -0800
+
+
+Started GET "/assets/sessions.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-12-15 11:44:40 -0800
+
+
+Started GET "/assets/user_categories.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-12-15 11:44:40 -0800
+
+
+Started GET "/assets/users.self-a2c7c262797be25e5171dc6d8c1f0be011aff22df93baed2a28539a232f7f852.css?body=1" for ::1 at 2015-12-15 11:44:40 -0800
+
+
+Started GET "/assets/application.self-53df0510da7038481a9225d205a746d058b54fb87e7952e75cbea8a58bd9022b.css?body=1" for ::1 at 2015-12-15 11:44:40 -0800
+
+
+Started GET "/assets/vendor/modernizr.self-74da3245def7569da28115667be6a85a2ad97464abe707c9829c46d8975597bc.js?body=1" for ::1 at 2015-12-15 11:44:40 -0800
+
+
+Started GET "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1" for ::1 at 2015-12-15 11:44:40 -0800
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for ::1 at 2015-12-15 11:44:40 -0800
+
+
+Started GET "/assets/foundation/foundation.self-98616d4fb376f824aeb7c868e05e747b97176a864c7da854779ed398828df78f.js?body=1" for ::1 at 2015-12-15 11:44:40 -0800
+
+
+Started GET "/assets/foundation/foundation.abide.self-670a9b56e37b4b434f79686b8a9862222173d68ec823b20565340e0e87627ca4.js?body=1" for ::1 at 2015-12-15 11:44:40 -0800
+
+
+Started GET "/assets/foundation/foundation.accordion.self-02a179f7efde1facecf8a814cae32112c36800ce3d66bafc00c807a56d7b8d46.js?body=1" for ::1 at 2015-12-15 11:44:40 -0800
+
+
+Started GET "/assets/foundation/foundation.alert.self-631e4c4124bd543574c5a7f4d5d8b59fdf350f6c11d6201ba8a872e8a0f203b0.js?body=1" for ::1 at 2015-12-15 11:44:40 -0800
+
+
+Started GET "/assets/foundation/foundation.clearing.self-96397aa6b2d39ff61e9b4ce8486a9f716f9072f2011f1dc99f94a96b381b3830.js?body=1" for ::1 at 2015-12-15 11:44:40 -0800
+
+
+Started GET "/assets/foundation/foundation.dropdown.self-3e70f72040b183d09b673307b08d1d688a5572c6c8cbb222755945e70ccbb05e.js?body=1" for ::1 at 2015-12-15 11:44:40 -0800
+
+
+Started GET "/assets/foundation/foundation.equalizer.self-1889be5dfd0e56321a9a6d5fe9d4a94b04602c158f3e4d58419b967c255b999f.js?body=1" for ::1 at 2015-12-15 11:44:40 -0800
+
+
+Started GET "/assets/foundation/foundation.interchange.self-c6d033cdd9e7fd3f29c067eb7b9ee564f7a6b542650d2ca530ae1e3c529a3c35.js?body=1" for ::1 at 2015-12-15 11:44:40 -0800
+
+
+Started GET "/assets/foundation/foundation.joyride.self-1f6b19104e2439f1e4353444cb6fb9f7f308563556f167c2154ca3108eb7f77e.js?body=1" for ::1 at 2015-12-15 11:44:40 -0800
+
+
+Started GET "/assets/foundation/foundation.magellan.self-1fcf75780d5b4db5e97c267810e7c9a5e19a9f0d7b67a2d167074d7cff1d6a70.js?body=1" for ::1 at 2015-12-15 11:44:40 -0800
+
+
+Started GET "/assets/foundation/foundation.offcanvas.self-2f34a4b91e1e958aefbde46004d6186ee82e018fe95634214749799141339810.js?body=1" for ::1 at 2015-12-15 11:44:40 -0800
+
+
+Started GET "/assets/foundation/foundation.orbit.self-ba7d30fe424df83b5bc8bc5bb67ea90608759c6eb8212d1475d52b09db0bcd0f.js?body=1" for ::1 at 2015-12-15 11:44:40 -0800
+
+
+Started GET "/assets/foundation/foundation.reveal.self-5a83316675f14b52f582d67c053ae7977827a5b06459d7e8f5556cbedfba1d0d.js?body=1" for ::1 at 2015-12-15 11:44:40 -0800
+
+
+Started GET "/assets/foundation/foundation.slider.self-686e8b14e01aeb75ec0980de90956540d2b245324fc58e8c25debafc60300b96.js?body=1" for ::1 at 2015-12-15 11:44:40 -0800
+
+
+Started GET "/assets/foundation/foundation.tab.self-9b2bd1afa5715ce8f154fa008d0aab44500763e9b336a6d4e5bca96437176a74.js?body=1" for ::1 at 2015-12-15 11:44:40 -0800
+
+
+Started GET "/assets/foundation/foundation.tooltip.self-dae1db2297f90064e1a8ae7b02b175ca613cc6a2d190aaed548f6ef853f4b46d.js?body=1" for ::1 at 2015-12-15 11:44:40 -0800
+
+
+Started GET "/assets/foundation/foundation.topbar.self-fa6260890f9f59c821128d066bcfaa18665c816022bafd398d937c367d5e39b7.js?body=1" for ::1 at 2015-12-15 11:44:40 -0800
+
+
+Started GET "/assets/foundation.self-abe4ee7a105042f73b12b1f1a28788522d2f253445a475a94ab4d6e1f7b0ec52.js?body=1" for ::1 at 2015-12-15 11:44:40 -0800
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2015-12-15 11:44:40 -0800
+
+
+Started GET "/assets/accountabuddy_requests.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-12-15 11:44:40 -0800
+
+
+Started GET "/assets/badges.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-12-15 11:44:40 -0800
+
+
+Started GET "/assets/curtain.self-03cedba756c2ea28b832bb6cb8c319e5954ea1495621342287edfc1657932778.js?body=1" for ::1 at 2015-12-15 11:44:40 -0800
+
+
+Started GET "/assets/friend_requests.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-12-15 11:44:40 -0800
+
+
+Started GET "/assets/friendships.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-12-15 11:44:40 -0800
+
+
+Started GET "/assets/messages.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-12-15 11:44:40 -0800
+
+
+Started GET "/assets/scroll_up.self-c3b7cbf89f2df9e2397e11ac3708fffb90c66ae2a5139623696d21e0d7ef68aa.js?body=1" for ::1 at 2015-12-15 11:44:40 -0800
+
+
+Started GET "/assets/sessions.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-12-15 11:44:40 -0800
+
+
+Started GET "/assets/user_categories.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-12-15 11:44:40 -0800
+
+
+Started GET "/assets/users.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-12-15 11:44:41 -0800
+
+
+Started GET "/assets/application.self-78e21ca868bd2c157d660e52d8d3353c1372e48fddc791d537f8af66a55707e5.js?body=1" for ::1 at 2015-12-15 11:44:41 -0800

@@ -1,4 +1,4 @@
-// This is a manifest file that'll be compiled into application.js, which will include all the files
+
 // listed below.
 //
 // Any JavaScript/Coffee file within this directory, lib/assets/javascripts, vendor/assets/javascripts,
@@ -30,6 +30,7 @@ $(function () {
 
 $(document).ready(function(){
   sendMessageListener();
+  userSubmitListener();
 });
 
 
@@ -54,5 +55,25 @@ var sendMessageListener = function() {
       console.log(response)
     })
   })
+}
+
+var userSubmitListener = function() {
+  $('body').on('submit', '#user-signedit-form', function(event){
+    event.preventDefault();
+    var userFormData = $(this).children().serialize();
+    $(".user-signedit-container").hide();
+    debugger
+
+    $("#map").css('display', 'block');
+    $("#geolocate").css('display', 'block')
+    //click find me
+    //create a variable and grab the coordinates from the find me button
+    //make the ajax request to the post route for users
+    //two sets of data in a object
+
+
+
+  })
+
 }
 
