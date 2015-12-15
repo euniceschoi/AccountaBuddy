@@ -18,24 +18,24 @@ class UsersController < ApplicationController
   def create
     p "*" * 50
     p params
-    # @user = User.new(user_params)
+    @user = User.new(name: params[:user][:name], username: params[:user][:username], email: params[:user][:email], about_me: params[:user][:about_me],gender: params[:user][:gender],password: params[:user][:password], password_confirmation: params[:user][:password_confirmation], latitude: params[:latitude], longitude: params[:longitude])
 
-    # if @user.save
-    #   @badge1 = Badge.new(name: "Fitness", description: "You're a fitness superstar!", user_id: @user.id, badge_image_link: "fitness-badge.png")
-    #   @badge2 = Badge.new(name: "Diet", description: "You're a Diet superstar!", user_id: @user.id, badge_image_link:"diet-badge.png")
-    #   @badge3 = Badge.new(name: "Hobbies", description: "You're a Hobbies superstar!", user_id: @user.id, badge_image_link:"hobbies-badge.png")
-    #   @badge4 = Badge.new(name: "Education", description: "You're a Education superstar!", user_id: @user.id, badge_image_link:"education-badge.png")
-    #     if @badge1.save && @badge2.save && @badge3.save && @badge4.save
-    #       session[:user_id] = @user.id
-    #       redirect_to user_path(@user.id)
-    #     else
-    #       flash[:error] = "Signup was unsuccessful. Please try again."
-    #       redirect_to '/signup'
-    #     end
-    # else
-    #   flash[:error] = "Signup was unsuccessful. Please try again."
-    #   redirect_to '/signup'
-    # end
+    if @user.save
+      @badge1 = Badge.new(name: "Fitness", description: "You're a fitness superstar!", user_id: @user.id, badge_image_link: "fitness-badge.png")
+      @badge2 = Badge.new(name: "Diet", description: "You're a Diet superstar!", user_id: @user.id, badge_image_link:"diet-badge.png")
+      @badge3 = Badge.new(name: "Hobbies", description: "You're a Hobbies superstar!", user_id: @user.id, badge_image_link:"hobbies-badge.png")
+      @badge4 = Badge.new(name: "Education", description: "You're a Education superstar!", user_id: @user.id, badge_image_link:"education-badge.png")
+        if @badge1.save && @badge2.save && @badge3.save && @badge4.save
+          session[:user_id] = @user.id
+          redirect_to user_path(@user.id)
+        else
+          flash[:error] = "Signup was unsuccessful. Please try again."
+          redirect_to '/signup'
+        end
+    else
+      flash[:error] = "Signup was unsuccessful. Please try again."
+      redirect_to '/signup'
+    end
   end
 
   def show
