@@ -24,9 +24,12 @@ body {
 	margin: 0px auto;
 	width: 900px;
 	height: auto;
-	background-color: rgba(255, 255, 255, .7);
-	padding: 50px;
-	border: 1px white solid;
+	background-color: rgba(255, 255, 255, .8);
+	padding: 50px;	
+	-webkit-box-shadow: 7px 8px 18px 0px rgba(12, 85, 98, .2);
+  -moz-box-shadow:    7px 8px 18px 0px rgba(12, 85, 98, .2);
+  box-shadow:         7px 8px 18px 0px rgba(12, 85, 98, .2);
+  margin-bottom: 75px;
 
 }
 
@@ -46,7 +49,7 @@ nav.top-bar a{
 
 .top-bar-section li:not(.has-form) a:not(.button):hover{
 	background-color: rgb(50, 161, 129);
-} 
+}
 
 .top-bar-section li:not(.has-form) a:not(.button) {
   background-color: rgb(50, 161, 129);
@@ -65,6 +68,13 @@ nav.top-bar a{
 	width: 100px;
 }
 
+#map{
+	display: none;
+}
+
+#geolocate{
+	display: none;
+}
 
 
 
