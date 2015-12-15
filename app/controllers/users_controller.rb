@@ -49,10 +49,13 @@ class UsersController < ApplicationController
     @accountabuddy_requests = AccountabuddyRequest.where(recipient_id: @user.id)
 
     if @user.id != current_user.id
-      @friendship = Friendship.find_by(user_id: current_user.id , friend_id: @user.id)
-      @accountabuddy_relationship = @friendship.accountabuddy
-      @inverse_friendship = Friendship.find_by(friend_id: current_user.id, user_id: @user.id)
-      @inverse_accountabuddy_relationship = @inverse_friendship.accountabuddy
+      if Friendship.find_by(user_id: current_user.id , friend_id: @user.id)
+        @friendship = Friendship.find_by(user_id: current_user.id , friend_id: @user.id)
+        @accountabuddy_relationship = @friendship.accountabuddy
+        @inverse_friendship = Friendship.find_by(friend_id: current_user.id, user_id: @user.id)
+        @inverse_accountabuddy_relationship = @inverse_friendship.accountabuddy
+      else
+      end
     end
   end
 

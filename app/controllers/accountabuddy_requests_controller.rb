@@ -16,5 +16,16 @@ class AccountabuddyRequestsController < ApplicationController
 
   def update
     p params
+    @accountabuddy_request = AccountabuddyRequest.find(params[:id])
+    p @accountabuddy_request
+    @friendship_id = @accountabuddy_request.friendship_id
+    @friendship = Friendship.find(@friendship_id)
+    @friendship.update(accountabuddy: true)
+    if @friendship.save
+      redirect_to friendship_path(@friendship_id)
+    else
+      redirect_to user_path(current_user.id)
+    end
+
   end
 end
