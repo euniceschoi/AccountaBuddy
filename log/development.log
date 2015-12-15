@@ -2968,3 +2968,662 @@ Processing by UsersController#show as HTML
   [1m[36mFriendRequest Load (0.1ms)[0m  [1mSELECT "friend_requests".* FROM "friend_requests" WHERE "friend_requests"."recipient_id" = $1 AND "friend_requests"."friends" = $2[0m  [["recipient_id", 14], ["friends", "f"]]
   Rendered users/show.html.erb within layouts/application (18.2ms)
 Completed 200 OK in 197ms (Views: 190.4ms | ActiveRecord: 1.9ms)
+  [1m[36m (19.6ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL) [0m
+  [1m[35m (2.7ms)[0m  CREATE UNIQUE INDEX  "unique_schema_migrations" ON "schema_migrations"  ("version")
+  [1m[36mActiveRecord::SchemaMigration Load (0.8ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreateUsers (20151211185732)
+  [1m[35m (0.3ms)[0m  BEGIN
+  [1m[36m (20.7ms)[0m  [1mCREATE TABLE "users" ("id" serial primary key, "name" character varying NOT NULL, "username" character varying NOT NULL, "email" character varying NOT NULL, "password_digest" character varying NOT NULL, "longitude" float, "latitude" float, "address" character varying, "about_me" text, "birthdate" character varying, "gender" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) [0m
+  [1m[35mSQL (0.8ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ($1)  [["version", "20151211185732"]]
+  [1m[36m (5.9ms)[0m  [1mCOMMIT[0m
+Migrating to CreateFriendships (20151211192332)
+  [1m[35m (6.5ms)[0m  BEGIN
+  [1m[36m (7.4ms)[0m  [1mCREATE TABLE "friendships" ("id" serial primary key, "user_id" integer, "friend_id" integer, "category_id" integer, "accountabuddy" boolean DEFAULT 'f', "messages" character varying[] DEFAULT '{}', "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) [0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ($1)  [["version", "20151211192332"]]
+  [1m[36m (1.1ms)[0m  [1mCOMMIT[0m
+Migrating to CreateCategories (20151211192830)
+  [1m[35m (0.5ms)[0m  BEGIN
+  [1m[36m (6.5ms)[0m  [1mCREATE TABLE "categories" ("id" serial primary key, "name" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) [0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ($1)  [["version", "20151211192830"]]
+  [1m[36m (1.2ms)[0m  [1mCOMMIT[0m
+Migrating to CreateUserCategories (20151211195801)
+  [1m[35m (0.7ms)[0m  BEGIN
+  [1m[36m (6.2ms)[0m  [1mCREATE TABLE "user_categories" ("id" serial primary key, "user_id" integer, "category_id" integer, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) [0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ($1)  [["version", "20151211195801"]]
+  [1m[36m (0.9ms)[0m  [1mCOMMIT[0m
+Migrating to CreateFriendRequests (20151212041422)
+  [1m[35m (0.6ms)[0m  BEGIN
+  [1m[36m (5.0ms)[0m  [1mCREATE TABLE "friend_requests" ("id" serial primary key, "user_id" integer, "recipient_id" integer, "category_id" integer, "friends" boolean DEFAULT 'f', "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) [0m
+  [1m[35mSQL (0.7ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ($1)  [["version", "20151212041422"]]
+  [1m[36m (1.0ms)[0m  [1mCOMMIT[0m
+Migrating to CreateConversations (20151212235936)
+  [1m[35m (0.5ms)[0m  BEGIN
+  [1m[36m (5.1ms)[0m  [1mCREATE TABLE "conversations" ("id" serial primary key, "sender_id" integer, "recipient_id" integer, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) [0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ($1)  [["version", "20151212235936"]]
+  [1m[36m (1.0ms)[0m  [1mCOMMIT[0m
+Migrating to CreateMessages (20151212235949)
+  [1m[35m (0.6ms)[0m  BEGIN
+  [1m[36m (7.0ms)[0m  [1mCREATE TABLE "messages" ("id" serial primary key, "body" text, "conversation_id" integer, "user_id" integer, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) [0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ($1)  [["version", "20151212235949"]]
+  [1m[36m (1.0ms)[0m  [1mCOMMIT[0m
+Migrating to CreateBadges (20151213233948)
+  [1m[35m (0.7ms)[0m  BEGIN
+  [1m[36m (10.7ms)[0m  [1mCREATE TABLE "badges" ("id" serial primary key, "name" character varying, "points" integer DEFAULT 0, "description" text, "user_id" integer, "badge_image_link" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) [0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ($1)  [["version", "20151213233948"]]
+  [1m[36m (0.9ms)[0m  [1mCOMMIT[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.5ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36m (6.7ms)[0m  [1mSELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'badges'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+[0m
+  [1m[35m (5.2ms)[0m  SELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'categories'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+
+  [1m[36m (5.4ms)[0m  [1mSELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'conversations'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+[0m
+  [1m[35m (5.1ms)[0m  SELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'friend_requests'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+
+  [1m[36m (5.6ms)[0m  [1mSELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'friendships'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+[0m
+  [1m[35m (5.2ms)[0m  SELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'messages'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+
+  [1m[36m (5.1ms)[0m  [1mSELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'user_categories'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+[0m
+  [1m[35m (5.1ms)[0m  SELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'users'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+
+  [1m[36mActiveRecord::SchemaMigration Load (0.9ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35mSQL (1.4ms)[0m  DELETE FROM "users"
+  [1m[36mSQL (0.9ms)[0m  [1mDELETE FROM "categories"[0m
+  [1m[35mSQL (1.0ms)[0m  DELETE FROM "user_categories"
+  [1m[36mSQL (0.9ms)[0m  [1mDELETE FROM "friendships"[0m
+  [1m[35m (0.3ms)[0m  BEGIN
+  [1m[36mUser Exists (1.4ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."username" = 'eunice' LIMIT 1[0m
+  [1m[35mUser Exists (1.3ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = 'eunice@gmail.com' LIMIT 1
+  [1m[36mSQL (1.1ms)[0m  [1mINSERT INTO "users" ("name", "username", "longitude", "latitude", "email", "password_digest", "about_me", "gender", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["name", "Eunice"], ["username", "eunice"], ["longitude", -122.0], ["latitude", 37.77], ["email", "eunice@gmail.com"], ["password_digest", "$2a$10$uVFAjTMLPzbMnuFhYckKnehESZlBFllAv6OaZN1joqVvGGh4GSGxm"], ["about_me", "I'm happy!"], ["gender", "female"], ["created_at", "2015-12-15 01:11:54.892730"], ["updated_at", "2015-12-15 01:11:54.892730"]]
+  [1m[35m (7.1ms)[0m  COMMIT
+  [1m[36m (0.3ms)[0m  [1mBEGIN[0m
+  [1m[35mUser Exists (0.6ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."username" = 'koske' LIMIT 1
+  [1m[36mUser Exists (0.5ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = 'koske@gmail.com' LIMIT 1[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "users" ("name", "username", "longitude", "latitude", "email", "password_digest", "about_me", "gender", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"  [["name", "Chris"], ["username", "koske"], ["longitude", -122.0], ["latitude", 37.68], ["email", "koske@gmail.com"], ["password_digest", "$2a$10$kTD2mJKobLfA8mZPu65jpeyuWWrpLfPIPYlzPp26TYZCT5NwV/GeC"], ["about_me", "I'm optimistic!"], ["gender", "male"], ["created_at", "2015-12-15 01:11:55.171547"], ["updated_at", "2015-12-15 01:11:55.171547"]]
+  [1m[36m (8.7ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  BEGIN
+  [1m[36mUser Exists (0.6ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."username" = 'jenna' LIMIT 1[0m
+  [1m[35mUser Exists (0.5ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = 'jenna@gmail.com' LIMIT 1
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "users" ("name", "username", "longitude", "latitude", "email", "password_digest", "about_me", "gender", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["name", "Jenna"], ["username", "jenna"], ["longitude", -122.0], ["latitude", 37.54], ["email", "jenna@gmail.com"], ["password_digest", "$2a$10$4twlxdohGFiJAJw/Yga6jex0mFZOvWOV14bnqqbcP/rHOke8Mi0tu"], ["about_me", "I'm creative!"], ["gender", "female"], ["created_at", "2015-12-15 01:11:55.450714"], ["updated_at", "2015-12-15 01:11:55.450714"]]
+  [1m[35m (8.8ms)[0m  COMMIT
+  [1m[36m (0.3ms)[0m  [1mBEGIN[0m
+  [1m[35mUser Exists (1.4ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."username" = 'tanya' LIMIT 1
+  [1m[36mUser Exists (0.5ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = 'tanya@gmail.com' LIMIT 1[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "users" ("name", "username", "longitude", "latitude", "email", "password_digest", "about_me", "gender", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"  [["name", "Tanya"], ["username", "tanya"], ["longitude", -122.0], ["latitude", 37.32], ["email", "tanya@gmail.com"], ["password_digest", "$2a$10$C.Yc7QMlmkuZzEawhlLSleyqHGXYfUtfCcemwwrJjZXubgxHFKcXe"], ["about_me", "I'm joyful!"], ["gender", "female"], ["created_at", "2015-12-15 01:11:55.728646"], ["updated_at", "2015-12-15 01:11:55.728646"]]
+  [1m[36m (8.7ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  BEGIN
+  [1m[36mUser Exists (0.7ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."username" = 'mary' LIMIT 1[0m
+  [1m[35mUser Exists (0.5ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = 'mary@gmail.com' LIMIT 1
+  [1m[36mSQL (0.6ms)[0m  [1mINSERT INTO "users" ("name", "username", "longitude", "latitude", "email", "password_digest", "about_me", "gender", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["name", "Mary"], ["username", "mary"], ["longitude", -122.0], ["latitude", 37.75], ["email", "mary@gmail.com"], ["password_digest", "$2a$10$GtfsY8K0jtnrlGo085TpHeMM64un6yZ8JPEzBJkbgZIP3qhdsuzDi"], ["about_me", "I'm energetic!"], ["gender", "female"], ["created_at", "2015-12-15 01:11:56.006757"], ["updated_at", "2015-12-15 01:11:56.006757"]]
+  [1m[35m (8.3ms)[0m  COMMIT
+  [1m[36m (0.3ms)[0m  [1mBEGIN[0m
+  [1m[35mUser Exists (0.6ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."username" = 'jupiter' LIMIT 1
+  [1m[36mUser Exists (0.5ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = 'jupiter@gmail.com' LIMIT 1[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "users" ("name", "username", "longitude", "latitude", "email", "password_digest", "about_me", "gender", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"  [["name", "Jupiter"], ["username", "jupiter"], ["longitude", -122.0], ["latitude", 37.79], ["email", "jupiter@gmail.com"], ["password_digest", "$2a$10$/1zQwcc3BxFqAlTaHzGPsesjHftBZkquSIb25Nep9LNFj0r/2w9fm"], ["about_me", "I'm communicative!"], ["gender", "male"], ["created_at", "2015-12-15 01:11:56.285301"], ["updated_at", "2015-12-15 01:11:56.285301"]]
+  [1m[36m (8.4ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mUser Exists (0.6ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."username" = 'chris' LIMIT 1[0m
+  [1m[35mUser Exists (0.5ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = 'chris@gmail.com' LIMIT 1
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "users" ("name", "username", "longitude", "latitude", "email", "password_digest", "about_me", "gender", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["name", "Chris"], ["username", "chris"], ["longitude", -122.0], ["latitude", 37.42], ["email", "chris@gmail.com"], ["password_digest", "$2a$10$.qBGGN6ZyI7jfShiOhHGvergJ1hTcCVGIfHWA5R1D/LFlU3Iv3mBG"], ["about_me", "I'm kind!"], ["gender", "male"], ["created_at", "2015-12-15 01:11:56.562088"], ["updated_at", "2015-12-15 01:11:56.562088"]]
+  [1m[35m (8.3ms)[0m  COMMIT
+  [1m[36m (0.3ms)[0m  [1mBEGIN[0m
+  [1m[35mUser Exists (0.6ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."username" = 'nathan' LIMIT 1
+  [1m[36mUser Exists (0.5ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = 'nathan@gmail.com' LIMIT 1[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "users" ("name", "username", "longitude", "latitude", "email", "password_digest", "about_me", "gender", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"  [["name", "Nathan"], ["username", "nathan"], ["longitude", -122.0], ["latitude", 37.48], ["email", "nathan@gmail.com"], ["password_digest", "$2a$10$zdJdtjajt8CzoHI0c1LpiubWPR.Pgvf2P54w05ePbWCrhb4w3PvIO"], ["about_me", "I'm thoughtful!"], ["gender", "male"], ["created_at", "2015-12-15 01:11:56.838638"], ["updated_at", "2015-12-15 01:11:56.838638"]]
+  [1m[36m (8.8ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  BEGIN
+  [1m[36mUser Exists (0.6ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."username" = 'shawn' LIMIT 1[0m
+  [1m[35mUser Exists (0.5ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = 'shawn@gmail.com' LIMIT 1
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "users" ("name", "username", "longitude", "latitude", "email", "password_digest", "about_me", "gender", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["name", "Shawn"], ["username", "shawn"], ["longitude", -122.0], ["latitude", 37.59], ["email", "shawn@gmail.com"], ["password_digest", "$2a$10$hRK3dnvMqAISi7LGIlvuGeTXbX3gQBih4hbHWFfZ.jvLpM6HD.YB."], ["about_me", "I'm sensitive!"], ["gender", "male"], ["created_at", "2015-12-15 01:11:57.117262"], ["updated_at", "2015-12-15 01:11:57.117262"]]
+  [1m[35m (0.8ms)[0m  COMMIT
+  [1m[36m (0.5ms)[0m  [1mBEGIN[0m
+  [1m[35mUser Exists (0.6ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."username" = 'mike' LIMIT 1
+  [1m[36mUser Exists (0.5ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = 'mike@gmail.com' LIMIT 1[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "users" ("name", "username", "longitude", "latitude", "email", "password_digest", "about_me", "gender", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"  [["name", "Mike"], ["username", "mike"], ["longitude", -122.0], ["latitude", 37.8], ["email", "mike@gmail.com"], ["password_digest", "$2a$10$q/z7liK81RgFg.pm9So.z.K4lLXNzP8PWRRhXJ10n.JAYsyH8/4Na"], ["about_me", "I'm direct!"], ["gender", "male"], ["created_at", "2015-12-15 01:11:57.386541"], ["updated_at", "2015-12-15 01:11:57.386541"]]
+  [1m[36m (8.8ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  BEGIN
+  [1m[36mUser Exists (0.6ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."username" = 'paul' LIMIT 1[0m
+  [1m[35mUser Exists (0.5ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = 'paul@gmail.com' LIMIT 1
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "users" ("name", "username", "longitude", "latitude", "email", "password_digest", "about_me", "gender", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["name", "Paul"], ["username", "paul"], ["longitude", -122.0], ["latitude", 37.35], ["email", "paul@gmail.com"], ["password_digest", "$2a$10$fVXDbprXg2agA4cS7MvwguExwVwK3Jh8tIgJlTUX9Gl9XOKjvH2Ai"], ["about_me", "I'm mischievous!"], ["gender", "male"], ["created_at", "2015-12-15 01:11:57.663297"], ["updated_at", "2015-12-15 01:11:57.663297"]]
+  [1m[35m (8.8ms)[0m  COMMIT
+  [1m[36m (0.3ms)[0m  [1mBEGIN[0m
+  [1m[35mUser Exists (0.6ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."username" = 'rosslyn' LIMIT 1
+  [1m[36mUser Exists (0.5ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = 'rosslyn@gmail.com' LIMIT 1[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "users" ("name", "username", "longitude", "latitude", "email", "password_digest", "about_me", "gender", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"  [["name", "Rosslyn"], ["username", "rosslyn"], ["longitude", -122.0], ["latitude", 37.72], ["email", "rosslyn@gmail.com"], ["password_digest", "$2a$10$/tHpeXMl5hGhslDJ.PESuO029lplYpj2E6MB0FU3xXXo4GuhZaoL6"], ["about_me", "I'm a cuddler!"], ["gender", "female"], ["created_at", "2015-12-15 01:11:57.940307"], ["updated_at", "2015-12-15 01:11:57.940307"]]
+  [1m[36m (8.7ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  BEGIN
+  [1m[36mSQL (1.0ms)[0m  [1mINSERT INTO "categories" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Fitness"], ["created_at", "2015-12-15 01:11:57.966661"], ["updated_at", "2015-12-15 01:11:57.966661"]]
+  [1m[35m (0.6ms)[0m  COMMIT
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "categories" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"  [["name", "Diet"], ["created_at", "2015-12-15 01:11:57.973605"], ["updated_at", "2015-12-15 01:11:57.973605"]]
+  [1m[36m (0.6ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  BEGIN
+  [1m[36mSQL (1.1ms)[0m  [1mINSERT INTO "badges" ("name", "description", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Fitness"], ["description", "You're a fitness superstar!"], ["created_at", "2015-12-15 01:11:57.999593"], ["updated_at", "2015-12-15 01:11:57.999593"]]
+  [1m[35m (0.7ms)[0m  COMMIT
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "badges" ("name", "description", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["name", "Diet"], ["description", "You're a Diet superstar!"], ["created_at", "2015-12-15 01:11:58.006235"], ["updated_at", "2015-12-15 01:11:58.006235"]]
+  [1m[36m (0.6ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  BEGIN
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "badges" ("name", "description", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Hobbies"], ["description", "You're a Hobbies superstar! "], ["created_at", "2015-12-15 01:11:58.011133"], ["updated_at", "2015-12-15 01:11:58.011133"]]
+  [1m[35m (0.6ms)[0m  COMMIT
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "badges" ("name", "description", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["name", "Education"], ["description", "You're a Education superstar!"], ["created_at", "2015-12-15 01:11:58.015572"], ["updated_at", "2015-12-15 01:11:58.015572"]]
+  [1m[36m (0.6ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.8ms)[0m  [1mINSERT INTO "user_categories" ("user_id", "category_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["user_id", 1], ["category_id", 1], ["created_at", "2015-12-15 01:11:58.032977"], ["updated_at", "2015-12-15 01:11:58.032977"]]
+  [1m[35m (0.6ms)[0m  COMMIT
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "user_categories" ("user_id", "category_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["user_id", 2], ["category_id", 1], ["created_at", "2015-12-15 01:11:58.038747"], ["updated_at", "2015-12-15 01:11:58.038747"]]
+  [1m[36m (0.7ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "user_categories" ("user_id", "category_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["user_id", 3], ["category_id", 1], ["created_at", "2015-12-15 01:11:58.043576"], ["updated_at", "2015-12-15 01:11:58.043576"]]
+  [1m[35m (0.6ms)[0m  COMMIT
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "user_categories" ("user_id", "category_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["user_id", 4], ["category_id", 1], ["created_at", "2015-12-15 01:11:58.048310"], ["updated_at", "2015-12-15 01:11:58.048310"]]
+  [1m[36m (0.7ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  BEGIN
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "user_categories" ("user_id", "category_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["user_id", 4], ["category_id", 2], ["created_at", "2015-12-15 01:11:58.077672"], ["updated_at", "2015-12-15 01:11:58.077672"]]
+  [1m[35m (0.7ms)[0m  COMMIT
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "user_categories" ("user_id", "category_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["user_id", 5], ["category_id", 1], ["created_at", "2015-12-15 01:11:58.082735"], ["updated_at", "2015-12-15 01:11:58.082735"]]
+  [1m[36m (0.6ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "user_categories" ("user_id", "category_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["user_id", 6], ["category_id", 1], ["created_at", "2015-12-15 01:11:58.087425"], ["updated_at", "2015-12-15 01:11:58.087425"]]
+  [1m[35m (0.6ms)[0m  COMMIT
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "user_categories" ("user_id", "category_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["user_id", 6], ["category_id", 2], ["created_at", "2015-12-15 01:11:58.091983"], ["updated_at", "2015-12-15 01:11:58.091983"]]
+  [1m[36m (0.7ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "user_categories" ("user_id", "category_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["user_id", 7], ["category_id", 1], ["created_at", "2015-12-15 01:11:58.096594"], ["updated_at", "2015-12-15 01:11:58.096594"]]
+  [1m[35m (0.6ms)[0m  COMMIT
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "user_categories" ("user_id", "category_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["user_id", 8], ["category_id", 1], ["created_at", "2015-12-15 01:11:58.100972"], ["updated_at", "2015-12-15 01:11:58.100972"]]
+  [1m[36m (0.6ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  BEGIN
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "user_categories" ("user_id", "category_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["user_id", 8], ["category_id", 2], ["created_at", "2015-12-15 01:11:58.105399"], ["updated_at", "2015-12-15 01:11:58.105399"]]
+  [1m[35m (0.8ms)[0m  COMMIT
+  [1m[36m (0.3ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "user_categories" ("user_id", "category_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["user_id", 9], ["category_id", 1], ["created_at", "2015-12-15 01:11:58.110462"], ["updated_at", "2015-12-15 01:11:58.110462"]]
+  [1m[36m (0.6ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "user_categories" ("user_id", "category_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["user_id", 9], ["category_id", 2], ["created_at", "2015-12-15 01:11:58.115312"], ["updated_at", "2015-12-15 01:11:58.115312"]]
+  [1m[35m (0.6ms)[0m  COMMIT
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "user_categories" ("user_id", "category_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["user_id", 10], ["category_id", 1], ["created_at", "2015-12-15 01:11:58.119679"], ["updated_at", "2015-12-15 01:11:58.119679"]]
+  [1m[36m (0.6ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "user_categories" ("user_id", "category_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["user_id", 10], ["category_id", 2], ["created_at", "2015-12-15 01:11:58.124249"], ["updated_at", "2015-12-15 01:11:58.124249"]]
+  [1m[35m (0.6ms)[0m  COMMIT
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "user_categories" ("user_id", "category_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["user_id", 11], ["category_id", 1], ["created_at", "2015-12-15 01:11:58.128423"], ["updated_at", "2015-12-15 01:11:58.128423"]]
+  [1m[36m (0.6ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "user_categories" ("user_id", "category_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["user_id", 12], ["category_id", 1], ["created_at", "2015-12-15 01:11:58.132732"], ["updated_at", "2015-12-15 01:11:58.132732"]]
+  [1m[35m (0.6ms)[0m  COMMIT
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "user_categories" ("user_id", "category_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["user_id", 12], ["category_id", 2], ["created_at", "2015-12-15 01:11:58.137018"], ["updated_at", "2015-12-15 01:11:58.137018"]]
+  [1m[36m (0.6ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.9ms)[0m  [1mINSERT INTO "friendships" ("user_id", "friend_id", "category_id", "accountabuddy", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["user_id", 1], ["friend_id", 2], ["category_id", 1], ["accountabuddy", "t"], ["created_at", "2015-12-15 01:11:58.157548"], ["updated_at", "2015-12-15 01:11:58.157548"]]
+  [1m[35m (0.6ms)[0m  COMMIT
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "friendships" ("user_id", "friend_id", "category_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["user_id", 1], ["friend_id", 3], ["category_id", 1], ["created_at", "2015-12-15 01:11:58.163911"], ["updated_at", "2015-12-15 01:11:58.163911"]]
+  [1m[36m (0.6ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "friendships" ("user_id", "friend_id", "category_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["user_id", 1], ["friend_id", 5], ["category_id", 1], ["created_at", "2015-12-15 01:11:58.169135"], ["updated_at", "2015-12-15 01:11:58.169135"]]
+  [1m[35m (0.8ms)[0m  COMMIT
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "friendships" ("user_id", "friend_id", "category_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["user_id", 1], ["friend_id", 6], ["category_id", 1], ["created_at", "2015-12-15 01:11:58.174367"], ["updated_at", "2015-12-15 01:11:58.174367"]]
+  [1m[36m (0.7ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "friendships" ("user_id", "friend_id", "category_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["user_id", 1], ["friend_id", 7], ["category_id", 1], ["created_at", "2015-12-15 01:11:58.179381"], ["updated_at", "2015-12-15 01:11:58.179381"]]
+  [1m[35m (0.7ms)[0m  COMMIT
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "friendships" ("user_id", "friend_id", "category_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["user_id", 1], ["friend_id", 9], ["category_id", 1], ["created_at", "2015-12-15 01:11:58.184324"], ["updated_at", "2015-12-15 01:11:58.184324"]]
+  [1m[36m (0.6ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "friendships" ("user_id", "friend_id", "category_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["user_id", 1], ["friend_id", 11], ["category_id", 1], ["created_at", "2015-12-15 01:11:58.189090"], ["updated_at", "2015-12-15 01:11:58.189090"]]
+  [1m[35m (0.7ms)[0m  COMMIT
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "friendships" ("user_id", "friend_id", "category_id", "accountabuddy", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"  [["user_id", 2], ["friend_id", 1], ["category_id", 1], ["accountabuddy", "t"], ["created_at", "2015-12-15 01:11:58.194022"], ["updated_at", "2015-12-15 01:11:58.194022"]]
+  [1m[36m (0.7ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "friendships" ("user_id", "friend_id", "category_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["user_id", 2], ["friend_id", 4], ["category_id", 1], ["created_at", "2015-12-15 01:11:58.199087"], ["updated_at", "2015-12-15 01:11:58.199087"]]
+  [1m[35m (0.7ms)[0m  COMMIT
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "friendships" ("user_id", "friend_id", "category_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["user_id", 2], ["friend_id", 6], ["category_id", 1], ["created_at", "2015-12-15 01:11:58.203739"], ["updated_at", "2015-12-15 01:11:58.203739"]]
+  [1m[36m (0.6ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "friendships" ("user_id", "friend_id", "category_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["user_id", 2], ["friend_id", 7], ["category_id", 1], ["created_at", "2015-12-15 01:11:58.208579"], ["updated_at", "2015-12-15 01:11:58.208579"]]
+  [1m[35m (0.6ms)[0m  COMMIT
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "friendships" ("user_id", "friend_id", "category_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["user_id", 2], ["friend_id", 8], ["category_id", 1], ["created_at", "2015-12-15 01:11:58.213176"], ["updated_at", "2015-12-15 01:11:58.213176"]]
+  [1m[36m (0.6ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  BEGIN
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "friendships" ("user_id", "friend_id", "category_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["user_id", 2], ["friend_id", 10], ["category_id", 1], ["created_at", "2015-12-15 01:11:58.218380"], ["updated_at", "2015-12-15 01:11:58.218380"]]
+  [1m[35m (0.7ms)[0m  COMMIT
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "friendships" ("user_id", "friend_id", "category_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["user_id", 2], ["friend_id", 12], ["category_id", 1], ["created_at", "2015-12-15 01:11:58.223737"], ["updated_at", "2015-12-15 01:11:58.223737"]]
+  [1m[36m (0.7ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  BEGIN
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "friendships" ("user_id", "friend_id", "category_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["user_id", 3], ["friend_id", 1], ["category_id", 1], ["created_at", "2015-12-15 01:11:58.229050"], ["updated_at", "2015-12-15 01:11:58.229050"]]
+  [1m[35m (0.7ms)[0m  COMMIT
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "friendships" ("user_id", "friend_id", "category_id", "accountabuddy", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"  [["user_id", 3], ["friend_id", 5], ["category_id", 1], ["accountabuddy", "t"], ["created_at", "2015-12-15 01:11:58.234150"], ["updated_at", "2015-12-15 01:11:58.234150"]]
+  [1m[36m (0.7ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "friendships" ("user_id", "friend_id", "category_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["user_id", 3], ["friend_id", 7], ["category_id", 1], ["created_at", "2015-12-15 01:11:58.239495"], ["updated_at", "2015-12-15 01:11:58.239495"]]
+  [1m[35m (0.6ms)[0m  COMMIT
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "friendships" ("user_id", "friend_id", "category_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["user_id", 3], ["friend_id", 8], ["category_id", 1], ["created_at", "2015-12-15 01:11:58.244532"], ["updated_at", "2015-12-15 01:11:58.244532"]]
+  [1m[36m (0.6ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "friendships" ("user_id", "friend_id", "category_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["user_id", 3], ["friend_id", 9], ["category_id", 1], ["created_at", "2015-12-15 01:11:58.249356"], ["updated_at", "2015-12-15 01:11:58.249356"]]
+  [1m[35m (0.7ms)[0m  COMMIT
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "friendships" ("user_id", "friend_id", "category_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["user_id", 3], ["friend_id", 11], ["category_id", 1], ["created_at", "2015-12-15 01:11:58.254690"], ["updated_at", "2015-12-15 01:11:58.254690"]]
+  [1m[36m (0.6ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "friendships" ("user_id", "friend_id", "category_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["user_id", 4], ["friend_id", 2], ["category_id", 1], ["created_at", "2015-12-15 01:11:58.259950"], ["updated_at", "2015-12-15 01:11:58.259950"]]
+  [1m[35m (0.7ms)[0m  COMMIT
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "friendships" ("user_id", "friend_id", "category_id", "accountabuddy", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"  [["user_id", 4], ["friend_id", 6], ["category_id", 2], ["accountabuddy", "t"], ["created_at", "2015-12-15 01:11:58.266142"], ["updated_at", "2015-12-15 01:11:58.266142"]]
+  [1m[36m (0.7ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "friendships" ("user_id", "friend_id", "category_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["user_id", 4], ["friend_id", 8], ["category_id", 2], ["created_at", "2015-12-15 01:11:58.271993"], ["updated_at", "2015-12-15 01:11:58.271993"]]
+  [1m[35m (0.7ms)[0m  COMMIT
+  [1m[36m (0.3ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "friendships" ("user_id", "friend_id", "category_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["user_id", 4], ["friend_id", 9], ["category_id", 2], ["created_at", "2015-12-15 01:11:58.277307"], ["updated_at", "2015-12-15 01:11:58.277307"]]
+  [1m[36m (0.7ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "friendships" ("user_id", "friend_id", "category_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["user_id", 4], ["friend_id", 10], ["category_id", 2], ["created_at", "2015-12-15 01:11:58.282982"], ["updated_at", "2015-12-15 01:11:58.282982"]]
+  [1m[35m (0.8ms)[0m  COMMIT
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "friendships" ("user_id", "friend_id", "category_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["user_id", 4], ["friend_id", 12], ["category_id", 2], ["created_at", "2015-12-15 01:11:58.288803"], ["updated_at", "2015-12-15 01:11:58.288803"]]
+  [1m[36m (0.7ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "friendships" ("user_id", "friend_id", "category_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["user_id", 5], ["friend_id", 1], ["category_id", 1], ["created_at", "2015-12-15 01:11:58.294165"], ["updated_at", "2015-12-15 01:11:58.294165"]]
+  [1m[35m (0.8ms)[0m  COMMIT
+  [1m[36m (0.3ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "friendships" ("user_id", "friend_id", "category_id", "accountabuddy", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"  [["user_id", 5], ["friend_id", 3], ["category_id", 1], ["accountabuddy", "t"], ["created_at", "2015-12-15 01:11:58.300396"], ["updated_at", "2015-12-15 01:11:58.300396"]]
+  [1m[36m (0.6ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "friendships" ("user_id", "friend_id", "category_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["user_id", 6], ["friend_id", 1], ["category_id", 1], ["created_at", "2015-12-15 01:11:58.305484"], ["updated_at", "2015-12-15 01:11:58.305484"]]
+  [1m[35m (0.6ms)[0m  COMMIT
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO "friendships" ("user_id", "friend_id", "category_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["user_id", 6], ["friend_id", 2], ["category_id", 1], ["created_at", "2015-12-15 01:11:58.310833"], ["updated_at", "2015-12-15 01:11:58.310833"]]
+  [1m[36m (0.8ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  BEGIN
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "friendships" ("user_id", "friend_id", "category_id", "accountabuddy", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["user_id", 6], ["friend_id", 4], ["category_id", 2], ["accountabuddy", "t"], ["created_at", "2015-12-15 01:11:58.317979"], ["updated_at", "2015-12-15 01:11:58.317979"]]
+  [1m[35m (0.7ms)[0m  COMMIT
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "friendships" ("user_id", "friend_id", "category_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["user_id", 7], ["friend_id", 1], ["category_id", 1], ["created_at", "2015-12-15 01:11:58.323431"], ["updated_at", "2015-12-15 01:11:58.323431"]]
+  [1m[36m (0.6ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "friendships" ("user_id", "friend_id", "category_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["user_id", 7], ["friend_id", 2], ["category_id", 1], ["created_at", "2015-12-15 01:11:58.328649"], ["updated_at", "2015-12-15 01:11:58.328649"]]
+  [1m[35m (0.6ms)[0m  COMMIT
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "friendships" ("user_id", "friend_id", "category_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["user_id", 7], ["friend_id", 3], ["category_id", 1], ["created_at", "2015-12-15 01:11:58.334499"], ["updated_at", "2015-12-15 01:11:58.334499"]]
+  [1m[36m (1.2ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.4ms)[0m  BEGIN
+  [1m[36mSQL (0.6ms)[0m  [1mINSERT INTO "friendships" ("user_id", "friend_id", "category_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["user_id", 8], ["friend_id", 3], ["category_id", 1], ["created_at", "2015-12-15 01:11:58.341093"], ["updated_at", "2015-12-15 01:11:58.341093"]]
+  [1m[35m (0.8ms)[0m  COMMIT
+  [1m[36m (0.4ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "friendships" ("user_id", "friend_id", "category_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["user_id", 8], ["friend_id", 2], ["category_id", 1], ["created_at", "2015-12-15 01:11:58.348432"], ["updated_at", "2015-12-15 01:11:58.348432"]]
+  [1m[36m (0.8ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  BEGIN
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "friendships" ("user_id", "friend_id", "category_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["user_id", 8], ["friend_id", 4], ["category_id", 2], ["created_at", "2015-12-15 01:11:58.354138"], ["updated_at", "2015-12-15 01:11:58.354138"]]
+  [1m[35m (0.7ms)[0m  COMMIT
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "friendships" ("user_id", "friend_id", "category_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["user_id", 9], ["friend_id", 1], ["category_id", 1], ["created_at", "2015-12-15 01:11:58.360386"], ["updated_at", "2015-12-15 01:11:58.360386"]]
+  [1m[36m (1.1ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.6ms)[0m  BEGIN
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "friendships" ("user_id", "friend_id", "category_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["user_id", 9], ["friend_id", 3], ["category_id", 1], ["created_at", "2015-12-15 01:11:58.366948"], ["updated_at", "2015-12-15 01:11:58.366948"]]
+  [1m[35m (0.8ms)[0m  COMMIT
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "friendships" ("user_id", "friend_id", "category_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["user_id", 9], ["friend_id", 4], ["category_id", 2], ["created_at", "2015-12-15 01:11:58.373281"], ["updated_at", "2015-12-15 01:11:58.373281"]]
+  [1m[36m (0.7ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "friendships" ("user_id", "friend_id", "category_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["user_id", 10], ["friend_id", 2], ["category_id", 1], ["created_at", "2015-12-15 01:11:58.378447"], ["updated_at", "2015-12-15 01:11:58.378447"]]
+  [1m[35m (0.9ms)[0m  COMMIT
+  [1m[36m (0.3ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "friendships" ("user_id", "friend_id", "category_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["user_id", 10], ["friend_id", 4], ["category_id", 2], ["created_at", "2015-12-15 01:11:58.386588"], ["updated_at", "2015-12-15 01:11:58.386588"]]
+  [1m[36m (0.8ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "friendships" ("user_id", "friend_id", "category_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["user_id", 11], ["friend_id", 1], ["category_id", 1], ["created_at", "2015-12-15 01:11:58.393114"], ["updated_at", "2015-12-15 01:11:58.393114"]]
+  [1m[35m (0.7ms)[0m  COMMIT
+  [1m[36m (0.3ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "friendships" ("user_id", "friend_id", "category_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["user_id", 11], ["friend_id", 3], ["category_id", 1], ["created_at", "2015-12-15 01:11:58.398910"], ["updated_at", "2015-12-15 01:11:58.398910"]]
+  [1m[36m (0.7ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  BEGIN
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "friendships" ("user_id", "friend_id", "category_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["user_id", 12], ["friend_id", 2], ["category_id", 1], ["created_at", "2015-12-15 01:11:58.404732"], ["updated_at", "2015-12-15 01:11:58.404732"]]
+  [1m[35m (0.7ms)[0m  COMMIT
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "friendships" ("user_id", "friend_id", "category_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["user_id", 12], ["friend_id", 4], ["category_id", 2], ["created_at", "2015-12-15 01:11:58.409906"], ["updated_at", "2015-12-15 01:11:58.409906"]]
+  [1m[36m (0.7ms)[0m  [1mCOMMIT[0m
+
+
+Started GET "/" for ::1 at 2015-12-14 17:12:15 -0800
+  [1m[36mActiveRecord::SchemaMigration Load (1.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by UsersController#index as HTML
+  [1m[35mUser Load (1.2ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 15]]
+  Rendered users/_user_index_header.html.erb (56.9ms)
+  Rendered users/index.html.erb within layouts/application (77.2ms)
+Completed 500 Internal Server Error in 228ms (ActiveRecord: 9.4ms)
+
+ActiveRecord::RecordNotFound (Couldn't find User with 'id'=15):
+  app/controllers/application_controller.rb:8:in `current_user'
+  app/views/users/_user_index_header.html.erb:3:in `_app_views_users__user_index_header_html_erb__2048774481630339109_70184819347860'
+  app/views/users/index.html.erb:5:in `_app_views_users_index_html_erb___2059890590361788005_70184819624340'
+  app/controllers/users_controller.rb:9:in `index'
+
+
+  Rendered /Users/Eunice/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_source.erb (23.6ms)
+  Rendered /Users/Eunice/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (10.0ms)
+  Rendered /Users/Eunice/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.7ms)
+  Rendered /Users/Eunice/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (253.1ms)
+  Rendered /Users/Eunice/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (1.1ms)
+  Rendered /Users/Eunice/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (1.1ms)
+  Rendered /Users/Eunice/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (1.9ms)
+  Rendered /Users/Eunice/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (1.0ms)
+  Rendered /Users/Eunice/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (260.7ms)
+  Rendered /Users/Eunice/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.8ms)
+  Rendered /Users/Eunice/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (1.3ms)
+  Rendered /Users/Eunice/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (500.6ms)
+
+
+Started GET "/" for ::1 at 2015-12-14 17:12:53 -0800
+Processing by UsersController#index as HTML
+  Rendered users/_user_index_header.html.erb (0.5ms)
+  Rendered users/index.html.erb within layouts/application (606.3ms)
+Completed 200 OK in 22983ms (Views: 22980.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/categories.self-742142b412dbf82a2e6327df2b2fa08339ecaf8c9b98ebb52c8de69f6c4d63b6.css?body=1" for ::1 at 2015-12-14 17:13:17 -0800
+
+
+Started GET "/assets/maps.self-a0b79f9c07da57fe12d6866db226828f61234d06192e46bb6bbb4cc57d4646d5.css?body=1" for ::1 at 2015-12-14 17:13:17 -0800
+
+
+Started GET "/assets/users.self-03910568803bb665eed11be64eab4d025f57a5572400b62bc385db8a58bd1ff3.css?body=1" for ::1 at 2015-12-14 17:13:17 -0800
+
+
+Started GET "/assets/application.self-89afab8dd3d27e002f1f80a1480f5733346aafac402dde7432079057dd93078f.css?body=1" for ::1 at 2015-12-14 17:13:17 -0800
+
+
+Started GET "/signup" for ::1 at 2015-12-14 17:13:22 -0800
+Processing by UsersController#new as HTML
+  Rendered users/new.html.erb within layouts/application (51.1ms)
+Completed 200 OK in 595ms (Views: 593.9ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users" for ::1 at 2015-12-14 17:13:33 -0800
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"0C7XkkGjWnxTjBZjZuQJc8V5Wqpo5j3mbufeK5BATDecQlx5uqmS5F4W4kQm8X12bREwl4/E/VhNTIOFQkNsLA==", "user"=>{"name"=>"bob", "username"=>"bob", "email"=>"bob", "about_me"=>"bob", "birthdate(1i)"=>"2015", "birthdate(2i)"=>"12", "birthdate(3i)"=>"15", "gender"=>"Female", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Submit"}
+  [1m[36m (0.3ms)[0m  [1mBEGIN[0m
+  [1m[35mUser Exists (1.9ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."username" = 'bob' LIMIT 1
+  [1m[36mUser Exists (0.7ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = 'bob' LIMIT 1[0m
+  [1m[35mSQL (0.9ms)[0m  INSERT INTO "users" ("name", "username", "email", "password_digest", "about_me", "gender", "birthdate", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"  [["name", "bob"], ["username", "bob"], ["email", "bob"], ["password_digest", "$2a$10$rPq84Qt5JPQ.McaOxQB5LONnc1pvjsu5qlP6zK1jLYd2lsJ1gcLCW"], ["about_me", "bob"], ["gender", "Female"], ["birthdate", "{1=>2015, 2=>12, 3=>15}"], ["created_at", "2015-12-15 01:13:33.568460"], ["updated_at", "2015-12-15 01:13:33.568460"]]
+  [1m[36m (8.9ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  BEGIN
+  [1m[36mSQL (0.8ms)[0m  [1mINSERT INTO "badges" ("name", "description", "user_id", "badge_image_link", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Fitness"], ["description", "You're a fitness superstar!"], ["user_id", 13], ["badge_image_link", "fitness-badge.png"], ["created_at", "2015-12-15 01:13:33.610688"], ["updated_at", "2015-12-15 01:13:33.610688"]]
+  [1m[35m (0.7ms)[0m  COMMIT
+  [1m[36m (0.3ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "badges" ("name", "description", "user_id", "badge_image_link", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"  [["name", "Diet"], ["description", "You're a Diet superstar!"], ["user_id", 13], ["badge_image_link", "diet-badge.png"], ["created_at", "2015-12-15 01:13:33.617205"], ["updated_at", "2015-12-15 01:13:33.617205"]]
+  [1m[36m (0.7ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  BEGIN
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "badges" ("name", "description", "user_id", "badge_image_link", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Hobbies"], ["description", "You're a Hobbies superstar!"], ["user_id", 13], ["badge_image_link", "hobbies-badge.png"], ["created_at", "2015-12-15 01:13:33.622155"], ["updated_at", "2015-12-15 01:13:33.622155"]]
+  [1m[35m (0.7ms)[0m  COMMIT
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "badges" ("name", "description", "user_id", "badge_image_link", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"  [["name", "Education"], ["description", "You're a Education superstar!"], ["user_id", 13], ["badge_image_link", "education-badge.png"], ["created_at", "2015-12-15 01:13:33.626838"], ["updated_at", "2015-12-15 01:13:33.626838"]]
+  [1m[36m (0.9ms)[0m  [1mCOMMIT[0m
+Redirected to http://localhost:3000/users/13
+Completed 302 Found in 395ms (ActiveRecord: 22.5ms)
+
+
+Started GET "/users/13" for ::1 at 2015-12-14 17:13:33 -0800
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"13"}
+  [1m[35mUser Load (0.7ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 13]]
+  [1m[36mUser Load (0.7ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 13]]
+  Rendered layouts/_navigation.html.erb (2.5ms)
+  [1m[35mBadge Load (1.0ms)[0m  SELECT "badges".* FROM "badges" WHERE "badges"."user_id" = $1  [["user_id", 13]]
+  [1m[36mFriendship Load (1.1ms)[0m  [1mSELECT "friendships".* FROM "friendships" WHERE "friendships"."user_id" = $1 AND "friendships"."accountabuddy" = $2[0m  [["user_id", 13], ["accountabuddy", "t"]]
+  [1m[35mFriendship Load (0.8ms)[0m  SELECT "friendships".* FROM "friendships" WHERE "friendships"."user_id" = $1 AND "friendships"."accountabuddy" = $2  [["user_id", 13], ["accountabuddy", "f"]]
+  [1m[36mFriendRequest Load (1.2ms)[0m  [1mSELECT "friend_requests".* FROM "friend_requests" WHERE "friend_requests"."user_id" = $1 AND "friend_requests"."friends" = $2[0m  [["user_id", 13], ["friends", "f"]]
+  [1m[35mFriendRequest Load (0.4ms)[0m  SELECT "friend_requests".* FROM "friend_requests" WHERE "friend_requests"."recipient_id" = $1 AND "friend_requests"."friends" = $2  [["recipient_id", 13], ["friends", "f"]]
+  Rendered users/show.html.erb within layouts/application (208.8ms)
+Completed 200 OK in 847ms (Views: 782.1ms | ActiveRecord: 9.9ms)
+
+
+Started GET "/logout" for ::1 at 2015-12-14 17:13:44 -0800
+Processing by SessionsController#destroy as HTML
+Redirected to http://localhost:3000/
+Completed 302 Found in 3ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2015-12-14 17:13:44 -0800
+Processing by UsersController#index as HTML
+  Rendered users/_user_index_header.html.erb (0.3ms)
+  Rendered users/index.html.erb within layouts/application (43.1ms)
+Completed 200 OK in 570ms (Views: 568.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/signup" for ::1 at 2015-12-14 17:13:47 -0800
+Processing by UsersController#new as HTML
+  Rendered users/new.html.erb within layouts/application (7.6ms)
+Completed 200 OK in 481ms (Views: 479.4ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users" for ::1 at 2015-12-14 17:13:55 -0800
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Ci9Y9JrK4E6Zi9cDG5EFLbrff5QEOcQdm0GqjqADq55GQ9MfYcAo1pQRIyRbhHEoErcVqeMbBKO46vcgcgCLhQ==", "user"=>{"name"=>"pop", "username"=>"pop", "email"=>"pop", "about_me"=>"pop", "birthdate(1i)"=>"2015", "birthdate(2i)"=>"12", "birthdate(3i)"=>"15", "gender"=>"Female", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Submit"}
+  [1m[36m (0.3ms)[0m  [1mBEGIN[0m
+  [1m[35mUser Exists (0.6ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."username" = 'pop' LIMIT 1
+  [1m[36mUser Exists (0.6ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = 'pop' LIMIT 1[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "users" ("name", "username", "email", "password_digest", "about_me", "gender", "birthdate", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"  [["name", "pop"], ["username", "pop"], ["email", "pop"], ["password_digest", "$2a$10$IRXPF1mgOLPhdh6LBtWN.eha2EnLr2WeTml.ahxgCDHFATEyUejGa"], ["about_me", "pop"], ["gender", "Female"], ["birthdate", "{1=>2015, 2=>12, 3=>15}"], ["created_at", "2015-12-15 01:13:56.169767"], ["updated_at", "2015-12-15 01:13:56.169767"]]
+  [1m[36m (8.7ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "badges" ("name", "description", "user_id", "badge_image_link", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Fitness"], ["description", "You're a fitness superstar!"], ["user_id", 14], ["badge_image_link", "fitness-badge.png"], ["created_at", "2015-12-15 01:13:56.185776"], ["updated_at", "2015-12-15 01:13:56.185776"]]
+  [1m[35m (0.7ms)[0m  COMMIT
+  [1m[36m (0.3ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "badges" ("name", "description", "user_id", "badge_image_link", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"  [["name", "Diet"], ["description", "You're a Diet superstar!"], ["user_id", 14], ["badge_image_link", "diet-badge.png"], ["created_at", "2015-12-15 01:13:56.190919"], ["updated_at", "2015-12-15 01:13:56.190919"]]
+  [1m[36m (0.7ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  BEGIN
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "badges" ("name", "description", "user_id", "badge_image_link", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["name", "Hobbies"], ["description", "You're a Hobbies superstar!"], ["user_id", 14], ["badge_image_link", "hobbies-badge.png"], ["created_at", "2015-12-15 01:13:56.195755"], ["updated_at", "2015-12-15 01:13:56.195755"]]
+  [1m[35m (0.7ms)[0m  COMMIT
+  [1m[36m (0.3ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "badges" ("name", "description", "user_id", "badge_image_link", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"  [["name", "Education"], ["description", "You're a Education superstar!"], ["user_id", 14], ["badge_image_link", "education-badge.png"], ["created_at", "2015-12-15 01:13:56.200522"], ["updated_at", "2015-12-15 01:13:56.200522"]]
+  [1m[36m (0.7ms)[0m  [1mCOMMIT[0m
+Redirected to http://localhost:3000/users/14
+Completed 302 Found in 305ms (ActiveRecord: 16.3ms)
+
+
+Started GET "/users/14" for ::1 at 2015-12-14 17:13:56 -0800
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"14"}
+  [1m[35mUser Load (0.7ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 14]]
+  [1m[36mUser Load (0.6ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 14]]
+  Rendered layouts/_navigation.html.erb (1.1ms)
+  [1m[35mBadge Load (0.6ms)[0m  SELECT "badges".* FROM "badges" WHERE "badges"."user_id" = $1  [["user_id", 14]]
+  [1m[36mFriendship Load (0.6ms)[0m  [1mSELECT "friendships".* FROM "friendships" WHERE "friendships"."user_id" = $1 AND "friendships"."accountabuddy" = $2[0m  [["user_id", 14], ["accountabuddy", "t"]]
+  [1m[35mFriendship Load (0.4ms)[0m  SELECT "friendships".* FROM "friendships" WHERE "friendships"."user_id" = $1 AND "friendships"."accountabuddy" = $2  [["user_id", 14], ["accountabuddy", "f"]]
+  [1m[36mFriendRequest Load (0.4ms)[0m  [1mSELECT "friend_requests".* FROM "friend_requests" WHERE "friend_requests"."user_id" = $1 AND "friend_requests"."friends" = $2[0m  [["user_id", 14], ["friends", "f"]]
+  [1m[35mFriendRequest Load (0.6ms)[0m  SELECT "friend_requests".* FROM "friend_requests" WHERE "friend_requests"."recipient_id" = $1 AND "friend_requests"."friends" = $2  [["recipient_id", 14], ["friends", "f"]]
+  Rendered users/show.html.erb within layouts/application (42.5ms)
+Completed 200 OK in 618ms (Views: 608.2ms | ActiveRecord: 3.9ms)
+
+
+Started GET "/users/13" for ::1 at 2015-12-14 17:14:00 -0800
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"13"}
+  [1m[36mUser Load (0.6ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 13]]
+  [1m[35mUser Load (0.4ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 14]]
+  [1m[36mFriendship Load (0.5ms)[0m  [1mSELECT  "friendships".* FROM "friendships" WHERE "friendships"."user_id" = $1 AND "friendships"."friend_id" = $2 LIMIT 1[0m  [["user_id", 14], ["friend_id", 13]]
+Completed 500 Internal Server Error in 11ms (ActiveRecord: 1.5ms)
+
+NoMethodError (undefined method `accountabuddy' for nil:NilClass):
+  app/controllers/users_controller.rb:51:in `show'
+
+
+  Rendered /Users/Eunice/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_source.erb (11.9ms)
+  Rendered /Users/Eunice/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (5.6ms)
+  Rendered /Users/Eunice/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.4ms)
+  Rendered /Users/Eunice/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (196.5ms)
+  Rendered /Users/Eunice/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (1.1ms)
+  Rendered /Users/Eunice/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.9ms)
+  Rendered /Users/Eunice/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.9ms)
+  Rendered /Users/Eunice/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (1.0ms)
+  Rendered /Users/Eunice/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (191.6ms)
+  Rendered /Users/Eunice/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.8ms)
+  Rendered /Users/Eunice/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (1.1ms)
+  Rendered /Users/Eunice/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (412.3ms)
+
+
+Started GET "/users/6" for ::1 at 2015-12-14 17:16:17 -0800
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[35mUser Load (0.5ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 6]]
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 14]]
+  [1m[35mFriendship Load (0.5ms)[0m  SELECT  "friendships".* FROM "friendships" WHERE "friendships"."user_id" = $1 AND "friendships"."friend_id" = $2 LIMIT 1  [["user_id", 14], ["friend_id", 6]]
+Completed 500 Internal Server Error in 9ms (ActiveRecord: 1.4ms)
+
+NoMethodError (undefined method `accountabuddy' for nil:NilClass):
+  app/controllers/users_controller.rb:51:in `show'
+
+
+  Rendered /Users/Eunice/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_source.erb (11.8ms)
+  Rendered /Users/Eunice/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (5.5ms)
+  Rendered /Users/Eunice/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.7ms)
+  Rendered /Users/Eunice/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (196.7ms)
+  Rendered /Users/Eunice/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (1.0ms)
+  Rendered /Users/Eunice/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.9ms)
+  Rendered /Users/Eunice/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.9ms)
+  Rendered /Users/Eunice/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.9ms)
+  Rendered /Users/Eunice/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (173.8ms)
+  Rendered /Users/Eunice/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.8ms)
+  Rendered /Users/Eunice/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (1.1ms)
+  Rendered /Users/Eunice/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (387.2ms)
+
+
+Started GET "/users/13" for ::1 at 2015-12-14 17:16:25 -0800
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"13"}
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 13]]
+  [1m[35mUser Load (0.4ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 14]]
+  [1m[36mFriendship Load (0.5ms)[0m  [1mSELECT  "friendships".* FROM "friendships" WHERE "friendships"."user_id" = $1 AND "friendships"."friend_id" = $2 LIMIT 1[0m  [["user_id", 14], ["friend_id", 13]]
+Completed 500 Internal Server Error in 10ms (ActiveRecord: 1.4ms)
+
+NoMethodError (undefined method `accountabuddy' for nil:NilClass):
+  app/controllers/users_controller.rb:51:in `show'
+
+
+  Rendered /Users/Eunice/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_source.erb (11.8ms)
+  Rendered /Users/Eunice/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (5.5ms)
+  Rendered /Users/Eunice/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.4ms)
+  Rendered /Users/Eunice/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (194.3ms)
+  Rendered /Users/Eunice/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (1.6ms)
+  Rendered /Users/Eunice/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (1.1ms)
+  Rendered /Users/Eunice/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.9ms)
+  Rendered /Users/Eunice/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.9ms)
+  Rendered /Users/Eunice/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (183.6ms)
+  Rendered /Users/Eunice/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.9ms)
+  Rendered /Users/Eunice/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (1.1ms)
+  Rendered /Users/Eunice/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (413.1ms)
+
+
+Started GET "/users/14" for ::1 at 2015-12-14 17:16:29 -0800
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"14"}
+  [1m[35mUser Load (0.5ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1  [["id", 14]]
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT 1[0m  [["id", 14]]
+  Rendered layouts/_navigation.html.erb (0.9ms)
+  [1m[35mBadge Load (0.6ms)[0m  SELECT "badges".* FROM "badges" WHERE "badges"."user_id" = $1  [["user_id", 14]]
+  [1m[36mFriendship Load (0.6ms)[0m  [1mSELECT "friendships".* FROM "friendships" WHERE "friendships"."user_id" = $1 AND "friendships"."accountabuddy" = $2[0m  [["user_id", 14], ["accountabuddy", "t"]]
+  [1m[35mFriendship Load (0.5ms)[0m  SELECT "friendships".* FROM "friendships" WHERE "friendships"."user_id" = $1 AND "friendships"."accountabuddy" = $2  [["user_id", 14], ["accountabuddy", "f"]]
+  [1m[36mFriendRequest Load (0.4ms)[0m  [1mSELECT "friend_requests".* FROM "friend_requests" WHERE "friend_requests"."user_id" = $1 AND "friend_requests"."friends" = $2[0m  [["user_id", 14], ["friends", "f"]]
+  [1m[35mFriendRequest Load (0.5ms)[0m  SELECT "friend_requests".* FROM "friend_requests" WHERE "friend_requests"."recipient_id" = $1 AND "friend_requests"."friends" = $2  [["recipient_id", 14], ["friends", "f"]]
+  Rendered users/show.html.erb within layouts/application (40.6ms)
+Completed 200 OK in 636ms (Views: 626.1ms | ActiveRecord: 3.5ms)
