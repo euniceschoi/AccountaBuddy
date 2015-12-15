@@ -1,0 +1,72 @@
+<!-- MAPBOX FIND ALL-->
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset=utf-8 />
+  <title>Geolocation</title>
+  <meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
+  <script src='https://api.mapbox.com/mapbox.js/v2.2.3/mapbox.js'></script>
+  <link href='https://api.mapbox.com/mapbox.js/v2.2.3/mapbox.css' rel='stylesheet' />
+  <style>
+    body { margin:0; padding:0; }
+    #map { position:absolute; top:0; bottom:0; width:100%; }
+  </style>
+</head>
+<body>
+
+<div id='map'></div>
+<script>
+L.mapbox.accessToken = "<%= ENV['MAPBOX_TOKEN'] %>";
+var geolocate = document.getElementById('geolocate');
+var map = L.mapbox.map('map', 'mapbox.streets').setView([37.7570841,-122.00], 12);
+var myLayer = L.mapbox.featureLayer().addTo(map);
+
+
+var geoJson = [];
+<% @users.each do |user| %>
+      geoJson.push({
+      type: 'Feature',
+      geometry: {
+      type: 'Point',
+      coordinates: [<%= user.longitude %>, <%= user.latitude %>],
+      },
+      properties: {
+        'marker-color': '#00607d',
+        'marker-symbol': 'star',
+        'marker-size': 'medium',
+        'name': '<%= user.username%>',
+        'url': "/users/"+ "<%=user.id%>",
+        'user_id': '<%= user.id %>'
+
+      }
+    });
+<% end %>
+
+
+// Add custom popups to each using our custom feature properties
+myLayer.on('layeradd', function(e) {
+  var marker = e.layer,
+  feature = marker.feature;
+    // Create custom popup content
+    var popupContent =  '<a target="_blank" class="popup" href="' + feature.properties.url + '">' +
+    '<img src="' + feature.properties.image + '" />' + "  " +
+    '<span style="font-size:20px">'+feature.properties.name+'</span>' + 
+    '<%= form_for :recipientid, :url => {:action=>"create", :controller=>"friend_requests"} do |f| %><%= f.button 'Add as Friend'%><%= f.hidden_field :category_id, value: @category.id %><%= f.hidden_field :recipient_id, value:' + feature.properties.user_id + '%><% end %>'
+    '</a>';
+    // http://leafletjs.com/reference.html#popup
+    marker.bindPopup(popupContent, {
+      closeButton: true,
+      minWidth: 320
+    });
+  });
+// Add features to the map
+myLayer.setGeoJSON(geoJson);
+myLayer.on('mouseover', function(e) {
+  e.layer.openPopup();
+});
+
+
+
+</script>
+</body>
+</html>

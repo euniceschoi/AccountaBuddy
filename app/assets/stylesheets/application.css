@@ -1,0 +1,69 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any styles
+ * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+ * file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ *= require foundation_and_overrides
+
+ */
+
+body {
+ 	background-color: #c4d1da;
+ }
+
+.innards {
+	margin: 0px auto;
+	width: 900px;
+	height: auto;
+	background-color: rgba(255, 255, 255, .7);
+	padding: 50px;
+	border: 1px white solid;
+
+}
+
+#home-nav-bar a{
+	font-family: 'Alegreya Sans', sans-serif;
+}
+
+nav.top-bar{
+	background-color: rgb(50, 161, 129);
+	margin-bottom: 10px;
+
+}
+
+nav.top-bar a{
+	font-size: 1.7em;
+}
+
+.top-bar-section li:not(.has-form) a:not(.button):hover{
+	background-color: rgb(50, 161, 129);
+} 
+
+.top-bar-section li:not(.has-form) a:not(.button) {
+  background-color: rgb(50, 161, 129);
+}
+
+.top-bar-section .dropdown li:hover:not(.has-form):not(.active) > a:not(.button){
+	 background-color: rgb(50, 161, 129);
+}
+
+.top-bar-section .dropdown li:not(.has-form):not(.active) > a:not(.button){
+	 background-color: rgb(50, 161, 129);
+}
+
+
+.map-show{
+	width: 100px;
+}
+
+
+
