@@ -38,8 +38,11 @@ class FriendshipsController < ApplicationController
   def update
     p params
       @friendship = Friendship.find(params[:id])
+      @user_id = @friendship.user_id
+      @inverse_friendship = Friendship.find(friend_id: @user_id)
+      @inverse_friendship.update(accountabuddy: true)
   		@friendship.update(accountabuddy: true)
-      if @friendship.save
+      if @friendship.save && @inverse_friendship.save
         redirect_to user_path(current_user.id)
       else
         redirect_to friendship_path(friendship.id)

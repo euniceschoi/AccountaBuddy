@@ -49,12 +49,15 @@ map.on('locationfound', function(e) {
     });
     // And hide the geolocation button
     geolocate.parentNode.removeChild(geolocate);
-$.ajax({
-            url: '/users',
-           
-            }).done(function( msg ) {
-              alert( "Data Saved: " + [e.latlng.lng, e.latlng.lat] );
-            });    
+    
+    $.ajax({
+        url: '/users/' + '<%= @user.id %>',
+        type: 'PUT',
+        data: {user_location: [e.latlng.lng, e.latlng.lat]},
+        dataType: 'JSON',
+    }).done(function( msg ) {
+        alert( "Data Saved: " + [e.latlng.lng, e.latlng.lat] );
+    }); 
 });
 // If the user chooses not to allow their location to be shared, display an error message.
 map.on('locationerror', function() {

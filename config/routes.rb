@@ -10,6 +10,8 @@ Rails.application.routes.draw do
   resources :conversations
   resources :messages
   resources :badges
+  resources :accountabuddy_requests, only:[:create, :update]
+  resources :user_categories
   # FB
   # get 'auth/facebook/callback', to: 'sessions#create'
   # get 'auth/failure', to: redirect('/')
