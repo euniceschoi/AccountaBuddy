@@ -5,7 +5,7 @@
 
   <h3>You have been friends with <%= @friend.name %> since <%= @friendship.created_at %> </h3>
 
-<<<<<<< HEAD
+
   <%= flash[:error] %>
   <% if @friendship.accountabuddy == false%>
     <% if @friendship.accountabuddy_request %>
@@ -20,10 +20,10 @@
   <% else %>
       Friendship Status: Accountabuddies
   <% end %>
-=======
+
   <%= link_to "Become Accountabuddies!", friendship_path(@friendship.id), method: 'put' %>
 
->>>>>>> move up a folder:arrow_up:
+
   <h1>Your conversation with <%= @friend.name %>:</h1>
 
 <% if @messages %>
