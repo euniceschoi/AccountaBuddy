@@ -46,11 +46,16 @@ class UsersController < ApplicationController
     @friend_requests = FriendRequest.where(recipient_id: @user.id, friends: false)
     @pending_requests = FriendRequest.where(user_id: @user.id, friends:false)
     @badges = @user.badges
-    if @user.id != current_user.id 
-      @friendship = Friendship.find_by(user_id: current_user.id , friend_id: @user.id)
-      @accountabuddy_relationship = @friendship.accountabuddy
-      @inverse_friendship = Friendship.find_by(friend_id: current_user.id, user_id: @user.id)
-      @inverse_accountabuddy_relationship = @inverse_friendship.accountabuddy
+    @accountabuddy_requests = AccountabuddyRequest.where(recipient_id: @user.id)
+
+    if @user.id != current_user.id
+      if Friendship.find_by(user_id: current_user.id , friend_id: @user.id)
+        @friendship = Friendship.find_by(user_id: current_user.id , friend_id: @user.id)
+        @accountabuddy_relationship = @friendship.accountabuddy
+        @inverse_friendship = Friendship.find_by(friend_id: current_user.id, user_id: @user.id)
+        @inverse_accountabuddy_relationship = @inverse_friendship.accountabuddy
+      else
+      end
     end
   end
 
@@ -59,12 +64,24 @@ class UsersController < ApplicationController
   end
 
   def update
-    if current_user && current_user.id = @user.id
-      @user
-      @user.latitude = e.latlng.lat  
-      @user.longitude = e.latlng.lng
+    @user = User.find(params[:id])
+    if current_user && current_user.id = @user.id 
+      longitude = params["user_location"][0].to_f
+      latitude = params["user_location"][1].to_f
+      @user.update_attributes(latitude: latitude, longitude: longitude)
+      if @user.save(validate: false)
+        respond_to do |format|
+          format.html
+          format.json { render json: @user } 
+        end
+      else
+        @user.errors.full_messages
+        respond_to do |format|
+          format.html
+          format.json { render json: @user.errors } 
+        end
+      end  
     else
-      #put an error message here
       redirect_to root_path
     end
   end

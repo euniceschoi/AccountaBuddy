@@ -50,7 +50,7 @@ myLayer.on('layeradd', function(e) {
     // Create custom popup content
     var popupContent =  '<a target="_blank" class="popup" href="' + feature.properties.url + '">' +
     '<img src="' + feature.properties.image + '" />' + "  " +
-    '<span style="font-size:20px">'+feature.properties.name+'</span>' + 
+    '<span style="font-size:20px">'+feature.properties.name+'</span>' +
     '<%= form_for :recipientid, :url => {:action=>"create", :controller=>"friend_requests"} do |f| %><%= f.button 'Add as Friend'%><%= f.hidden_field :category_id, value: @category.id %><%= f.hidden_field :recipient_id, value:' + feature.properties.user_id + '%><% end %>'
     '</a>';
     // http://leafletjs.com/reference.html#popup

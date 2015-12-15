@@ -1,22 +1,70 @@
-<div id="signup-container">
-	<div class="innards">
+<div class="user-signedit-container">
+	<div class="user-signedit-box">
 
-		<h1>Signup!</h1>
+		<h1>Sign Up</h1>
 
+    <form>
+      <div class="row">
 
+        <div id="user-signedit-form" class="large-12">
+          <%= form_for :user, url: '/users' do |f| %>
 
-<%= form_for :user, url: '/users' do |f| %>
-  Name: <%= f.text_field :name %>
-  Username: <%= f.text_field :username %>
-  Email: <%= f.text_field :email %>
-  Quick Description: <%= f.text_field :about_me %>
-  Birthdate: <%= f.date_select :birthdate, { :start_year => 1950, :end_year => 2015 } %>
-  Gender: <%= f.select :gender, ['Female', 'Male']%>
-  Password: <%= f.password_field :password %>
-  Password Confirmation: <%= f.password_field :password_confirmation %>
-  <%= f.submit "Submit" %>
+            <div class="row">
+              <div class="large-4 columns"><label for="right-label" class="right">First name:</label> 
+              </div>
+              <div class="large-8 columns"><%= f.text_field :name %>
+              </div>
+            </div>
 
-<% end %>
+            <div class="row">
+              <div class="large-4 columns"><label for="right-label" class="right">Username:</label> 
+              </div>
+              <div class="large-8 columns"><%= f.text_field :username %>
+              </div>
+            </div>
+
+             <div class="row">
+              <div class="large-4 columns"><label for="right-label" class="right">Email:</label> 
+              </div>
+              <div class="large-8 columns"><%= f.text_field :email %>
+              </div>
+            </div>
+
+             <div class="row">
+              <div class="large-4 columns"><label for="right-label" class="right">In three sentences or less: Who are you, and what are you working toward? </label> 
+              </div>
+              <div class="large-8 columns">
+            <div id="new-user-description"><%= f.text_area :about_me %></div>
+              </div>
+            </div>
+
+             <div class="row">
+              <div class="large-4 columns"><label for="right-label" class="right">Gender:</label> 
+              </div>
+              <div class="large-8 columns"><%= f.select :gender, ['Female', 'Male']%>
+              </div>
+            </div>
+
+             <div class="row">
+              <div class="large-4 columns"><label for="right-label" class="right">Password:</label> 
+              </div>
+              <div class="large-8 columns">       <%= f.password_field :password %>
+              </div>
+            </div>
+
+             <div class="row">
+              <div class="large-4 columns"><label for="right-label" class="right">Password Confirmation:</label> 
+              </div>
+              <div class="large-8 columns"> <%= f.password_field :password_confirmation %>
+              </div>
+            </div>
+            
+            <%= f.submit "Submit", :class => "myButton" %>
+
+          <% end %>
+        </div>
+      </div>
+    </form>
 
 	</div>
 </div>
