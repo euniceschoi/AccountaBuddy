@@ -118,7 +118,11 @@ font-size: 1.2em
 //styling for user#new
 
 .user-signedit-container {
-  background-color: #32a181;
+  background: #2d9577; /* For browsers that do not support gradients */
+  background: -webkit-linear-gradient(#32a181, #3f7c87); /* For Safari 5.1 to 6.0 */
+  background: -o-linear-gradient(#32a181, #3f7c87); /* For Opera 11.1 to 12.0 */
+  background: -moz-linear-gradient(#32a181, #3f7c87); /* For Firefox 3.6 to 15 */
+  background: linear-gradient(#32a181, #3f7c87); /* Standard syntax */
   padding-top: 50px;
   padding-bottom: 100px;
 }
@@ -138,7 +142,7 @@ font-size: 1.2em
   font-family: 'Alegreya Sans', sans-serif;
   text-align: center;
   color: #1c8975;
-  -webkit-text-stroke: 1.5px #32c99e;
+  -webkit-text-stroke: 1px white;
   font-size: 5em;
 
 }

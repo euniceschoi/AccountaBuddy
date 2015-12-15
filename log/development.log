@@ -1,0 +1,2420 @@
+
+
+Started GET "/" for ::1 at 2015-12-15 10:12:34 -0800
+  [1m[36mActiveRecord::SchemaMigration Load (6.9ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+
+ActiveRecord::PendingMigrationError (
+
+Migrations are pending. To resolve this issue, run:
+
+	bin/rake db:migrate RAILS_ENV=development
+
+):
+  activerecord (4.2.5) lib/active_record/migration.rb:392:in `check_pending!'
+  activerecord (4.2.5) lib/active_record/migration.rb:373:in `call'
+  actionpack (4.2.5) lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+  activesupport (4.2.5) lib/active_support/callbacks.rb:88:in `__run_callbacks__'
+  activesupport (4.2.5) lib/active_support/callbacks.rb:778:in `_run_call_callbacks'
+  activesupport (4.2.5) lib/active_support/callbacks.rb:81:in `run_callbacks'
+  actionpack (4.2.5) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (4.2.5) lib/action_dispatch/middleware/reloader.rb:73:in `call'
+  actionpack (4.2.5) lib/action_dispatch/middleware/remote_ip.rb:78:in `call'
+  actionpack (4.2.5) lib/action_dispatch/middleware/debug_exceptions.rb:17:in `call'
+  web-console (2.2.1) lib/web_console/middleware.rb:39:in `call'
+  actionpack (4.2.5) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.5) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.5) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.5) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.5) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.5) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.5) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.5) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.4) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.5) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.5) lib/action_dispatch/middleware/static.rb:116:in `call'
+  rack (1.6.4) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.5) lib/rails/engine.rb:518:in `call'
+  railties (4.2.5) lib/rails/application.rb:165:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  rack (1.6.4) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.4) lib/rack/handler/webrick.rb:88:in `service'
+  /Users/jennacole/.rvm/rubies/ruby-2.0.0-p643/lib/ruby/2.0.0/webrick/httpserver.rb:138:in `service'
+  /Users/jennacole/.rvm/rubies/ruby-2.0.0-p643/lib/ruby/2.0.0/webrick/httpserver.rb:94:in `run'
+  /Users/jennacole/.rvm/rubies/ruby-2.0.0-p643/lib/ruby/2.0.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /Users/jennacole/.rvm/gems/ruby-2.0.0-p643/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_source.erb (2.0ms)
+  Rendered /Users/jennacole/.rvm/gems/ruby-2.0.0-p643/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.2ms)
+  Rendered /Users/jennacole/.rvm/gems/ruby-2.0.0-p643/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.7ms)
+  Rendered /Users/jennacole/.rvm/gems/ruby-2.0.0-p643/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (19.2ms)
+  Rendered /Users/jennacole/.rvm/gems/ruby-2.0.0-p643/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.4ms)
+  Rendered /Users/jennacole/.rvm/gems/ruby-2.0.0-p643/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/jennacole/.rvm/gems/ruby-2.0.0-p643/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/jennacole/.rvm/gems/ruby-2.0.0-p643/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/jennacole/.rvm/gems/ruby-2.0.0-p643/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (16.8ms)
+  Rendered /Users/jennacole/.rvm/gems/ruby-2.0.0-p643/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/jennacole/.rvm/gems/ruby-2.0.0-p643/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/jennacole/.rvm/gems/ruby-2.0.0-p643/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (37.9ms)
+
+
+Started GET "/" for ::1 at 2015-12-15 10:12:34 -0800
+  [1m[35mActiveRecord::SchemaMigration Load (0.2ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+
+ActiveRecord::PendingMigrationError (
+
+Migrations are pending. To resolve this issue, run:
+
+	bin/rake db:migrate RAILS_ENV=development
+
+):
+  activerecord (4.2.5) lib/active_record/migration.rb:392:in `check_pending!'
+  activerecord (4.2.5) lib/active_record/migration.rb:373:in `call'
+  actionpack (4.2.5) lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+  activesupport (4.2.5) lib/active_support/callbacks.rb:88:in `__run_callbacks__'
+  activesupport (4.2.5) lib/active_support/callbacks.rb:778:in `_run_call_callbacks'
+  activesupport (4.2.5) lib/active_support/callbacks.rb:81:in `run_callbacks'
+  actionpack (4.2.5) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (4.2.5) lib/action_dispatch/middleware/reloader.rb:73:in `call'
+  actionpack (4.2.5) lib/action_dispatch/middleware/remote_ip.rb:78:in `call'
+  actionpack (4.2.5) lib/action_dispatch/middleware/debug_exceptions.rb:17:in `call'
+  web-console (2.2.1) lib/web_console/middleware.rb:39:in `call'
+  actionpack (4.2.5) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.5) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.5) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.5) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.5) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.5) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.5) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.5) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.4) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.5) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.5) lib/action_dispatch/middleware/static.rb:116:in `call'
+  rack (1.6.4) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.5) lib/rails/engine.rb:518:in `call'
+  railties (4.2.5) lib/rails/application.rb:165:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  rack (1.6.4) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.4) lib/rack/handler/webrick.rb:88:in `service'
+  /Users/jennacole/.rvm/rubies/ruby-2.0.0-p643/lib/ruby/2.0.0/webrick/httpserver.rb:138:in `service'
+  /Users/jennacole/.rvm/rubies/ruby-2.0.0-p643/lib/ruby/2.0.0/webrick/httpserver.rb:94:in `run'
+  /Users/jennacole/.rvm/rubies/ruby-2.0.0-p643/lib/ruby/2.0.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /Users/jennacole/.rvm/gems/ruby-2.0.0-p643/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_source.erb (2.0ms)
+  Rendered /Users/jennacole/.rvm/gems/ruby-2.0.0-p643/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.0ms)
+  Rendered /Users/jennacole/.rvm/gems/ruby-2.0.0-p643/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (38.7ms)
+  Rendered /Users/jennacole/.rvm/gems/ruby-2.0.0-p643/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (52.5ms)
+  Rendered /Users/jennacole/.rvm/gems/ruby-2.0.0-p643/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.3ms)
+  Rendered /Users/jennacole/.rvm/gems/ruby-2.0.0-p643/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/jennacole/.rvm/gems/ruby-2.0.0-p643/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/jennacole/.rvm/gems/ruby-2.0.0-p643/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/jennacole/.rvm/gems/ruby-2.0.0-p643/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (12.6ms)
+  Rendered /Users/jennacole/.rvm/gems/ruby-2.0.0-p643/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.2ms)
+  Rendered /Users/jennacole/.rvm/gems/ruby-2.0.0-p643/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/jennacole/.rvm/gems/ruby-2.0.0-p643/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (25.7ms)
+  [1m[36m (4.4ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL) [0m
+  [1m[35m (1.0ms)[0m  CREATE UNIQUE INDEX  "unique_schema_migrations" ON "schema_migrations"  ("version")
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreateUsers (20151211185732)
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (20.9ms)[0m  [1mCREATE TABLE "users" ("id" serial primary key, "name" character varying NOT NULL, "username" character varying NOT NULL, "email" character varying NOT NULL, "password_digest" character varying NOT NULL, "longitude" float, "latitude" float, "address" character varying, "about_me" text, "birthdate" character varying, "gender" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) [0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ($1)  [["version", "20151211185732"]]
+  [1m[36m (6.9ms)[0m  [1mCOMMIT[0m
+Migrating to CreateFriendships (20151211192332)
+  [1m[35m (5.5ms)[0m  BEGIN
+  [1m[36m (19.4ms)[0m  [1mCREATE TABLE "friendships" ("id" serial primary key, "user_id" integer, "friend_id" integer, "category_id" integer, "accountabuddy" boolean DEFAULT 'f', "messages" character varying[] DEFAULT '{}', "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) [0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ($1)  [["version", "20151211192332"]]
+  [1m[36m (0.5ms)[0m  [1mCOMMIT[0m
+Migrating to CreateCategories (20151211192830)
+  [1m[35m (5.9ms)[0m  BEGIN
+  [1m[36m (14.2ms)[0m  [1mCREATE TABLE "categories" ("id" serial primary key, "name" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) [0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ($1)  [["version", "20151211192830"]]
+  [1m[36m (5.0ms)[0m  [1mCOMMIT[0m
+Migrating to CreateUserCategories (20151211195801)
+  [1m[35m (5.5ms)[0m  BEGIN
+  [1m[36m (7.5ms)[0m  [1mCREATE TABLE "user_categories" ("id" serial primary key, "user_id" integer, "category_id" integer, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) [0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ($1)  [["version", "20151211195801"]]
+  [1m[36m (6.0ms)[0m  [1mCOMMIT[0m
+Migrating to CreateFriendRequests (20151212041422)
+  [1m[35m (5.5ms)[0m  BEGIN
+  [1m[36m (7.4ms)[0m  [1mCREATE TABLE "friend_requests" ("id" serial primary key, "user_id" integer, "recipient_id" integer, "category_id" integer, "friends" boolean DEFAULT 'f', "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) [0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ($1)  [["version", "20151212041422"]]
+  [1m[36m (6.0ms)[0m  [1mCOMMIT[0m
+Migrating to CreateConversations (20151212235936)
+  [1m[35m (6.0ms)[0m  BEGIN
+  [1m[36m (8.7ms)[0m  [1mCREATE TABLE "conversations" ("id" serial primary key, "sender_id" integer, "recipient_id" integer, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) [0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ($1)  [["version", "20151212235936"]]
+  [1m[36m (6.2ms)[0m  [1mCOMMIT[0m
+Migrating to CreateMessages (20151212235949)
+  [1m[35m (5.6ms)[0m  BEGIN
+  [1m[36m (14.4ms)[0m  [1mCREATE TABLE "messages" ("id" serial primary key, "body" text, "conversation_id" integer, "user_id" integer, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) [0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ($1)  [["version", "20151212235949"]]
+  [1m[36m (1.5ms)[0m  [1mCOMMIT[0m
+Migrating to CreateBadges (20151213233948)
+  [1m[35m (5.4ms)[0m  BEGIN
+  [1m[36m (14.1ms)[0m  [1mCREATE TABLE "badges" ("id" serial primary key, "name" character varying, "points" integer DEFAULT 0, "description" text, "user_id" integer, "badge_image_link" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) [0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ($1)  [["version", "20151213233948"]]
+  [1m[36m (4.9ms)[0m  [1mCOMMIT[0m
+Migrating to CreateAccountabuddyRequests (20151214190534)
+  [1m[35m (5.9ms)[0m  BEGIN
+  [1m[36m (7.9ms)[0m  [1mCREATE TABLE "accountabuddy_requests" ("id" serial primary key, "user_id" integer, "recipient_id" integer, "friendship_id" integer, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) [0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ($1)  [["version", "20151214190534"]]
+  [1m[36m (8.9ms)[0m  [1mCOMMIT[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.2ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36m (2.0ms)[0m  [1mSELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'accountabuddy_requests'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+[0m
+  [1m[35m (1.5ms)[0m  SELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'badges'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+
+  [1m[36m (1.4ms)[0m  [1mSELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'categories'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+[0m
+  [1m[35m (1.4ms)[0m  SELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'conversations'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+
+  [1m[36m (1.7ms)[0m  [1mSELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'friend_requests'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+[0m
+  [1m[35m (1.5ms)[0m  SELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'friendships'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+
+  [1m[36m (1.5ms)[0m  [1mSELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'messages'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+[0m
+  [1m[35m (1.8ms)[0m  SELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'user_categories'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+
+  [1m[36m (1.8ms)[0m  [1mSELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'users'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35mSQL (0.5ms)[0m  DELETE FROM "users"
+  [1m[36mSQL (0.3ms)[0m  [1mDELETE FROM "categories"[0m
+  [1m[35mSQL (0.3ms)[0m  DELETE FROM "user_categories"
+  [1m[36mSQL (0.3ms)[0m  [1mDELETE FROM "friendships"[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mUser Exists (0.5ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."username" = 'eunice' LIMIT 1[0m
+  [1m[35mUser Exists (0.2ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = 'eunice@gmail.com' LIMIT 1
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "users" ("name", "username", "longitude", "latitude", "email", "password_digest", "about_me", "gender", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["name", "Eunice"], ["username", "eunice"], ["longitude", -122.0], ["latitude", 37.77], ["email", "eunice@gmail.com"], ["password_digest", "$2a$10$oJadBun9N.dTiNxekYcqnOYhVyRfEYeji8/ehNFSLLh16HtMUo2Im"], ["about_me", "I'm happy!"], ["gender", "female"], ["created_at", "2015-12-15 18:12:58.541269"], ["updated_at", "2015-12-15 18:12:58.541269"]]
+  [1m[35m (6.0ms)[0m  COMMIT
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mUser Exists (0.3ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."username" = 'koske' LIMIT 1
+  [1m[36mUser Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = 'koske@gmail.com' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "users" ("name", "username", "longitude", "latitude", "email", "password_digest", "about_me", "gender", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"  [["name", "Chris"], ["username", "koske"], ["longitude", -122.0], ["latitude", 37.68], ["email", "koske@gmail.com"], ["password_digest", "$2a$10$2HE87CjwFNcWTkzrzapXBei.QhYfi8PAtdBbJDtvm7LJ0ClZ25BNe"], ["about_me", "I'm optimistic!"], ["gender", "male"], ["created_at", "2015-12-15 18:12:58.620558"], ["updated_at", "2015-12-15 18:12:58.620558"]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mUser Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."username" = 'jenna' LIMIT 1[0m
+  [1m[35mUser Exists (0.2ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = 'jenna@gmail.com' LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "users" ("name", "username", "longitude", "latitude", "email", "password_digest", "about_me", "gender", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["name", "Jenna"], ["username", "jenna"], ["longitude", -122.0], ["latitude", 37.54], ["email", "jenna@gmail.com"], ["password_digest", "$2a$10$P.ZcbP02aYD7/tDTBmhAMehT9Ng.yNrPyPXpRi8WIyFZBi.AHXKfG"], ["about_me", "I'm creative!"], ["gender", "female"], ["created_at", "2015-12-15 18:12:58.693110"], ["updated_at", "2015-12-15 18:12:58.693110"]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mUser Exists (0.2ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."username" = 'tanya' LIMIT 1
+  [1m[36mUser Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = 'tanya@gmail.com' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "users" ("name", "username", "longitude", "latitude", "email", "password_digest", "about_me", "gender", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"  [["name", "Tanya"], ["username", "tanya"], ["longitude", -122.0], ["latitude", 37.32], ["email", "tanya@gmail.com"], ["password_digest", "$2a$10$q9cE7lzfH8GMzENj75KaROL477QtP94vyQIaD/fxNwgaRNBFRBvCO"], ["about_me", "I'm joyful!"], ["gender", "female"], ["created_at", "2015-12-15 18:12:58.765446"], ["updated_at", "2015-12-15 18:12:58.765446"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mUser Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."username" = 'mary' LIMIT 1[0m
+  [1m[35mUser Exists (0.2ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = 'mary@gmail.com' LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "users" ("name", "username", "longitude", "latitude", "email", "password_digest", "about_me", "gender", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["name", "Mary"], ["username", "mary"], ["longitude", -122.0], ["latitude", 37.75], ["email", "mary@gmail.com"], ["password_digest", "$2a$10$6pnKmbvxqpKpYJgt9KRjLeZ/qyEwJdd9v0vJMqlomi1KzJritiuPO"], ["about_me", "I'm energetic!"], ["gender", "female"], ["created_at", "2015-12-15 18:12:58.838167"], ["updated_at", "2015-12-15 18:12:58.838167"]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mUser Exists (0.2ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."username" = 'jupiter' LIMIT 1
+  [1m[36mUser Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = 'jupiter@gmail.com' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "users" ("name", "username", "longitude", "latitude", "email", "password_digest", "about_me", "gender", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"  [["name", "Jupiter"], ["username", "jupiter"], ["longitude", -122.0], ["latitude", 37.79], ["email", "jupiter@gmail.com"], ["password_digest", "$2a$10$aL4rUcp5gkSICQtPfjXfRuH9rGfFuSFcqDkdcju7wvq6XWZ8tNi1O"], ["about_me", "I'm communicative!"], ["gender", "male"], ["created_at", "2015-12-15 18:12:58.912472"], ["updated_at", "2015-12-15 18:12:58.912472"]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mUser Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."username" = 'chris' LIMIT 1[0m
+  [1m[35mUser Exists (0.2ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = 'chris@gmail.com' LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "users" ("name", "username", "longitude", "latitude", "email", "password_digest", "about_me", "gender", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["name", "Chris"], ["username", "chris"], ["longitude", -122.0], ["latitude", 37.42], ["email", "chris@gmail.com"], ["password_digest", "$2a$10$ulCBO2YFd2zv0bIQYuEZtOwQi7NWtXjxkSESSsags2UuyQhD/TgG."], ["about_me", "I'm kind!"], ["gender", "male"], ["created_at", "2015-12-15 18:12:58.987080"], ["updated_at", "2015-12-15 18:12:58.987080"]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mUser Exists (0.2ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."username" = 'nathan' LIMIT 1
+  [1m[36mUser Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = 'nathan@gmail.com' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "users" ("name", "username", "longitude", "latitude", "email", "password_digest", "about_me", "gender", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"  [["name", "Nathan"], ["username", "nathan"], ["longitude", -122.0], ["latitude", 37.48], ["email", "nathan@gmail.com"], ["password_digest", "$2a$10$RV/wG94XOe3UkFOeVorfg.wrRIjnZaJDetPMx9FKlcGTmMrB.vSK2"], ["about_me", "I'm thoughtful!"], ["gender", "male"], ["created_at", "2015-12-15 18:12:59.057854"], ["updated_at", "2015-12-15 18:12:59.057854"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mUser Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."username" = 'shawn' LIMIT 1[0m
+  [1m[35mUser Exists (0.2ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = 'shawn@gmail.com' LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "users" ("name", "username", "longitude", "latitude", "email", "password_digest", "about_me", "gender", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["name", "Shawn"], ["username", "shawn"], ["longitude", -122.0], ["latitude", 37.59], ["email", "shawn@gmail.com"], ["password_digest", "$2a$10$Ptarr0ZzdyTUo1BxgYHbyevfQY34daUbxkb2VScerRDYqV68Dgoka"], ["about_me", "I'm sensitive!"], ["gender", "male"], ["created_at", "2015-12-15 18:12:59.128612"], ["updated_at", "2015-12-15 18:12:59.128612"]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mUser Exists (0.2ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."username" = 'mike' LIMIT 1
+  [1m[36mUser Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = 'mike@gmail.com' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "users" ("name", "username", "longitude", "latitude", "email", "password_digest", "about_me", "gender", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"  [["name", "Mike"], ["username", "mike"], ["longitude", -122.0], ["latitude", 37.8], ["email", "mike@gmail.com"], ["password_digest", "$2a$10$ZqJRSw9MB3OYmcdv4JhtEu41x68obe94A.UrPc3dD844/F6I/fhKm"], ["about_me", "I'm direct!"], ["gender", "male"], ["created_at", "2015-12-15 18:12:59.199747"], ["updated_at", "2015-12-15 18:12:59.199747"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mUser Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."username" = 'paul' LIMIT 1[0m
+  [1m[35mUser Exists (0.2ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = 'paul@gmail.com' LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "users" ("name", "username", "longitude", "latitude", "email", "password_digest", "about_me", "gender", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["name", "Paul"], ["username", "paul"], ["longitude", -122.0], ["latitude", 37.35], ["email", "paul@gmail.com"], ["password_digest", "$2a$10$.ma.r6gGUhAhk16Sr2UwWuLXP12sUHB.1OzpPXY7oj1G6So3dDh1O"], ["about_me", "I'm mischievous!"], ["gender", "male"], ["created_at", "2015-12-15 18:12:59.270597"], ["updated_at", "2015-12-15 18:12:59.270597"]]
+  [1m[35m (0.4ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mUser Exists (0.3ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."username" = 'rosslyn' LIMIT 1
+  [1m[36mUser Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."email" = 'rosslyn@gmail.com' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "users" ("name", "username", "longitude", "latitude", "email", "password_digest", "about_me", "gender", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"  [["name", "Rosslyn"], ["username", "rosslyn"], ["longitude", -122.0], ["latitude", 37.72], ["email", "rosslyn@gmail.com"], ["password_digest", "$2a$10$9o4VOb6lN4465HUFMpofl.0HC5N9nEs.faESc9wFOm7GBmxGXdxDq"], ["about_me", "I'm a cuddler!"], ["gender", "female"], ["created_at", "2015-12-15 18:12:59.341809"], ["updated_at", "2015-12-15 18:12:59.341809"]]
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "categories" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Fitness"], ["created_at", "2015-12-15 18:12:59.380617"], ["updated_at", "2015-12-15 18:12:59.380617"]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "categories" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"  [["name", "Diet"], ["created_at", "2015-12-15 18:12:59.382756"], ["updated_at", "2015-12-15 18:12:59.382756"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "badges" ("name", "description", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Fitness"], ["description", "You're a fitness superstar!"], ["created_at", "2015-12-15 18:12:59.392024"], ["updated_at", "2015-12-15 18:12:59.392024"]]
+  [1m[35m (6.1ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "badges" ("name", "description", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["name", "Diet"], ["description", "You're a Diet superstar!"], ["created_at", "2015-12-15 18:12:59.400301"], ["updated_at", "2015-12-15 18:12:59.400301"]]
+  [1m[36m (6.0ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "badges" ("name", "description", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Hobbies"], ["description", "You're a Hobbies superstar! "], ["created_at", "2015-12-15 18:12:59.407837"], ["updated_at", "2015-12-15 18:12:59.407837"]]
+  [1m[35m (4.9ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "badges" ("name", "description", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["name", "Education"], ["description", "You're a Education superstar!"], ["created_at", "2015-12-15 18:12:59.414123"], ["updated_at", "2015-12-15 18:12:59.414123"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "user_categories" ("user_id", "category_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["user_id", 1], ["category_id", 1], ["created_at", "2015-12-15 18:12:59.419941"], ["updated_at", "2015-12-15 18:12:59.419941"]]
+  [1m[35m (1.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "user_categories" ("user_id", "category_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["user_id", 2], ["category_id", 1], ["created_at", "2015-12-15 18:12:59.422943"], ["updated_at", "2015-12-15 18:12:59.422943"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "user_categories" ("user_id", "category_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["user_id", 3], ["category_id", 1], ["created_at", "2015-12-15 18:12:59.424368"], ["updated_at", "2015-12-15 18:12:59.424368"]]
+  [1m[35m (0.2ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "user_categories" ("user_id", "category_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["user_id", 4], ["category_id", 1], ["created_at", "2015-12-15 18:12:59.425772"], ["updated_at", "2015-12-15 18:12:59.425772"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "user_categories" ("user_id", "category_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["user_id", 4], ["category_id", 2], ["created_at", "2015-12-15 18:12:59.427202"], ["updated_at", "2015-12-15 18:12:59.427202"]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "user_categories" ("user_id", "category_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["user_id", 5], ["category_id", 1], ["created_at", "2015-12-15 18:12:59.428624"], ["updated_at", "2015-12-15 18:12:59.428624"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "user_categories" ("user_id", "category_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["user_id", 6], ["category_id", 1], ["created_at", "2015-12-15 18:12:59.430024"], ["updated_at", "2015-12-15 18:12:59.430024"]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "user_categories" ("user_id", "category_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["user_id", 6], ["category_id", 2], ["created_at", "2015-12-15 18:12:59.431490"], ["updated_at", "2015-12-15 18:12:59.431490"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "user_categories" ("user_id", "category_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["user_id", 7], ["category_id", 1], ["created_at", "2015-12-15 18:12:59.432935"], ["updated_at", "2015-12-15 18:12:59.432935"]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "user_categories" ("user_id", "category_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["user_id", 8], ["category_id", 1], ["created_at", "2015-12-15 18:12:59.434582"], ["updated_at", "2015-12-15 18:12:59.434582"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "user_categories" ("user_id", "category_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["user_id", 8], ["category_id", 2], ["created_at", "2015-12-15 18:12:59.436026"], ["updated_at", "2015-12-15 18:12:59.436026"]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "user_categories" ("user_id", "category_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["user_id", 9], ["category_id", 1], ["created_at", "2015-12-15 18:12:59.437445"], ["updated_at", "2015-12-15 18:12:59.437445"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "user_categories" ("user_id", "category_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["user_id", 9], ["category_id", 2], ["created_at", "2015-12-15 18:12:59.438887"], ["updated_at", "2015-12-15 18:12:59.438887"]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "user_categories" ("user_id", "category_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["user_id", 10], ["category_id", 1], ["created_at", "2015-12-15 18:12:59.440302"], ["updated_at", "2015-12-15 18:12:59.440302"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "user_categories" ("user_id", "category_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["user_id", 10], ["category_id", 2], ["created_at", "2015-12-15 18:12:59.441663"], ["updated_at", "2015-12-15 18:12:59.441663"]]
+  [1m[35m (0.2ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "user_categories" ("user_id", "category_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["user_id", 11], ["category_id", 1], ["created_at", "2015-12-15 18:12:59.442962"], ["updated_at", "2015-12-15 18:12:59.442962"]]
+  [1m[36m (0.2ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "user_categories" ("user_id", "category_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["user_id", 12], ["category_id", 1], ["created_at", "2015-12-15 18:12:59.444247"], ["updated_at", "2015-12-15 18:12:59.444247"]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "user_categories" ("user_id", "category_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"  [["user_id", 12], ["category_id", 2], ["created_at", "2015-12-15 18:12:59.445569"], ["updated_at", "2015-12-15 18:12:59.445569"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "friendships" ("user_id", "friend_id", "category_id", "accountabuddy", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["user_id", 1], ["friend_id", 2], ["category_id", 1], ["accountabuddy", "t"], ["created_at", "2015-12-15 18:12:59.453046"], ["updated_at", "2015-12-15 18:12:59.453046"]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "friendships" ("user_id", "friend_id", "category_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["user_id", 1], ["friend_id", 3], ["category_id", 1], ["created_at", "2015-12-15 18:12:59.455423"], ["updated_at", "2015-12-15 18:12:59.455423"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "friendships" ("user_id", "friend_id", "category_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["user_id", 1], ["friend_id", 5], ["category_id", 1], ["created_at", "2015-12-15 18:12:59.457079"], ["updated_at", "2015-12-15 18:12:59.457079"]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "friendships" ("user_id", "friend_id", "category_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["user_id", 1], ["friend_id", 6], ["category_id", 1], ["created_at", "2015-12-15 18:12:59.458669"], ["updated_at", "2015-12-15 18:12:59.458669"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "friendships" ("user_id", "friend_id", "category_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["user_id", 1], ["friend_id", 7], ["category_id", 1], ["created_at", "2015-12-15 18:12:59.460198"], ["updated_at", "2015-12-15 18:12:59.460198"]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "friendships" ("user_id", "friend_id", "category_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["user_id", 1], ["friend_id", 9], ["category_id", 1], ["created_at", "2015-12-15 18:12:59.461703"], ["updated_at", "2015-12-15 18:12:59.461703"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "friendships" ("user_id", "friend_id", "category_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["user_id", 1], ["friend_id", 11], ["category_id", 1], ["created_at", "2015-12-15 18:12:59.463165"], ["updated_at", "2015-12-15 18:12:59.463165"]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "friendships" ("user_id", "friend_id", "category_id", "accountabuddy", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"  [["user_id", 2], ["friend_id", 1], ["category_id", 1], ["accountabuddy", "t"], ["created_at", "2015-12-15 18:12:59.464634"], ["updated_at", "2015-12-15 18:12:59.464634"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "friendships" ("user_id", "friend_id", "category_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["user_id", 2], ["friend_id", 4], ["category_id", 1], ["created_at", "2015-12-15 18:12:59.466227"], ["updated_at", "2015-12-15 18:12:59.466227"]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "friendships" ("user_id", "friend_id", "category_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["user_id", 2], ["friend_id", 6], ["category_id", 1], ["created_at", "2015-12-15 18:12:59.467657"], ["updated_at", "2015-12-15 18:12:59.467657"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "friendships" ("user_id", "friend_id", "category_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["user_id", 2], ["friend_id", 7], ["category_id", 1], ["created_at", "2015-12-15 18:12:59.469187"], ["updated_at", "2015-12-15 18:12:59.469187"]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "friendships" ("user_id", "friend_id", "category_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["user_id", 2], ["friend_id", 8], ["category_id", 1], ["created_at", "2015-12-15 18:12:59.470651"], ["updated_at", "2015-12-15 18:12:59.470651"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "friendships" ("user_id", "friend_id", "category_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["user_id", 2], ["friend_id", 10], ["category_id", 1], ["created_at", "2015-12-15 18:12:59.472101"], ["updated_at", "2015-12-15 18:12:59.472101"]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "friendships" ("user_id", "friend_id", "category_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["user_id", 2], ["friend_id", 12], ["category_id", 1], ["created_at", "2015-12-15 18:12:59.473561"], ["updated_at", "2015-12-15 18:12:59.473561"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "friendships" ("user_id", "friend_id", "category_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["user_id", 3], ["friend_id", 1], ["category_id", 1], ["created_at", "2015-12-15 18:12:59.475020"], ["updated_at", "2015-12-15 18:12:59.475020"]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "friendships" ("user_id", "friend_id", "category_id", "accountabuddy", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"  [["user_id", 3], ["friend_id", 5], ["category_id", 1], ["accountabuddy", "t"], ["created_at", "2015-12-15 18:12:59.476533"], ["updated_at", "2015-12-15 18:12:59.476533"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "friendships" ("user_id", "friend_id", "category_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["user_id", 3], ["friend_id", 7], ["category_id", 1], ["created_at", "2015-12-15 18:12:59.478060"], ["updated_at", "2015-12-15 18:12:59.478060"]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "friendships" ("user_id", "friend_id", "category_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["user_id", 3], ["friend_id", 8], ["category_id", 1], ["created_at", "2015-12-15 18:12:59.479585"], ["updated_at", "2015-12-15 18:12:59.479585"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "friendships" ("user_id", "friend_id", "category_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["user_id", 3], ["friend_id", 9], ["category_id", 1], ["created_at", "2015-12-15 18:12:59.481114"], ["updated_at", "2015-12-15 18:12:59.481114"]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "friendships" ("user_id", "friend_id", "category_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["user_id", 3], ["friend_id", 11], ["category_id", 1], ["created_at", "2015-12-15 18:12:59.482633"], ["updated_at", "2015-12-15 18:12:59.482633"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "friendships" ("user_id", "friend_id", "category_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["user_id", 4], ["friend_id", 2], ["category_id", 1], ["created_at", "2015-12-15 18:12:59.484135"], ["updated_at", "2015-12-15 18:12:59.484135"]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "friendships" ("user_id", "friend_id", "category_id", "accountabuddy", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"  [["user_id", 4], ["friend_id", 6], ["category_id", 2], ["accountabuddy", "t"], ["created_at", "2015-12-15 18:12:59.485630"], ["updated_at", "2015-12-15 18:12:59.485630"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "friendships" ("user_id", "friend_id", "category_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["user_id", 4], ["friend_id", 8], ["category_id", 2], ["created_at", "2015-12-15 18:12:59.487179"], ["updated_at", "2015-12-15 18:12:59.487179"]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "friendships" ("user_id", "friend_id", "category_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["user_id", 4], ["friend_id", 9], ["category_id", 2], ["created_at", "2015-12-15 18:12:59.488701"], ["updated_at", "2015-12-15 18:12:59.488701"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "friendships" ("user_id", "friend_id", "category_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["user_id", 4], ["friend_id", 10], ["category_id", 2], ["created_at", "2015-12-15 18:12:59.490218"], ["updated_at", "2015-12-15 18:12:59.490218"]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "friendships" ("user_id", "friend_id", "category_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["user_id", 4], ["friend_id", 12], ["category_id", 2], ["created_at", "2015-12-15 18:12:59.491771"], ["updated_at", "2015-12-15 18:12:59.491771"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "friendships" ("user_id", "friend_id", "category_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["user_id", 5], ["friend_id", 1], ["category_id", 1], ["created_at", "2015-12-15 18:12:59.493261"], ["updated_at", "2015-12-15 18:12:59.493261"]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "friendships" ("user_id", "friend_id", "category_id", "accountabuddy", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"  [["user_id", 5], ["friend_id", 3], ["category_id", 1], ["accountabuddy", "t"], ["created_at", "2015-12-15 18:12:59.494713"], ["updated_at", "2015-12-15 18:12:59.494713"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "friendships" ("user_id", "friend_id", "category_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["user_id", 6], ["friend_id", 1], ["category_id", 1], ["created_at", "2015-12-15 18:12:59.496242"], ["updated_at", "2015-12-15 18:12:59.496242"]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "friendships" ("user_id", "friend_id", "category_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["user_id", 6], ["friend_id", 2], ["category_id", 1], ["created_at", "2015-12-15 18:12:59.497699"], ["updated_at", "2015-12-15 18:12:59.497699"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "friendships" ("user_id", "friend_id", "category_id", "accountabuddy", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["user_id", 6], ["friend_id", 4], ["category_id", 2], ["accountabuddy", "t"], ["created_at", "2015-12-15 18:12:59.499165"], ["updated_at", "2015-12-15 18:12:59.499165"]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "friendships" ("user_id", "friend_id", "category_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["user_id", 7], ["friend_id", 1], ["category_id", 1], ["created_at", "2015-12-15 18:12:59.500654"], ["updated_at", "2015-12-15 18:12:59.500654"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "friendships" ("user_id", "friend_id", "category_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["user_id", 7], ["friend_id", 2], ["category_id", 1], ["created_at", "2015-12-15 18:12:59.502125"], ["updated_at", "2015-12-15 18:12:59.502125"]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "friendships" ("user_id", "friend_id", "category_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["user_id", 7], ["friend_id", 3], ["category_id", 1], ["created_at", "2015-12-15 18:12:59.503590"], ["updated_at", "2015-12-15 18:12:59.503590"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "friendships" ("user_id", "friend_id", "category_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["user_id", 8], ["friend_id", 3], ["category_id", 1], ["created_at", "2015-12-15 18:12:59.505040"], ["updated_at", "2015-12-15 18:12:59.505040"]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "friendships" ("user_id", "friend_id", "category_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["user_id", 8], ["friend_id", 2], ["category_id", 1], ["created_at", "2015-12-15 18:12:59.506471"], ["updated_at", "2015-12-15 18:12:59.506471"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "friendships" ("user_id", "friend_id", "category_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["user_id", 8], ["friend_id", 4], ["category_id", 2], ["created_at", "2015-12-15 18:12:59.507959"], ["updated_at", "2015-12-15 18:12:59.507959"]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "friendships" ("user_id", "friend_id", "category_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["user_id", 9], ["friend_id", 1], ["category_id", 1], ["created_at", "2015-12-15 18:12:59.509379"], ["updated_at", "2015-12-15 18:12:59.509379"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "friendships" ("user_id", "friend_id", "category_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["user_id", 9], ["friend_id", 3], ["category_id", 1], ["created_at", "2015-12-15 18:12:59.510802"], ["updated_at", "2015-12-15 18:12:59.510802"]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "friendships" ("user_id", "friend_id", "category_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["user_id", 9], ["friend_id", 4], ["category_id", 2], ["created_at", "2015-12-15 18:12:59.512278"], ["updated_at", "2015-12-15 18:12:59.512278"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "friendships" ("user_id", "friend_id", "category_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["user_id", 10], ["friend_id", 2], ["category_id", 1], ["created_at", "2015-12-15 18:12:59.513775"], ["updated_at", "2015-12-15 18:12:59.513775"]]
+  [1m[35m (0.4ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "friendships" ("user_id", "friend_id", "category_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["user_id", 10], ["friend_id", 4], ["category_id", 2], ["created_at", "2015-12-15 18:12:59.515592"], ["updated_at", "2015-12-15 18:12:59.515592"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "friendships" ("user_id", "friend_id", "category_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["user_id", 11], ["friend_id", 1], ["category_id", 1], ["created_at", "2015-12-15 18:12:59.517250"], ["updated_at", "2015-12-15 18:12:59.517250"]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "friendships" ("user_id", "friend_id", "category_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["user_id", 11], ["friend_id", 3], ["category_id", 1], ["created_at", "2015-12-15 18:12:59.518981"], ["updated_at", "2015-12-15 18:12:59.518981"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "friendships" ("user_id", "friend_id", "category_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["user_id", 12], ["friend_id", 2], ["category_id", 1], ["created_at", "2015-12-15 18:12:59.520843"], ["updated_at", "2015-12-15 18:12:59.520843"]]
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "friendships" ("user_id", "friend_id", "category_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["user_id", 12], ["friend_id", 4], ["category_id", 2], ["created_at", "2015-12-15 18:12:59.522553"], ["updated_at", "2015-12-15 18:12:59.522553"]]
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+
+
+Started GET "/" for ::1 at 2015-12-15 10:13:16 -0800
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by UsersController#index as HTML
+  Rendered users/_user_index_header.html.erb (0.5ms)
+  Rendered users/index.html.erb within layouts/application (181.4ms)
+Completed 200 OK in 5139ms (Views: 5114.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/categories.self-e8a6114352c4a4315c267ce0b12944c82aa153af96cc22cece2adde7753025cb.css?body=1" for ::1 at 2015-12-15 10:13:21 -0800
+
+
+Started GET "/assets/accountabuddy_requests.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-12-15 10:13:21 -0800
+
+
+Started GET "/assets/user_categories.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-12-15 10:13:21 -0800
+
+
+Started GET "/assets/accountabuddy_requests.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-12-15 10:13:21 -0800
+
+
+Started GET "/assets/user_categories.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-12-15 10:13:21 -0800
+
+
+Started GET "/assets/green-splash-7436ff6630fe1e085fd8c4f7f7ad4f5065c46ea3597d2e9e70f8f61be3f561fb.jpg" for ::1 at 2015-12-15 10:13:21 -0800
+
+
+Started GET "/assets/blue-splash-e61535aa332aee5394fb320f43e72eb1e3ad08056143eb93f59f4e60ed712fb8.jpg" for ::1 at 2015-12-15 10:13:21 -0800
+
+
+Started GET "/assets/greenapplegreen-splash-df33e7972fc5fd6b0306f05025ca4bef6bd06ac70f58669405ad9c3b256330e7.jpg" for ::1 at 2015-12-15 10:13:21 -0800
+
+
+Started GET "/signup" for ::1 at 2015-12-15 10:13:33 -0800
+Processing by UsersController#new as HTML
+  Rendered users/new.html.erb within layouts/application (9.8ms)
+Completed 200 OK in 213ms (Views: 211.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/signup" for ::1 at 2015-12-15 10:16:00 -0800
+Processing by UsersController#new as HTML
+  Rendered users/new.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 217ms (Views: 216.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/accountabuddy_requests.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-12-15 10:16:01 -0800
+
+
+Started GET "/assets/badges.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-12-15 10:16:01 -0800
+
+
+Started GET "/assets/categories.self-e8a6114352c4a4315c267ce0b12944c82aa153af96cc22cece2adde7753025cb.css?body=1" for ::1 at 2015-12-15 10:16:01 -0800
+
+
+Started GET "/assets/foundation_and_overrides.self-85979c8b4dd7ab44d7b09aca41957e6695467722df91b01da803a62249ba4852.css?body=1" for ::1 at 2015-12-15 10:16:01 -0800
+
+
+Started GET "/assets/curtain.self-928bfa886689b15bd31b09e76d8aced46c87f449904e48e704741702c11df316.css?body=1" for ::1 at 2015-12-15 10:16:01 -0800
+
+
+Started GET "/assets/friend_requests.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-12-15 10:16:01 -0800
+
+
+Started GET "/assets/friendships.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-12-15 10:16:01 -0800
+
+
+Started GET "/assets/maps.self-b5bc4fc1cf3c2909b24ddf2b9352060a752391a045a40d1d05a8710e7fde0cda.css?body=1" for ::1 at 2015-12-15 10:16:01 -0800
+
+
+Started GET "/assets/messages.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-12-15 10:16:01 -0800
+
+
+Started GET "/assets/sessions.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-12-15 10:16:01 -0800
+
+
+Started GET "/assets/user_categories.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-12-15 10:16:01 -0800
+
+
+Started GET "/assets/users.self-70467802eccf90b18630d63e16d4bd1a11cde978d306ad47329c664751c5bc6a.css?body=1" for ::1 at 2015-12-15 10:16:01 -0800
+
+
+Started GET "/assets/application.self-a288552b8f3049270b1dfe038d6a3067580ba472708e9db48e02d6e80b6ffde8.css?body=1" for ::1 at 2015-12-15 10:16:01 -0800
+
+
+Started GET "/assets/vendor/modernizr.self-74da3245def7569da28115667be6a85a2ad97464abe707c9829c46d8975597bc.js?body=1" for ::1 at 2015-12-15 10:16:01 -0800
+
+
+Started GET "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1" for ::1 at 2015-12-15 10:16:01 -0800
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for ::1 at 2015-12-15 10:16:01 -0800
+
+
+Started GET "/assets/foundation/foundation.self-98616d4fb376f824aeb7c868e05e747b97176a864c7da854779ed398828df78f.js?body=1" for ::1 at 2015-12-15 10:16:01 -0800
+
+
+Started GET "/assets/foundation/foundation.abide.self-670a9b56e37b4b434f79686b8a9862222173d68ec823b20565340e0e87627ca4.js?body=1" for ::1 at 2015-12-15 10:16:01 -0800
+
+
+Started GET "/assets/foundation/foundation.accordion.self-02a179f7efde1facecf8a814cae32112c36800ce3d66bafc00c807a56d7b8d46.js?body=1" for ::1 at 2015-12-15 10:16:01 -0800
+
+
+Started GET "/assets/foundation/foundation.alert.self-631e4c4124bd543574c5a7f4d5d8b59fdf350f6c11d6201ba8a872e8a0f203b0.js?body=1" for ::1 at 2015-12-15 10:16:01 -0800
+
+
+Started GET "/assets/foundation/foundation.clearing.self-96397aa6b2d39ff61e9b4ce8486a9f716f9072f2011f1dc99f94a96b381b3830.js?body=1" for ::1 at 2015-12-15 10:16:01 -0800
+
+
+Started GET "/assets/foundation/foundation.dropdown.self-3e70f72040b183d09b673307b08d1d688a5572c6c8cbb222755945e70ccbb05e.js?body=1" for ::1 at 2015-12-15 10:16:01 -0800
+
+
+Started GET "/assets/foundation/foundation.equalizer.self-1889be5dfd0e56321a9a6d5fe9d4a94b04602c158f3e4d58419b967c255b999f.js?body=1" for ::1 at 2015-12-15 10:16:01 -0800
+
+
+Started GET "/assets/foundation/foundation.interchange.self-c6d033cdd9e7fd3f29c067eb7b9ee564f7a6b542650d2ca530ae1e3c529a3c35.js?body=1" for ::1 at 2015-12-15 10:16:01 -0800
+
+
+Started GET "/assets/foundation/foundation.joyride.self-1f6b19104e2439f1e4353444cb6fb9f7f308563556f167c2154ca3108eb7f77e.js?body=1" for ::1 at 2015-12-15 10:16:01 -0800
+
+
+Started GET "/assets/foundation/foundation.magellan.self-1fcf75780d5b4db5e97c267810e7c9a5e19a9f0d7b67a2d167074d7cff1d6a70.js?body=1" for ::1 at 2015-12-15 10:16:01 -0800
+
+
+Started GET "/assets/foundation/foundation.offcanvas.self-2f34a4b91e1e958aefbde46004d6186ee82e018fe95634214749799141339810.js?body=1" for ::1 at 2015-12-15 10:16:01 -0800
+
+
+Started GET "/assets/foundation/foundation.orbit.self-ba7d30fe424df83b5bc8bc5bb67ea90608759c6eb8212d1475d52b09db0bcd0f.js?body=1" for ::1 at 2015-12-15 10:16:01 -0800
+
+
+Started GET "/assets/foundation/foundation.reveal.self-5a83316675f14b52f582d67c053ae7977827a5b06459d7e8f5556cbedfba1d0d.js?body=1" for ::1 at 2015-12-15 10:16:01 -0800
+
+
+Started GET "/assets/foundation/foundation.slider.self-686e8b14e01aeb75ec0980de90956540d2b245324fc58e8c25debafc60300b96.js?body=1" for ::1 at 2015-12-15 10:16:01 -0800
+
+
+Started GET "/assets/foundation/foundation.tab.self-9b2bd1afa5715ce8f154fa008d0aab44500763e9b336a6d4e5bca96437176a74.js?body=1" for ::1 at 2015-12-15 10:16:01 -0800
+
+
+Started GET "/assets/foundation/foundation.tooltip.self-dae1db2297f90064e1a8ae7b02b175ca613cc6a2d190aaed548f6ef853f4b46d.js?body=1" for ::1 at 2015-12-15 10:16:01 -0800
+
+
+Started GET "/assets/foundation/foundation.topbar.self-fa6260890f9f59c821128d066bcfaa18665c816022bafd398d937c367d5e39b7.js?body=1" for ::1 at 2015-12-15 10:16:01 -0800
+
+
+Started GET "/assets/foundation.self-abe4ee7a105042f73b12b1f1a28788522d2f253445a475a94ab4d6e1f7b0ec52.js?body=1" for ::1 at 2015-12-15 10:16:01 -0800
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2015-12-15 10:16:01 -0800
+
+
+Started GET "/assets/accountabuddy_requests.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-12-15 10:16:01 -0800
+
+
+Started GET "/assets/badges.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-12-15 10:16:01 -0800
+
+
+Started GET "/assets/curtain.self-03cedba756c2ea28b832bb6cb8c319e5954ea1495621342287edfc1657932778.js?body=1" for ::1 at 2015-12-15 10:16:01 -0800
+
+
+Started GET "/assets/friend_requests.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-12-15 10:16:01 -0800
+
+
+Started GET "/assets/friendships.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-12-15 10:16:01 -0800
+
+
+Started GET "/assets/messages.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-12-15 10:16:01 -0800
+
+
+Started GET "/assets/scroll_up.self-c3b7cbf89f2df9e2397e11ac3708fffb90c66ae2a5139623696d21e0d7ef68aa.js?body=1" for ::1 at 2015-12-15 10:16:01 -0800
+
+
+Started GET "/assets/sessions.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-12-15 10:16:01 -0800
+
+
+Started GET "/assets/user_categories.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-12-15 10:16:01 -0800
+
+
+Started GET "/assets/users.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-12-15 10:16:01 -0800
+
+
+Started GET "/assets/application.self-a15dad4aa95cf08ba9eff41f8898e4f14ae00c5bd8a2be5e6212c7991c0dc2b3.js?body=1" for ::1 at 2015-12-15 10:16:01 -0800
+
+
+Started GET "/signup?utf8=%E2%9C%93&authenticity_token=DyW%2FEFqgMNGOvO6zQFupZnWdW7SeX0VKbUMkdh4bcDE5dGJsvABg3IdILQXN7foEw3UDkfDzHoeypel61juAaA%3D%3D&user%5Bname%5D=j&user%5Busername%5D=j&user%5Bemail%5D=j&user%5Babout_me%5D=j&user%5Bgender%5D=Female&user%5Bpassword%5D=[FILTERED]&user%5Bpassword_confirmation%5D=[FILTERED]&commit=Submit" for ::1 at 2015-12-15 10:16:06 -0800
+Processing by UsersController#new as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"DyW/EFqgMNGOvO6zQFupZnWdW7SeX0VKbUMkdh4bcDE5dGJsvABg3IdILQXN7foEw3UDkfDzHoeypel61juAaA==", "user"=>{"name"=>"j", "username"=>"j", "email"=>"j", "about_me"=>"j", "gender"=>"Female", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Submit"}
+  Rendered users/new.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 266ms (Views: 265.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/signup?utf8=%E2%9C%93&authenticity_token=DyW%2FEFqgMNGOvO6zQFupZnWdW7SeX0VKbUMkdh4bcDE5dGJsvABg3IdILQXN7foEw3UDkfDzHoeypel61juAaA%3D%3D&user%5Bname%5D=j&user%5Busername%5D=j&user%5Bemail%5D=j&user%5Babout_me%5D=j&user%5Bgender%5D=Female&user%5Bpassword%5D=[FILTERED]&user%5Bpassword_confirmation%5D=[FILTERED]&commit=Submit" for ::1 at 2015-12-15 10:21:55 -0800
+Processing by UsersController#new as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"DyW/EFqgMNGOvO6zQFupZnWdW7SeX0VKbUMkdh4bcDE5dGJsvABg3IdILQXN7foEw3UDkfDzHoeypel61juAaA==", "user"=>{"name"=>"j", "username"=>"j", "email"=>"j", "about_me"=>"j", "gender"=>"Female", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Submit"}
+  Rendered users/new.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 183ms (Views: 182.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/accountabuddy_requests.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-12-15 10:21:55 -0800
+
+
+Started GET "/assets/categories.self-e8a6114352c4a4315c267ce0b12944c82aa153af96cc22cece2adde7753025cb.css?body=1" for ::1 at 2015-12-15 10:21:55 -0800
+
+
+Started GET "/assets/badges.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-12-15 10:21:55 -0800
+
+
+Started GET "/assets/friend_requests.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-12-15 10:21:55 -0800
+
+
+Started GET "/assets/curtain.self-928bfa886689b15bd31b09e76d8aced46c87f449904e48e704741702c11df316.css?body=1" for ::1 at 2015-12-15 10:21:55 -0800
+
+
+Started GET "/assets/foundation_and_overrides.self-85979c8b4dd7ab44d7b09aca41957e6695467722df91b01da803a62249ba4852.css?body=1" for ::1 at 2015-12-15 10:21:55 -0800
+
+
+Started GET "/assets/friendships.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-12-15 10:21:55 -0800
+
+
+Started GET "/assets/maps.self-b5bc4fc1cf3c2909b24ddf2b9352060a752391a045a40d1d05a8710e7fde0cda.css?body=1" for ::1 at 2015-12-15 10:21:55 -0800
+
+
+Started GET "/assets/messages.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-12-15 10:21:56 -0800
+
+
+Started GET "/assets/sessions.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-12-15 10:21:56 -0800
+
+
+Started GET "/assets/user_categories.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-12-15 10:21:56 -0800
+
+
+Started GET "/assets/users.self-70467802eccf90b18630d63e16d4bd1a11cde978d306ad47329c664751c5bc6a.css?body=1" for ::1 at 2015-12-15 10:21:56 -0800
+
+
+Started GET "/assets/application.self-a288552b8f3049270b1dfe038d6a3067580ba472708e9db48e02d6e80b6ffde8.css?body=1" for ::1 at 2015-12-15 10:21:56 -0800
+
+
+Started GET "/assets/vendor/modernizr.self-74da3245def7569da28115667be6a85a2ad97464abe707c9829c46d8975597bc.js?body=1" for ::1 at 2015-12-15 10:21:56 -0800
+
+
+Started GET "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1" for ::1 at 2015-12-15 10:21:56 -0800
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for ::1 at 2015-12-15 10:21:56 -0800
+
+
+Started GET "/assets/foundation/foundation.self-98616d4fb376f824aeb7c868e05e747b97176a864c7da854779ed398828df78f.js?body=1" for ::1 at 2015-12-15 10:21:56 -0800
+
+
+Started GET "/assets/foundation/foundation.abide.self-670a9b56e37b4b434f79686b8a9862222173d68ec823b20565340e0e87627ca4.js?body=1" for ::1 at 2015-12-15 10:21:56 -0800
+
+
+Started GET "/assets/foundation/foundation.accordion.self-02a179f7efde1facecf8a814cae32112c36800ce3d66bafc00c807a56d7b8d46.js?body=1" for ::1 at 2015-12-15 10:21:56 -0800
+
+
+Started GET "/assets/foundation/foundation.alert.self-631e4c4124bd543574c5a7f4d5d8b59fdf350f6c11d6201ba8a872e8a0f203b0.js?body=1" for ::1 at 2015-12-15 10:21:56 -0800
+
+
+Started GET "/assets/foundation/foundation.clearing.self-96397aa6b2d39ff61e9b4ce8486a9f716f9072f2011f1dc99f94a96b381b3830.js?body=1" for ::1 at 2015-12-15 10:21:56 -0800
+
+
+Started GET "/assets/foundation/foundation.dropdown.self-3e70f72040b183d09b673307b08d1d688a5572c6c8cbb222755945e70ccbb05e.js?body=1" for ::1 at 2015-12-15 10:21:56 -0800
+
+
+Started GET "/assets/foundation/foundation.equalizer.self-1889be5dfd0e56321a9a6d5fe9d4a94b04602c158f3e4d58419b967c255b999f.js?body=1" for ::1 at 2015-12-15 10:21:56 -0800
+
+
+Started GET "/assets/foundation/foundation.interchange.self-c6d033cdd9e7fd3f29c067eb7b9ee564f7a6b542650d2ca530ae1e3c529a3c35.js?body=1" for ::1 at 2015-12-15 10:21:56 -0800
+
+
+Started GET "/assets/foundation/foundation.joyride.self-1f6b19104e2439f1e4353444cb6fb9f7f308563556f167c2154ca3108eb7f77e.js?body=1" for ::1 at 2015-12-15 10:21:56 -0800
+
+
+Started GET "/assets/foundation/foundation.magellan.self-1fcf75780d5b4db5e97c267810e7c9a5e19a9f0d7b67a2d167074d7cff1d6a70.js?body=1" for ::1 at 2015-12-15 10:21:56 -0800
+
+
+Started GET "/assets/foundation/foundation.offcanvas.self-2f34a4b91e1e958aefbde46004d6186ee82e018fe95634214749799141339810.js?body=1" for ::1 at 2015-12-15 10:21:56 -0800
+
+
+Started GET "/assets/foundation/foundation.orbit.self-ba7d30fe424df83b5bc8bc5bb67ea90608759c6eb8212d1475d52b09db0bcd0f.js?body=1" for ::1 at 2015-12-15 10:21:56 -0800
+
+
+Started GET "/assets/foundation/foundation.reveal.self-5a83316675f14b52f582d67c053ae7977827a5b06459d7e8f5556cbedfba1d0d.js?body=1" for ::1 at 2015-12-15 10:21:56 -0800
+
+
+Started GET "/assets/foundation/foundation.slider.self-686e8b14e01aeb75ec0980de90956540d2b245324fc58e8c25debafc60300b96.js?body=1" for ::1 at 2015-12-15 10:21:56 -0800
+
+
+Started GET "/assets/foundation/foundation.tab.self-9b2bd1afa5715ce8f154fa008d0aab44500763e9b336a6d4e5bca96437176a74.js?body=1" for ::1 at 2015-12-15 10:21:56 -0800
+
+
+Started GET "/assets/foundation/foundation.tooltip.self-dae1db2297f90064e1a8ae7b02b175ca613cc6a2d190aaed548f6ef853f4b46d.js?body=1" for ::1 at 2015-12-15 10:21:56 -0800
+
+
+Started GET "/assets/foundation/foundation.topbar.self-fa6260890f9f59c821128d066bcfaa18665c816022bafd398d937c367d5e39b7.js?body=1" for ::1 at 2015-12-15 10:21:56 -0800
+
+
+Started GET "/assets/foundation.self-abe4ee7a105042f73b12b1f1a28788522d2f253445a475a94ab4d6e1f7b0ec52.js?body=1" for ::1 at 2015-12-15 10:21:56 -0800
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2015-12-15 10:21:56 -0800
+
+
+Started GET "/assets/accountabuddy_requests.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-12-15 10:21:56 -0800
+
+
+Started GET "/assets/badges.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-12-15 10:21:56 -0800
+
+
+Started GET "/assets/curtain.self-03cedba756c2ea28b832bb6cb8c319e5954ea1495621342287edfc1657932778.js?body=1" for ::1 at 2015-12-15 10:21:56 -0800
+
+
+Started GET "/assets/friend_requests.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-12-15 10:21:56 -0800
+
+
+Started GET "/assets/friendships.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-12-15 10:21:56 -0800
+
+
+Started GET "/assets/messages.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-12-15 10:21:56 -0800
+
+
+Started GET "/assets/scroll_up.self-c3b7cbf89f2df9e2397e11ac3708fffb90c66ae2a5139623696d21e0d7ef68aa.js?body=1" for ::1 at 2015-12-15 10:21:56 -0800
+
+
+Started GET "/assets/sessions.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-12-15 10:21:56 -0800
+
+
+Started GET "/assets/user_categories.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-12-15 10:21:56 -0800
+
+
+Started GET "/assets/users.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-12-15 10:21:56 -0800
+
+
+Started GET "/assets/application.self-a15dad4aa95cf08ba9eff41f8898e4f14ae00c5bd8a2be5e6212c7991c0dc2b3.js?body=1" for ::1 at 2015-12-15 10:21:56 -0800
+
+
+Started POST "/users" for ::1 at 2015-12-15 10:22:00 -0800
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"o5z7a2bthOh4SokHi+OcUiLiF9FFby7+e9Px2AsML9aVzSYXgE3U5XG+SrEGVc8wlApP9CvDdTOkNTzUwyzfjw==", "user"=>{"name"=>"j", "username"=>"j", "email"=>"j", "about_me"=>"j", "gender"=>"Female", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Submit"}
+  [1m[35m (0.5ms)[0m  BEGIN
+  [1m[36mUser Exists (0.8ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."username" = 'j' LIMIT 1[0m
+  [1m[35mUser Exists (0.2ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = 'j' LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+Redirected to http://localhost:3000/signup
+Completed 302 Found in 118ms (ActiveRecord: 5.4ms)
+
+
+Started GET "/signup" for ::1 at 2015-12-15 10:22:01 -0800
+Processing by UsersController#new as HTML
+  Rendered users/new.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 214ms (Views: 213.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users" for ::1 at 2015-12-15 10:22:20 -0800
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"UTXujxMt97L+yHzSJC+758PvWK3BhtiYejfjXqVi/+BnZDPz9Y2nv/c8v2SpmeiFdQcAiK8qg1Wl0S5SbUIPuQ==", "user"=>{"name"=>"Jenna", "username"=>"jnicholea", "email"=>"jenna@gmail.com", "about_me"=>"l;akjsdf;lakjasdf;lkjasdf", "gender"=>"Female", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Submit"}
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mUser Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE "users"."username" = 'jnicholea' LIMIT 1[0m
+  [1m[35mUser Exists (0.2ms)[0m  SELECT  1 AS one FROM "users" WHERE "users"."email" = 'jenna@gmail.com' LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+Redirected to http://localhost:3000/signup
+Completed 302 Found in 80ms (ActiveRecord: 0.8ms)
+
+
+Started GET "/signup" for ::1 at 2015-12-15 10:22:20 -0800
+Processing by UsersController#new as HTML
+  Rendered users/new.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 151ms (Views: 150.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/signup" for ::1 at 2015-12-15 10:35:28 -0800
+Processing by UsersController#new as HTML
+  Rendered users/new.html.erb within layouts/application (80.9ms)
+Completed 200 OK in 428ms (Views: 427.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/accountabuddy_requests.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-12-15 10:35:29 -0800
+
+
+Started GET "/assets/users.self-9d64ba3fb93f5864229b738d944553bd0445e9aa404d9bc0d677378e8bdf7abe.css?body=1" for ::1 at 2015-12-15 10:35:29 -0800
+
+
+Started GET "/assets/badges.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-12-15 10:35:29 -0800
+
+
+Started GET "/assets/curtain.self-928bfa886689b15bd31b09e76d8aced46c87f449904e48e704741702c11df316.css?body=1" for ::1 at 2015-12-15 10:35:29 -0800
+
+
+Started GET "/assets/categories.self-e8a6114352c4a4315c267ce0b12944c82aa153af96cc22cece2adde7753025cb.css?body=1" for ::1 at 2015-12-15 10:35:29 -0800
+
+
+Started GET "/assets/foundation_and_overrides.self-85979c8b4dd7ab44d7b09aca41957e6695467722df91b01da803a62249ba4852.css?body=1" for ::1 at 2015-12-15 10:35:29 -0800
+
+
+Started GET "/assets/friend_requests.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-12-15 10:35:29 -0800
+
+
+Started GET "/assets/friendships.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-12-15 10:35:29 -0800
+
+
+Started GET "/assets/maps.self-b5bc4fc1cf3c2909b24ddf2b9352060a752391a045a40d1d05a8710e7fde0cda.css?body=1" for ::1 at 2015-12-15 10:35:29 -0800
+
+
+Started GET "/assets/messages.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-12-15 10:35:29 -0800
+
+
+Started GET "/assets/sessions.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-12-15 10:35:29 -0800
+
+
+Started GET "/assets/user_categories.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-12-15 10:35:29 -0800
+
+
+Started GET "/assets/application.self-a288552b8f3049270b1dfe038d6a3067580ba472708e9db48e02d6e80b6ffde8.css?body=1" for ::1 at 2015-12-15 10:35:29 -0800
+
+
+Started GET "/assets/vendor/modernizr.self-74da3245def7569da28115667be6a85a2ad97464abe707c9829c46d8975597bc.js?body=1" for ::1 at 2015-12-15 10:35:29 -0800
+
+
+Started GET "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1" for ::1 at 2015-12-15 10:35:29 -0800
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for ::1 at 2015-12-15 10:35:29 -0800
+
+
+Started GET "/assets/foundation/foundation.self-98616d4fb376f824aeb7c868e05e747b97176a864c7da854779ed398828df78f.js?body=1" for ::1 at 2015-12-15 10:35:29 -0800
+
+
+Started GET "/assets/foundation/foundation.abide.self-670a9b56e37b4b434f79686b8a9862222173d68ec823b20565340e0e87627ca4.js?body=1" for ::1 at 2015-12-15 10:35:29 -0800
+
+
+Started GET "/assets/foundation/foundation.accordion.self-02a179f7efde1facecf8a814cae32112c36800ce3d66bafc00c807a56d7b8d46.js?body=1" for ::1 at 2015-12-15 10:35:29 -0800
+
+
+Started GET "/assets/foundation/foundation.alert.self-631e4c4124bd543574c5a7f4d5d8b59fdf350f6c11d6201ba8a872e8a0f203b0.js?body=1" for ::1 at 2015-12-15 10:35:29 -0800
+
+
+Started GET "/assets/foundation/foundation.clearing.self-96397aa6b2d39ff61e9b4ce8486a9f716f9072f2011f1dc99f94a96b381b3830.js?body=1" for ::1 at 2015-12-15 10:35:29 -0800
+
+
+Started GET "/assets/foundation/foundation.dropdown.self-3e70f72040b183d09b673307b08d1d688a5572c6c8cbb222755945e70ccbb05e.js?body=1" for ::1 at 2015-12-15 10:35:29 -0800
+
+
+Started GET "/assets/foundation/foundation.equalizer.self-1889be5dfd0e56321a9a6d5fe9d4a94b04602c158f3e4d58419b967c255b999f.js?body=1" for ::1 at 2015-12-15 10:35:29 -0800
+
+
+Started GET "/assets/foundation/foundation.interchange.self-c6d033cdd9e7fd3f29c067eb7b9ee564f7a6b542650d2ca530ae1e3c529a3c35.js?body=1" for ::1 at 2015-12-15 10:35:29 -0800
+
+
+Started GET "/assets/foundation/foundation.joyride.self-1f6b19104e2439f1e4353444cb6fb9f7f308563556f167c2154ca3108eb7f77e.js?body=1" for ::1 at 2015-12-15 10:35:29 -0800
+
+
+Started GET "/assets/foundation/foundation.magellan.self-1fcf75780d5b4db5e97c267810e7c9a5e19a9f0d7b67a2d167074d7cff1d6a70.js?body=1" for ::1 at 2015-12-15 10:35:29 -0800
+
+
+Started GET "/assets/foundation/foundation.offcanvas.self-2f34a4b91e1e958aefbde46004d6186ee82e018fe95634214749799141339810.js?body=1" for ::1 at 2015-12-15 10:35:29 -0800
+
+
+Started GET "/assets/foundation/foundation.orbit.self-ba7d30fe424df83b5bc8bc5bb67ea90608759c6eb8212d1475d52b09db0bcd0f.js?body=1" for ::1 at 2015-12-15 10:35:29 -0800
+
+
+Started GET "/assets/foundation/foundation.reveal.self-5a83316675f14b52f582d67c053ae7977827a5b06459d7e8f5556cbedfba1d0d.js?body=1" for ::1 at 2015-12-15 10:35:29 -0800
+
+
+Started GET "/assets/foundation/foundation.slider.self-686e8b14e01aeb75ec0980de90956540d2b245324fc58e8c25debafc60300b96.js?body=1" for ::1 at 2015-12-15 10:35:29 -0800
+
+
+Started GET "/assets/foundation/foundation.tab.self-9b2bd1afa5715ce8f154fa008d0aab44500763e9b336a6d4e5bca96437176a74.js?body=1" for ::1 at 2015-12-15 10:35:29 -0800
+
+
+Started GET "/assets/foundation/foundation.tooltip.self-dae1db2297f90064e1a8ae7b02b175ca613cc6a2d190aaed548f6ef853f4b46d.js?body=1" for ::1 at 2015-12-15 10:35:29 -0800
+
+
+Started GET "/assets/foundation/foundation.topbar.self-fa6260890f9f59c821128d066bcfaa18665c816022bafd398d937c367d5e39b7.js?body=1" for ::1 at 2015-12-15 10:35:29 -0800
+
+
+Started GET "/assets/foundation.self-abe4ee7a105042f73b12b1f1a28788522d2f253445a475a94ab4d6e1f7b0ec52.js?body=1" for ::1 at 2015-12-15 10:35:29 -0800
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2015-12-15 10:35:29 -0800
+
+
+Started GET "/assets/accountabuddy_requests.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-12-15 10:35:29 -0800
+
+
+Started GET "/assets/badges.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-12-15 10:35:29 -0800
+
+
+Started GET "/assets/curtain.self-03cedba756c2ea28b832bb6cb8c319e5954ea1495621342287edfc1657932778.js?body=1" for ::1 at 2015-12-15 10:35:29 -0800
+
+
+Started GET "/assets/friend_requests.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-12-15 10:35:29 -0800
+
+
+Started GET "/assets/friendships.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-12-15 10:35:29 -0800
+
+
+Started GET "/assets/messages.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-12-15 10:35:29 -0800
+
+
+Started GET "/assets/scroll_up.self-c3b7cbf89f2df9e2397e11ac3708fffb90c66ae2a5139623696d21e0d7ef68aa.js?body=1" for ::1 at 2015-12-15 10:35:29 -0800
+
+
+Started GET "/assets/sessions.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-12-15 10:35:29 -0800
+
+
+Started GET "/assets/user_categories.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-12-15 10:35:29 -0800
+
+
+Started GET "/assets/users.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-12-15 10:35:29 -0800
+
+
+Started GET "/assets/application.self-a15dad4aa95cf08ba9eff41f8898e4f14ae00c5bd8a2be5e6212c7991c0dc2b3.js?body=1" for ::1 at 2015-12-15 10:35:29 -0800
+
+
+Started GET "/signup" for ::1 at 2015-12-15 10:35:52 -0800
+Processing by UsersController#new as HTML
+  Rendered users/new.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 308ms (Views: 307.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/accountabuddy_requests.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-12-15 10:35:52 -0800
+
+
+Started GET "/assets/foundation_and_overrides.self-85979c8b4dd7ab44d7b09aca41957e6695467722df91b01da803a62249ba4852.css?body=1" for ::1 at 2015-12-15 10:35:52 -0800
+
+
+Started GET "/assets/categories.self-e8a6114352c4a4315c267ce0b12944c82aa153af96cc22cece2adde7753025cb.css?body=1" for ::1 at 2015-12-15 10:35:52 -0800
+
+
+Started GET "/assets/curtain.self-928bfa886689b15bd31b09e76d8aced46c87f449904e48e704741702c11df316.css?body=1" for ::1 at 2015-12-15 10:35:52 -0800
+
+
+Started GET "/assets/users.self-869a5f9712832b32cec5569d96dd126080610d5047ec8ce0ba303af67c172e2f.css?body=1" for ::1 at 2015-12-15 10:35:52 -0800
+
+
+Started GET "/assets/badges.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-12-15 10:35:52 -0800
+
+
+Started GET "/assets/friend_requests.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-12-15 10:35:52 -0800
+
+
+Started GET "/assets/friendships.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-12-15 10:35:52 -0800
+
+
+Started GET "/assets/maps.self-b5bc4fc1cf3c2909b24ddf2b9352060a752391a045a40d1d05a8710e7fde0cda.css?body=1" for ::1 at 2015-12-15 10:35:52 -0800
+
+
+Started GET "/assets/messages.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-12-15 10:35:52 -0800
+
+
+Started GET "/assets/sessions.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-12-15 10:35:52 -0800
+
+
+Started GET "/assets/user_categories.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-12-15 10:35:52 -0800
+
+
+Started GET "/assets/application.self-a288552b8f3049270b1dfe038d6a3067580ba472708e9db48e02d6e80b6ffde8.css?body=1" for ::1 at 2015-12-15 10:35:52 -0800
+
+
+Started GET "/assets/vendor/modernizr.self-74da3245def7569da28115667be6a85a2ad97464abe707c9829c46d8975597bc.js?body=1" for ::1 at 2015-12-15 10:35:52 -0800
+
+
+Started GET "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1" for ::1 at 2015-12-15 10:35:52 -0800
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for ::1 at 2015-12-15 10:35:52 -0800
+
+
+Started GET "/assets/foundation/foundation.self-98616d4fb376f824aeb7c868e05e747b97176a864c7da854779ed398828df78f.js?body=1" for ::1 at 2015-12-15 10:35:52 -0800
+
+
+Started GET "/assets/foundation/foundation.abide.self-670a9b56e37b4b434f79686b8a9862222173d68ec823b20565340e0e87627ca4.js?body=1" for ::1 at 2015-12-15 10:35:52 -0800
+
+
+Started GET "/assets/foundation/foundation.accordion.self-02a179f7efde1facecf8a814cae32112c36800ce3d66bafc00c807a56d7b8d46.js?body=1" for ::1 at 2015-12-15 10:35:52 -0800
+
+
+Started GET "/assets/foundation/foundation.alert.self-631e4c4124bd543574c5a7f4d5d8b59fdf350f6c11d6201ba8a872e8a0f203b0.js?body=1" for ::1 at 2015-12-15 10:35:52 -0800
+
+
+Started GET "/assets/foundation/foundation.clearing.self-96397aa6b2d39ff61e9b4ce8486a9f716f9072f2011f1dc99f94a96b381b3830.js?body=1" for ::1 at 2015-12-15 10:35:52 -0800
+
+
+Started GET "/assets/foundation/foundation.dropdown.self-3e70f72040b183d09b673307b08d1d688a5572c6c8cbb222755945e70ccbb05e.js?body=1" for ::1 at 2015-12-15 10:35:52 -0800
+
+
+Started GET "/assets/foundation/foundation.equalizer.self-1889be5dfd0e56321a9a6d5fe9d4a94b04602c158f3e4d58419b967c255b999f.js?body=1" for ::1 at 2015-12-15 10:35:52 -0800
+
+
+Started GET "/assets/foundation/foundation.interchange.self-c6d033cdd9e7fd3f29c067eb7b9ee564f7a6b542650d2ca530ae1e3c529a3c35.js?body=1" for ::1 at 2015-12-15 10:35:52 -0800
+
+
+Started GET "/assets/foundation/foundation.joyride.self-1f6b19104e2439f1e4353444cb6fb9f7f308563556f167c2154ca3108eb7f77e.js?body=1" for ::1 at 2015-12-15 10:35:52 -0800
+
+
+Started GET "/assets/foundation/foundation.magellan.self-1fcf75780d5b4db5e97c267810e7c9a5e19a9f0d7b67a2d167074d7cff1d6a70.js?body=1" for ::1 at 2015-12-15 10:35:52 -0800
+
+
+Started GET "/assets/foundation/foundation.offcanvas.self-2f34a4b91e1e958aefbde46004d6186ee82e018fe95634214749799141339810.js?body=1" for ::1 at 2015-12-15 10:35:52 -0800
+
+
+Started GET "/assets/foundation/foundation.orbit.self-ba7d30fe424df83b5bc8bc5bb67ea90608759c6eb8212d1475d52b09db0bcd0f.js?body=1" for ::1 at 2015-12-15 10:35:52 -0800
+
+
+Started GET "/assets/foundation/foundation.reveal.self-5a83316675f14b52f582d67c053ae7977827a5b06459d7e8f5556cbedfba1d0d.js?body=1" for ::1 at 2015-12-15 10:35:52 -0800
+
+
+Started GET "/assets/foundation/foundation.slider.self-686e8b14e01aeb75ec0980de90956540d2b245324fc58e8c25debafc60300b96.js?body=1" for ::1 at 2015-12-15 10:35:52 -0800
+
+
+Started GET "/assets/foundation/foundation.tab.self-9b2bd1afa5715ce8f154fa008d0aab44500763e9b336a6d4e5bca96437176a74.js?body=1" for ::1 at 2015-12-15 10:35:52 -0800
+
+
+Started GET "/assets/foundation/foundation.tooltip.self-dae1db2297f90064e1a8ae7b02b175ca613cc6a2d190aaed548f6ef853f4b46d.js?body=1" for ::1 at 2015-12-15 10:35:52 -0800
+
+
+Started GET "/assets/foundation/foundation.topbar.self-fa6260890f9f59c821128d066bcfaa18665c816022bafd398d937c367d5e39b7.js?body=1" for ::1 at 2015-12-15 10:35:52 -0800
+
+
+Started GET "/assets/foundation.self-abe4ee7a105042f73b12b1f1a28788522d2f253445a475a94ab4d6e1f7b0ec52.js?body=1" for ::1 at 2015-12-15 10:35:52 -0800
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2015-12-15 10:35:52 -0800
+
+
+Started GET "/assets/accountabuddy_requests.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-12-15 10:35:52 -0800
+
+
+Started GET "/assets/badges.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-12-15 10:35:52 -0800
+
+
+Started GET "/assets/curtain.self-03cedba756c2ea28b832bb6cb8c319e5954ea1495621342287edfc1657932778.js?body=1" for ::1 at 2015-12-15 10:35:52 -0800
+
+
+Started GET "/assets/friend_requests.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-12-15 10:35:52 -0800
+
+
+Started GET "/assets/friendships.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-12-15 10:35:52 -0800
+
+
+Started GET "/assets/messages.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-12-15 10:35:52 -0800
+
+
+Started GET "/assets/scroll_up.self-c3b7cbf89f2df9e2397e11ac3708fffb90c66ae2a5139623696d21e0d7ef68aa.js?body=1" for ::1 at 2015-12-15 10:35:52 -0800
+
+
+Started GET "/assets/sessions.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-12-15 10:35:52 -0800
+
+
+Started GET "/assets/user_categories.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-12-15 10:35:52 -0800
+
+
+Started GET "/assets/users.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-12-15 10:35:52 -0800
+
+
+Started GET "/assets/application.self-a15dad4aa95cf08ba9eff41f8898e4f14ae00c5bd8a2be5e6212c7991c0dc2b3.js?body=1" for ::1 at 2015-12-15 10:35:52 -0800
+
+
+Started GET "/signup" for ::1 at 2015-12-15 10:35:58 -0800
+Processing by UsersController#new as HTML
+  Rendered users/new.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 318ms (Views: 317.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/accountabuddy_requests.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-12-15 10:35:59 -0800
+
+
+Started GET "/assets/users.self-89bc89a2bf667c324e78d4df3e17b92452b16ff2ef37ea2aa3181d96298fc179.css?body=1" for ::1 at 2015-12-15 10:35:59 -0800
+
+
+Started GET "/assets/badges.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-12-15 10:35:59 -0800
+
+
+Started GET "/assets/curtain.self-928bfa886689b15bd31b09e76d8aced46c87f449904e48e704741702c11df316.css?body=1" for ::1 at 2015-12-15 10:35:59 -0800
+
+
+Started GET "/assets/foundation_and_overrides.self-85979c8b4dd7ab44d7b09aca41957e6695467722df91b01da803a62249ba4852.css?body=1" for ::1 at 2015-12-15 10:35:59 -0800
+
+
+Started GET "/assets/categories.self-e8a6114352c4a4315c267ce0b12944c82aa153af96cc22cece2adde7753025cb.css?body=1" for ::1 at 2015-12-15 10:35:59 -0800
+
+
+Started GET "/assets/friend_requests.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-12-15 10:35:59 -0800
+
+
+Started GET "/assets/friendships.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-12-15 10:35:59 -0800
+
+
+Started GET "/assets/maps.self-b5bc4fc1cf3c2909b24ddf2b9352060a752391a045a40d1d05a8710e7fde0cda.css?body=1" for ::1 at 2015-12-15 10:35:59 -0800
+
+
+Started GET "/assets/messages.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-12-15 10:35:59 -0800
+
+
+Started GET "/assets/sessions.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-12-15 10:35:59 -0800
+
+
+Started GET "/assets/user_categories.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-12-15 10:35:59 -0800
+
+
+Started GET "/assets/application.self-a288552b8f3049270b1dfe038d6a3067580ba472708e9db48e02d6e80b6ffde8.css?body=1" for ::1 at 2015-12-15 10:35:59 -0800
+
+
+Started GET "/assets/vendor/modernizr.self-74da3245def7569da28115667be6a85a2ad97464abe707c9829c46d8975597bc.js?body=1" for ::1 at 2015-12-15 10:35:59 -0800
+
+
+Started GET "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1" for ::1 at 2015-12-15 10:35:59 -0800
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for ::1 at 2015-12-15 10:35:59 -0800
+
+
+Started GET "/assets/foundation/foundation.self-98616d4fb376f824aeb7c868e05e747b97176a864c7da854779ed398828df78f.js?body=1" for ::1 at 2015-12-15 10:35:59 -0800
+
+
+Started GET "/assets/foundation/foundation.abide.self-670a9b56e37b4b434f79686b8a9862222173d68ec823b20565340e0e87627ca4.js?body=1" for ::1 at 2015-12-15 10:35:59 -0800
+
+
+Started GET "/assets/foundation/foundation.accordion.self-02a179f7efde1facecf8a814cae32112c36800ce3d66bafc00c807a56d7b8d46.js?body=1" for ::1 at 2015-12-15 10:35:59 -0800
+
+
+Started GET "/assets/foundation/foundation.alert.self-631e4c4124bd543574c5a7f4d5d8b59fdf350f6c11d6201ba8a872e8a0f203b0.js?body=1" for ::1 at 2015-12-15 10:35:59 -0800
+
+
+Started GET "/assets/foundation/foundation.clearing.self-96397aa6b2d39ff61e9b4ce8486a9f716f9072f2011f1dc99f94a96b381b3830.js?body=1" for ::1 at 2015-12-15 10:35:59 -0800
+
+
+Started GET "/assets/foundation/foundation.dropdown.self-3e70f72040b183d09b673307b08d1d688a5572c6c8cbb222755945e70ccbb05e.js?body=1" for ::1 at 2015-12-15 10:35:59 -0800
+
+
+Started GET "/assets/foundation/foundation.equalizer.self-1889be5dfd0e56321a9a6d5fe9d4a94b04602c158f3e4d58419b967c255b999f.js?body=1" for ::1 at 2015-12-15 10:35:59 -0800
+
+
+Started GET "/assets/foundation/foundation.interchange.self-c6d033cdd9e7fd3f29c067eb7b9ee564f7a6b542650d2ca530ae1e3c529a3c35.js?body=1" for ::1 at 2015-12-15 10:35:59 -0800
+
+
+Started GET "/assets/foundation/foundation.joyride.self-1f6b19104e2439f1e4353444cb6fb9f7f308563556f167c2154ca3108eb7f77e.js?body=1" for ::1 at 2015-12-15 10:35:59 -0800
+
+
+Started GET "/assets/foundation/foundation.magellan.self-1fcf75780d5b4db5e97c267810e7c9a5e19a9f0d7b67a2d167074d7cff1d6a70.js?body=1" for ::1 at 2015-12-15 10:35:59 -0800
+
+
+Started GET "/assets/foundation/foundation.offcanvas.self-2f34a4b91e1e958aefbde46004d6186ee82e018fe95634214749799141339810.js?body=1" for ::1 at 2015-12-15 10:35:59 -0800
+
+
+Started GET "/assets/foundation/foundation.orbit.self-ba7d30fe424df83b5bc8bc5bb67ea90608759c6eb8212d1475d52b09db0bcd0f.js?body=1" for ::1 at 2015-12-15 10:35:59 -0800
+
+
+Started GET "/assets/foundation/foundation.reveal.self-5a83316675f14b52f582d67c053ae7977827a5b06459d7e8f5556cbedfba1d0d.js?body=1" for ::1 at 2015-12-15 10:35:59 -0800
+
+
+Started GET "/assets/foundation/foundation.slider.self-686e8b14e01aeb75ec0980de90956540d2b245324fc58e8c25debafc60300b96.js?body=1" for ::1 at 2015-12-15 10:35:59 -0800
+
+
+Started GET "/assets/foundation/foundation.tab.self-9b2bd1afa5715ce8f154fa008d0aab44500763e9b336a6d4e5bca96437176a74.js?body=1" for ::1 at 2015-12-15 10:35:59 -0800
+
+
+Started GET "/assets/foundation/foundation.tooltip.self-dae1db2297f90064e1a8ae7b02b175ca613cc6a2d190aaed548f6ef853f4b46d.js?body=1" for ::1 at 2015-12-15 10:35:59 -0800
+
+
+Started GET "/assets/foundation/foundation.topbar.self-fa6260890f9f59c821128d066bcfaa18665c816022bafd398d937c367d5e39b7.js?body=1" for ::1 at 2015-12-15 10:35:59 -0800
+
+
+Started GET "/assets/foundation.self-abe4ee7a105042f73b12b1f1a28788522d2f253445a475a94ab4d6e1f7b0ec52.js?body=1" for ::1 at 2015-12-15 10:35:59 -0800
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2015-12-15 10:35:59 -0800
+
+
+Started GET "/assets/accountabuddy_requests.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-12-15 10:35:59 -0800
+
+
+Started GET "/assets/badges.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-12-15 10:35:59 -0800
+
+
+Started GET "/assets/curtain.self-03cedba756c2ea28b832bb6cb8c319e5954ea1495621342287edfc1657932778.js?body=1" for ::1 at 2015-12-15 10:35:59 -0800
+
+
+Started GET "/assets/friend_requests.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-12-15 10:35:59 -0800
+
+
+Started GET "/assets/friendships.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-12-15 10:35:59 -0800
+
+
+Started GET "/assets/messages.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-12-15 10:35:59 -0800
+
+
+Started GET "/assets/scroll_up.self-c3b7cbf89f2df9e2397e11ac3708fffb90c66ae2a5139623696d21e0d7ef68aa.js?body=1" for ::1 at 2015-12-15 10:35:59 -0800
+
+
+Started GET "/assets/sessions.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-12-15 10:35:59 -0800
+
+
+Started GET "/assets/user_categories.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-12-15 10:35:59 -0800
+
+
+Started GET "/assets/users.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-12-15 10:35:59 -0800
+
+
+Started GET "/assets/application.self-a15dad4aa95cf08ba9eff41f8898e4f14ae00c5bd8a2be5e6212c7991c0dc2b3.js?body=1" for ::1 at 2015-12-15 10:35:59 -0800
+
+
+Started GET "/signup" for ::1 at 2015-12-15 10:37:01 -0800
+Processing by UsersController#new as HTML
+  Rendered users/new.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 330ms (Views: 329.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/accountabuddy_requests.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-12-15 10:37:01 -0800
+
+
+Started GET "/assets/badges.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-12-15 10:37:01 -0800
+
+
+Started GET "/assets/foundation_and_overrides.self-85979c8b4dd7ab44d7b09aca41957e6695467722df91b01da803a62249ba4852.css?body=1" for ::1 at 2015-12-15 10:37:01 -0800
+
+
+Started GET "/assets/categories.self-e8a6114352c4a4315c267ce0b12944c82aa153af96cc22cece2adde7753025cb.css?body=1" for ::1 at 2015-12-15 10:37:01 -0800
+
+
+Started GET "/assets/curtain.self-928bfa886689b15bd31b09e76d8aced46c87f449904e48e704741702c11df316.css?body=1" for ::1 at 2015-12-15 10:37:01 -0800
+
+
+Started GET "/assets/users.self-3227f2131ad928b62214e6d8681e293228b888eca33d2bbda2b988ac1420ac4a.css?body=1" for ::1 at 2015-12-15 10:37:01 -0800
+
+
+Started GET "/assets/friend_requests.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-12-15 10:37:01 -0800
+
+
+Started GET "/assets/friendships.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-12-15 10:37:01 -0800
+
+
+Started GET "/assets/maps.self-b5bc4fc1cf3c2909b24ddf2b9352060a752391a045a40d1d05a8710e7fde0cda.css?body=1" for ::1 at 2015-12-15 10:37:01 -0800
+
+
+Started GET "/assets/messages.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-12-15 10:37:01 -0800
+
+
+Started GET "/assets/sessions.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-12-15 10:37:01 -0800
+
+
+Started GET "/assets/user_categories.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-12-15 10:37:01 -0800
+
+
+Started GET "/assets/application.self-a288552b8f3049270b1dfe038d6a3067580ba472708e9db48e02d6e80b6ffde8.css?body=1" for ::1 at 2015-12-15 10:37:01 -0800
+
+
+Started GET "/assets/vendor/modernizr.self-74da3245def7569da28115667be6a85a2ad97464abe707c9829c46d8975597bc.js?body=1" for ::1 at 2015-12-15 10:37:01 -0800
+
+
+Started GET "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1" for ::1 at 2015-12-15 10:37:01 -0800
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for ::1 at 2015-12-15 10:37:01 -0800
+
+
+Started GET "/assets/foundation/foundation.self-98616d4fb376f824aeb7c868e05e747b97176a864c7da854779ed398828df78f.js?body=1" for ::1 at 2015-12-15 10:37:01 -0800
+
+
+Started GET "/assets/foundation/foundation.abide.self-670a9b56e37b4b434f79686b8a9862222173d68ec823b20565340e0e87627ca4.js?body=1" for ::1 at 2015-12-15 10:37:01 -0800
+
+
+Started GET "/assets/foundation/foundation.accordion.self-02a179f7efde1facecf8a814cae32112c36800ce3d66bafc00c807a56d7b8d46.js?body=1" for ::1 at 2015-12-15 10:37:01 -0800
+
+
+Started GET "/assets/foundation/foundation.alert.self-631e4c4124bd543574c5a7f4d5d8b59fdf350f6c11d6201ba8a872e8a0f203b0.js?body=1" for ::1 at 2015-12-15 10:37:01 -0800
+
+
+Started GET "/assets/foundation/foundation.clearing.self-96397aa6b2d39ff61e9b4ce8486a9f716f9072f2011f1dc99f94a96b381b3830.js?body=1" for ::1 at 2015-12-15 10:37:01 -0800
+
+
+Started GET "/assets/foundation/foundation.dropdown.self-3e70f72040b183d09b673307b08d1d688a5572c6c8cbb222755945e70ccbb05e.js?body=1" for ::1 at 2015-12-15 10:37:01 -0800
+
+
+Started GET "/assets/foundation/foundation.equalizer.self-1889be5dfd0e56321a9a6d5fe9d4a94b04602c158f3e4d58419b967c255b999f.js?body=1" for ::1 at 2015-12-15 10:37:01 -0800
+
+
+Started GET "/assets/foundation/foundation.interchange.self-c6d033cdd9e7fd3f29c067eb7b9ee564f7a6b542650d2ca530ae1e3c529a3c35.js?body=1" for ::1 at 2015-12-15 10:37:01 -0800
+
+
+Started GET "/assets/foundation/foundation.joyride.self-1f6b19104e2439f1e4353444cb6fb9f7f308563556f167c2154ca3108eb7f77e.js?body=1" for ::1 at 2015-12-15 10:37:01 -0800
+
+
+Started GET "/assets/foundation/foundation.magellan.self-1fcf75780d5b4db5e97c267810e7c9a5e19a9f0d7b67a2d167074d7cff1d6a70.js?body=1" for ::1 at 2015-12-15 10:37:01 -0800
+
+
+Started GET "/assets/foundation/foundation.offcanvas.self-2f34a4b91e1e958aefbde46004d6186ee82e018fe95634214749799141339810.js?body=1" for ::1 at 2015-12-15 10:37:01 -0800
+
+
+Started GET "/assets/foundation/foundation.orbit.self-ba7d30fe424df83b5bc8bc5bb67ea90608759c6eb8212d1475d52b09db0bcd0f.js?body=1" for ::1 at 2015-12-15 10:37:01 -0800
+
+
+Started GET "/assets/foundation/foundation.reveal.self-5a83316675f14b52f582d67c053ae7977827a5b06459d7e8f5556cbedfba1d0d.js?body=1" for ::1 at 2015-12-15 10:37:01 -0800
+
+
+Started GET "/assets/foundation/foundation.slider.self-686e8b14e01aeb75ec0980de90956540d2b245324fc58e8c25debafc60300b96.js?body=1" for ::1 at 2015-12-15 10:37:01 -0800
+
+
+Started GET "/assets/foundation/foundation.tab.self-9b2bd1afa5715ce8f154fa008d0aab44500763e9b336a6d4e5bca96437176a74.js?body=1" for ::1 at 2015-12-15 10:37:01 -0800
+
+
+Started GET "/assets/foundation/foundation.tooltip.self-dae1db2297f90064e1a8ae7b02b175ca613cc6a2d190aaed548f6ef853f4b46d.js?body=1" for ::1 at 2015-12-15 10:37:01 -0800
+
+
+Started GET "/assets/foundation/foundation.topbar.self-fa6260890f9f59c821128d066bcfaa18665c816022bafd398d937c367d5e39b7.js?body=1" for ::1 at 2015-12-15 10:37:01 -0800
+
+
+Started GET "/assets/foundation.self-abe4ee7a105042f73b12b1f1a28788522d2f253445a475a94ab4d6e1f7b0ec52.js?body=1" for ::1 at 2015-12-15 10:37:01 -0800
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2015-12-15 10:37:01 -0800
+
+
+Started GET "/assets/accountabuddy_requests.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-12-15 10:37:01 -0800
+
+
+Started GET "/assets/badges.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-12-15 10:37:01 -0800
+
+
+Started GET "/assets/curtain.self-03cedba756c2ea28b832bb6cb8c319e5954ea1495621342287edfc1657932778.js?body=1" for ::1 at 2015-12-15 10:37:01 -0800
+
+
+Started GET "/assets/friend_requests.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-12-15 10:37:01 -0800
+
+
+Started GET "/assets/friendships.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-12-15 10:37:01 -0800
+
+
+Started GET "/assets/messages.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-12-15 10:37:01 -0800
+
+
+Started GET "/assets/scroll_up.self-c3b7cbf89f2df9e2397e11ac3708fffb90c66ae2a5139623696d21e0d7ef68aa.js?body=1" for ::1 at 2015-12-15 10:37:01 -0800
+
+
+Started GET "/assets/sessions.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-12-15 10:37:01 -0800
+
+
+Started GET "/assets/user_categories.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-12-15 10:37:01 -0800
+
+
+Started GET "/assets/users.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-12-15 10:37:01 -0800
+
+
+Started GET "/assets/application.self-a15dad4aa95cf08ba9eff41f8898e4f14ae00c5bd8a2be5e6212c7991c0dc2b3.js?body=1" for ::1 at 2015-12-15 10:37:01 -0800
+
+
+Started GET "/signup" for ::1 at 2015-12-15 10:37:38 -0800
+Processing by UsersController#new as HTML
+  Rendered users/new.html.erb within layouts/application (1.0ms)
+Completed 500 Internal Server Error in 36ms (ActiveRecord: 0.0ms)
+
+ActionView::Template::Error (Invalid CSS after "  background: ": expected expression (e.g. 1px, bold), was "##2d9577; /* Fo..."):
+     7: 
+     8:   <title><%= content_for?(:title) ? yield(:title) : "AccountaBuddy" %></title>
+     9: 
+    10:   <%= stylesheet_link_tag    "application" %>
+    11:   <%= javascript_include_tag "vendor/modernizr" %>
+    12:   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+    13:   <%= csrf_meta_tags %>
+  app/assets/stylesheets/users.scss:121
+  app/views/layouts/application.html.erb:10:in `_app_views_layouts_application_html_erb___332283339685259719_70349197638940'
+
+
+  Rendered /Users/jennacole/.rvm/gems/ruby-2.0.0-p643/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_source.erb (7.1ms)
+  Rendered /Users/jennacole/.rvm/gems/ruby-2.0.0-p643/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.7ms)
+  Rendered /Users/jennacole/.rvm/gems/ruby-2.0.0-p643/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.8ms)
+  Rendered /Users/jennacole/.rvm/gems/ruby-2.0.0-p643/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (24.7ms)
+  Rendered /Users/jennacole/.rvm/gems/ruby-2.0.0-p643/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.4ms)
+  Rendered /Users/jennacole/.rvm/gems/ruby-2.0.0-p643/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/jennacole/.rvm/gems/ruby-2.0.0-p643/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/jennacole/.rvm/gems/ruby-2.0.0-p643/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/jennacole/.rvm/gems/ruby-2.0.0-p643/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (16.6ms)
+  Rendered /Users/jennacole/.rvm/gems/ruby-2.0.0-p643/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/jennacole/.rvm/gems/ruby-2.0.0-p643/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/jennacole/.rvm/gems/ruby-2.0.0-p643/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (36.0ms)
+
+
+Started GET "/signup" for ::1 at 2015-12-15 10:37:44 -0800
+Processing by UsersController#new as HTML
+  Rendered users/new.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 385ms (Views: 384.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/accountabuddy_requests.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-12-15 10:37:44 -0800
+
+
+Started GET "/assets/categories.self-e8a6114352c4a4315c267ce0b12944c82aa153af96cc22cece2adde7753025cb.css?body=1" for ::1 at 2015-12-15 10:37:44 -0800
+
+
+Started GET "/assets/foundation_and_overrides.self-85979c8b4dd7ab44d7b09aca41957e6695467722df91b01da803a62249ba4852.css?body=1" for ::1 at 2015-12-15 10:37:44 -0800
+
+
+Started GET "/assets/badges.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-12-15 10:37:44 -0800
+
+
+Started GET "/assets/curtain.self-928bfa886689b15bd31b09e76d8aced46c87f449904e48e704741702c11df316.css?body=1" for ::1 at 2015-12-15 10:37:44 -0800
+
+
+Started GET "/assets/friend_requests.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-12-15 10:37:44 -0800
+
+
+Started GET "/assets/friendships.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-12-15 10:37:44 -0800
+
+
+Started GET "/assets/maps.self-b5bc4fc1cf3c2909b24ddf2b9352060a752391a045a40d1d05a8710e7fde0cda.css?body=1" for ::1 at 2015-12-15 10:37:44 -0800
+
+
+Started GET "/assets/messages.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-12-15 10:37:44 -0800
+
+
+Started GET "/assets/sessions.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-12-15 10:37:44 -0800
+
+
+Started GET "/assets/user_categories.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-12-15 10:37:44 -0800
+
+
+Started GET "/assets/users.self-542e7f4b6b4e65d7fe517dddfcbfc879674cd18ab470c67310c9d88afd220835.css?body=1" for ::1 at 2015-12-15 10:37:44 -0800
+
+
+Started GET "/assets/application.self-a288552b8f3049270b1dfe038d6a3067580ba472708e9db48e02d6e80b6ffde8.css?body=1" for ::1 at 2015-12-15 10:37:44 -0800
+
+
+Started GET "/assets/vendor/modernizr.self-74da3245def7569da28115667be6a85a2ad97464abe707c9829c46d8975597bc.js?body=1" for ::1 at 2015-12-15 10:37:44 -0800
+
+
+Started GET "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1" for ::1 at 2015-12-15 10:37:44 -0800
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for ::1 at 2015-12-15 10:37:44 -0800
+
+
+Started GET "/assets/foundation/foundation.self-98616d4fb376f824aeb7c868e05e747b97176a864c7da854779ed398828df78f.js?body=1" for ::1 at 2015-12-15 10:37:44 -0800
+
+
+Started GET "/assets/foundation/foundation.abide.self-670a9b56e37b4b434f79686b8a9862222173d68ec823b20565340e0e87627ca4.js?body=1" for ::1 at 2015-12-15 10:37:44 -0800
+
+
+Started GET "/assets/foundation/foundation.accordion.self-02a179f7efde1facecf8a814cae32112c36800ce3d66bafc00c807a56d7b8d46.js?body=1" for ::1 at 2015-12-15 10:37:44 -0800
+
+
+Started GET "/assets/foundation/foundation.alert.self-631e4c4124bd543574c5a7f4d5d8b59fdf350f6c11d6201ba8a872e8a0f203b0.js?body=1" for ::1 at 2015-12-15 10:37:44 -0800
+
+
+Started GET "/assets/foundation/foundation.clearing.self-96397aa6b2d39ff61e9b4ce8486a9f716f9072f2011f1dc99f94a96b381b3830.js?body=1" for ::1 at 2015-12-15 10:37:44 -0800
+
+
+Started GET "/assets/foundation/foundation.dropdown.self-3e70f72040b183d09b673307b08d1d688a5572c6c8cbb222755945e70ccbb05e.js?body=1" for ::1 at 2015-12-15 10:37:44 -0800
+
+
+Started GET "/assets/foundation/foundation.equalizer.self-1889be5dfd0e56321a9a6d5fe9d4a94b04602c158f3e4d58419b967c255b999f.js?body=1" for ::1 at 2015-12-15 10:37:44 -0800
+
+
+Started GET "/assets/foundation/foundation.interchange.self-c6d033cdd9e7fd3f29c067eb7b9ee564f7a6b542650d2ca530ae1e3c529a3c35.js?body=1" for ::1 at 2015-12-15 10:37:44 -0800
+
+
+Started GET "/assets/foundation/foundation.joyride.self-1f6b19104e2439f1e4353444cb6fb9f7f308563556f167c2154ca3108eb7f77e.js?body=1" for ::1 at 2015-12-15 10:37:44 -0800
+
+
+Started GET "/assets/foundation/foundation.magellan.self-1fcf75780d5b4db5e97c267810e7c9a5e19a9f0d7b67a2d167074d7cff1d6a70.js?body=1" for ::1 at 2015-12-15 10:37:44 -0800
+
+
+Started GET "/assets/foundation/foundation.offcanvas.self-2f34a4b91e1e958aefbde46004d6186ee82e018fe95634214749799141339810.js?body=1" for ::1 at 2015-12-15 10:37:44 -0800
+
+
+Started GET "/assets/foundation/foundation.orbit.self-ba7d30fe424df83b5bc8bc5bb67ea90608759c6eb8212d1475d52b09db0bcd0f.js?body=1" for ::1 at 2015-12-15 10:37:44 -0800
+
+
+Started GET "/assets/foundation/foundation.reveal.self-5a83316675f14b52f582d67c053ae7977827a5b06459d7e8f5556cbedfba1d0d.js?body=1" for ::1 at 2015-12-15 10:37:44 -0800
+
+
+Started GET "/assets/foundation/foundation.slider.self-686e8b14e01aeb75ec0980de90956540d2b245324fc58e8c25debafc60300b96.js?body=1" for ::1 at 2015-12-15 10:37:44 -0800
+
+
+Started GET "/assets/foundation/foundation.tab.self-9b2bd1afa5715ce8f154fa008d0aab44500763e9b336a6d4e5bca96437176a74.js?body=1" for ::1 at 2015-12-15 10:37:44 -0800
+
+
+Started GET "/assets/foundation/foundation.tooltip.self-dae1db2297f90064e1a8ae7b02b175ca613cc6a2d190aaed548f6ef853f4b46d.js?body=1" for ::1 at 2015-12-15 10:37:44 -0800
+
+
+Started GET "/assets/foundation/foundation.topbar.self-fa6260890f9f59c821128d066bcfaa18665c816022bafd398d937c367d5e39b7.js?body=1" for ::1 at 2015-12-15 10:37:44 -0800
+
+
+Started GET "/assets/foundation.self-abe4ee7a105042f73b12b1f1a28788522d2f253445a475a94ab4d6e1f7b0ec52.js?body=1" for ::1 at 2015-12-15 10:37:44 -0800
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2015-12-15 10:37:44 -0800
+
+
+Started GET "/assets/accountabuddy_requests.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-12-15 10:37:44 -0800
+
+
+Started GET "/assets/badges.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-12-15 10:37:44 -0800
+
+
+Started GET "/assets/curtain.self-03cedba756c2ea28b832bb6cb8c319e5954ea1495621342287edfc1657932778.js?body=1" for ::1 at 2015-12-15 10:37:44 -0800
+
+
+Started GET "/assets/friend_requests.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-12-15 10:37:44 -0800
+
+
+Started GET "/assets/friendships.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-12-15 10:37:44 -0800
+
+
+Started GET "/assets/messages.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-12-15 10:37:44 -0800
+
+
+Started GET "/assets/scroll_up.self-c3b7cbf89f2df9e2397e11ac3708fffb90c66ae2a5139623696d21e0d7ef68aa.js?body=1" for ::1 at 2015-12-15 10:37:44 -0800
+
+
+Started GET "/assets/sessions.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-12-15 10:37:44 -0800
+
+
+Started GET "/assets/user_categories.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-12-15 10:37:44 -0800
+
+
+Started GET "/assets/users.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-12-15 10:37:44 -0800
+
+
+Started GET "/assets/application.self-a15dad4aa95cf08ba9eff41f8898e4f14ae00c5bd8a2be5e6212c7991c0dc2b3.js?body=1" for ::1 at 2015-12-15 10:37:44 -0800
+
+
+Started GET "/signup" for ::1 at 2015-12-15 10:38:12 -0800
+Processing by UsersController#new as HTML
+  Rendered users/new.html.erb within layouts/application (0.7ms)
+Completed 500 Internal Server Error in 103ms (ActiveRecord: 0.0ms)
+
+ActionView::Template::Error (Invalid CSS after "...ight, #32a181, ": expected function argument, was "##21a28e); /* F..."):
+     7: 
+     8:   <title><%= content_for?(:title) ? yield(:title) : "AccountaBuddy" %></title>
+     9: 
+    10:   <%= stylesheet_link_tag    "application" %>
+    11:   <%= javascript_include_tag "vendor/modernizr" %>
+    12:   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+    13:   <%= csrf_meta_tags %>
+  app/assets/stylesheets/users.scss:123
+  app/views/layouts/application.html.erb:10:in `_app_views_layouts_application_html_erb___332283339685259719_70349197638940'
+
+
+  Rendered /Users/jennacole/.rvm/gems/ruby-2.0.0-p643/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_source.erb (8.4ms)
+  Rendered /Users/jennacole/.rvm/gems/ruby-2.0.0-p643/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.3ms)
+  Rendered /Users/jennacole/.rvm/gems/ruby-2.0.0-p643/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.7ms)
+  Rendered /Users/jennacole/.rvm/gems/ruby-2.0.0-p643/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (23.9ms)
+  Rendered /Users/jennacole/.rvm/gems/ruby-2.0.0-p643/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.3ms)
+  Rendered /Users/jennacole/.rvm/gems/ruby-2.0.0-p643/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/jennacole/.rvm/gems/ruby-2.0.0-p643/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.2ms)
+  Rendered /Users/jennacole/.rvm/gems/ruby-2.0.0-p643/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/jennacole/.rvm/gems/ruby-2.0.0-p643/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (14.5ms)
+  Rendered /Users/jennacole/.rvm/gems/ruby-2.0.0-p643/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/jennacole/.rvm/gems/ruby-2.0.0-p643/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/jennacole/.rvm/gems/ruby-2.0.0-p643/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (29.9ms)
+
+
+Started GET "/signup" for ::1 at 2015-12-15 10:38:21 -0800
+Processing by UsersController#new as HTML
+  Rendered users/new.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 392ms (Views: 391.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/accountabuddy_requests.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-12-15 10:38:21 -0800
+
+
+Started GET "/assets/users.self-eb090da02289847bb2b1b0d81c50011422be5a0caa3e66d2fce2f50b4e4949db.css?body=1" for ::1 at 2015-12-15 10:38:22 -0800
+
+
+Started GET "/assets/badges.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-12-15 10:38:22 -0800
+
+
+Started GET "/assets/categories.self-e8a6114352c4a4315c267ce0b12944c82aa153af96cc22cece2adde7753025cb.css?body=1" for ::1 at 2015-12-15 10:38:22 -0800
+
+
+Started GET "/assets/curtain.self-928bfa886689b15bd31b09e76d8aced46c87f449904e48e704741702c11df316.css?body=1" for ::1 at 2015-12-15 10:38:22 -0800
+
+
+Started GET "/assets/foundation_and_overrides.self-85979c8b4dd7ab44d7b09aca41957e6695467722df91b01da803a62249ba4852.css?body=1" for ::1 at 2015-12-15 10:38:22 -0800
+
+
+Started GET "/assets/friend_requests.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-12-15 10:38:22 -0800
+
+
+Started GET "/assets/friendships.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-12-15 10:38:22 -0800
+
+
+Started GET "/assets/maps.self-b5bc4fc1cf3c2909b24ddf2b9352060a752391a045a40d1d05a8710e7fde0cda.css?body=1" for ::1 at 2015-12-15 10:38:22 -0800
+
+
+Started GET "/assets/messages.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-12-15 10:38:22 -0800
+
+
+Started GET "/assets/sessions.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-12-15 10:38:22 -0800
+
+
+Started GET "/assets/user_categories.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-12-15 10:38:22 -0800
+
+
+Started GET "/assets/application.self-a288552b8f3049270b1dfe038d6a3067580ba472708e9db48e02d6e80b6ffde8.css?body=1" for ::1 at 2015-12-15 10:38:22 -0800
+
+
+Started GET "/assets/vendor/modernizr.self-74da3245def7569da28115667be6a85a2ad97464abe707c9829c46d8975597bc.js?body=1" for ::1 at 2015-12-15 10:38:22 -0800
+
+
+Started GET "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1" for ::1 at 2015-12-15 10:38:22 -0800
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for ::1 at 2015-12-15 10:38:22 -0800
+
+
+Started GET "/assets/foundation/foundation.self-98616d4fb376f824aeb7c868e05e747b97176a864c7da854779ed398828df78f.js?body=1" for ::1 at 2015-12-15 10:38:22 -0800
+
+
+Started GET "/assets/foundation/foundation.abide.self-670a9b56e37b4b434f79686b8a9862222173d68ec823b20565340e0e87627ca4.js?body=1" for ::1 at 2015-12-15 10:38:22 -0800
+
+
+Started GET "/assets/foundation/foundation.accordion.self-02a179f7efde1facecf8a814cae32112c36800ce3d66bafc00c807a56d7b8d46.js?body=1" for ::1 at 2015-12-15 10:38:22 -0800
+
+
+Started GET "/assets/foundation/foundation.alert.self-631e4c4124bd543574c5a7f4d5d8b59fdf350f6c11d6201ba8a872e8a0f203b0.js?body=1" for ::1 at 2015-12-15 10:38:22 -0800
+
+
+Started GET "/assets/foundation/foundation.clearing.self-96397aa6b2d39ff61e9b4ce8486a9f716f9072f2011f1dc99f94a96b381b3830.js?body=1" for ::1 at 2015-12-15 10:38:22 -0800
+
+
+Started GET "/assets/foundation/foundation.dropdown.self-3e70f72040b183d09b673307b08d1d688a5572c6c8cbb222755945e70ccbb05e.js?body=1" for ::1 at 2015-12-15 10:38:22 -0800
+
+
+Started GET "/assets/foundation/foundation.equalizer.self-1889be5dfd0e56321a9a6d5fe9d4a94b04602c158f3e4d58419b967c255b999f.js?body=1" for ::1 at 2015-12-15 10:38:22 -0800
+
+
+Started GET "/assets/foundation/foundation.interchange.self-c6d033cdd9e7fd3f29c067eb7b9ee564f7a6b542650d2ca530ae1e3c529a3c35.js?body=1" for ::1 at 2015-12-15 10:38:22 -0800
+
+
+Started GET "/assets/foundation/foundation.joyride.self-1f6b19104e2439f1e4353444cb6fb9f7f308563556f167c2154ca3108eb7f77e.js?body=1" for ::1 at 2015-12-15 10:38:22 -0800
+
+
+Started GET "/assets/foundation/foundation.magellan.self-1fcf75780d5b4db5e97c267810e7c9a5e19a9f0d7b67a2d167074d7cff1d6a70.js?body=1" for ::1 at 2015-12-15 10:38:22 -0800
+
+
+Started GET "/assets/foundation/foundation.offcanvas.self-2f34a4b91e1e958aefbde46004d6186ee82e018fe95634214749799141339810.js?body=1" for ::1 at 2015-12-15 10:38:22 -0800
+
+
+Started GET "/assets/foundation/foundation.orbit.self-ba7d30fe424df83b5bc8bc5bb67ea90608759c6eb8212d1475d52b09db0bcd0f.js?body=1" for ::1 at 2015-12-15 10:38:22 -0800
+
+
+Started GET "/assets/foundation/foundation.reveal.self-5a83316675f14b52f582d67c053ae7977827a5b06459d7e8f5556cbedfba1d0d.js?body=1" for ::1 at 2015-12-15 10:38:22 -0800
+
+
+Started GET "/assets/foundation/foundation.slider.self-686e8b14e01aeb75ec0980de90956540d2b245324fc58e8c25debafc60300b96.js?body=1" for ::1 at 2015-12-15 10:38:22 -0800
+
+
+Started GET "/assets/foundation/foundation.tab.self-9b2bd1afa5715ce8f154fa008d0aab44500763e9b336a6d4e5bca96437176a74.js?body=1" for ::1 at 2015-12-15 10:38:22 -0800
+
+
+Started GET "/assets/foundation/foundation.tooltip.self-dae1db2297f90064e1a8ae7b02b175ca613cc6a2d190aaed548f6ef853f4b46d.js?body=1" for ::1 at 2015-12-15 10:38:22 -0800
+
+
+Started GET "/assets/foundation/foundation.topbar.self-fa6260890f9f59c821128d066bcfaa18665c816022bafd398d937c367d5e39b7.js?body=1" for ::1 at 2015-12-15 10:38:22 -0800
+
+
+Started GET "/assets/foundation.self-abe4ee7a105042f73b12b1f1a28788522d2f253445a475a94ab4d6e1f7b0ec52.js?body=1" for ::1 at 2015-12-15 10:38:22 -0800
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2015-12-15 10:38:22 -0800
+
+
+Started GET "/assets/accountabuddy_requests.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-12-15 10:38:22 -0800
+
+
+Started GET "/assets/badges.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-12-15 10:38:22 -0800
+
+
+Started GET "/assets/curtain.self-03cedba756c2ea28b832bb6cb8c319e5954ea1495621342287edfc1657932778.js?body=1" for ::1 at 2015-12-15 10:38:22 -0800
+
+
+Started GET "/assets/friend_requests.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-12-15 10:38:22 -0800
+
+
+Started GET "/assets/friendships.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-12-15 10:38:22 -0800
+
+
+Started GET "/assets/messages.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-12-15 10:38:22 -0800
+
+
+Started GET "/assets/scroll_up.self-c3b7cbf89f2df9e2397e11ac3708fffb90c66ae2a5139623696d21e0d7ef68aa.js?body=1" for ::1 at 2015-12-15 10:38:22 -0800
+
+
+Started GET "/assets/sessions.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-12-15 10:38:22 -0800
+
+
+Started GET "/assets/user_categories.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-12-15 10:38:22 -0800
+
+
+Started GET "/assets/users.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-12-15 10:38:22 -0800
+
+
+Started GET "/assets/application.self-a15dad4aa95cf08ba9eff41f8898e4f14ae00c5bd8a2be5e6212c7991c0dc2b3.js?body=1" for ::1 at 2015-12-15 10:38:22 -0800
+
+
+Started GET "/signup" for ::1 at 2015-12-15 10:39:54 -0800
+Processing by UsersController#new as HTML
+  Rendered users/new.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 441ms (Views: 440.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/accountabuddy_requests.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-12-15 10:39:55 -0800
+
+
+Started GET "/assets/categories.self-e8a6114352c4a4315c267ce0b12944c82aa153af96cc22cece2adde7753025cb.css?body=1" for ::1 at 2015-12-15 10:39:55 -0800
+
+
+Started GET "/assets/badges.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-12-15 10:39:55 -0800
+
+
+Started GET "/assets/users.self-86039a18ec0fb85e914f612085729d696d7f6cac0d1158aa62df4a8b1e90543e.css?body=1" for ::1 at 2015-12-15 10:39:55 -0800
+
+
+Started GET "/assets/curtain.self-928bfa886689b15bd31b09e76d8aced46c87f449904e48e704741702c11df316.css?body=1" for ::1 at 2015-12-15 10:39:55 -0800
+
+
+Started GET "/assets/foundation_and_overrides.self-85979c8b4dd7ab44d7b09aca41957e6695467722df91b01da803a62249ba4852.css?body=1" for ::1 at 2015-12-15 10:39:55 -0800
+
+
+Started GET "/assets/friend_requests.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-12-15 10:39:55 -0800
+
+
+Started GET "/assets/friendships.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-12-15 10:39:55 -0800
+
+
+Started GET "/assets/maps.self-b5bc4fc1cf3c2909b24ddf2b9352060a752391a045a40d1d05a8710e7fde0cda.css?body=1" for ::1 at 2015-12-15 10:39:55 -0800
+
+
+Started GET "/assets/messages.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-12-15 10:39:55 -0800
+
+
+Started GET "/assets/sessions.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-12-15 10:39:55 -0800
+
+
+Started GET "/assets/user_categories.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-12-15 10:39:55 -0800
+
+
+Started GET "/assets/application.self-a288552b8f3049270b1dfe038d6a3067580ba472708e9db48e02d6e80b6ffde8.css?body=1" for ::1 at 2015-12-15 10:39:55 -0800
+
+
+Started GET "/assets/vendor/modernizr.self-74da3245def7569da28115667be6a85a2ad97464abe707c9829c46d8975597bc.js?body=1" for ::1 at 2015-12-15 10:39:55 -0800
+
+
+Started GET "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1" for ::1 at 2015-12-15 10:39:55 -0800
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for ::1 at 2015-12-15 10:39:55 -0800
+
+
+Started GET "/assets/foundation/foundation.self-98616d4fb376f824aeb7c868e05e747b97176a864c7da854779ed398828df78f.js?body=1" for ::1 at 2015-12-15 10:39:55 -0800
+
+
+Started GET "/assets/foundation/foundation.abide.self-670a9b56e37b4b434f79686b8a9862222173d68ec823b20565340e0e87627ca4.js?body=1" for ::1 at 2015-12-15 10:39:55 -0800
+
+
+Started GET "/assets/foundation/foundation.accordion.self-02a179f7efde1facecf8a814cae32112c36800ce3d66bafc00c807a56d7b8d46.js?body=1" for ::1 at 2015-12-15 10:39:55 -0800
+
+
+Started GET "/assets/foundation/foundation.alert.self-631e4c4124bd543574c5a7f4d5d8b59fdf350f6c11d6201ba8a872e8a0f203b0.js?body=1" for ::1 at 2015-12-15 10:39:55 -0800
+
+
+Started GET "/assets/foundation/foundation.clearing.self-96397aa6b2d39ff61e9b4ce8486a9f716f9072f2011f1dc99f94a96b381b3830.js?body=1" for ::1 at 2015-12-15 10:39:55 -0800
+
+
+Started GET "/assets/foundation/foundation.dropdown.self-3e70f72040b183d09b673307b08d1d688a5572c6c8cbb222755945e70ccbb05e.js?body=1" for ::1 at 2015-12-15 10:39:55 -0800
+
+
+Started GET "/assets/foundation/foundation.equalizer.self-1889be5dfd0e56321a9a6d5fe9d4a94b04602c158f3e4d58419b967c255b999f.js?body=1" for ::1 at 2015-12-15 10:39:55 -0800
+
+
+Started GET "/assets/foundation/foundation.interchange.self-c6d033cdd9e7fd3f29c067eb7b9ee564f7a6b542650d2ca530ae1e3c529a3c35.js?body=1" for ::1 at 2015-12-15 10:39:55 -0800
+
+
+Started GET "/assets/foundation/foundation.joyride.self-1f6b19104e2439f1e4353444cb6fb9f7f308563556f167c2154ca3108eb7f77e.js?body=1" for ::1 at 2015-12-15 10:39:55 -0800
+
+
+Started GET "/assets/foundation/foundation.magellan.self-1fcf75780d5b4db5e97c267810e7c9a5e19a9f0d7b67a2d167074d7cff1d6a70.js?body=1" for ::1 at 2015-12-15 10:39:55 -0800
+
+
+Started GET "/assets/foundation/foundation.offcanvas.self-2f34a4b91e1e958aefbde46004d6186ee82e018fe95634214749799141339810.js?body=1" for ::1 at 2015-12-15 10:39:55 -0800
+
+
+Started GET "/assets/foundation/foundation.orbit.self-ba7d30fe424df83b5bc8bc5bb67ea90608759c6eb8212d1475d52b09db0bcd0f.js?body=1" for ::1 at 2015-12-15 10:39:55 -0800
+
+
+Started GET "/assets/foundation/foundation.reveal.self-5a83316675f14b52f582d67c053ae7977827a5b06459d7e8f5556cbedfba1d0d.js?body=1" for ::1 at 2015-12-15 10:39:55 -0800
+
+
+Started GET "/assets/foundation/foundation.slider.self-686e8b14e01aeb75ec0980de90956540d2b245324fc58e8c25debafc60300b96.js?body=1" for ::1 at 2015-12-15 10:39:55 -0800
+
+
+Started GET "/assets/foundation/foundation.tab.self-9b2bd1afa5715ce8f154fa008d0aab44500763e9b336a6d4e5bca96437176a74.js?body=1" for ::1 at 2015-12-15 10:39:55 -0800
+
+
+Started GET "/assets/foundation/foundation.tooltip.self-dae1db2297f90064e1a8ae7b02b175ca613cc6a2d190aaed548f6ef853f4b46d.js?body=1" for ::1 at 2015-12-15 10:39:55 -0800
+
+
+Started GET "/assets/foundation/foundation.topbar.self-fa6260890f9f59c821128d066bcfaa18665c816022bafd398d937c367d5e39b7.js?body=1" for ::1 at 2015-12-15 10:39:55 -0800
+
+
+Started GET "/assets/foundation.self-abe4ee7a105042f73b12b1f1a28788522d2f253445a475a94ab4d6e1f7b0ec52.js?body=1" for ::1 at 2015-12-15 10:39:55 -0800
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2015-12-15 10:39:55 -0800
+
+
+Started GET "/assets/accountabuddy_requests.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-12-15 10:39:55 -0800
+
+
+Started GET "/assets/badges.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-12-15 10:39:55 -0800
+
+
+Started GET "/assets/curtain.self-03cedba756c2ea28b832bb6cb8c319e5954ea1495621342287edfc1657932778.js?body=1" for ::1 at 2015-12-15 10:39:55 -0800
+
+
+Started GET "/assets/friend_requests.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-12-15 10:39:55 -0800
+
+
+Started GET "/assets/friendships.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-12-15 10:39:55 -0800
+
+
+Started GET "/assets/messages.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-12-15 10:39:55 -0800
+
+
+Started GET "/assets/scroll_up.self-c3b7cbf89f2df9e2397e11ac3708fffb90c66ae2a5139623696d21e0d7ef68aa.js?body=1" for ::1 at 2015-12-15 10:39:55 -0800
+
+
+Started GET "/assets/sessions.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-12-15 10:39:55 -0800
+
+
+Started GET "/assets/user_categories.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-12-15 10:39:55 -0800
+
+
+Started GET "/assets/users.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-12-15 10:39:55 -0800
+
+
+Started GET "/assets/application.self-a15dad4aa95cf08ba9eff41f8898e4f14ae00c5bd8a2be5e6212c7991c0dc2b3.js?body=1" for ::1 at 2015-12-15 10:39:55 -0800
+
+
+Started GET "/signup" for ::1 at 2015-12-15 10:40:36 -0800
+Processing by UsersController#new as HTML
+  Rendered users/new.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 400ms (Views: 399.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/accountabuddy_requests.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-12-15 10:40:37 -0800
+
+
+Started GET "/assets/badges.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-12-15 10:40:37 -0800
+
+
+Started GET "/assets/users.self-71e98aefa7e65f3499a066eb6500e73df56779828e18d53911b90f3bd5a1e3f7.css?body=1" for ::1 at 2015-12-15 10:40:37 -0800
+
+
+Started GET "/assets/curtain.self-928bfa886689b15bd31b09e76d8aced46c87f449904e48e704741702c11df316.css?body=1" for ::1 at 2015-12-15 10:40:37 -0800
+
+
+Started GET "/assets/categories.self-e8a6114352c4a4315c267ce0b12944c82aa153af96cc22cece2adde7753025cb.css?body=1" for ::1 at 2015-12-15 10:40:37 -0800
+
+
+Started GET "/assets/friend_requests.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-12-15 10:40:37 -0800
+
+
+Started GET "/assets/foundation_and_overrides.self-85979c8b4dd7ab44d7b09aca41957e6695467722df91b01da803a62249ba4852.css?body=1" for ::1 at 2015-12-15 10:40:37 -0800
+
+
+Started GET "/assets/friendships.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-12-15 10:40:37 -0800
+
+
+Started GET "/assets/maps.self-b5bc4fc1cf3c2909b24ddf2b9352060a752391a045a40d1d05a8710e7fde0cda.css?body=1" for ::1 at 2015-12-15 10:40:37 -0800
+
+
+Started GET "/assets/messages.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-12-15 10:40:37 -0800
+
+
+Started GET "/assets/sessions.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-12-15 10:40:37 -0800
+
+
+Started GET "/assets/user_categories.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-12-15 10:40:37 -0800
+
+
+Started GET "/assets/application.self-a288552b8f3049270b1dfe038d6a3067580ba472708e9db48e02d6e80b6ffde8.css?body=1" for ::1 at 2015-12-15 10:40:37 -0800
+
+
+Started GET "/assets/vendor/modernizr.self-74da3245def7569da28115667be6a85a2ad97464abe707c9829c46d8975597bc.js?body=1" for ::1 at 2015-12-15 10:40:37 -0800
+
+
+Started GET "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1" for ::1 at 2015-12-15 10:40:37 -0800
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for ::1 at 2015-12-15 10:40:37 -0800
+
+
+Started GET "/assets/foundation/foundation.self-98616d4fb376f824aeb7c868e05e747b97176a864c7da854779ed398828df78f.js?body=1" for ::1 at 2015-12-15 10:40:37 -0800
+
+
+Started GET "/assets/foundation/foundation.abide.self-670a9b56e37b4b434f79686b8a9862222173d68ec823b20565340e0e87627ca4.js?body=1" for ::1 at 2015-12-15 10:40:37 -0800
+
+
+Started GET "/assets/foundation/foundation.accordion.self-02a179f7efde1facecf8a814cae32112c36800ce3d66bafc00c807a56d7b8d46.js?body=1" for ::1 at 2015-12-15 10:40:37 -0800
+
+
+Started GET "/assets/foundation/foundation.alert.self-631e4c4124bd543574c5a7f4d5d8b59fdf350f6c11d6201ba8a872e8a0f203b0.js?body=1" for ::1 at 2015-12-15 10:40:37 -0800
+
+
+Started GET "/assets/foundation/foundation.clearing.self-96397aa6b2d39ff61e9b4ce8486a9f716f9072f2011f1dc99f94a96b381b3830.js?body=1" for ::1 at 2015-12-15 10:40:37 -0800
+
+
+Started GET "/assets/foundation/foundation.dropdown.self-3e70f72040b183d09b673307b08d1d688a5572c6c8cbb222755945e70ccbb05e.js?body=1" for ::1 at 2015-12-15 10:40:37 -0800
+
+
+Started GET "/assets/foundation/foundation.equalizer.self-1889be5dfd0e56321a9a6d5fe9d4a94b04602c158f3e4d58419b967c255b999f.js?body=1" for ::1 at 2015-12-15 10:40:37 -0800
+
+
+Started GET "/assets/foundation/foundation.interchange.self-c6d033cdd9e7fd3f29c067eb7b9ee564f7a6b542650d2ca530ae1e3c529a3c35.js?body=1" for ::1 at 2015-12-15 10:40:37 -0800
+
+
+Started GET "/assets/foundation/foundation.joyride.self-1f6b19104e2439f1e4353444cb6fb9f7f308563556f167c2154ca3108eb7f77e.js?body=1" for ::1 at 2015-12-15 10:40:37 -0800
+
+
+Started GET "/assets/foundation/foundation.magellan.self-1fcf75780d5b4db5e97c267810e7c9a5e19a9f0d7b67a2d167074d7cff1d6a70.js?body=1" for ::1 at 2015-12-15 10:40:37 -0800
+
+
+Started GET "/assets/foundation/foundation.offcanvas.self-2f34a4b91e1e958aefbde46004d6186ee82e018fe95634214749799141339810.js?body=1" for ::1 at 2015-12-15 10:40:37 -0800
+
+
+Started GET "/assets/foundation/foundation.orbit.self-ba7d30fe424df83b5bc8bc5bb67ea90608759c6eb8212d1475d52b09db0bcd0f.js?body=1" for ::1 at 2015-12-15 10:40:37 -0800
+
+
+Started GET "/assets/foundation/foundation.reveal.self-5a83316675f14b52f582d67c053ae7977827a5b06459d7e8f5556cbedfba1d0d.js?body=1" for ::1 at 2015-12-15 10:40:37 -0800
+
+
+Started GET "/assets/foundation/foundation.slider.self-686e8b14e01aeb75ec0980de90956540d2b245324fc58e8c25debafc60300b96.js?body=1" for ::1 at 2015-12-15 10:40:37 -0800
+
+
+Started GET "/assets/foundation/foundation.tab.self-9b2bd1afa5715ce8f154fa008d0aab44500763e9b336a6d4e5bca96437176a74.js?body=1" for ::1 at 2015-12-15 10:40:37 -0800
+
+
+Started GET "/assets/foundation/foundation.tooltip.self-dae1db2297f90064e1a8ae7b02b175ca613cc6a2d190aaed548f6ef853f4b46d.js?body=1" for ::1 at 2015-12-15 10:40:37 -0800
+
+
+Started GET "/assets/foundation/foundation.topbar.self-fa6260890f9f59c821128d066bcfaa18665c816022bafd398d937c367d5e39b7.js?body=1" for ::1 at 2015-12-15 10:40:37 -0800
+
+
+Started GET "/assets/foundation.self-abe4ee7a105042f73b12b1f1a28788522d2f253445a475a94ab4d6e1f7b0ec52.js?body=1" for ::1 at 2015-12-15 10:40:37 -0800
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2015-12-15 10:40:37 -0800
+
+
+Started GET "/assets/accountabuddy_requests.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-12-15 10:40:37 -0800
+
+
+Started GET "/assets/badges.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-12-15 10:40:37 -0800
+
+
+Started GET "/assets/curtain.self-03cedba756c2ea28b832bb6cb8c319e5954ea1495621342287edfc1657932778.js?body=1" for ::1 at 2015-12-15 10:40:37 -0800
+
+
+Started GET "/assets/friend_requests.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-12-15 10:40:37 -0800
+
+
+Started GET "/assets/friendships.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-12-15 10:40:37 -0800
+
+
+Started GET "/assets/messages.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-12-15 10:40:37 -0800
+
+
+Started GET "/assets/scroll_up.self-c3b7cbf89f2df9e2397e11ac3708fffb90c66ae2a5139623696d21e0d7ef68aa.js?body=1" for ::1 at 2015-12-15 10:40:37 -0800
+
+
+Started GET "/assets/sessions.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-12-15 10:40:37 -0800
+
+
+Started GET "/assets/user_categories.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-12-15 10:40:37 -0800
+
+
+Started GET "/assets/users.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-12-15 10:40:37 -0800
+
+
+Started GET "/assets/application.self-a15dad4aa95cf08ba9eff41f8898e4f14ae00c5bd8a2be5e6212c7991c0dc2b3.js?body=1" for ::1 at 2015-12-15 10:40:37 -0800
+
+
+Started GET "/signup" for ::1 at 2015-12-15 10:41:27 -0800
+Processing by UsersController#new as HTML
+  Rendered users/new.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 408ms (Views: 407.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/accountabuddy_requests.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-12-15 10:41:27 -0800
+
+
+Started GET "/assets/users.self-7d57d40296cb946501382874a5b4b0aa9c192ebf879bb8b342fd31c84e969ce6.css?body=1" for ::1 at 2015-12-15 10:41:27 -0800
+
+
+Started GET "/assets/badges.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-12-15 10:41:27 -0800
+
+
+Started GET "/assets/categories.self-e8a6114352c4a4315c267ce0b12944c82aa153af96cc22cece2adde7753025cb.css?body=1" for ::1 at 2015-12-15 10:41:27 -0800
+
+
+Started GET "/assets/friend_requests.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-12-15 10:41:27 -0800
+
+
+Started GET "/assets/curtain.self-928bfa886689b15bd31b09e76d8aced46c87f449904e48e704741702c11df316.css?body=1" for ::1 at 2015-12-15 10:41:27 -0800
+
+
+Started GET "/assets/foundation_and_overrides.self-85979c8b4dd7ab44d7b09aca41957e6695467722df91b01da803a62249ba4852.css?body=1" for ::1 at 2015-12-15 10:41:27 -0800
+
+
+Started GET "/assets/friendships.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-12-15 10:41:27 -0800
+
+
+Started GET "/assets/maps.self-b5bc4fc1cf3c2909b24ddf2b9352060a752391a045a40d1d05a8710e7fde0cda.css?body=1" for ::1 at 2015-12-15 10:41:27 -0800
+
+
+Started GET "/assets/messages.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-12-15 10:41:27 -0800
+
+
+Started GET "/assets/sessions.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-12-15 10:41:27 -0800
+
+
+Started GET "/assets/user_categories.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-12-15 10:41:27 -0800
+
+
+Started GET "/assets/application.self-a288552b8f3049270b1dfe038d6a3067580ba472708e9db48e02d6e80b6ffde8.css?body=1" for ::1 at 2015-12-15 10:41:27 -0800
+
+
+Started GET "/assets/vendor/modernizr.self-74da3245def7569da28115667be6a85a2ad97464abe707c9829c46d8975597bc.js?body=1" for ::1 at 2015-12-15 10:41:27 -0800
+
+
+Started GET "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1" for ::1 at 2015-12-15 10:41:27 -0800
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for ::1 at 2015-12-15 10:41:27 -0800
+
+
+Started GET "/assets/foundation/foundation.self-98616d4fb376f824aeb7c868e05e747b97176a864c7da854779ed398828df78f.js?body=1" for ::1 at 2015-12-15 10:41:27 -0800
+
+
+Started GET "/assets/foundation/foundation.abide.self-670a9b56e37b4b434f79686b8a9862222173d68ec823b20565340e0e87627ca4.js?body=1" for ::1 at 2015-12-15 10:41:27 -0800
+
+
+Started GET "/assets/foundation/foundation.accordion.self-02a179f7efde1facecf8a814cae32112c36800ce3d66bafc00c807a56d7b8d46.js?body=1" for ::1 at 2015-12-15 10:41:27 -0800
+
+
+Started GET "/assets/foundation/foundation.alert.self-631e4c4124bd543574c5a7f4d5d8b59fdf350f6c11d6201ba8a872e8a0f203b0.js?body=1" for ::1 at 2015-12-15 10:41:27 -0800
+
+
+Started GET "/assets/foundation/foundation.clearing.self-96397aa6b2d39ff61e9b4ce8486a9f716f9072f2011f1dc99f94a96b381b3830.js?body=1" for ::1 at 2015-12-15 10:41:27 -0800
+
+
+Started GET "/assets/foundation/foundation.dropdown.self-3e70f72040b183d09b673307b08d1d688a5572c6c8cbb222755945e70ccbb05e.js?body=1" for ::1 at 2015-12-15 10:41:27 -0800
+
+
+Started GET "/assets/foundation/foundation.equalizer.self-1889be5dfd0e56321a9a6d5fe9d4a94b04602c158f3e4d58419b967c255b999f.js?body=1" for ::1 at 2015-12-15 10:41:27 -0800
+
+
+Started GET "/assets/foundation/foundation.interchange.self-c6d033cdd9e7fd3f29c067eb7b9ee564f7a6b542650d2ca530ae1e3c529a3c35.js?body=1" for ::1 at 2015-12-15 10:41:27 -0800
+
+
+Started GET "/assets/foundation/foundation.joyride.self-1f6b19104e2439f1e4353444cb6fb9f7f308563556f167c2154ca3108eb7f77e.js?body=1" for ::1 at 2015-12-15 10:41:27 -0800
+
+
+Started GET "/assets/foundation/foundation.magellan.self-1fcf75780d5b4db5e97c267810e7c9a5e19a9f0d7b67a2d167074d7cff1d6a70.js?body=1" for ::1 at 2015-12-15 10:41:27 -0800
+
+
+Started GET "/assets/foundation/foundation.offcanvas.self-2f34a4b91e1e958aefbde46004d6186ee82e018fe95634214749799141339810.js?body=1" for ::1 at 2015-12-15 10:41:27 -0800
+
+
+Started GET "/assets/foundation/foundation.orbit.self-ba7d30fe424df83b5bc8bc5bb67ea90608759c6eb8212d1475d52b09db0bcd0f.js?body=1" for ::1 at 2015-12-15 10:41:27 -0800
+
+
+Started GET "/assets/foundation/foundation.reveal.self-5a83316675f14b52f582d67c053ae7977827a5b06459d7e8f5556cbedfba1d0d.js?body=1" for ::1 at 2015-12-15 10:41:27 -0800
+
+
+Started GET "/assets/foundation/foundation.slider.self-686e8b14e01aeb75ec0980de90956540d2b245324fc58e8c25debafc60300b96.js?body=1" for ::1 at 2015-12-15 10:41:27 -0800
+
+
+Started GET "/assets/foundation/foundation.tab.self-9b2bd1afa5715ce8f154fa008d0aab44500763e9b336a6d4e5bca96437176a74.js?body=1" for ::1 at 2015-12-15 10:41:27 -0800
+
+
+Started GET "/assets/foundation/foundation.tooltip.self-dae1db2297f90064e1a8ae7b02b175ca613cc6a2d190aaed548f6ef853f4b46d.js?body=1" for ::1 at 2015-12-15 10:41:27 -0800
+
+
+Started GET "/assets/foundation/foundation.topbar.self-fa6260890f9f59c821128d066bcfaa18665c816022bafd398d937c367d5e39b7.js?body=1" for ::1 at 2015-12-15 10:41:27 -0800
+
+
+Started GET "/assets/foundation.self-abe4ee7a105042f73b12b1f1a28788522d2f253445a475a94ab4d6e1f7b0ec52.js?body=1" for ::1 at 2015-12-15 10:41:27 -0800
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2015-12-15 10:41:27 -0800
+
+
+Started GET "/assets/accountabuddy_requests.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-12-15 10:41:27 -0800
+
+
+Started GET "/assets/badges.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-12-15 10:41:27 -0800
+
+
+Started GET "/assets/curtain.self-03cedba756c2ea28b832bb6cb8c319e5954ea1495621342287edfc1657932778.js?body=1" for ::1 at 2015-12-15 10:41:27 -0800
+
+
+Started GET "/assets/friend_requests.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-12-15 10:41:28 -0800
+
+
+Started GET "/assets/friendships.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-12-15 10:41:28 -0800
+
+
+Started GET "/assets/messages.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-12-15 10:41:28 -0800
+
+
+Started GET "/assets/scroll_up.self-c3b7cbf89f2df9e2397e11ac3708fffb90c66ae2a5139623696d21e0d7ef68aa.js?body=1" for ::1 at 2015-12-15 10:41:28 -0800
+
+
+Started GET "/assets/sessions.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-12-15 10:41:28 -0800
+
+
+Started GET "/assets/user_categories.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-12-15 10:41:28 -0800
+
+
+Started GET "/assets/users.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-12-15 10:41:28 -0800
+
+
+Started GET "/assets/application.self-a15dad4aa95cf08ba9eff41f8898e4f14ae00c5bd8a2be5e6212c7991c0dc2b3.js?body=1" for ::1 at 2015-12-15 10:41:28 -0800
+
+
+Started GET "/signup" for ::1 at 2015-12-15 10:43:55 -0800
+Processing by UsersController#new as HTML
+  Rendered users/new.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 222ms (Views: 221.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/accountabuddy_requests.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-12-15 10:43:55 -0800
+
+
+Started GET "/assets/badges.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-12-15 10:43:55 -0800
+
+
+Started GET "/assets/categories.self-e8a6114352c4a4315c267ce0b12944c82aa153af96cc22cece2adde7753025cb.css?body=1" for ::1 at 2015-12-15 10:43:55 -0800
+
+
+Started GET "/assets/foundation_and_overrides.self-85979c8b4dd7ab44d7b09aca41957e6695467722df91b01da803a62249ba4852.css?body=1" for ::1 at 2015-12-15 10:43:55 -0800
+
+
+Started GET "/assets/curtain.self-928bfa886689b15bd31b09e76d8aced46c87f449904e48e704741702c11df316.css?body=1" for ::1 at 2015-12-15 10:43:55 -0800
+
+
+Started GET "/assets/friend_requests.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-12-15 10:43:55 -0800
+
+
+Started GET "/assets/friendships.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-12-15 10:43:55 -0800
+
+
+Started GET "/assets/maps.self-b5bc4fc1cf3c2909b24ddf2b9352060a752391a045a40d1d05a8710e7fde0cda.css?body=1" for ::1 at 2015-12-15 10:43:55 -0800
+
+
+Started GET "/assets/messages.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-12-15 10:43:55 -0800
+
+
+Started GET "/assets/sessions.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-12-15 10:43:55 -0800
+
+
+Started GET "/assets/user_categories.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-12-15 10:43:55 -0800
+
+
+Started GET "/assets/users.self-7d57d40296cb946501382874a5b4b0aa9c192ebf879bb8b342fd31c84e969ce6.css?body=1" for ::1 at 2015-12-15 10:43:55 -0800
+
+
+Started GET "/assets/application.self-a288552b8f3049270b1dfe038d6a3067580ba472708e9db48e02d6e80b6ffde8.css?body=1" for ::1 at 2015-12-15 10:43:55 -0800
+
+
+Started GET "/assets/vendor/modernizr.self-74da3245def7569da28115667be6a85a2ad97464abe707c9829c46d8975597bc.js?body=1" for ::1 at 2015-12-15 10:43:55 -0800
+
+
+Started GET "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1" for ::1 at 2015-12-15 10:43:55 -0800
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for ::1 at 2015-12-15 10:43:55 -0800
+
+
+Started GET "/assets/foundation/foundation.self-98616d4fb376f824aeb7c868e05e747b97176a864c7da854779ed398828df78f.js?body=1" for ::1 at 2015-12-15 10:43:55 -0800
+
+
+Started GET "/assets/foundation/foundation.abide.self-670a9b56e37b4b434f79686b8a9862222173d68ec823b20565340e0e87627ca4.js?body=1" for ::1 at 2015-12-15 10:43:55 -0800
+
+
+Started GET "/assets/foundation/foundation.accordion.self-02a179f7efde1facecf8a814cae32112c36800ce3d66bafc00c807a56d7b8d46.js?body=1" for ::1 at 2015-12-15 10:43:55 -0800
+
+
+Started GET "/assets/foundation/foundation.alert.self-631e4c4124bd543574c5a7f4d5d8b59fdf350f6c11d6201ba8a872e8a0f203b0.js?body=1" for ::1 at 2015-12-15 10:43:55 -0800
+
+
+Started GET "/assets/foundation/foundation.clearing.self-96397aa6b2d39ff61e9b4ce8486a9f716f9072f2011f1dc99f94a96b381b3830.js?body=1" for ::1 at 2015-12-15 10:43:55 -0800
+
+
+Started GET "/assets/foundation/foundation.dropdown.self-3e70f72040b183d09b673307b08d1d688a5572c6c8cbb222755945e70ccbb05e.js?body=1" for ::1 at 2015-12-15 10:43:55 -0800
+
+
+Started GET "/assets/foundation/foundation.equalizer.self-1889be5dfd0e56321a9a6d5fe9d4a94b04602c158f3e4d58419b967c255b999f.js?body=1" for ::1 at 2015-12-15 10:43:55 -0800
+
+
+Started GET "/assets/foundation/foundation.interchange.self-c6d033cdd9e7fd3f29c067eb7b9ee564f7a6b542650d2ca530ae1e3c529a3c35.js?body=1" for ::1 at 2015-12-15 10:43:55 -0800
+
+
+Started GET "/assets/foundation/foundation.joyride.self-1f6b19104e2439f1e4353444cb6fb9f7f308563556f167c2154ca3108eb7f77e.js?body=1" for ::1 at 2015-12-15 10:43:55 -0800
+
+
+Started GET "/assets/foundation/foundation.magellan.self-1fcf75780d5b4db5e97c267810e7c9a5e19a9f0d7b67a2d167074d7cff1d6a70.js?body=1" for ::1 at 2015-12-15 10:43:55 -0800
+
+
+Started GET "/assets/foundation/foundation.offcanvas.self-2f34a4b91e1e958aefbde46004d6186ee82e018fe95634214749799141339810.js?body=1" for ::1 at 2015-12-15 10:43:55 -0800
+
+
+Started GET "/assets/foundation/foundation.orbit.self-ba7d30fe424df83b5bc8bc5bb67ea90608759c6eb8212d1475d52b09db0bcd0f.js?body=1" for ::1 at 2015-12-15 10:43:55 -0800
+
+
+Started GET "/assets/foundation/foundation.reveal.self-5a83316675f14b52f582d67c053ae7977827a5b06459d7e8f5556cbedfba1d0d.js?body=1" for ::1 at 2015-12-15 10:43:55 -0800
+
+
+Started GET "/assets/foundation/foundation.slider.self-686e8b14e01aeb75ec0980de90956540d2b245324fc58e8c25debafc60300b96.js?body=1" for ::1 at 2015-12-15 10:43:55 -0800
+
+
+Started GET "/assets/foundation/foundation.tab.self-9b2bd1afa5715ce8f154fa008d0aab44500763e9b336a6d4e5bca96437176a74.js?body=1" for ::1 at 2015-12-15 10:43:55 -0800
+
+
+Started GET "/assets/foundation/foundation.tooltip.self-dae1db2297f90064e1a8ae7b02b175ca613cc6a2d190aaed548f6ef853f4b46d.js?body=1" for ::1 at 2015-12-15 10:43:55 -0800
+
+
+Started GET "/assets/foundation/foundation.topbar.self-fa6260890f9f59c821128d066bcfaa18665c816022bafd398d937c367d5e39b7.js?body=1" for ::1 at 2015-12-15 10:43:55 -0800
+
+
+Started GET "/assets/foundation.self-abe4ee7a105042f73b12b1f1a28788522d2f253445a475a94ab4d6e1f7b0ec52.js?body=1" for ::1 at 2015-12-15 10:43:55 -0800
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2015-12-15 10:43:55 -0800
+
+
+Started GET "/assets/accountabuddy_requests.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-12-15 10:43:55 -0800
+
+
+Started GET "/assets/badges.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-12-15 10:43:55 -0800
+
+
+Started GET "/assets/curtain.self-03cedba756c2ea28b832bb6cb8c319e5954ea1495621342287edfc1657932778.js?body=1" for ::1 at 2015-12-15 10:43:55 -0800
+
+
+Started GET "/assets/friend_requests.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-12-15 10:43:55 -0800
+
+
+Started GET "/assets/friendships.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-12-15 10:43:55 -0800
+
+
+Started GET "/assets/messages.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-12-15 10:43:55 -0800
+
+
+Started GET "/assets/scroll_up.self-c3b7cbf89f2df9e2397e11ac3708fffb90c66ae2a5139623696d21e0d7ef68aa.js?body=1" for ::1 at 2015-12-15 10:43:55 -0800
+
+
+Started GET "/assets/sessions.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-12-15 10:43:55 -0800
+
+
+Started GET "/assets/user_categories.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-12-15 10:43:55 -0800
+
+
+Started GET "/assets/users.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-12-15 10:43:55 -0800
+
+
+Started GET "/assets/application.self-a15dad4aa95cf08ba9eff41f8898e4f14ae00c5bd8a2be5e6212c7991c0dc2b3.js?body=1" for ::1 at 2015-12-15 10:43:55 -0800
