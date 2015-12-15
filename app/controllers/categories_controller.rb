@@ -7,6 +7,9 @@ class CategoriesController < ApplicationController
   def show
     @category = Category.find(params[:id])
     @users_in_category = @category.users
+    if UserCategory.exists?(user_id: current_user.id, category_id: @category.id)
+      @user_category = true
+    end
     if params[:search].present?
       @users = @users_in_category.near(params[:search], 25)
     else

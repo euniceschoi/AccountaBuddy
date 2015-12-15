@@ -46,11 +46,16 @@ class UsersController < ApplicationController
     @friend_requests = FriendRequest.where(recipient_id: @user.id, friends: false)
     @pending_requests = FriendRequest.where(user_id: @user.id, friends:false)
     @badges = @user.badges
-    if @user.id != current_user.id 
-      @friendship = Friendship.find_by(user_id: current_user.id , friend_id: @user.id)
-      @accountabuddy_relationship = @friendship.accountabuddy
-      @inverse_friendship = Friendship.find_by(friend_id: current_user.id, user_id: @user.id)
-      @inverse_accountabuddy_relationship = @inverse_friendship.accountabuddy
+    @accountabuddy_requests = AccountabuddyRequest.where(recipient_id: @user.id)
+
+    if @user.id != current_user.id
+      if Friendship.find_by(user_id: current_user.id , friend_id: @user.id)
+        @friendship = Friendship.find_by(user_id: current_user.id , friend_id: @user.id)
+        @accountabuddy_relationship = @friendship.accountabuddy
+        @inverse_friendship = Friendship.find_by(friend_id: current_user.id, user_id: @user.id)
+        @inverse_accountabuddy_relationship = @inverse_friendship.accountabuddy
+      else
+      end
     end
   end
 
@@ -61,7 +66,7 @@ class UsersController < ApplicationController
   def update
     if current_user && current_user.id = @user.id
       @user
-      @user.latitude = e.latlng.lat  
+      @user.latitude = e.latlng.lat
       @user.longitude = e.latlng.lng
     else
       #put an error message here
