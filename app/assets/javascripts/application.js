@@ -60,10 +60,10 @@ var sendMessageListener = function() {
 
 var geoLocatorListener = function() {
     // $("#map").css('display', 'block');
+    var map = L.mapbox.map('map', 'mapbox.streets');
   $("#geolocate").on('click', function(event){
     event.preventDefault();
     event.stopPropagation();
-    var map = L.mapbox.map('map', 'mapbox.streets');
     var locate = map.locate();
     var myLayer = L.mapbox.featureLayer().addTo(map);
     console.log("IT WORKED!")
