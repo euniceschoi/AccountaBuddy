@@ -15,7 +15,7 @@ class UsersController < ApplicationController
   def new
   end
 
-  def create    
+  def create
     p "*" * 50
     p params
     @user = User.new(name: params[:user][:name], username: params[:user][:username], email: params[:user][:email], about_me: params[:user][:about_me],gender: params[:user][:gender],password: params[:user][:password], password_confirmation: params[:user][:password_confirmation], latitude: params[:latitude], longitude: params[:longitude])
@@ -27,7 +27,7 @@ class UsersController < ApplicationController
       @badge4 = Badge.new(name: "Education", description: "You're a Education superstar!", user_id: @user.id, badge_image_link:"education-badge.png")
         if @badge1.save && @badge2.save && @badge3.save && @badge4.save
           session[:user_id] = @user.id
-          {user_id: @user.id}.to
+          {user_id: @user.id}.to_json
         else
           flash[:error] = "Signup was unsuccessful. Please try again."
           redirect_to '/signup'
@@ -55,7 +55,7 @@ class UsersController < ApplicationController
         @inverse_accountabuddy_relationship = @inverse_friendship.accountabuddy
       else
       end
-    end  
+    end
     # VERY IMPORTANT DONT DELETE
     # # LOGIC FOR _location_show
     # if current_user && current_user.id = @user.id
@@ -72,7 +72,7 @@ class UsersController < ApplicationController
     #       format.html
     #       format.json { render json: @user.errors }
     #     end
-    #   end  
+    #   end
     # end
     # # LOGIC FOR _location_all
     # if params[:search].present?

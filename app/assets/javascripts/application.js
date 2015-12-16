@@ -13,7 +13,7 @@
 //= require jquery
 //= require jquery_ujs
 //= require foundation
-// require turbolinks
+//= require turbolinks
 //= require_tree .
 
 $(function(){ $(document).foundation(); });
@@ -59,7 +59,6 @@ var sendMessageListener = function() {
 
 var userSubmitListener = function() {
   $('body').on('submit', '#user-signedit-form', function(event){
-    debugger
     event.preventDefault();
     var userFormData = $(this).children().serialize();
     $(".user-signedit-box").hide();
