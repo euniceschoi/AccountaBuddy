@@ -92,6 +92,8 @@ class UsersController < ApplicationController
 
   def update
     p "YOU MADE IT TO THE EDIT YEAH"
+    p "*" * 50
+    p params
     @user = User.find(params[:id])
     @user.update(user_params)
       if @user.save
