@@ -45,13 +45,15 @@
 <div class="innards">
 
 <div class="row">
-  <div id="user-show-about" class="large-6 columns">
+  <div id="user-show-about" class="large-5 columns">
     <h2> Let's Be Friends!</h2>
     <ul>
       <li>"<%= @user.about_me %> And also I like to drink a lot of cold-brew coffee and take my energy level to an 11."</li>
     </ul>
   </div>
-  <div id="user-show-categories" class="large-6 columns">
+  <div class="large-2 columns">
+  </div>
+  <div id="user-show-categories" class="large-5 columns">
       <% if @user == current_user  %>
       <p id="user-show-categories-current">Current goals:</p>
       <p id="user-show-categories-new"><%= link_to "Start a new goal", categories_path %></p>
