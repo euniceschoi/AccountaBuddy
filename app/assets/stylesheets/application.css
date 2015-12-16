@@ -16,8 +16,12 @@
 
  */
 
+ * li{
+ 	list-style-type: none;
+ }
+
 body {
- 	background-color: #c4d1da;
+ 	background-color: #d7e3e3;
  }
 
 .innards {
@@ -25,7 +29,7 @@ body {
 	width: 900px;
 	height: auto;
 	background-color: rgba(255, 255, 255, .8);
-	padding: 50px;
+	padding: 30px 50px 50px 50px;
 	-webkit-box-shadow: 7px 8px 18px 0px rgba(12, 85, 98, .2);
   -moz-box-shadow:    7px 8px 18px 0px rgba(12, 85, 98, .2);
   box-shadow:         7px 8px 18px 0px rgba(12, 85, 98, .2);

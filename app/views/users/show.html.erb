@@ -44,66 +44,113 @@
   </div>
 <div class="innards">
 
-        <h3> About Me:</h3>
+<div class="row">
+  <div id="user-show-about" class="large-6 columns">
+    <h2> Let's Be Friends!</h2>
+    <ul>
+      <li>"<%= @user.about_me %> And also I like to drink a lot of cold-brew coffee and take my energy level to an 11."</li>
+    </ul>
+  </div>
+  <div id="user-show-categories" class="large-6 columns">
+      <% if @user == current_user  %>
+      <p id="user-show-categories-current">Categories you've joined:</p>
+      <p id="user-show-categories-new"><%= link_to "Ready to push yourself even harder? Click here to add a new category!", categories_path %></p>
+      <% end %>
+  </div>
+</div>
+<div id="user-show-praise-container" class="row">
+  <div id="user-show-praise" class="large-12 columns">
+     <div class="row">
+      <div class="large-2 columns">
+      <ul>
+        <li><img src="<%= asset_path( 'eunice-tea.jpg' ) %>"></li>
+        <li><img src="<%= asset_path( 'eunice-tea.jpg' ) %>"></li>
+      </ul>
+      </div>
+      <div class="large-10 columns">
+        <p> Here I am endorsing Chris for his excellent, excellent work as a teammate, coder, raver, and human person.</p>
+
+         <p> And more praise for Chris because he's just that good.</p>
+      </div>
+     </div>
+    <p>
+  </div>
+</div>
+<% if @user == current_user %>
+  <div class="row">
+    <div id="user-show-friends" class="large-5 columns">
+
+      <h2>Your Friends:</h2>
         <ul>
-          <li>"<%= @user.about_me %>"</li>
+          <% @just_friends.each do |friendship| %>
+              <%= link_to friendship_path(friendship.id) do%>
+                 <li><%= friendship.friend.name %></li>
+              <% end %>
+          <% end %>
         </ul>
 
+         <h6 class="pending-sent">Pending Friend Requests You've Sent:</h6>
+        <ul>
+          <% @pending_requests.each do |pending_request| %>
+           <li><%= pending_request.recipient.name %></li>
+          <% end %>
+        </ul>
 
+        <h6 class="pending-sent">Friend Requests Awaiting Your Approval:</h6>
 
-  <%= link_to "Start a New Goal!", categories_path %>
-
-  <p>Your Accountabuddies: </p>
-  <ul>
-    <% @accountabuddies.each do |accountabuddy| %>
-      <li>
-          <%= accountabuddy.friend.name %>
-          <%= link_to "See Friendship", friendship_path(accountabuddy.id) %>
-      </li>
-    <% end %>
-  </ul>
-
-  <p>Accountabuddy Requests From:</p>
-    <% if @accountabuddy_requests %>
-          <% @accountabuddy_requests.each do |request| %>
-
-            <% if request.friendship.accountabuddy == true %>
-            <% else %>
-              <li><%= request.user.name %></li>
-                <%= form_tag accountabuddy_request_path(request.id), method: 'put' do %>
+            <% @friend_requests.each do |friend_request| %>
+              <ul>
+              <li><%= friend_request.user.name %></li>
+                <%= form_tag friend_request_path(friend_request.id), method: 'put' do %>
                 <%= submit_tag "Accept" %>
               <% end %>
             <% end %>
-          <% end %>
-    <% end %>
+            </ul>
 
-  <p>Your Friends:</p>
-  <ul>
-    <% @just_friends.each do |friendship| %>
-      <li>
-        <%= friendship.friend.name %>
-        <%= link_to "See Friendship", friendship_path(friendship.id)%>
-      </li>
-    <% end %>
-  </ul>
+    </div>
+    <div id="user-show-accountabuddies" class="large-7 columns">
 
-  <p>Pending Friend Requests To:</p>
-    <% @pending_requests.each do |pending_request| %>
-      <li><%= pending_request.recipient.name %></li>
-    <% end %>
+    <h2>Your AccountaBuddies: </h2>
+      <ul>
+        <% @accountabuddies.each do |accountabuddy| %>
+              <%= link_to friendship_path(accountabuddy.id) do%>
+                <li><%= accountabuddy.friend.name %></li>
+              <% end %>
+        <% end %>
+      </ul>
+      <ul>
+        <h6> AccountaBuddy Requests Awaiting Your Approval:</h6>
+        <% if @accountabuddy_requests %>
+              <% @accountabuddy_requests.each do |request| %>
 
-      <p>Friend Requests From:</p>
+                <% if request.friendship.accountabuddy == true %>
+                <% else %>
+                  <li><%= request.user.name %></li>
+                    <%= form_tag accountabuddy_request_path(request.id), method: 'put' do %>
+                    <%= submit_tag "Accept" %>
+                  <% end %>
+                <% end %>
+              <% end %>
+        <% end %>
+      </ul>
+    </div>
+  </div>
+<% end %>
 
-          <% @friend_requests.each do |friend_request| %>
 
-            <li><%= friend_request.user.name %></li>
-              <%= form_tag friend_request_path(friend_request.id), method: 'put' do %>
-              <%= submit_tag "Accept" %>
-            <% end %>
 
-          <% end %>
 
-        </ul>
+
+
+
+  
+
+
+    
+
+  
+
+
 </div>
 
 <!-- Uncomment code in users_controller show to see these in action -->
