@@ -2,17 +2,17 @@
 <div class="innards">
 
   <div class="row">
-    <div class="large-6 columns">
-      <h1>Chat with Friends</h1>
+    <div class="large-7 columns">
+      <h2>Chat With Your Friends</h2>
     </div>
-    <div class="large-6 columns">
+    <div id="friendship-accountabuddy-request" class="large-5 columns">
       <%= flash[:error] %>
         <% if @friendship.accountabuddy == false%>
           <% if @friendship.accountabuddy_request %>
-            Accountabuddy Request Sent
+            <p>AccountaBuddy Request Sent<p>
           <% else %>
             <%= form_for :recipient, :url => {:action=>"create", :controller=>"accountabuddy_requests"} do |f| %>
-            <%= f.button "Become Accountabuddies with "+ @friend.name %>
+            <%= f.button "Become AccountaBuddies with "+ @friend.name, :class => "myButton"  %>
             <%= f.hidden_field :friendship_id, value: @friendship.id %>
             <%= f.hidden_field :recipient_id, value: @friend.id %>
             <% end %>
@@ -24,28 +24,26 @@
   </div>
 
   <div class="row">
-    <div class="large-12 columns">
+    <div class="large-10 columns">
       <%= flash[:error] %>
         <div id="send-messages">
         <%= form_for :message, url: '/messages' do |f| %>
-          <%= f.text_field :body, :size => "60x12", id:"message-input-box"%>
+          <%= f.text_field :body, id:"message-input-box"%>
           <% if @conversation %>
           <%= f.hidden_field :conversation, value: @conversation.id  %>
             <% end %>
             <%= f.hidden_field :friendship, value: @friendship.id %>
-            <%= f.submit "Send" %>
+    </div>
+    <div class="large-2 columns">
+            <%= f.submit "Send", :class => "myButton"  %>
           <% end %>
           </div>
-
-          <%= link_to "Back to Profile", user_path(current_user.id) %>
-        </div>
     </div>
   </div>
 
   <div class="row">
-    <div class="large-12 columns"
-
-      <h1>Your conversation with <%= @friend.name %>:</h1>
+    <div class="large-12 columns">
+      <h4 id="chat-history-header">Chat history with <%= @friend.name %>:</h4>
         <% if @messages %>
         <ul id="messages">
           <% @messages.each do |message| %>
@@ -57,9 +55,10 @@
           <%end %>
         </ul>
         <% end %>
-
     </div>
   </div>
+
+</div>
 
 
 

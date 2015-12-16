@@ -1,3 +1,19 @@
 // Place all the styles related to the friendships controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+#friendship-accountabuddy-request p{
+	font-size: 1.3em;
+	color: #649c7c;
+	font-style: italic;
+	padding-left: 20px;
+	border-bottom: 1px white solid;
+}
+
+#message-input-box{
+	width: 95%;
+}
+
+#chat-history-header{
+	margin-top: 15px;
+}
