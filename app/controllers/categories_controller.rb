@@ -2,6 +2,11 @@ class CategoriesController < ApplicationController
 
   def index
     @categories = Category.all
+    @user_categories = UserCategory.all
+    respond_to do |format|
+      format.html
+      format.json { render json: @geojson }  # respond with the created JSON object
+    end   
   end
 
   def show

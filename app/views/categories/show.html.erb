@@ -24,9 +24,9 @@
   <% @users_in_category.each do |user| %>
     <li><%= user.username %></li>
     <%= form_for :recipientid, :url => {:action=>"create", :controller=>"friend_requests"} do |f| %>
-    <%= f.button "Add as Friend"%>
     <%= f.hidden_field :category_id, value: @category.id %>
     <%= f.hidden_field :recipient_id, value: user.id %>
+    <%= f.button "Add as Friend"%>
     <% end %>
   <% end %>
 </ul>
@@ -34,7 +34,7 @@
 </div>
 
 <div id="map">
-  <%= render 'map_index_all' %>
+  <%= render 'map_index_one_category' %>
 </div>
 
 
