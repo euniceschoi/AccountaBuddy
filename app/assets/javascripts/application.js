@@ -30,7 +30,7 @@ $(function () {
 
 $(document).ready(function(){
   sendMessageListener();
-  userSubmitListener();
+
 });
 
 

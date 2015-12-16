@@ -86,7 +86,8 @@ img.bg {
   width: 200px;
   border: white 10px solid;
   margin-left: 80px;
-  margin-top: 10px;
+  margin-top: 5px;
+  margin-bottom: 20px;
 }
 
 #user-show-header{
@@ -102,7 +103,7 @@ img.bg {
   font-size: 1.6em;
   text-align: right;
   margin-top: -40px;
-  margin-right: 40px;
+  margin-right: 150px;
   color: #498f87;
 }
 
@@ -111,7 +112,6 @@ img.bg {
 }
 
 #user-badges li{
-  list-style-type: none;
   width: 120px;
 }
 
@@ -119,19 +119,73 @@ img.bg {
   font-size: 1.2em;
 }
 
-#user-show-description{
-  background: white;
-  padding: 10px;
-  height: auto;
-  display: none;
+#user-show-about li{
+  color: gray;
+
 }
-#user-show-description ul{
-  list-style-type: none;
+
+#user-show-about h2{
+  color: #356f67;
 }
-#user-show-description ul li{
-  margin-left: -60px;
-  margin-top: 10px;
+
+#user-show-praise-container{
+  margin-top: 20px;
+  margin-bottom: 20px;
+  padding-top: 20px;
+  border-top: 1px #c1c7c6 solid; 
+  border-bottom: 1px #c1c7c6 solid; 
 }
+
+
+#user-show-praise img{
+  height: 75px;
+  padding-top: 10px;
+  float: right;
+
+}
+
+#user-show-praise p{
+  font-style: italic;
+  padding-top: 15px;
+}
+
+#user-show-categories-new{
+  text-align: center;
+  font-size: .92em;
+}
+
+#user-show-categories-new a{
+  color: #356f67;
+}
+
+#user-show-categories-current{
+  font-size: 1.2em;
+}
+
+#user-show-friends {
+  border-right: 1px #c1c7c6 solid;
+}
+
+#user-show-friends a{
+  color: #356f67;
+  float: left;
+  padding: 20px;
+  font-size: 1.2em;
+}
+
+#user-show-accountabuddies a{
+  color: #356f67;
+  float: left;
+  padding: 20px;
+  font-size: 1.2em;
+
+}
+
+.pending-sent {
+  margin-top: 20px;
+  float: left;
+}
+
 
 //styling for user#new
 
