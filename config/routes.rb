@@ -13,9 +13,9 @@ Rails.application.routes.draw do
   resources :accountabuddy_requests, only:[:create, :update]
   resources :user_categories
   # FB
-  # get 'auth/facebook/callback', to: 'sessions#create'
-  # get 'auth/failure', to: redirect('/')
-  # get 'signout', to: 'sessions#destroy', as: 'signout'
+  get 'auth/facebook/callback', to: 'sessions#create'
+  get 'auth/failure', to: redirect('/')
+  get 'signout', to: 'sessions#destroy', as: 'signout'
   # You can have the root of your site routed with "root"
   root 'users#index'
   # Example of regular route:

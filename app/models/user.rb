@@ -20,23 +20,25 @@ class User < ActiveRecord::Base
   reverse_geocoded_by :latitude, :longitude  #, :address => :location
   after_validation :reverse_geocode  # auto-fetch address
   # after_validation :geocode, :if => :address_changed?
-  validates_presence_of :name, :username, :email, :password, :about_me, :gender
-  validates_uniqueness_of :username, :email
-  validates_length_of :password, :in => 6..20
+  # validates_presence_of :name, :username, :email, :password, :about_me, :gender
+  # validates_uniqueness_of :username, :email
+  # validates_length_of :password, :in => 6..20
 
 
-  
 
-  # def self.create_with_omniauth(auth)
-  #   create! do |user|
-  #     user.provider = auth['provider']
-  #     user.uid = auth['uid']
-  #     if auth['info']
-  #       user.name = auth['info']['name'] || ""
-  #       user.email = auth['info']['email'] || ""
-  #     end
-  #   end
-  # end
+  def self.create_with_omniauth(auth)
+    user = find_or_create_by(uid: auth['uid'], provider: auth['provider'])
+
+      user.email = "#{auth['uid']}@#{auth['provider']}.com"
+      user.password = auth['uid']
+      user.name = auth['info']['name']
+      user.gender = auth['extra']['raw_info']['gender']
+
+      user.save!
+
+      user
+
+  end
 
   # def self.from_omniauth(auth)
   #   where(auth.slice(:provider, :uid)).first_or_initialize.tap do |user|
