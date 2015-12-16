@@ -95,7 +95,7 @@ class UsersController < ApplicationController
     if current_user && current_user.id = @user.id
       longitude = params["user_location"][0].to_f
       latitude = params["user_location"][1].to_f
-      @user.update_attributes(latitude: latitude, longitude: longitude)
+      @user.update_attributes(address: address, latitude: latitude, longitude: longitude)
       if @user.save(validate: false)
         respond_to do |format|
           format.html
