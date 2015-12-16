@@ -53,8 +53,8 @@
   </div>
   <div id="user-show-categories" class="large-6 columns">
       <% if @user == current_user  %>
-      <p id="user-show-categories-current">Categories you've joined:</p>
-      <p id="user-show-categories-new"><%= link_to "Ready to push yourself even harder? Click here to add a new category!", categories_path %></p>
+      <p id="user-show-categories-current">Current goals:</p>
+      <p id="user-show-categories-new"><%= link_to "Start a new goal", categories_path %></p>
       <% end %>
   </div>
 </div>
