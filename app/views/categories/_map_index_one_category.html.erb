@@ -18,7 +18,7 @@
 <script>
 L.mapbox.accessToken = 'pk.eyJ1IjoidG9wZ2lybGNvZGVyIiwiYSI6ImNpaTZqOXJhdTAxb2p0b2tmZThoMHpjMm0ifQ.R9Flgvg9aIBq1S1_qVlMbw';
 var geolocate = document.getElementById('geolocate');
-var map = L.mapbox.map('map', 'mapbox.streets').setView([37.7570841,-122.00], 12);
+var map = L.mapbox.map('map', 'mapbox.streets').setView([<%= current_user.latitude.to_f %> , <%= current_user.longitude.to_f %>], 12);
 var myLayer = L.mapbox.featureLayer().addTo(map);
 
 
@@ -36,16 +36,16 @@ var geoJson = [];
         <% end %>
         <% if @category.name == "Diet" %>
           'marker-color': '#ffff00',  //yellow
-        <% end %>  
+        <% end %>
         <% if current_user == user.id %>
           'marker-color': '#ff0000',  //red
-        <% end %>       
+        <% end %>
         'marker-symbol': 'star',
         'marker-size': 'medium',
         'name': '<%= user.username%>',
         'about': '<%= user.about_me %>',
         'url': "/users/"+ "<%=user.id%>",
-        'user_id': '<%= user.id %>'        
+        'user_id': '<%= user.id %>'
 
       }
     });
@@ -59,7 +59,7 @@ myLayer.on('layeradd', function(e) {
     // Create custom popup content
     var popupContent =  '<a target="_blank" class="popup" href="' + feature.properties.url + '">' +
     '<img src="' + feature.properties.image + '" />' + "  " +
-    '<span style="font-size:20px">'+feature.properties.name+'</span><br>' + 
+    '<span style="font-size:20px">'+feature.properties.name+'</span><br>' +
     '<span style="font-size:18px">'+feature.properties.about+'</span>' +
     '<%= form_for :recipientid, :url => {:action=>"create", :controller=>"friend_requests"} do |f| %><%= f.button 'Add as Friend'%><%= f.hidden_field :category_id, value: @category.id %><%= f.hidden_field :recipient_id, value:' + feature.properties.user_id + '%><% end %>'
     '</a>';
