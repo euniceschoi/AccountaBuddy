@@ -95,6 +95,7 @@ class UsersController < ApplicationController
     p "*" * 50
     p params
     @user = User.find(params[:id])
+
     @user.update(user_params)
       if @user.save
         redirect_to user_path(current_user.id)

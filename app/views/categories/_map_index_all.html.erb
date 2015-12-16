@@ -16,9 +16,9 @@
 
 <div id='map'></div>
 <script>
-L.mapbox.accessToken = 'pk.eyJ1IjoidG9wZ2lybGNvZGVyIiwiYSI6ImNpaTZqOXJhdTAxb2p0b2tmZThoMHpjMm0ifQ.R9Flgvg9aIBq1S1_qVlMbw';
+L.mapbox.accessToken = 'pk.eyJ1IjoidG9wZ2lybGNvZGVyIiwiYSI6ImNpaTg0cndlODAwNzZ0Zmx5azg4cmY5djgifQ.TZL_V5r4IAGG32ihA5Sw3Q';
 var geolocate = document.getElementById('geolocate');
-var map = L.mapbox.map('map', 'mapbox.streets').setView([<%= current_user.latitude.to_f %> , <%= current_user.longitude.to_f %>], 12);
+var map = L.mapbox.map('map', 'mapbox.streets').setView([<%= current_user.latitude.to_f %> , <%= current_user.longitude.to_f %>], 10);
 var myLayer = L.mapbox.featureLayer().addTo(map);
 
 
@@ -68,8 +68,7 @@ myLayer.on('layeradd', function(e) {
     var popupContent =  '<a target="_blank" class="popup" href="' + feature.properties.url + '">' +
     '<img src="' + feature.properties.image + '" />' + "  " +
     '<span style="font-size:20px">'+feature.properties.name+'</span><br>' +
-    '<span style="font-size:18px">'+feature.properties.about+'</span>' +
-    '<%= form_for :recipientid, :url => {:action=>"create", :controller=>"friend_requests"} do |f| %><%= f.button 'Add as Friend'%><%= f.hidden_field :category_id, value: @category.id %><%= f.hidden_field :recipient_id, value:' + feature.properties.user_id + '%><% end %>'
+    '<span style="font-size:18px">'+feature.properties.about+'</span>' 
     '</a>';
     // http://leafletjs.com/reference.html#popup
     marker.bindPopup(popupContent, {
