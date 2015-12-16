@@ -5,6 +5,15 @@ Category.delete_all
 UserCategory.delete_all
 Friendship.delete_all
 
+
+badges = Badge.create!([
+	{name: "Fitness", description: "You're a fitness superstar!"},
+	{name: "Diet", description: "You're a Diet superstar!"},
+	{name: "Hobbies", description: "You're a Hobbies superstar! "},
+	{name: "Education", description: "You're a Education superstar!"},
+
+	])
+
 users = User.create!([
 	{name: "Eunice", username: "eunice", longitude: -122, latitude: 37.77, email: 'eunice@gmail.com', password: '123456', about_me: "I'm happy!", gender: "female"},
 	{name: "Chris", username: "koske", longitude: -122, latitude: 37.68, email: 'koske@gmail.com', password: '123456', about_me: "I'm optimistic!", gender: "male"},
@@ -22,15 +31,6 @@ users = User.create!([
 categories = Category.create!([
 	{name: "Fitness"},
 	{name: "Diet"}])
-
-
-badges = Badge.create!([
-	{name: "Fitness", description: "You're a fitness superstar!"},
-	{name: "Diet", description: "You're a Diet superstar!"},
-	{name: "Hobbies", description: "You're a Hobbies superstar! "},
-	{name: "Education", description: "You're a Education superstar!"},
-
-	])
 
 
 user_categories = UserCategory.create!([
