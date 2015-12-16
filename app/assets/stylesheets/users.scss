@@ -119,13 +119,14 @@ img.bg {
   font-size: 1.2em;
 }
 
-#user-show-about li{
+#user-show-about p{
   color: gray;
-
+  margin-top: 30px;
 }
 
 #user-show-about h2{
   color: #356f67;
+  margin-left: -20px;
 }
 
 #user-show-praise-container{
@@ -147,6 +148,10 @@ img.bg {
 #user-show-praise p{
   font-style: italic;
   padding-top: 15px;
+}
+
+#user-show-categories{
+  border-left: 1px #c1c7c6 solid;
 }
 
 #user-show-categories-new{
