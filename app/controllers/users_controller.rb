@@ -25,13 +25,23 @@ class UsersController < ApplicationController
       @badge2 = Badge.new(name: "Diet", description: "You're a Diet superstar!", user_id: @user.id, badge_image_link:"diet-badge.png")
       @badge3 = Badge.new(name: "Hobbies", description: "You're a Hobbies superstar!", user_id: @user.id, badge_image_link:"hobbies-badge.png")
       @badge4 = Badge.new(name: "Education", description: "You're a Education superstar!", user_id: @user.id, badge_image_link:"education-badge.png")
+      if request.xhr?
+        p "YOU MADE THE REQUEST XHR"
         if @badge1.save && @badge2.save && @badge3.save && @badge4.save
+          p "You saved the badges"
           session[:user_id] = @user.id
-          {user_id: @user.id}.to_json
+
+         respond_to do |format|
+          format.json {render :json => @user.id}
+        end
+
         else
+          p "YOU DIDN'T GET THE REQUEST XHR"
           flash[:error] = "Signup was unsuccessful. Please try again."
+          redirect_to user_path(@user)
           redirect_to '/signup'
         end
+      end
     else
       flash[:error] = "Signup was unsuccessful. Please try again."
       redirect_to '/signup'

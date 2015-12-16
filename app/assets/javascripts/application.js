@@ -13,7 +13,7 @@
 //= require jquery
 //= require jquery_ujs
 //= require foundation
-//= require turbolinks
+// require turbolinks
 //= require_tree .
 
 $(function(){ $(document).foundation(); });
@@ -93,13 +93,20 @@ var userSubmitListener = function() {
     $("#geolocate").hide();
     var userCoordinates = {longitude: event.latlng.lng, latitude: event.latlng.lat}
 
-    var request = $.ajax({
-      url: '/users',
-      type: "POST",
-      data: userFormData + "&longitude=" + event.latlng.lng + "&latitude=" + event.latlng.lat,
-      dataType: 'JSON'
-    })
-    request.done
+    // var request = $.ajax({
+    //   url: '/users',
+    //   type: "POST",
+    //   data: userFormData + "&longitude=" + event.latlng.lng + "&latitude=" + event.latlng.lat,
+    //   dataType: 'JSON'
+    // })
+    // request.done(function(response){
+    //   console.log(response);
+    //   console.log("NICE!");
+    // });
+    // request.fail(function(response){
+    //   console.log(response)
+    //   console.log("shit")
+    // })
 
 
 
