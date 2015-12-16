@@ -9,16 +9,16 @@
   <link href='https://api.mapbox.com/mapbox.js/v2.2.3/mapbox.css' rel='stylesheet' />
   <style>
     body { margin:0; padding:0; }
-    #map { position:absolute; top:0; bottom:0; width:100%; }
+    #map { position:absolute; top:0; bottom:0; width:60%; height:60%; }
   </style>
 </head>
 <body>
 
 <div id='map'></div>
-<a href='#' id='geolocate' class='ui-button'>Find me</a>
+<a href='#' id='geolocate' class='ui-button'>Pin My Location</a>
 <script>
 
-L.mapbox.accessToken = ""
+L.mapbox.accessToken = "pk.eyJ1IjoiZXVuaWNlc2Nob2kiLCJhIjoiY2loZmdtaXVvMG05eHY1a2x5aGR6YjBtMCJ9.h4rnR4TNaSNtW4VbuG9ypA"
 // var geolocate = document.getElementById('geolocate');
 // var map = L.mapbox.map('map', 'mapbox.streets');
 // var myLayer = L.mapbox.featureLayer().addTo(map);

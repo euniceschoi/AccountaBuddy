@@ -30,6 +30,7 @@ $(function () {
 
 $(document).ready(function(){
   sendMessageListener();
+  geoLocatorListener();
 
 });
 
@@ -57,69 +58,104 @@ var sendMessageListener = function() {
   })
 }
 
-var userSubmitListener = function() {
-  $('body').on('submit', '#user-signedit-form', function(event){
+var geoLocatorListener = function() {
+    // $("#map").css('display', 'block');
+  $("#geolocate").on('click', function(event){
     event.preventDefault();
-    var userFormData = $(this).children().serialize();
-    $(".user-signedit-box").hide();
+    event.stopPropagation();
+    var map = L.mapbox.map('map', 'mapbox.streets');
+    var locate = map.locate();
+    var myLayer = L.mapbox.featureLayer().addTo(map);
+    console.log("IT WORKED!")
+    map.on('locationfound', function(event){
+        console.log(event);
+        var latitude = event.latlng.lat
+        var longitude = event.latlng.lng
+          map.fitBounds(event.bounds);
+          myLayer.setGeoJSON({
+            type: 'Feature',
+              geometry: {
+              type: 'Point',
+              coordinates: [event.latlng.lng, event.latlng.lat]
+          },
+          properties: {
+              'title': 'Here I am!',
+              'marker-color': '#ff8888',
+              'marker-symbol': 'star'
+          }
+        })
+        $('#map').delay(1000).fadeOut()
+        $("#latitude-fill input").val(latitude)
+        $("#longitude-fill input").val(longitude)
 
-
-    $("#map").css('display', 'block');
-    $("#geolocate").css('display', 'block')
-    $("#geolocate").on('click', function(event){
-      event.preventDefault();
-      event.stopPropagation();
-      var map = L.mapbox.map('map', 'mapbox.streets');
-      var locate = map.locate();
-      var myLayer = L.mapbox.featureLayer().addTo(map);
-
-      console.log(event)
-      console.log(locate)
-      map.on('locationfound', function(event){
-        map.fitBounds(event.bounds);
-        myLayer.setGeoJSON({
-          type: 'Feature',
-            geometry: {
-            type: 'Point',
-            coordinates: [event.latlng.lng, event.latlng.lat]
-        },
-        properties: {
-            'title': 'Here I am!',
-            'marker-color': '#ff8888',
-            'marker-symbol': 'star'
-        }
+        $("#geolocate").hide();
     });
-    // And hide the geolocation button
-    $("#geolocate").hide();
-    var userCoordinates = {longitude: event.latlng.lng, latitude: event.latlng.lat}
-
-    // var request = $.ajax({
-    //   url: '/users',
-    //   type: "POST",
-    //   data: userFormData + "&longitude=" + event.latlng.lng + "&latitude=" + event.latlng.lat,
-    //   dataType: 'JSON'
-    // })
-    // request.done(function(response){
-    //   console.log(response);
-    //   console.log("NICE!");
-    // });
-    // request.fail(function(response){
-    //   console.log(response)
-    //   console.log("shit")
-    // })
-
-
-
-      })
-    })
-    //click find me
-    //create a variable and grab the coordinates from the find me button
-    //make the ajax request to the post route for users
-    //two sets of data in a object
-
-
-
   })
-
 }
+
+// var userSubmitListener = function() {
+//   $('body').on('submit', '#user-signedit-form', function(event){
+//     event.preventDefault();
+//     var userFormData = $(this).children().serialize();
+//     $(".user-signedit-box").hide();
+
+
+//     $("#map").css('display', 'block');
+//     $("#geolocate").css('display', 'block')
+//     $("#geolocate").on('click', function(event){
+//       event.preventDefault();
+//       event.stopPropagation();
+      // var map = L.mapbox.map('map', 'mapbox.streets');
+      // var locate = map.locate();
+      // var myLayer = L.mapbox.featureLayer().addTo(map);
+
+//       console.log(event)
+//       console.log(locate)
+//       map.on('locationfound', function(event){
+//         map.fitBounds(event.bounds);
+//         myLayer.setGeoJSON({
+//           type: 'Feature',
+//             geometry: {
+//             type: 'Point',
+//             coordinates: [event.latlng.lng, event.latlng.lat]
+//         },
+//         properties: {
+//             'title': 'Here I am!',
+//             'marker-color': '#ff8888',
+//             'marker-symbol': 'star'
+//         }
+//     });
+//     // And hide the geolocation button
+//     $("#geolocate").hide();
+//     var userCoordinates = {longitude: event.latlng.lng, latitude: event.latlng.lat}
+
+//     // var request = $.ajax({
+//     //   url: '/users',
+//     //   type: "POST",
+//     //   data: userFormData + "&longitude=" + event.latlng.lng + "&latitude=" + event.latlng.lat,
+//     //   dataType: 'JSON'
+//     // })
+//     // request.done(function(response){
+//     //   console.log(response);
+//     //   console.log("NICE!");
+//     // });
+//     // request.fail(function(response){
+//     //   console.log(response)
+//     //   console.log("shit")
+//     // })
+
+
+
+//       })
+//     })
+//     //click find me
+//     //create a variable and grab the coordinates from the find me button
+//     //make the ajax request to the post route for users
+//     //two sets of data in a object
+
+
+
+//   })
+
+// }
 
