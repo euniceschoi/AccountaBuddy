@@ -4,10 +4,12 @@
 
 		<h1>Edit Your Profile</h1>
 
+    <%= flash[:error] %>
+
       <div class="row">
 
         <div id="user-signedit-form" class="large-12">
-          <%= form_for :user, url: '/users' do |f| %>
+          <%= form_for :user, :url => { :action => "update" } do |f| %>
 
             <div class="row">
               <div class="large-4 columns"><label for="right-label" class="right">First name:</label>
