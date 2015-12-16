@@ -16,20 +16,27 @@ class UsersController < ApplicationController
   end
 
   def create
-    p "*" * 50
-    p params
-    @user = User.new(name: params[:user][:name], username: params[:user][:username], email: params[:user][:email], about_me: params[:user][:about_me],gender: params[:user][:gender],password: params[:user][:password], password_confirmation: params[:user][:password_confirmation], latitude: params[:latitude], longitude: params[:longitude])
+    # p "*" * 50
+    # p params
+    # @user = User.new(name: params[:user][:name], username: params[:user][:username], email: params[:user][:email], about_me: params[:user][:about_me],gender: params[:user][:gender],password: params[:user][:password], password_confirmation: params[:user][:password_confirmation], latitude: params[:latitude], longitude: params[:longitude])
+
+    @user = User.new(user_params)
 
     if @user.save
       @badge1 = Badge.new(name: "Fitness", description: "You're a fitness superstar!", user_id: @user.id, badge_image_link: "fitness-badge.png")
       @badge2 = Badge.new(name: "Diet", description: "You're a Diet superstar!", user_id: @user.id, badge_image_link:"diet-badge.png")
       @badge3 = Badge.new(name: "Hobbies", description: "You're a Hobbies superstar!", user_id: @user.id, badge_image_link:"hobbies-badge.png")
       @badge4 = Badge.new(name: "Education", description: "You're a Education superstar!", user_id: @user.id, badge_image_link:"education-badge.png")
+        p "YOU MADE THE REQUEST XHR"
         if @badge1.save && @badge2.save && @badge3.save && @badge4.save
+          p "You saved the badges"
           session[:user_id] = @user.id
-          {user_id: @user.id}.to_json
+          redirect_to user_path(@user.id)
+
         else
+          p "YOU DIDN'T GET THE REQUEST XHR"
           flash[:error] = "Signup was unsuccessful. Please try again."
+          redirect_to user_path(@user)
           redirect_to '/signup'
         end
     else
@@ -91,38 +98,26 @@ class UsersController < ApplicationController
   end
 
   def update
-    p "YOU MADE IT TO THE EDIT YEAH"
-    p "*" * 50
-    p params
     @user = User.find(params[:id])
-
-    @user.update(user_params)
-      if @user.save
-        redirect_to user_path(current_user.id)
+    if current_user && current_user.id = @user.id
+      longitude = params["user_location"][0].to_f
+      latitude = params["user_location"][1].to_f
+      @user.update_attributes(latitude: latitude, longitude: longitude)
+      if @user.save(validate: false)
+        respond_to do |format|
+          format.html
+          format.json { render json: @user }
+        end
       else
-        flash[:error] = "Update was unsuccessful. Please try again."
-        redirect_to edit_user_path(current_user.id)
+        @user.errors.full_messages
+        respond_to do |format|
+          format.html
+          format.json { render json: @user.errors }
+        end
       end
-
-    # if current_user && current_user.id = @user.id
-    #   longitude = params["user_location"][0].to_f
-    #   latitude = params["user_location"][1].to_f
-    #   @user.update_attributes(latitude: latitude, longitude: longitude)
-    #   if @user.save(validate: false)
-    #     respond_to do |format|
-    #       format.html
-    #       format.json { render json: @user }
-    #     end
-    #   else
-    #     @user.errors.full_messages
-    #     respond_to do |format|
-    #       format.html
-    #       format.json { render json: @user.errors }
-    #     end
-    #   end
-    # else
-    #   redirect_to root_path
-    # end
+    else
+      redirect_to root_path
+    end
   end
 
   def delete
