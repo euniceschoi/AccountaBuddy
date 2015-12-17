@@ -19,6 +19,7 @@ class User < ActiveRecord::Base
 
   geocoded_by :address
   # reverse_geocoded_by :latitude, :longitude, :address => :location
+  mount_uploader :attachment
   after_validation :reverse_geocode  # auto-fetch address
   # after_validation :geocode, :if => :address_changed?
   # validates_presence_of :name, :username, :email, :password, :about_me, :gender

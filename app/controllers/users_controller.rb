@@ -18,7 +18,6 @@ class UsersController < ApplicationController
   def create
     p "*" * 50
     p params
-    # @user = User.new(name: params[:user][:name], username: params[:user][:username], email: params[:user][:email], about_me: params[:user][:about_me],gender: params[:user][:gender],password: params[:user][:password], password_confirmation: params[:user][:password_confirmation], latitude: params[:latitude], longitude: params[:longitude])
     @user = User.new(user_params) 
     if @user.save
       @badge1 = Badge.new(name: "Fitness", description: "You're a fitness superstar!", user_id: @user.id, badge_image_link: "fitness-badge.png")
@@ -133,7 +132,7 @@ class UsersController < ApplicationController
   private
 
   def user_params
-    params.require(:user).permit(:name, :username, :email, :password, :password_confirmation, :address, :latitude, :longitude, :about_me, :gender)
+    params.require(:user).permit(:name, :username, :email, :password, :password_confirmation, :address, :latitude, :longitude, :about_me, :gender, :attachment)
   end
 
 end
