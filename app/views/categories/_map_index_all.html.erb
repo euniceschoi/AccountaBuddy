@@ -18,7 +18,7 @@
 <script>
 L.mapbox.accessToken = 'pk.eyJ1IjoidG9wZ2lybGNvZGVyIiwiYSI6ImNpaTg0cndlODAwNzZ0Zmx5azg4cmY5djgifQ.TZL_V5r4IAGG32ihA5Sw3Q';
 var geolocate = document.getElementById('geolocate');
-var map = L.mapbox.map('map', 'mapbox.streets').setView([<%= current_user.latitude.to_f %> , <%= current_user.longitude.to_f %>], 15);
+var map = L.mapbox.map('map', 'mapbox.streets').setView([<%= current_user.latitude.to_f %> , <%= current_user.longitude.to_f %>], 16);
 var myLayer = L.mapbox.featureLayer().addTo(map);
 
 
@@ -32,22 +32,22 @@ var geoJson = [];
       },
       properties: {
         <% if user_category.category.name == "Fitness" %>
-          'marker-color': '#0000ff', //blue
+          'marker-color': '#498f87', //blue
         <% end %>
         <% if user_category.category.name == "Diet" %>
-          'marker-color': '#ffff00',  //yellow
+          'marker-color': '#dc854f',  //yellow
         <% end %>
         <% if user_category.user_id == current_user.id %>
-        'marker-color': '#F23F21',
+        'marker-color': '#cc0066',
         'marker-symbol': 'star',
-        'marker-size': 'medium',
+        'marker-size': 'large',
         'name': '<%= user_category.user.username%>',
         'about': 'You are Here',
         'url': "/users/"+ "<%=user_category.user_id%>",
         'user_id': '<%= user_category.user_id %>'
         <% else %>
-        'marker-symbol': 'star',
-        'marker-size': 'medium',
+        'marker-symbol': 'circle',
+        'marker-size': 'large',
         'name': '<%= user_category.user.username%>',
         'about': '<%= user_category.user.about_me%>',
         'url': "/users/"+ "<%=user_category.user_id%>",

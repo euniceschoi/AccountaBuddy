@@ -36,15 +36,6 @@
   border: none;
 }
 
-#categories-index-map {
-  position:fixed;
-  left:16%;
-  width:90%;
-  margin-top:4.8%;
-  top:0;bottom:0;
-  height:95%;
-
-}
 
 #categories-show-container{
   height: 800px;
@@ -81,6 +72,16 @@
   margin-right: 15px;
   font-size: 1.8em;
   font-weight: bold;
+}
+
+#categories-index-map {
+  position:fixed;
+  left:16%;
+  width:90%;
+  margin-top:4.8%;
+  top:0;bottom:0;
+  height:95%;
+
 }
 
 #categories-show-map{
