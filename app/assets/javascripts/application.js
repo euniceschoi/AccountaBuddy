@@ -34,6 +34,7 @@ $(document).ready(function(){
   recommendationHandler();
   recommendationSubmit();
   loginListener();
+  endorseHandler(); 
 
 });
 
@@ -140,6 +141,29 @@ var loginListener = function (){
     event.preventDefault();
     console.log("prevent!")
     $("#splash-box-1").delay(100).fadeIn();
+  })
+}
+
+var endorseHandler = function (){
+  $('#user-badges').on('click','.endorse-link',function(event){
+    event.preventDefault();
+    console.log("prevent! ")
+   
+
+    var urlPath = $(this).attr('href')
+
+    var request = $.ajax({
+      url: urlPath,
+      method: 'put'
+    })
+    request.done(function(response){
+      console.log(response)
+      console.log("yes you made it!!");
+    })
+    request.fail(function(error){
+      console.log(error);
+      console.log("awwwman")
+    })
   })
 }
 // var userSubmitListener = function() {
