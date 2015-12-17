@@ -8,7 +8,7 @@
   <title><%= content_for?(:title) ? yield(:title) : "AccountaBuddy" %></title>
   <%= stylesheet_link_tag    "application" %>
   <%= javascript_include_tag "vendor/modernizr" %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => false %>
   <script src="http://api.tiles.mapbox.com/mapbox.js/v1.0.2/mapbox.js"></script>
   <link href="http://api.tiles.mapbox.com/mapbox.js/v1.0.2/mapbox.css" rel="stylesheet" />
   <script src="http://cdn.leafletjs.com/leaflet/v0.7.7/leaflet.js"></script>
