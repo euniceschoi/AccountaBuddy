@@ -13,7 +13,6 @@ backbround-size: cover;
 //styling for the users#index
 
 .nav-bar-home{
-  margin-top: 90px;
   margin-left: 480px;
   margin-bottom: 5px;
   position: absolute;
@@ -23,14 +22,13 @@ backbround-size: cover;
 
 .nav-bar-home a{
   font-family: 'Yanone Kaffeesatz';
-  font-weight: '700';
+  font-weight: 400;
   color: rgba(24,102,88, 0.8);
-  text-shadow: 1px 4px 6px #def, 0 0 0 #000, 1px 4px 6px #def;
 }
 
 
 .nav-bar-user{
-  font-size: 2.5em;
+  font-size: 2.1em;
   float: right;
   height: 10px;
 }
@@ -39,21 +37,36 @@ backbround-size: cover;
   color: #2d7f98
 }
 
-.splash-box {
+#user-show-login-signup{
+  position: absolute;
+  margin-top: 230px;
+  margin-left: 1025px;
+}
+
+#splash-box-1 {
   width: 700px;
   height: 200px;
   padding: 40px;
-  background-color: white;
+  margin-left: -370px;
+  margin-top: 50px;
+  background-color: rgba(0, 0, 0, 0);
   position: absolute;
   border-radius: 5px;
   opacity: .80;
-}
-
-#splash-box-1{
-  margin-top: 250px;
-  margin-left: 75px;
   display: none;
 }
+
+#facebook-button{
+  margin-bottom: 17px;
+}
+
+#splash-box-1 a{
+  font-size: 2em;
+  margin-top: -10px;
+  font-weight: bold;
+  color: #3b5998;
+}
+
 
 #splash-box-2{
   margin-top: 100px;
@@ -198,6 +211,7 @@ backbround-size: cover;
 
 .user-signedit-container {
   padding-bottom: 100px;
+  margin-top: 100px;
 }
 
 .user-signedit-box {
