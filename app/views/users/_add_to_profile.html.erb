@@ -1,15 +1,4 @@
-<%= render 'layouts/navigation' %>
-<div class="user-signedit-container">
-	<div class="user-signedit-box">
-
-    <% if current_user.latitude == nil %>
-
-
-      <%= render 'users/add_to_profile' %>
-
-
-    <% else %>
-    <h1>Edit Your Profile</h1>
+<h1 style="font-size:4em">Add to Your Profile</h1>
 
     <%= flash[:error] %>
 
@@ -20,30 +9,17 @@
           <%= form_for :user, method: :put, url: user_path(current_user.id) do |f| %>
 
             <div class="row">
-              <div class="large-4 columns"><label for="right-label" class="right">First name:</label>
-              </div>
-              <div class="large-8 columns"><%= f.text_field :name %>
+              <div class="large-8 columns"><%= f.hidden_field :name, value: current_user.name %>
               </div>
             </div>
 
             <div class="row">
-              <div class="large-4 columns"><label for="right-label" class="right">Username:</label>
-              </div>
-              <div class="large-8 columns"><%= f.text_field :username %>
+              <div class="large-8 columns"><%= f.hidden_field :username, value: current_user.name %>
               </div>
             </div>
 
              <div class="row">
-              <div class="large-4 columns"><label for="right-label" class="right">Email:</label>
-              </div>
-              <div class="large-8 columns"><%= f.text_field :email %>
-              </div>
-            </div>
-
-            <div class="row">
-              <div class="large-4 columns"><label for="right-label" class="right">Change Profile Picture</label>
-              </div>
-              <div class="large-8 columns"><%= f.file_field :attachment %>
+              <div class="large-8 columns"><%= f.hidden_field :email, value: current_user.email %>
               </div>
             </div>
 
@@ -85,25 +61,14 @@
 
 
              <div class="row">
-              <div class="large-4 columns"><label for="right-label" class="right">Password:</label>
-              </div>
-              <div class="large-8 columns">       <%= f.password_field :password %>
+              <div class="large-8 columns">       <%= f.hidden_field :password, value: current_user.password %>
               </div>
             </div>
 
-             <div class="row">
-              <div class="large-4 columns"><label for="right-label" class="right">Password Confirmation:</label>
-              </div>
-              <div class="large-8 columns"> <%= f.password_field :password_confirmation %>
-              </div>
-            </div>
 
-            <%= f.submit "Update", :class => "myButton" %>
+            <%= f.submit "Add", :class => "myButton" %>
+        
 
           <% end %>
         </div>
       </div>
-      <% end %>
-
-	</div>
-</div>

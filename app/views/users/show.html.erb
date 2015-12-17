@@ -2,7 +2,7 @@
 <%= render 'layouts/navigation' %>
   <div class="row">
     <div class="large-4 columns" style="text-align: left">
-      <img class="profile-image" src="<%= asset_path( 'eunice-tea.jpg' ) %>">
+      <img class="profile-image" src="<%=@user.attachment%>">
     </div>
     <div class="large-8 columns">
       <% if @user == current_user  %>
@@ -20,14 +20,14 @@
                <% @badges.order(:id).each do |badge| %>
                   <li> <img class="badge-image" src="<%= asset_path(badge.badge_image_link) %>">
                   <p> <%= badge.points %> victories</p>
-                      <%= link_to "Endorse!", badge_path(badge.id), method: 'put' %>
+                      <%= link_to "Endorse!", badge_path(badge.id), method: 'put', class: "endorse-link" %>
                   </li>
                 <% end %>
               <% elsif @inverse_accountabuddy_relationship %>
                    <% @badges.order(:id).each do |badge| %>
                   <li> <img class="badge-image" src="<%= asset_path(badge.badge_image_link) %>">
                   <p> <%= badge.points %> victories</p>
-                      <%= link_to "Endorse!", badge_path(badge.id), method: 'put' %>
+                      <%= link_to "Endorse!", badge_path(badge.id), method: 'put', class: "endorse-link" %>
                   </li>
                 <% end %>
               <% else %>
@@ -47,7 +47,7 @@
 <div class="row">
   <div id="user-show-about" class="large-7 columns">
     <h2> About Me:</h2>
-      <p>"<%= @user.about_me %> And also I like to drink a lot of cold-brew coffee and take my energy level to an 11."</p>
+      <p>"<%= @user.about_me %>"</p>
   </div>
   <div id="user-show-categories" class="large-5 columns">
       <% if @user == current_user  %>
@@ -73,6 +73,8 @@
             <div id="recommendation-text">
               "<%= recommendation.body %>"
               - <%= recommendation.user.name %>
+              <img src="<%= recommendation.user.attachment%>">
+              <br>
             </div>
           <% end %>
         </div>
@@ -90,9 +92,6 @@
               </div>
             <% end %>
           <% end %>
-          <!-- <p> Here I am endorsing Chris for his excellent, excellent work as a teammate, coder, raver, and human person.</p>
-
-           <p> And more praise for Chris because he's just that good.</p> -->
       </div>
      </div>
     <p>
@@ -106,7 +105,7 @@
         <ul>
           <% @just_friends.each do |friendship| %>
               <%= link_to friendship_path(friendship.id) do%>
-                 <li><%= friendship.friend.name %></li>
+                 <li><%= friendship.friend.name %> : <%=friendship.category.name %></li>
               <% end %>
           <% end %>
         </ul>
@@ -136,7 +135,7 @@
       <ul>
         <% @accountabuddies.each do |accountabuddy| %>
               <%= link_to friendship_path(accountabuddy.id) do%>
-                <li><%= accountabuddy.friend.name %></li>
+                <li><%= accountabuddy.friend.name %>: <%= accountabuddy.category.name %></li>
               <% end %>
         <% end %>
       </ul>
