@@ -33,6 +33,7 @@ $(document).ready(function(){
   geoLocatorListener();
   recommendationHandler();
   recommendationSubmit();
+  loginListener();
 
 });
 
@@ -132,6 +133,14 @@ var recommendationSubmit = function() {
         console.log(error)
       })
     })
+}
+
+var loginListener = function (){
+  $('.curtains').on('click', '#login-link', function(event){
+    event.preventDefault();
+    console.log("prevent!")
+    $("#splash-box-1").delay(100).fadeIn();
+  })
 }
 // var userSubmitListener = function() {
 //   $('body').on('submit', '#user-signedit-form', function(event){
