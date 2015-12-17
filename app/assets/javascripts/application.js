@@ -34,7 +34,7 @@ $(document).ready(function(){
   recommendationHandler();
   recommendationSubmit();
   loginListener();
-  endorseHandler(); 
+  // endorseHandler(); 
 
 });
 
@@ -154,11 +154,13 @@ var endorseHandler = function (){
 
     var request = $.ajax({
       url: urlPath,
-      method: 'put'
+      method: 'put',
+      dataType: 'json'
     })
     request.done(function(response){
       console.log(response)
       console.log("yes you made it!!");
+      
     })
     request.fail(function(error){
       console.log(error);
