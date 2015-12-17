@@ -66,9 +66,33 @@
       </ul>
       </div>
       <div class="large-10 columns">
-        <p> Here I am endorsing Chris for his excellent, excellent work as a teammate, coder, raver, and human person.</p>
+        <h3>Recommendations</h3>
+          
+          <div id="recommendations">
+          <% @recommendations.each do |recommendation| %>
+            <div id="recommendation-text">
+              "<%= recommendation.body %>"
+              - <%= recommendation.user.name %>
+            </div>
+          <% end %>
+        </div>
 
-         <p> And more praise for Chris because he's just that good.</p>
+          <% if current_user %>
+            <% if @accountabuddy_relationship || @inverse_accountabuddy_relationship %>
+            <%= link_to "Write a Recommendation!", recommendations_path, id: "recommendation-link" %>
+              <div id="recommendation-box">
+                Your Recommendation:
+                <%= form_for :recommendation, url: '/recommendations', id: "recommendation-form" do |f| %>
+                <%= f.text_field :body %>
+                <%= f.hidden_field :recipient_id, value: @user.id %>
+                <%= f.button "Submit" %>
+                <% end %>
+              </div>
+            <% end %>
+          <% end %>
+          <!-- <p> Here I am endorsing Chris for his excellent, excellent work as a teammate, coder, raver, and human person.</p>
+
+           <p> And more praise for Chris because he's just that good.</p> -->
       </div>
      </div>
     <p>

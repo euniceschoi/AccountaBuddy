@@ -13,6 +13,7 @@ class User < ActiveRecord::Base
   has_many :conversations, foreign_key: :recipient_id
   has_many :badges
   has_many :accountabuddy_requests
+  has_many :recommendations
 
   has_secure_password
 
