@@ -37,6 +37,11 @@ body {
 
 }
 
+.innards-left {
+	height: auto;
+	background-color: rgba(255, 255, 255, .8);
+}
+
 #home-nav-bar a{
 	font-family: 'Alegreya Sans', sans-serif;
 	margin-left: 10px;
