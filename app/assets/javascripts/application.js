@@ -31,6 +31,8 @@ $(function () {
 $(document).ready(function(){
   sendMessageListener();
   geoLocatorListener();
+  recommendationHandler();
+  recommendationSubmit();
 
 });
 
@@ -60,8 +62,10 @@ var sendMessageListener = function() {
 
 var geoLocatorListener = function() {
    // $("#map").css('display', 'none');
-    var map = L.mapbox.map('map', 'mapbox.streets');
+   var map = L.mapbox.map('map', 'mapbox.streets');
+    // $("#map").css('display', 'block');
   $("#geolocate").on('click', function(event){
+    //var map = L.mapbox.map('map', 'mapbox.streets'); (merge conflict - if map issue, perhaps uncomment this)
     event.preventDefault();
     event.stopPropagation();
     
@@ -95,6 +99,40 @@ var geoLocatorListener = function() {
   })
 }
 
+var recommendationHandler= function(){
+  $('#user-show-praise-container').on('click', '#recommendation-link', function(event){
+    event.preventDefault();
+    $(this).hide();
+    $("#recommendation-box").fadeIn();
+  })
+}
+
+var recommendationSubmit = function() {
+   $('#user-show-praise').on('submit', '#recommendation-box', function(event){
+
+      event.preventDefault();
+   
+      var recommendationData = $(this).children().serialize();
+      console.log(recommendationData)
+      var request = $.ajax({
+        url: '/recommendations',
+        data: recommendationData,
+        method: 'POST'
+      })
+      request.done(function(response){
+        console.log(response);
+        console.log("FUCK YEAHHHHHHH");
+        
+        $("#recommendations").append(response)
+        $("#recommendation-box #recommendation_body").val("")
+        $("#recommendation-box").fadeOut();
+        $("#recommendation-link").fadeIn();
+      })
+      request.fail(function(error){
+        console.log(error)
+      })
+    })
+}
 // var userSubmitListener = function() {
 //   $('body').on('submit', '#user-signedit-form', function(event){
 //     event.preventDefault();

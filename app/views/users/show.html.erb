@@ -45,16 +45,14 @@
 <div class="innards">
 
 <div class="row">
-  <div id="user-show-about" class="large-6 columns">
-    <h2> Let's Be Friends!</h2>
-    <ul>
-      <li>"<%= @user.about_me %> And also I like to drink a lot of cold-brew coffee and take my energy level to an 11."</li>
-    </ul>
+  <div id="user-show-about" class="large-7 columns">
+    <h2> About Me:</h2>
+      <p>"<%= @user.about_me %> And also I like to drink a lot of cold-brew coffee and take my energy level to an 11."</p>
   </div>
-  <div id="user-show-categories" class="large-6 columns">
+  <div id="user-show-categories" class="large-5 columns">
       <% if @user == current_user  %>
-      <p id="user-show-categories-current">Categories you've joined:</p>
-      <p id="user-show-categories-new"><%= link_to "Ready to push yourself even harder? Click here to add a new category!", categories_path %></p>
+      <p id="user-show-categories-current">Current goals:</p>
+      <p id="user-show-categories-new"><%= link_to "Start a new goal", categories_path %></p>
       <% end %>
   </div>
 </div>
@@ -68,9 +66,33 @@
       </ul>
       </div>
       <div class="large-10 columns">
-        <p> Here I am endorsing Chris for his excellent, excellent work as a teammate, coder, raver, and human person.</p>
+        <h3>Recommendations</h3>
+          
+          <div id="recommendations">
+          <% @recommendations.each do |recommendation| %>
+            <div id="recommendation-text">
+              "<%= recommendation.body %>"
+              - <%= recommendation.user.name %>
+            </div>
+          <% end %>
+        </div>
 
-         <p> And more praise for Chris because he's just that good.</p>
+          <% if current_user %>
+            <% if @accountabuddy_relationship || @inverse_accountabuddy_relationship %>
+            <%= link_to "Write a Recommendation!", recommendations_path, id: "recommendation-link" %>
+              <div id="recommendation-box">
+                Your Recommendation:
+                <%= form_for :recommendation, url: '/recommendations', id: "recommendation-form" do |f| %>
+                <%= f.text_field :body %>
+                <%= f.hidden_field :recipient_id, value: @user.id %>
+                <%= f.button "Submit" %>
+                <% end %>
+              </div>
+            <% end %>
+          <% end %>
+          <!-- <p> Here I am endorsing Chris for his excellent, excellent work as a teammate, coder, raver, and human person.</p>
+
+           <p> And more praise for Chris because he's just that good.</p> -->
       </div>
      </div>
     <p>

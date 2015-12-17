@@ -1,24 +1,93 @@
-#map {
-  position:absolute;
-  left:19%;
-  width:80%;
-  margin-top:2.5%;
+#categories-index-container{
+  height: 800px;
+  width: 237px;
+  margin-left: 1px;
+  margin-top: -10px;
+  background-color: white;
+  position: fixed;
+}
+
+
+#categories-index-table{
+  position: fixed; 
+  left: 0px;
+  border: none;
+}
+
+#categories-index-table table{
+  border: none;
+}
+
+#categories-index-table h1{
+  color: #1a5c57;
+}
+
+#categories-index-table td a{
+  color: #498f87;
+  float: right;
+  margin-right: 15px;
+  font-size: 1.5em;
+  font-weight: bold;
+}
+
+#categories-show-table {
+  position: fixed; 
+  left: 0px;
+  border: none;
+}
+
+#categories-index-map {
+  position:fixed;
+  left:16%;
+  width:90%;
+  margin-top:4.8%;
   top:0;bottom:0;
   height:95%;
 
 }
 
-#side-bar{
-  position:absolute;
-  width:19%;
-  height:90%;
-  margin-top: 3%;
-  top:0;left:0;
-  overflow:hidden;
-  border-right:1px solid rgba(0,0,0,0.25);
+#categories-show-container{
+  height: 800px;
+  width: 375px;
+  margin-left: 1px;
+  margin-top: -10px;
+  background-color: white;
+  position: fixed;
 }
 
-#listing {
-  height:90%;
-  overflow:auto;
+#categories-show-subscribe  button{
+  background-color: #498f87;
+}
+
+#categories-show-table{
+  position: fixed; 
+  left: 0px;
+  border: none;
+}
+
+#categories-show-table table{
+  border: none;
+  width: 370px;
+}
+
+#categories-show-table h1{
+  color: #1a5c57;
+  text-align: center;
+}
+
+#categories-show-table td a{
+  color: #498f87;
+  float: right;
+  margin-right: 15px;
+  font-size: 1.8em;
+  font-weight: bold;
+}
+
+#categories-show-map{
+  position:fixed;
+  left:26%;
+  width:75%;
+  margin-top:4.8%;
+  top:0;bottom:0;
+  height:95%;
 }

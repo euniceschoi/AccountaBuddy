@@ -1,18 +1,21 @@
 <%= render 'layouts/navigation' %>
-<div class="innards">
-	<h1>Listing categories</h1>
-	<table>
-	  <tr>
-	    <th>Category</th>
-	  </tr>
-	  <% @categories.each do |category| %>
-	    <tr>
-	      <td><%=link_to "#{category.name}", category_path(category.id) %></td>
-	    </tr>
-	  <% end %>
-	</table>
+<div id="categories-index-container">
+	<div id="categories-index-table">
+				<table>
+				  <tr>
+				    <th><h1>Categories</h1></th>
+				  </tr>
+				  <% @categories.each do |category| %>
+				    <tr>
+				      <td><%=link_to "#{category.name}", category_path(category.id) %></td>
+				    </tr>
+				  <% end %>
+				</table>
+	</div>
 </div>
 
-<div id="map">
-  <%= render 'map_index_all' %>
-</div> 
+
+	<div id="categories-index-map">
+
+	  <%= render 'map_index_all' %>
+	</div> 
