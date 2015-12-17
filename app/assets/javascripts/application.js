@@ -62,9 +62,9 @@ var sendMessageListener = function() {
 
 var geoLocatorListener = function() {
    // $("#map").css('display', 'none');
-   var map = L.mapbox.map('map', 'mapbox.streets');
     // $("#map").css('display', 'block');
   $("#geolocate").on('click', function(event){
+   var map = L.mapbox.map('map', 'mapbox.streets');
     //var map = L.mapbox.map('map', 'mapbox.streets'); (merge conflict - if map issue, perhaps uncomment this)
     event.preventDefault();
     event.stopPropagation();
