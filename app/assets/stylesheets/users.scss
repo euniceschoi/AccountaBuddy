@@ -2,50 +2,37 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-@import url(https://fonts.googleapis.com/css?family=Alegreya+Sans:900);
+@import url(https://fonts.googleapis.com/css?family=Yanone+Kaffeesatz:400,700|Quicksand:400,700);
 
 //the background images for the splash page
 img.bg {
-  /* Set rules to fill background */
-  min-height: 100%;
-  min-width: 1024px;
-  
-  /* Set up proportionate scaling */
-  width: 100%;
-  height: auto;
-  
-  /* Set up positioning */
-  position: fixed;
-  top: -5;
-  left: 0;
-
-  z-index: -1;
+backbround-size: cover; 
 }
 
 
 //styling for the users#index
 
 .nav-bar-home{
-  margin-top: 45px;
-  margin-left: 125px;
+  margin-top: 90px;
+  margin-left: 480px;
   margin-bottom: 5px;
   position: absolute;
-  font-size: 6em;
+  font-size: 12em;
 
 }
 
 .nav-bar-home a{
-  color: #1c8975;
-  font-family: 'Alegreya Sans', sans-serif;
-  font-weight: bold;
+  font-family: 'Yanone Kaffeesatz';
+  font-weight: '700';
+  color: rgba(24,102,88, 0.8);
+  text-shadow: 1px 4px 6px #def, 0 0 0 #000, 1px 4px 6px #def;
 }
 
 
 .nav-bar-user{
-  position: absolute;
   font-size: 2.5em;
-  margin-left: 420px;
-  margin-top: 150px;
+  float: right;
+  height: 10px;
 }
 
 .nav-bar-user a{
