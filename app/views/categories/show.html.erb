@@ -18,7 +18,14 @@
      
       <% @users_in_category.each do |user| %>
       <tr>
-        <td><%= link_to "#{user.username}", user_path(user.id) %></ltd>
+        <td><%= link_to "#{user.username}", user_path(user.id) %></td>
+         <td>
+            <%= form_for :recipientid, :url => {:action=>"create", :controller=>"friend_requests"} do |f| %>
+            <%= f.button "Add as Friend"%>
+            <%= f.hidden_field :category_id, value: @category.id %>
+            <%= f.hidden_field :recipient_id, value: user.id %>
+            <% end %>
+        </td>
       <% end %>
 
   </div>
