@@ -45,18 +45,14 @@
 <div class="innards">
 
 <div class="row">
-  <div id="user-show-about" class="large-6 columns">
-    <% if @user.id != current_user.id && @friendship == nil %>
-    <h2><%= link_to "Let's Be Friends!", friend_request_path(category_id: @id, value2: :tag_value), method: :create %></h2>
-    <% end %>
-    <ul>
-      <li>"<%= @user.about_me %> And also I like to drink a lot of cold-brew coffee and take my energy level to an 11."</li>
-    </ul>
+  <div id="user-show-about" class="large-7 columns">
+    <h2> About Me:</h2>
+      <p>"<%= @user.about_me %> And also I like to drink a lot of cold-brew coffee and take my energy level to an 11."</p>
   </div>
-  <div id="user-show-categories" class="large-6 columns">
+  <div id="user-show-categories" class="large-5 columns">
       <% if @user == current_user  %>
-      <p id="user-show-categories-current">Categories you've joined:</p>
-      <p id="user-show-categories-new"><%= link_to "Ready to push yourself even harder? Click here to add a new category!", categories_path %></p>
+      <p id="user-show-categories-current">Current goals:</p>
+      <p id="user-show-categories-new"><%= link_to "Start a new goal", categories_path %></p>
       <% end %>
   </div>
 </div>

@@ -1,39 +1,30 @@
 <%= render 'layouts/navigation' %>
 
-<div class="innards">
-<div id="side-bar">
-	<h1>Your Category</h1>
+<div id="categories-show-container">
+  <div id="categories-show-table">
+    <table>
+      <tr>
+   	    <th><h1><%= @category.name %><h1></th>
+      </tr>
+        <%= flash[:error] %>
 
-	<p><%= @category.name %></p>
+        <% if @user_category != true%>
+        <%= form_for :category, :url => {:action=>"create", :controller=>"user_categories"} do |f| %>
+          <div id="categories-show-subscribe"><%= f.button "Subscribe to " + @category.name.upcase + " so others can find me" %></div>
+          <%= f.hidden_field :category_id, value: @category.id %>
+          <%= f.hidden_field :user_id, value: current_user.id %>
+        <% end %>
+        <% end %>
+     
+      <% @users_in_category.each do |user| %>
+      <tr>
+        <td><%= link_to "#{user.username}", user_path(user.id) %></ltd>
+      <% end %>
 
-  <%= flash[:error] %>
-
-  <% if @user_category != true%>
-  <%= form_for :category, :url => {:action=>"create", :controller=>"user_categories"} do |f| %>
-    <%= f.button "Subscribe to " + @category.name + " so others can find me!" %>
-    <%= f.hidden_field :category_id, value: @category.id %>
-    <%= f.hidden_field :user_id, value: current_user.id %>
-  <% end %>
-  <% end %>
-
-
-<div id="listing">
-<!-- putting all people in this category here for now -->
-<!-- implementing add friend button -->
-<ul>
-  <% @users_in_category.each do |user| %>
-    <li><%= user.username %></li>
-    <%= form_for :recipientid, :url => {:action=>"create", :controller=>"friend_requests"} do |f| %>
-    <%= f.hidden_field :category_id, value: @category.id %>
-    <%= f.hidden_field :recipient_id, value: user.id %>
-    <%= f.button "Add as Friend"%>
-    <% end %>
-  <% end %>
-</ul>
-</div>
+  </div>
 </div>
 
-<div id="map">
+<div id="categories-show-map">
   <%= render 'map_index_one_category' %>
 </div>
 
