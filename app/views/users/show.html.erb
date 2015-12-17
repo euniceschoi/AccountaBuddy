@@ -47,7 +47,7 @@
 <div class="row">
   <div id="user-show-about" class="large-7 columns">
     <h2> About Me:</h2>
-      <p>"<%= @user.about_me %> And also I like to drink a lot of cold-brew coffee and take my energy level to an 11."</p>
+      <p>"<%= @user.about_me %>"</p>
   </div>
   <div id="user-show-categories" class="large-5 columns">
       <% if @user == current_user  %>
@@ -90,9 +90,6 @@
               </div>
             <% end %>
           <% end %>
-          <!-- <p> Here I am endorsing Chris for his excellent, excellent work as a teammate, coder, raver, and human person.</p>
-
-           <p> And more praise for Chris because he's just that good.</p> -->
       </div>
      </div>
     <p>

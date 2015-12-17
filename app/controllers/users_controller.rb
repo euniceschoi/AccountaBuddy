@@ -98,25 +98,32 @@ class UsersController < ApplicationController
 
   def update
     @user = User.find(params[:id])
-    if current_user && current_user.id = @user.id
-      longitude = params["user_location"][0].to_f
-      latitude = params["user_location"][1].to_f
-      @user.update_attributes(latitude: latitude, longitude: longitude)
-      if @user.save(validate: false)
-        respond_to do |format|
-          format.html
-          format.json { render json: @user }
-        end
-      else
-        @user.errors.full_messages
-        respond_to do |format|
-          format.html
-          format.json { render json: @user.errors }
-        end
-      end
+    @user.update(user_params)
+    if @user.save 
+      redirect_to user_path(@user.id)
     else
-      redirect_to root_path
+      flash[:error] = "Update was not successful. Please try again." 
+      redirect_to edit_user_path(@user.id)
     end
+    # if current_user && current_user.id = @user.id
+    #   longitude = params["user_location"][0].to_f
+    #   latitude = params["user_location"][1].to_f
+    #   @user.update_attributes(latitude: latitude, longitude: longitude)
+    #   if @user.save(validate: false)
+    #     respond_to do |format|
+    #       format.html
+    #       format.json { render json: @user }
+    #     end
+    #   else
+    #     @user.errors.full_messages
+    #     respond_to do |format|
+    #       format.html
+    #       format.json { render json: @user.errors }
+    #     end
+    #   end
+    # else
+    #   redirect_to root_path
+    # end
   end
 
   def delete
