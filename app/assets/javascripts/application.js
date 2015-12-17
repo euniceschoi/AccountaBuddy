@@ -59,14 +59,16 @@ var sendMessageListener = function() {
 }
 
 var geoLocatorListener = function() {
-    // $("#map").css('display', 'block');
+   // $("#map").css('display', 'none');
     var map = L.mapbox.map('map', 'mapbox.streets');
   $("#geolocate").on('click', function(event){
     event.preventDefault();
     event.stopPropagation();
+    
     var locate = map.locate();
     var myLayer = L.mapbox.featureLayer().addTo(map);
     console.log("IT WORKED!")
+    
     map.on('locationfound', function(event){
         console.log(event);
         var latitude = event.latlng.lat
@@ -82,12 +84,12 @@ var geoLocatorListener = function() {
               'title': 'Here I am!',
               'marker-color': '#ff8888',
               'marker-symbol': 'star'
-          }
+          }  
         })
-        $('#map').delay(1000).fadeOut()
+
+        $('#map').css('display', 'none')
         $("#latitude-fill input").val(latitude)
         $("#longitude-fill input").val(longitude)
-
         $("#geolocate").hide();
     });
   })
