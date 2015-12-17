@@ -18,7 +18,7 @@ class User < ActiveRecord::Base
   has_secure_password
 
   geocoded_by :address
-  reverse_geocoded_by :latitude, :longitude  #, :address => :location
+  reverse_geocoded_by :latitude, :longitude, :address => :location
   after_validation :reverse_geocode  # auto-fetch address
   # after_validation :geocode, :if => :address_changed?
   # validates_presence_of :name, :username, :email, :password, :about_me, :gender
