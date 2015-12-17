@@ -1,7 +1,9 @@
 
-	<p class="nav-bar-home"><%= link_to "AccountaBuddy", '/'%></p>
+
+
 	<% if current_user %>
 	  <p class="nav-bar-user">Signed in as <%= current_user.name%> <%=link_to "Profile", user_path(current_user.id) %> | <%= link_to "Logout", '/logout' %></p>
 	<% else %>
 	  <p class="nav-bar-user"><%= link_to 'Login', '/login', id: 'login-link' %> | <%= link_to 'Signup', '/signup' %></p>
 	<% end %>
+
