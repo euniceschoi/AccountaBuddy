@@ -14,7 +14,11 @@ class SessionsController < ApplicationController
       puts request.env['omniauth.auth'].to_yaml
       @user = User.create_with_omniauth(request.env['omniauth.auth'])
       session[:user_id] = @user.id
-      redirect_to edit_user_path(@user.id)
+      if @user.latitude == nil
+        redirect_to edit_user_path(@user.id)
+      else 
+        redirect_to user_path(@user.id)
+      end
     else
       @user = User.find_by_email(params[:email])
       if @user && @user.authenticate(params[:password])

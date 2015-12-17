@@ -52,6 +52,7 @@ class UsersController < ApplicationController
     @badges = @user.badges
     @accountabuddy_requests = AccountabuddyRequest.where(recipient_id: @user.id)
     @recommendations = Recommendation.where(recipient_id: @user.id)
+    
 
     if @user.id != current_user.id
       if Friendship.find_by(user_id: current_user.id , friend_id: @user.id)
