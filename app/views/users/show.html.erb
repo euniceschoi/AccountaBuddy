@@ -52,6 +52,10 @@
   <div id="user-show-categories" class="large-5 columns">
       <% if @user == current_user  %>
       <p id="user-show-categories-current">Current goals:</p>
+      <% @user_categories.each do |category| %>
+       <%= link_to category.category.name, category_path(category.category.id) %>
+       
+      <% end %>
       <p id="user-show-categories-new"><%= link_to "Start a new goal", categories_path %></p>
       <% end %>
   </div>
