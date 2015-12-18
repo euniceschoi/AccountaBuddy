@@ -203,10 +203,13 @@ backbround-size: cover;
 
 #user-show-friends {
   border-right: 1px #c1c7c6 solid;
+  text-align: center;
+  margin: 0px auto;
 }
 
 #user-show-friends h2{
   color: #1a5c57;
+  text-align: center;
 }
 
 #user-show-friends a{
@@ -214,16 +217,19 @@ backbround-size: cover;
   float: left;
   padding: 20px;
   font-size: 1.2em;
+  text-align: center;
 }
 
 .pending-sent{
-  margin-top: 50px;
+
   font-style: italic;
   color: #86807a;
 }
 
+
 #user-show-accountabuddies h2{
   color: #1a5c57;
+  text-align: center;
 
 }
 
@@ -232,6 +238,7 @@ backbround-size: cover;
   float: left;
   padding: 20px;
   font-size: 1.2em;
+  text-align: center;
 
 }
 
@@ -241,10 +248,10 @@ backbround-size: cover;
   color: #86807a;
 }
 
-.pending-sent {
-  margin-top: 20px;
-  float: left;
+#user-show-accountabuddies p{
+  text-align: center;
 }
+
 
 
 //styling for user#new

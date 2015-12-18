@@ -118,18 +118,61 @@ nav.top-bar{
 }
 .myButton:hover {
   background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #6c7c7c), color-stop(1, #768d87));
-  background:-moz-linear-gradient(top, #6c7c7c 5%, #c7891d 100%);
-  background:-webkit-linear-gradient(top, #6c7c7c 5%, #c7891d 100%);
-  background:-o-linear-gradient(top, #6c7c7c 5%, #c7891d 100%);
-  background:-ms-linear-gradient(top, #6c7c7c 5%, #c7891d 100%);
-  background:linear-gradient(to bottom, #6c7c7c 5%, #c7891d 100%);
-  filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#6c7c7c', endColorstr='#768d87',GradientType=0);
-  background-color:#6c7c7c;
+  background:-moz-linear-gradient(top, #1a849c 5%, #5daabb 100%);
+  background:-webkit-linear-gradient(top, #1a849c 5%, #5daabb 100%);
+  background:-o-linear-gradient(top, #1a849c 5%, #5daabb 100%);
+  background:-ms-linear-gradient(top, #1a849c 5%, #5daabb 100%);
+  background:linear-gradient(to bottom, #1a849c 5%, #5daabb 100%);
+  filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#1a849c', endColorstr='#768d87',GradientType=0);
+  background-color:#1a849c;
 }
 .myButton:active {
   position:relative;
   top:1px;
 }
+
+.mySmallButton {
+  -moz-box-shadow:inset 0px 1px 3px 0px #91b8b3;
+  -webkit-box-shadow:inset 0px 1px 3px 0px #91b8b3;
+  box-shadow:inset 0px 1px 3px 0px #91b8b3;
+  background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #768d87), color-stop(1, #6c7c7c));
+  background:-moz-linear-gradient(top, #1a849c 5%, #3899af 100%);
+  background:-webkit-linear-gradient(top, #1a849c 5%, #3899af 100%);
+  background:-o-linear-gradient(top, #1a849c 5%, #3899af 100%);
+  background:-ms-linear-gradient(top, #1a849c 5%, #3899af 100%);
+  background:linear-gradient(to bottom, #1a849c 5%, #3899af 100%);
+  filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#1a849c', endColorstr='#3899af',GradientType=0);
+  background-color:#768d87;
+  -moz-border-radius:5px;
+  -webkit-border-radius:5px;
+  border-radius:5px;
+  border:1px solid #3899af;
+  display:inline-block;
+  cursor:pointer;
+  color:#ffffff;
+  font-family:Arial;
+  font-size:15px;
+  font-weight:bold;
+  padding:1px 12px;
+  text-decoration:none;
+  text-shadow:0px -1px 0px #2b665e;
+  float: right;
+}
+.mySmallButton:hover {
+  background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #6c7c7c), color-stop(1, #768d87));
+  background:-moz-linear-gradient(top, #1a849c 5%, #5daabb 100%);
+  background:-webkit-linear-gradient(top, #1a849c 5%, #5daabb 100%);
+  background:-o-linear-gradient(top, #1a849c 5%, #5daabb 100%);
+  background:-ms-linear-gradient(top, #1a849c 5%, #5daabb 100%);
+  background:linear-gradient(to bottom, #1a849c 5%, #5daabb 100%);
+  filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#1a849c', endColorstr='#768d87',GradientType=0);
+  background-color:#1a849c;
+}
+.mySmallButton:active {
+  position:relative;
+  top:1px;
+}
+
 
 #recommendation-box {
   display:none;
