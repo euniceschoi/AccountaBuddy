@@ -20,7 +20,7 @@ class User < ActiveRecord::Base
   geocoded_by :address
   mount_uploader :attachment
   after_validation :reverse_geocode  # auto-fetch address
-  validates_length_of :password, :in => 6..20
+  # validates_length_of :password, :in => 6..20
 # after_validation :geocode, :if => :address_changed?
   # validates_presence_of :name, :username, :email, :password, :about_me, :gender
   # validates_uniqueness_of :username, :email
