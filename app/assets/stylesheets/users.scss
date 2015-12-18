@@ -25,6 +25,16 @@ backbround-size: cover;
   font-weight: 400;
   color: rgba(24,102,88, 0.8);
 }
+#nav-bar-user-signedin{
+  margin-left: -420px;
+  font-size: 2.1em;
+  float: right;
+  height: 10px;
+}
+
+#nav-bar-user-signedin a{
+  color: #d77544;
+}
 
 
 .nav-bar-user{
@@ -67,13 +77,10 @@ backbround-size: cover;
   color: #3b5998;
 }
 
-
 #splash-box-2{
   margin-top: 100px;
-  margin-left: 200px;
-  width: 1000px;
-  height: 600px;
-  text-align: right;
+  margin-left: 700px;
+
 }
 
 #splash-box-3{
@@ -120,15 +127,40 @@ backbround-size: cover;
   font-size: 1.2em;
 }
 
-#user-show-about p{
-  color: gray;
-  margin-top: 30px;
+
+.quote {
+    font-family: sans-serif;
+    color: #86807a;
+    font-size:16pt;
+    padding-top:30px;
+    padding-bottom:15px;
+    text-align: left;
+    max-width: 440px;
+    line-height: 32px;
+
+}
+#speech-mark-left {
+    font-weight: bold;
+    color:gray;
+    font-size:90pt;
+    vertical-align: top;
+    float:left;
+    margin-top: -10px;
+    margin-left: -30px;
 }
 
-#user-show-about h2{
-  color: #356f67;
-  margin-left: -20px;
+#speech-mark-right {
+  font-weight: bold;
+  color:gray;
+  font-size:90pt;
+  vertical-align: top;
+  margin-top: 70px;
+  float:right;
+  margin-bottom: -50px;
 }
+
+
+
 
 #user-show-categories{
   border-left: 1px #c1c7c6 solid;
@@ -136,8 +168,7 @@ backbround-size: cover;
 
 #user-show-categories-new{
   text-align: right;
-  font-size: 2em;
-  margin-top: 75px;
+  font-size: 1.5em;
 }
 
 #user-show-categories-new a{
@@ -145,7 +176,7 @@ backbround-size: cover;
 }
 
 #user-show-categories-current{
-  font-size: 1.4em;
+  font-size: 1.2em;
   color: #1a5c57;
 }
 
@@ -179,26 +210,35 @@ backbround-size: cover;
 }
 
 #user-show-friends a{
-  color: #a18825;
+  color: #c76d36;
   float: left;
   padding: 20px;
   font-size: 1.2em;
+}
+
+.pending-sent{
+  margin-top: 50px;
+  font-style: italic;
+  color: #86807a;
 }
 
 #user-show-accountabuddies h2{
   color: #1a5c57;
+
 }
 
 #user-show-accountabuddies a{
-  color: #a18825;
+  color: #c76d36;
   float: left;
   padding: 20px;
   font-size: 1.2em;
 
 }
 
-#user-show-accountabuddies ul h6{
+#user-show-accountabuddies ul p{
   margin-top: 50px;
+  font-style: italic;
+  color: #86807a;
 }
 
 .pending-sent {
@@ -216,6 +256,7 @@ backbround-size: cover;
 
 .user-signedit-box {
   margin: 0px auto;
+  padding-top: 20px;
   padding-bottom: 50px;
   width: 700px;
   background-color: rgba(255, 255, 255, .9);
@@ -238,8 +279,9 @@ backbround-size: cover;
   font-family: 'Alegreya Sans', sans-serif;
   text-align: center;
   color: white;
-  font-size: 5em;
+  font-size: 4em;
   text-shadow: 2px 2px 2px rgba(150, 150, 150, 0.49);
+  padding-bottom: 50px; 
 
 }
 

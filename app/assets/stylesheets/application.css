@@ -43,8 +43,10 @@ body {
 }
 
 #home-nav-bar a{
-	font-family: 'Alegreya Sans', sans-serif;
+	font-family: 'Yanone Kaffeesatz';
+  font-weight: 400;
 	margin-left: 10px;
+  font-size: 2em;
 }
 
 nav.top-bar{
@@ -53,8 +55,8 @@ nav.top-bar{
 
 }
 
-nav.top-bar a{
-	font-size: 1.7em;
+.top-bar-section ul li a{
+	font-size: 1em;
 }
 
 .top-bar-section li:not(.has-form) a:not(.button):hover{
