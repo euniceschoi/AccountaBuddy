@@ -12,7 +12,11 @@
             <p>AccountaBuddy Request Sent<p>
           <% else %>
             <%= form_for :recipient, :url => {:action=>"create", :controller=>"accountabuddy_requests"} do |f| %>
+            <% if current_user.id == @friend.id %>
+            <%= f.button "Become AccountaBuddies with "+ @user.name, :class => "myButton"  %>
+            <% else %>
             <%= f.button "Become AccountaBuddies with "+ @friend.name, :class => "myButton"  %>
+            <% end %>
             <%= f.hidden_field :friendship_id, value: @friendship.id %>
             <%= f.hidden_field :recipient_id, value: @friend.id %>
             <% end %>
@@ -43,7 +47,11 @@
 
   <div class="row">
     <div class="large-12 columns">
+      <% if current_user.id == @friend.id %>
+      <h4 id="chat-history-header">Chat history with <%= link_to @user.name, user_path(@user.id) %>:</h4>
+      <% else %>
       <h4 id="chat-history-header">Chat history with <%= @friend.name %>:</h4>
+      <% end %>
         <% if @messages %>
         <ul id="messages">
           <% @messages.each do |message| %>

@@ -1,6 +1,10 @@
- <div id="recommendation-text">
-	"<%= recommendation.body %>"
-	- <%= recommendation.user.name %>
-	<img src="<%= recommendation.user.attachment%>">
-	<br>
- </div>
+ <tr>  
+  <td style="float:left"><img  src="<%= recommendation.user.attachment%>"></td>
+  <td style="width:80%">
+    <div id="recommendation-text">
+      "<%= recommendation.body %>"
+      <br>
+      - <%= recommendation.user.name %>   
+    </div>
+  </td>
+</tr>

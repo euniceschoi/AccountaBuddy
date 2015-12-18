@@ -125,7 +125,7 @@ var recommendationSubmit = function() {
         console.log(response);
         console.log("FUCK YEAHHHHHHH");
         
-        $("#recommendations").append(response)
+        $("#recommendation-append").append(response)
         $("#recommendation-box #recommendation_body").val("")
         $("#recommendation-box").fadeOut();
         $("#recommendation-link").fadeIn();

@@ -58,26 +58,27 @@
 </div>
 <div id="user-show-praise-container" class="row">
   <div id="user-show-praise" class="large-12 columns">
+        <h3>Recommendations</h3>
      <div class="row">
       <div class="large-2 columns">
-      <ul>
-        <li><img src="<%= asset_path( 'eunice-tea.jpg' ) %>"></li>
-        <li><img src="<%= asset_path( 'eunice-tea.jpg' ) %>"></li>
-      </ul>
       </div>
       <div class="large-10 columns">
-        <h3>Recommendations</h3>
-          
-          <div id="recommendations">
-          <% @recommendations.each do |recommendation| %>
-            <div id="recommendation-text">
-              "<%= recommendation.body %>"
-              - <%= recommendation.user.name %>
-              <img src="<%= recommendation.user.attachment%>">
-              <br>
-            </div>
-          <% end %>
-        </div>
+
+        <table style="border-style:none" id="recommendation-append">
+            <% @recommendations.each do |recommendation| %>
+          <tr >  
+              <td style="float:left"><img  src="<%= recommendation.user.attachment%>"></td>
+              <td style="width:80%">
+                <div id="recommendation-text">
+                  "<%= recommendation.body %>"
+                  <br>
+                  - <%= recommendation.user.name %>   
+                </div>
+              </td>
+          </tr>
+              
+            <% end %>
+        </table>
 
           <% if current_user %>
             <% if @accountabuddy_relationship || @inverse_accountabuddy_relationship %>
