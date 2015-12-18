@@ -46,8 +46,13 @@
 
 <div class="row">
   <div id="user-show-about" class="large-7 columns">
-    <h2> About Me:</h2>
-      <p>"<%= @user.about_me %>"</p>
+
+            <div class="quote">
+              <span id="speech-mark-left">&ldquo;</span>
+              <%= @user.about_me %>
+              <span id="speech-mark-right">&rdquo;</span>
+            </div>
+
   </div>
   <div id="user-show-categories" class="large-5 columns">
       <% if @user == current_user  %>
@@ -57,6 +62,7 @@
        
       <% end %>
       <p id="user-show-categories-new"><%= link_to "Start a new goal", categories_path %></p>
+
       <% end %>
   </div>
 </div>
@@ -92,7 +98,7 @@
                 <%= form_for :recommendation, url: '/recommendations', id: "recommendation-form" do |f| %>
                 <%= f.text_field :body %>
                 <%= f.hidden_field :recipient_id, value: @user.id %>
-                <%= f.button "Submit" %>
+                <%= f.button "Submit", :class => "myButton" %>
                 <% end %>
               </div>
             <% end %>
@@ -106,7 +112,7 @@
   <div class="row">
     <div id="user-show-friends" class="large-5 columns">
 
-      <h2>Your Friends:</h2>
+      <h2>Your Friends</h2>
         <ul>
           <% @just_friends.each do |friendship| %>
               <%= link_to friendship_path(friendship.id) do%>
@@ -114,29 +120,31 @@
               <% end %>
           <% end %>
         </ul>
-
-         <h6 class="pending-sent">Pending Friend Requests You've Sent:</h6>
-        <ul>
-          <% @pending_requests.each do |pending_request| %>
-           <li><%= pending_request.recipient.name %></li>
-          <% end %>
-        </ul>
-
-        <h6 class="pending-sent">Friend Requests Awaiting Your Approval:</h6>
-
-            <% @friend_requests.each do |friend_request| %>
-              <ul>
-              <li><%= friend_request.user.name %></li>
-                <%= form_tag friend_request_path(friend_request.id), method: 'put' do %>
-                <%= submit_tag "Accept" %>
+        <div class="row">
+          <div class="large-12 columns">
+             <p class="pending-sent">Pending Friend Requests You've Sent</p>
+            <ul>
+              <% @pending_requests.each do |pending_request| %>
+               <li><%= pending_request.recipient.name %></li>
               <% end %>
-            <% end %>
-            </ul>
-
+            </ul> 
+            <div class="large-12 columns">
+              <p class="pending-sent">Friend Requests Awaiting Your Approval</p>
+                  <% @friend_requests.each do |friend_request| %>
+                    <ul>
+                    <li><%= friend_request.user.name %></li>
+                      <%= form_tag friend_request_path(friend_request.id), method: 'put' do %>
+                      <%= submit_tag "Accept", :class => "mySmallButton" %>
+                    <% end %>
+                  <% end %>
+                  </ul>
+            </div>
+        </div>
     </div>
+  </div>
     <div id="user-show-accountabuddies" class="large-7 columns">
 
-    <h2>Your AccountaBuddies: </h2>
+    <h2>Your AccountaBuddies </h2>
       <ul>
         <% @accountabuddies.each do |accountabuddy| %>
               <%= link_to friendship_path(accountabuddy.id) do%>
@@ -145,7 +153,7 @@
         <% end %>
       </ul>
       <ul>
-        <h6> AccountaBuddy Requests Awaiting Your Approval:</h6>
+        <p> AccountaBuddy Requests Awaiting Your Approval</p>
         <% if @accountabuddy_requests %>
               <% @accountabuddy_requests.each do |request| %>
 
@@ -153,7 +161,7 @@
                 <% else %>
                   <li><%= request.user.name %></li>
                     <%= form_tag accountabuddy_request_path(request.id), method: 'put' do %>
-                    <%= submit_tag "Accept" %>
+                    <span><%= submit_tag "Accept", :class => "mySmallButton" %></span>
                   <% end %>
                 <% end %>
               <% end %>
