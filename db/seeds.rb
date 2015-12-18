@@ -15,7 +15,7 @@ badges = Badge.create!([
 	])
 
 users = User.create!([
-	{name: "Eunice", username: "eunice", longitude: -122.392727, latitude: 37.785996, email: 'eunice@gmail.com', password: '123456', about_me: "I'm happy!", gender: "female"},
+	# {name: "Eunice", username: "eunice", longitude: -122.392727, latitude: 37.785996, email: 'eunice@gmail.com', password: '123456', about_me: "I'm happy!", gender: "female"},
 	{name: "Chris", username: "koske", longitude: -122.404293, latitude: 37.787505, email: 'koske@gmail.com', password: '123456', about_me: "I'm optimistic!", gender: "male"},
 	{name: "Jenna", username: "jenna", longitude: -122.397298, latitude: 37.789625, email: 'jenna@gmail.com', password: '123456', about_me: "I'm creative!", gender: "female"},
 	{name: "Tanya", username: "tanya", longitude:  -122.399701, latitude: 37.787776, email: 'tanya@gmail.com', password: '123456', about_me: "I'm joyful!", gender: "female"},
@@ -51,9 +51,7 @@ user_categories = UserCategory.create!([
 	{user_id: 9, category_id: 2},
 	{user_id: 10, category_id: 1},
 	{user_id: 10, category_id: 2},
-	{user_id: 11, category_id: 1},
-	{user_id: 12, category_id: 1},
-	{user_id: 12, category_id: 2} ])
+	{user_id: 11, category_id: 1}])
 
 friendships = Friendship.create!([
 	{user_id: 1, friend_id: 2, category_id: 1, accountabuddy: true},
@@ -69,7 +67,6 @@ friendships = Friendship.create!([
 	{user_id: 2, friend_id: 7, category_id: 1, accountabuddy: false },
 	{user_id: 2, friend_id: 8, category_id: 1, accountabuddy: false },
 	{user_id: 2, friend_id: 10, category_id: 1, accountabuddy: false },
-	{user_id: 2, friend_id: 12, category_id: 1, accountabuddy: false },
 	{user_id: 3, friend_id: 1, category_id: 1, accountabuddy: false },
 	{user_id: 3, friend_id: 5, category_id: 1, accountabuddy: true },
 	{user_id: 3, friend_id: 7, category_id: 1, accountabuddy: false },
@@ -81,7 +78,6 @@ friendships = Friendship.create!([
 	{user_id: 4, friend_id: 8, category_id: 2, accountabuddy: false },
 	{user_id: 4, friend_id: 9, category_id: 2, accountabuddy: false },
 	{user_id: 4, friend_id: 10, category_id: 2, accountabuddy: false },
-	{user_id: 4, friend_id: 12, category_id: 2, accountabuddy: false },
 	{user_id: 5, friend_id: 1, category_id: 1, accountabuddy: false },
 	{user_id: 5, friend_id: 3, category_id: 1, accountabuddy: true },
 	{user_id: 6, friend_id: 1, category_id: 1, accountabuddy: false },

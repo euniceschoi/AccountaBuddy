@@ -44,14 +44,16 @@ var geoJson = [];
         'name': '<%= user_category.user.username%>',
         'about': 'You are Here',
         'url': "/users/"+ "<%=user_category.user_id%>",
-        'user_id': '<%= user_category.user_id %>'
+        'user_id': '<%= user_category.user_id %>',
+        'image': '<%=user_category.user.attachment %>'
         <% else %>
         'marker-symbol': 'circle',
         'marker-size': 'large',
         'name': '<%= user_category.user.username%>',
         'about': '<%= user_category.user.about_me%>',
         'url': "/users/"+ "<%=user_category.user_id%>",
-        'user_id': '<%= user_category.user_id %>'
+        'user_id': '<%= user_category.user_id %>',
+        'image': '<%=user_category.user.attachment%>'
         <% end %>
 
 
@@ -66,7 +68,7 @@ myLayer.on('layeradd', function(e) {
   feature = marker.feature;
     // Create custom popup content
     var popupContent =  '<a target="_blank" class="popup" href="' + feature.properties.url + '">' +
-    '<img src="' + feature.properties.image + '" />' + "  " +
+    '<img style="width:60px; height:60px" src="' + feature.properties.image + '" />' + "  " +
     '<span style="font-size:20px">'+feature.properties.name+'</span><br>' +
     '<span style="font-size:18px">'+feature.properties.about+'</span>'
     '</a>';
