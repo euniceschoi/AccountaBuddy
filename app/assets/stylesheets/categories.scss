@@ -1,5 +1,5 @@
 #categories-index-container{
-  height: 800px;
+  height: 1000px;
   width: 237px;
   margin-left: 1px;
   margin-top: -10px;
@@ -59,6 +59,7 @@
 #categories-show-table table{
   border: none;
   width: 370px;
+
 }
 
 #categories-show-table h1{
@@ -76,9 +77,9 @@
 
 #categories-index-map {
   position:fixed;
-  left:16%;
+  left:16.5%;
   width:90%;
-  margin-top:4.8%;
+  margin-top:3.2%;
   top:0;bottom:0;
   height:95%;
 
@@ -88,7 +89,7 @@
   position:fixed;
   left:26%;
   width:75%;
-  margin-top:4.8%;
+  margin-top:3.1%;
   top:0;bottom:0;
   height:95%;
 }
