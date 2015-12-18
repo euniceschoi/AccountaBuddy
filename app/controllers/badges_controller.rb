@@ -9,7 +9,7 @@ class BadgesController < ApplicationController
       badge = Badge.find(params[:id])
       badge.update(points: badge.points.to_i + 1 )
       badge.save
-      redirect_to_user_path(badge.user.id)
+      redirect_to user_path(badge.user.id)
 
 
       # respond_to do |format|
