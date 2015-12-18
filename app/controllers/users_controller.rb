@@ -52,7 +52,7 @@ class UsersController < ApplicationController
     @accountabuddy_requests = AccountabuddyRequest.where(recipient_id: @user.id)
     @recommendations = Recommendation.where(recipient_id: @user.id)
     @user_categories = UserCategory.where(user_id: @user.id)
-    
+
 
     if @user.id != current_user.id
       if Friendship.find_by(user_id: current_user.id , friend_id: @user.id)
@@ -133,7 +133,7 @@ class UsersController < ApplicationController
   private
 
   def user_params
-    params.require(:user).permit(:name, :username, :email, :password, :password_confirmation, :address, :latitude, :longitude, :about_me, :gender, :attachment)
+    params.require(:user).permit(:name, :username, :email, :password, :password_confirmation, :latitude, :longitude, :about_me, :gender, :attachment)
   end
 
 end
