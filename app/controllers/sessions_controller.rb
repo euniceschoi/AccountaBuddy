@@ -1,13 +1,4 @@
 class SessionsController < ApplicationController
-  # def create
-  #   # auth = request.env["omniauth.auth"]
-  #   # user = User.where(:provider => auth['provider'],
-  #   #                   :uid => auth['uid']).first || User.create_with_omniauth(auth)
-  #   # session[:user_id] = user.id
-  #   # redirect_to root_url, :notice => "Signed in!"
-
-
-  # end
 
   def create
     if request.env['omniauth.auth']
@@ -16,7 +7,7 @@ class SessionsController < ApplicationController
       session[:user_id] = @user.id
       if @user.latitude == nil
         redirect_to edit_user_path(@user.id)
-      else 
+      else
         redirect_to user_path(@user.id)
       end
     else
@@ -30,36 +21,13 @@ class SessionsController < ApplicationController
       end
     end
   end
+
   def new
   end
-
-  # def create
-  #   p params
-  #   # user = User.find_by_email(params[:email])
-  #   # # If the user exists AND the password entered is correct.
-  #   # if user && user.authenticate(params[:password])
-  #   #   # Save the user id inside the browser cookie. This is how we keep the user
-  #   #   # logged in when they navigate around our website.
-  #   #   session[:user_id] = user.id
-  #   #   redirect_to user_path(user.id)
-  #   # else
-  #   # # If user's login doesn't work, send them back to the login form.
-  #   #   flash[:error] = "Incorrect password or email. Try again."
-  #   #   redirect_to '/'
-  #   # end
-  # end
 
   def destroy
     session[:user_id] = nil
     redirect_to root_path
   end
 
-  # def new
-  #   redirect_to '/auth/facebook'
-  # end
-
-  # def destroy
-  #   reset_session
-  #   redirect_to root_url, notice => 'Signed out'
-  # end
 end
