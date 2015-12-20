@@ -1,4 +1,5 @@
 class UsersController < ApplicationController
+  before_action :load_user, only: [:show, :edit, :update]
 
   def index
     if params[:search].present?
@@ -16,26 +17,16 @@ class UsersController < ApplicationController
   end
 
   def create
-    p "*" * 50
-    p params
-    @user = User.new(user_params) 
-    if @user.save
-      @badge1 = Badge.new(name: "Fitness", description: "You're a fitness superstar!", user_id: @user.id, badge_image_link: "fitness-badge.png")
-      @badge2 = Badge.new(name: "Diet", description: "You're a Diet superstar!", user_id: @user.id, badge_image_link:"diet-badge.png")
-      @badge3 = Badge.new(name: "Hobbies", description: "You're a Hobbies superstar!", user_id: @user.id, badge_image_link:"hobbies-badge.png")
-      @badge4 = Badge.new(name: "Education", description: "You're a Education superstar!", user_id: @user.id, badge_image_link:"education-badge.png")
-        p "YOU MADE THE REQUEST XHR"
-        if @badge1.save && @badge2.save && @badge3.save && @badge4.save
-          p "You saved the badges"
-          session[:user_id] = @user.id
-          redirect_to user_path(@user.id)
+    @user = User.new(user_params)
 
-        else
-          p "YOU DIDN'T GET THE REQUEST XHR"
-          flash[:error] = "Signup was unsuccessful. Please try again."
-          redirect_to user_path(@user)
-          redirect_to '/signup'
-        end
+    if @user.save
+      @badge1 = Badge.create(name: "Fitness", description: "You're a fitness superstar!", user_id: @user.id, badge_image_link: "fitness-badge.png")
+      @badge2 = Badge.create(name: "Diet", description: "You're a Diet superstar!", user_id: @user.id, badge_image_link:"diet-badge.png")
+      @badge3 = Badge.create(name: "Hobbies", description: "You're a Hobbies superstar!", user_id: @user.id, badge_image_link:"hobbies-badge.png")
+      @badge4 = Badge.create(name: "Education", description: "You're a Education superstar!", user_id: @user.id, badge_image_link:"education-badge.png")
+
+      session[:user_id] = @user.id
+      redirect_to user_path(@user.id)
     else
       flash[:error] = "Signup was unsuccessful. Please try again."
       redirect_to '/signup'
@@ -43,7 +34,6 @@ class UsersController < ApplicationController
   end
 
   def show
-    @user = User.find(params[:id])
     @accountabuddies = @user.friendships.where(accountabuddy:true)
     @just_friends= @user.friendships.where(accountabuddy:false)
     @friend_requests = FriendRequest.where(recipient_id: @user.id, friends: false)
@@ -63,68 +53,19 @@ class UsersController < ApplicationController
       else
       end
     end
-    # VERY IMPORTANT DONT DELETE
-    # # LOGIC FOR _location_show
-    # if current_user && current_user.id = @user.id
-    # address = request.location
-    #   @user.update(address: address)
-    #   if @user.save(validate: false)
-    #     respond_to do |format|
-    #       format.html
-    #       format.json { render json: @user }
-    #     end
-    #   else
-    #     @user.errors.full_messages
-    #     respond_to do |format|
-    #       format.html
-    #       format.json { render json: @user.errors }
-    #     end
-    #   end
-    # end
-    # # LOGIC FOR _location_all
-    # if params[:search].present?
-    #   @users = User.near(params[:search], 25)
-    # else
-    #   @users = User.all
-    # end
-    # respond_to do |format|
-    #   format.html
-    #   format.json { render json: @user }  # respond with the created JSON object
-    # end
   end
 
   def edit
-    @user = User.find(params[:id])
   end
 
   def update
-    @user = User.find(params[:id])
     @user.update(user_params)
-    if @user.save 
+    if @user.save
       redirect_to user_path(@user.id)
     else
-      flash[:error] = "Update was not successful. Please try again." 
+      flash[:error] = "Update was not successful. Please try again."
       redirect_to edit_user_path(@user.id)
     end
-    # if current_user && current_user.id = @user.id
-    #   longitude = params["user_location"][0].to_f
-    #   latitude = params["user_location"][1].to_f
-    #   @user.update_attributes(latitude: latitude, longitude: longitude)
-    #   if @user.save(validate: false)
-    #     respond_to do |format|
-    #       format.html
-    #       format.json { render json: @user }
-    #     end
-    #   else
-    #     @user.errors.full_messages
-    #     respond_to do |format|
-    #       format.html
-    #       format.json { render json: @user.errors }
-    #     end
-    #   end
-    # else
-    #   redirect_to root_path
-    # end
   end
 
   def delete
@@ -132,8 +73,23 @@ class UsersController < ApplicationController
 
   private
 
+  def load_user
+    @user = User.find(params[:id])
+  end
+
   def user_params
-    params.require(:user).permit(:name, :username, :email, :password, :password_confirmation, :latitude, :longitude, :about_me, :gender, :attachment)
+    params.require(:user).permit(
+      :name,
+      :username,
+      :email,
+      :password,
+      :password_confirmation,
+      :latitude,
+      :longitude,
+      :about_me,
+      :gender,
+      :attachment
+    )
   end
 
 end

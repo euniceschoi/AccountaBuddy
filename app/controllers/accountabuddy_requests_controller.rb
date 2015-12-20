@@ -28,4 +28,5 @@ class AccountabuddyRequestsController < ApplicationController
     end
 
   end
+
 end
