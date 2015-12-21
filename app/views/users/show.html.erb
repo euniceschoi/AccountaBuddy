@@ -59,7 +59,7 @@
       <p id="user-show-categories-current">Current goals:</p>
       <% @user_categories.each do |category| %>
        <%= link_to category.category.name, category_path(category.category.id) %>
-       
+
       <% end %>
       <p id="user-show-categories-new"><%= link_to "Start a new goal", categories_path %></p>
 
@@ -76,17 +76,17 @@
 
         <table style="border-style:none" id="recommendation-append">
             <% @recommendations.each do |recommendation| %>
-          <tr >  
+          <tr >
               <td style="float:left"><img  src="<%= recommendation.user.attachment%>"></td>
               <td style="width:80%">
                 <div id="recommendation-text">
                   "<%= recommendation.body %>"
                   <br>
-                  - <%= recommendation.user.name %>   
+                  - <%= recommendation.user.name %>
                 </div>
               </td>
           </tr>
-              
+
             <% end %>
         </table>
 
@@ -127,7 +127,7 @@
               <% @pending_requests.each do |pending_request| %>
                <li><%= pending_request.recipient.name %></li>
               <% end %>
-            </ul> 
+            </ul>
             <div class="large-12 columns">
               <p class="pending-sent">Friend Requests Awaiting Your Approval</p>
                   <% @friend_requests.each do |friend_request| %>
@@ -170,27 +170,4 @@
     </div>
   </div>
 <% end %>
-
-
-
-
-
-
-
-  
-
-
-    
-
-  
-
-
 </div>
-
-<!-- Uncomment code in users_controller show to see these in action -->
-<%#= render 'location_all' %>
-<%#= render 'location_show' %>
-
-
-
-<%#= render 'map_show' %>

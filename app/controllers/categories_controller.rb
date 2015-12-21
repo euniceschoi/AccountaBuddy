@@ -1,16 +1,16 @@
 class CategoriesController < ApplicationController
 
+  before_action :load_user_categories
+
   def index
     @categories = Category.all
-    @user_categories = UserCategory.all
     respond_to do |format|
       format.html
       format.json { render json: @geojson }  # respond with the created JSON object
-    end   
+    end
   end
 
   def show
-    @user_categories = UserCategory.all
     @user = User.find(params[:id])
     @category = Category.find(params[:id])
     @users_in_category = @category.users
@@ -29,6 +29,10 @@ class CategoriesController < ApplicationController
   end
 
   private
+
+  def load_user_categories
+    @user_categories = UserCategory.all
+  end
 
   def category_params
     params.require(:category).permit(:name)
