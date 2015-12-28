@@ -1,7 +1,7 @@
 class FriendRequestsController < ApplicationController
-  before_action :load_category_id
 
   def create
+    @category_id = params[:recipientid][:category_id].to_i
     @friend_request = FriendRequest.new(user_id: current_user.id, recipient_id: params[:recipientid][:recipient_id], category_id: @category_id)
 
     if @friend_request.save
@@ -13,6 +13,7 @@ class FriendRequestsController < ApplicationController
 
   def update
     @friend_request = FriendRequest.find(params[:id])
+    @category_id = @friend_request.category_id
     @friend_request.update(friends: true)
 
     if @friend_request.save
@@ -24,12 +25,6 @@ class FriendRequestsController < ApplicationController
     end
 
     redirect_to user_path(current_user.id)
-  end
-
-  private
-
-  def load_category_id
-    @category_id = @friend_request.category_id
   end
 
 end

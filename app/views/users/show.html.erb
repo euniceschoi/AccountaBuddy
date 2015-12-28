@@ -159,10 +159,13 @@
 
                 <% if request.friendship.accountabuddy == true %>
                 <% else %>
-                  <li><%= request.user.name %></li>
-                    <%= form_tag accountabuddy_request_path(request.id), method: 'put' do %>
-                    <span><%= submit_tag "Accept", :class => "mySmallButton" %></span>
-                  <% end %>
+                  <% if request.user.id == current_user.id %>
+                  <% else %>
+                    <li><%= request.user.name %></li>
+                      <%= form_tag accountabuddy_request_path(request.id), method: 'put' do %>
+                      <span><%= submit_tag "Accept", :class => "mySmallButton" %></span>
+                      <% end %>
+                    <% end %>
                 <% end %>
               <% end %>
         <% end %>
