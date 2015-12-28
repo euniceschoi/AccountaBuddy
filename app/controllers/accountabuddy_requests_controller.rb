@@ -1,7 +1,5 @@
 class AccountabuddyRequestsController < ApplicationController
   def create
-    p "*" * 60
-    p params
     @recipient_id = params[:recipient][:recipient_id].to_i
     @friendship_id = params[:recipient][:friendship_id].to_i
     @accountabuddy_request = AccountabuddyRequest.new(user_id: current_user.id, recipient_id: @recipient_id, friendship_id: @friendship_id)
@@ -15,9 +13,7 @@ class AccountabuddyRequestsController < ApplicationController
   end
 
   def update
-    p params
     @accountabuddy_request = AccountabuddyRequest.find(params[:id])
-    p @accountabuddy_request
     @friendship_id = @accountabuddy_request.friendship_id
     @friendship = Friendship.find(@friendship_id)
     @friendship.update(accountabuddy: true)
