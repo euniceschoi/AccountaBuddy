@@ -56,6 +56,12 @@ class UsersController < ApplicationController
   end
 
   def edit
+    if current_user == @user 
+      @user
+    else
+      flash[:error] = "You cannot edit a different user's account!!"
+      redirect_to user_path(current_user.id) 
+    end
   end
 
   def update
