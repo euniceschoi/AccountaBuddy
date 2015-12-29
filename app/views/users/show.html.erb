@@ -5,6 +5,7 @@
       <img class="profile-image" src="<%=@user.attachment%>">
     </div>
     <div class="large-8 columns">
+    <%= flash[:error] %>
       <% if @user == current_user  %>
         <p id="user-show-header">Hello <%= @user.name %>!</p>
         <p id="user-show-header-2"> What goals will you vanquish today?<p>
