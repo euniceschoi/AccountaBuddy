@@ -16,7 +16,6 @@ badges = Badge.create!([
 	])
 
 users = User.create!([
-	# {name: "Eunice", username: "eunice", longitude: -122.392727, latitude: 37.785996, email: 'eunice@gmail.com', password: '123456', about_me: "I'm happy!", gender: "female"},
 	{name: "Chris", username: "koske", longitude: -122.404293, latitude: 37.787505, email: 'koske@gmail.com', password: '123456', about_me: "I'm optimistic!", gender: "male"},
 	{name: "Jenna", username: "jenna", longitude: -122.397298, latitude: 37.789625, email: 'jenna@gmail.com', password: '123456', about_me: "I'm creative!", gender: "female"},
 	{name: "Tanya", username: "tanya", longitude:  -122.399701, latitude: 37.787776, email: 'tanya@gmail.com', password: '123456', about_me: "I'm joyful!", gender: "female"},

@@ -9,7 +9,7 @@ class UsersController < ApplicationController
     end
     respond_to do |format|
       format.html
-      format.json { render json: @geojson }  # respond with the created JSON object
+      format.json { render json: @geojson }
     end
   end
 
@@ -56,11 +56,11 @@ class UsersController < ApplicationController
   end
 
   def edit
-    if current_user == @user 
+    if current_user == @user
       @user
     else
       flash[:error] = "You cannot edit a different user's account!!"
-      redirect_to user_path(current_user.id) 
+      redirect_to user_path(current_user.id)
     end
   end
 
