@@ -35,7 +35,7 @@ gem 'responders'
 
 gem 'carrierwave'
 
-
+gem 'rspec-rails'
 
 
 # Use ActiveModel has_secure_password
