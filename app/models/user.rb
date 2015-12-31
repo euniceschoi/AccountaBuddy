@@ -21,7 +21,7 @@ class User < ActiveRecord::Base
   mount_uploader :attachment
   after_validation :reverse_geocode
   validates_length_of :password, :in => 6..20
-  validates_presence_of :name, :username, :email, :password, :about_me, :gender
+  validates_presence_of :name, :username, :email, :password
   validates_uniqueness_of :username, :email
   # after_validation :geocode, :if => :address_changed?
 
