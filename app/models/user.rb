@@ -19,12 +19,11 @@ class User < ActiveRecord::Base
 
   geocoded_by :address
   mount_uploader :attachment
-  after_validation :reverse_geocode  # auto-fetch address
-  # validates_length_of :password, :in => 6..20
-# after_validation :geocode, :if => :address_changed?
-  # validates_presence_of :name, :username, :email, :password, :about_me, :gender
-  # validates_uniqueness_of :username, :email
-  # va
+  after_validation :reverse_geocode
+  validates_length_of :password, :in => 6..20
+  validates_presence_of :name, :username, :email, :password, :about_me, :gender
+  validates_uniqueness_of :username, :email
+  # after_validation :geocode, :if => :address_changed?
 
 
   def self.create_with_omniauth(auth)
@@ -34,18 +33,16 @@ class User < ActiveRecord::Base
       user.password = auth['uid']
       user.name = auth['info']['name']
       user.gender = auth['extra']['raw_info']['gender']
-      # user.picture_url = auth['info']['image']
 
 
       if User.exists?(user)
         user
-      else 
+      else
         user.save!
           badge1 = Badge.new(name: "Fitness", description: "You're a fitness superstar!", user_id: user.id, badge_image_link: "fitness-badge.png")
           badge2 = Badge.new(name: "Diet", description: "You're a Diet superstar!", user_id: user.id, badge_image_link:"diet-badge.png")
           badge3 = Badge.new(name: "Hobbies", description: "You're a Hobbies superstar!", user_id: user.id, badge_image_link:"hobbies-badge.png")
           badge4 = Badge.new(name: "Education", description: "You're a Education superstar!", user_id: user.id, badge_image_link:"education-badge.png")
-            p "YOU MADE THE REQUEST XHR"
           badge1.save && badge2.save && badge3.save && badge4.save
         user
       end

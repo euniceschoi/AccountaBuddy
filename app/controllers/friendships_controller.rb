@@ -12,7 +12,6 @@ class FriendshipsController < ApplicationController
     if @friendship.save
       redirect_to user_path(friendship.id)
     else
-      #redirect the user to their own profile page if this fails?
     end
   end
 
@@ -25,7 +24,6 @@ class FriendshipsController < ApplicationController
     if @conversation && @conversation.messages
       @messages = @conversation.messages.order("created_at DESC")
     else
-      # .order("created_at DESC").all
     end
   end
 

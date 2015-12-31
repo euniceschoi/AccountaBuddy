@@ -4,7 +4,6 @@ class BadgesController < ApplicationController
   end
 
   def update
-      p params
       badge = Badge.find(params[:id])
       badge.update(points: badge.points.to_i + 1 )
       badge.save

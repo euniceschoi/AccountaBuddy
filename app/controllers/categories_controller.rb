@@ -6,7 +6,7 @@ class CategoriesController < ApplicationController
     @categories = Category.all
     respond_to do |format|
       format.html
-      format.json { render json: @geojson }  # respond with the created JSON object
+      format.json { render json: @geojson }
     end
   end
 
@@ -24,7 +24,7 @@ class CategoriesController < ApplicationController
     end
     respond_to do |format|
       format.html
-      format.json { render json: @geojson }  # respond with the created JSON object
+      format.json { render json: @geojson }
     end
   end
 
