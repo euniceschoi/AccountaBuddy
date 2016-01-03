@@ -3,8 +3,8 @@ require 'test_helper'
 class MessagesControllerTest < ActionController::TestCase
   test '#create creates message' do
     message_params = {
-      body: "Hello"
-      conversation_id: 1
+      body: "Hello",
+      conversation_id: 1,
       user_id: 1
     }
 
