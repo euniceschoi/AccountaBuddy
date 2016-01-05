@@ -39,17 +39,17 @@ class UsersControllerTest < ActionController::TestCase
     }
 
     patch :update, id: user.id, user: user_params
-    p user['name']
-    assert_equal user_params[:name], user['name']
+    
+    assert_equal user_params[:name], assigns(:user).name
   end
 
-  # test '#destroy destroys user' do
-  #   user = users(:eunice)
+  test '#destroy destroys user' do
+    user = users(:eunice)
 
-  #   assert_difference 'User.count', -1 do
-  #     delete :destroy, id: user.id
-  #   end
+    assert_difference('User.count',-1) do
+      delete :destroy, id: user.id
+    end
 
-  #   assert_response 204
-  # end
+    assert_redirected_to root_path
+  end
 end
