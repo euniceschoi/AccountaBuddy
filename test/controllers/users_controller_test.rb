@@ -40,7 +40,7 @@ class UsersControllerTest < ActionController::TestCase
 
     patch :update, id: user.id, user: user_params
     p user['name']
-    assert_equal user_params[:name], user['name']
+    assert_equal user_params[:name], assigns(:user).name
   end
 
   # test '#destroy destroys user' do
