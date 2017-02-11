@@ -1,54 +1,51 @@
-<div>
-	<ol class="curtains">
-		<li class="cover">
-
-						<p class="nav-bar-home"><%= link_to "AccountaBuddy", '/'%></p>
-		<div id="user-show-login-signup">
-			<%= render 'user_index_header' %>
-				<div id="splash-box-1">
-					<%= flash[:error] %>
-				
-
-			
-					<%= form_tag '/login' do %>
-
-					  Email: <%= text_field_tag :email %>
-					  Password: <%= password_field_tag :password %>
-					  <%= submit_tag "Submit", :class => "myButton" %>
-
-
-					<% end %>
-					<img id="facebook-button" src="<%= asset_path( 'fb-logo.png' ) %>">
-					<%= link_to "Sign in with Facebook", "/auth/facebook" %>
+<div id="home-page">
+		<div class="cover">
+			<p class="nav-bar-home"><%= link_to "AccountaBuddy", '/'%></p>
+			<div id="user-show-login-signup" >
+				<%= render 'user_index_header' %>
+					<div id="splash-box-1">
+						<%= flash[:error] %>
 					
 
-					</img>
-	
-				</div>
-			</div>
-			
-			<img class="splash-image" src="<%= asset_path( 'gg-splash.jpg' ) %>">
-		</li>
-		<li class="cover">
-		
-
-		
 				
-			<img class="splash-image" src="<%= asset_path( 'white-splash.jpg' ) %>">
-		</li>
-		<li class="cover">
+						<%= form_tag '/login' do %>
 
+						  Email: <%= text_field_tag :email %>
+						  Password: <%= password_field_tag :password %>
+						  <%= submit_tag "Submit", :class => "myButton" %>
+
+
+						<% end %>
+						<img id="facebook-button" src="<%= asset_path( 'fb-logo.png' ) %>">
+						<%= link_to "Sign in with Facebook", "/auth/facebook" %>
+						
+
+						</img>
+		
+					</div>
+				</div>
+				<img src="<%= asset_path( 'gg-splash.jpg' ) %>">
+		</div>
+		<div class="cover">
+			<img class="splash-image" src="<%= asset_path( 'white-splash.jpg' ) %>">
+		</div>
+		<div class="cover">
 			<img class="splash-image" src="<%= asset_path( 'shoe-splash-2.jpg' ) %>">
-		</li>
-		<li class="cover"><img class="splash-image" src="<%= asset_path( 'orange-splash.jpg' ) %>"></li>
-		<li class="cover"><img class="splash-image" src="<%= asset_path( 'paddleboarding-splash.jpg' ) %>"></li>
-		<li class="cover"><img class="splash-image" src="<%= asset_path( 'teal-splash.jpg' ) %>"></li>
-		<li class="cover"><img class="splash-image" src="<%= asset_path( 'teens-splash.jpg' ) %>"></li>
-	</ol>
-	<div id="scrollUp"></div>
+		</div>
+		<div class="cover">
+			<img class="splash-image" src="<%= asset_path( 'orange-splash.jpg' ) %>">
+		</div>
+		<div class="cover">
+			<img class="splash-image" src="<%= asset_path( 'paddleboarding-splash.jpg' ) %>">
+		</div>
+		<div class="cover">
+			<img class="splash-image" src="<%= asset_path( 'teal-splash.jpg' ) %>">
+		</div>
+		<div class="cover">
+			<img class="splash-image" src="<%= asset_path( 'teens-splash.jpg' ) %>">
+		</div>
 </div>
 
-<%#= render 'location_all' %>
 
 
 
