@@ -106,7 +106,7 @@ var recommendationSubmit = function() {
 }
 
 var loginListener = function (){
-  $('.curtains').on('click', '#login-link', function(event){
+  $('#login-link').on('click', function(event){
     event.preventDefault();
     $("#splash-box-1").delay(100).fadeIn();
   })
