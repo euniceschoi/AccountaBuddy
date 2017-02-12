@@ -14,6 +14,7 @@ class UsersController < ApplicationController
   end
 
   def new
+    @mapbox_token = ENV['MAPBOX_TOKEN']
   end
 
   def create
