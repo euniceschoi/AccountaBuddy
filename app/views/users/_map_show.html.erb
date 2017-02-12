@@ -5,8 +5,8 @@
   <meta charset=utf-8 />
   <title>Geolocation</title>
   <meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
-  <script src='https://api.mapbox.com/mapbox.js/v2.2.3/mapbox.js'></script>
-  <link href='https://api.mapbox.com/mapbox.js/v2.2.3/mapbox.css' rel='stylesheet' />
+  <script src='https://api.mapbox.com/mapbox.js/v3.0.1/mapbox.js'></script>
+  <link href='https://api.mapbox.com/mapbox.js/v3.0.1/mapbox.css' rel='stylesheet' />
   <style>
     body { margin:0; padding:0; }
     #map { position:absolute; top:1%; bottom:0; width:1%; height:1%; }
@@ -17,52 +17,48 @@
 <a href='#' id='geolocate'>Find My Location</a>
 <script>
 
-L.mapbox.accessToken = 'pk.eyJ1IjoidG9wZ2lybGNvZGVyIiwiYSI6ImNpaTg0cndlODAwNzZ0Zmx5azg4cmY5djgifQ.TZL_V5r4IAGG32ihA5Sw3Q';
-// var geolocate = document.getElementById('geolocate');
-// var map = L.mapbox.map('map', 'mapbox.streets');
-// var myLayer = L.mapbox.featureLayer().addTo(map);
+L.mapbox.accessToken = '<%= @mapbox_token %>'
+var geolocate = document.getElementById('geolocate');
+var map = L.mapbox.map('map', 'mapbox.streets');
+var myLayer = L.mapbox.featureLayer().addTo(map);
 
-// if (!navigator.geolocation) {
-//     geolocate.innerHTML = 'Geolocation is not available';
-// } else {
-//     geolocate.onclick = function (e) {
-//         e.preventDefault();
-//         e.stopPropagation();
-//         map.locate();
-//         console.log(e);
-//     };
-// }
-// // Once we've got a position, zoom and center the map on it, and add a single marker.
-// map.on('locationfound', function(e) {
-//     map.fitBounds(e.bounds);
-//     myLayer.setGeoJSON({
-//         type: 'Feature',
-    //     geometry: {
-    //         type: 'Point',
-    //         coordinates: [e.latlng.lng, e.latlng.lat]
-    //     },
-    //     properties: {
-    //         'title': 'Here I am!',
-    //         'marker-color': '#ff8888',
-    //         'marker-symbol': 'star'
-    //     }
-    // });
-    // // And hide the geolocation button
-    // geolocate.parentNode.removeChild(geolocate);
+if (!navigator.geolocation) {
+    geolocate.innerHTML = 'Geolocation is not available';
+} else {
+    geolocate.onclick = function (e) {
+        e.preventDefault();
+        e.stopPropagation();
+        map.locate();
+        console.log(e);
+    };
+}
+// Once we've got a position, zoom and center the map on it, and add a single marker.
+map.on('locationfound', function(e) {
+    map.fitBounds(e.bounds);
+    myLayer.setGeoJSON({
+        type: 'Feature',
+        geometry: {
+            type: 'Point',
+            coordinates: [e.latlng.lng, e.latlng.lat]
+        },
+        properties: {
+            'title': 'Here I am!',
+            'marker-color': '#ff8888',
+            'marker-symbol': 'star'
+        }
+    });
+    // And hide the geolocation button
+    geolocate.parentNode.removeChild(geolocate);
 
-    // $.ajax({
-    //     url: '/users/' + '<%#= @user.id %>',
-    //     type: 'PUT',
-    //     data: {user_location: [e.latlng.lng, e.latlng.lat]},
-    //     dataType: 'JSON',
-    // }).done(function( msg ) {
-    //     alert( "Data Saved: " + [e.latlng.lng, e.latlng.lat] );
-    // });
-// });
+    // fill in form with latitude and longitude
+    $('#latitude-val').val(e.latlng.lat);
+    $('#longitude-val').val(e.latlng.lng);
+});
+
 // If the user chooses not to allow their location to be shared, display an error message.
-// map.on('locationerror', function() {
-//     geolocate.innerHTML = 'Position could not be found';
-// });
+map.on('locationerror', function() {
+    geolocate.innerHTML = 'Position could not be found';
+});
 </script>
 </body>
 </html>

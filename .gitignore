@@ -1,5 +1,6 @@
 log
 tmp
+.env
 
 
 # Ignore application configuration
