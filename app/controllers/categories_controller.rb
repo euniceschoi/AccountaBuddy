@@ -1,6 +1,7 @@
 class CategoriesController < ApplicationController
 
   before_action :load_user_categories
+  before_filter :get_mapbox_token
 
   def index
     @categories = Category.all
@@ -32,6 +33,10 @@ class CategoriesController < ApplicationController
 
   def load_user_categories
     @user_categories = UserCategory.all
+  end
+
+  def get_mapbox_token
+    @mapbox_token = ENV['MAPBOX_TOKEN']
   end
 
   def category_params
