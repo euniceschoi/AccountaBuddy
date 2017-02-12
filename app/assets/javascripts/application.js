@@ -18,7 +18,6 @@ $(document).ready(function(){
   recommendationHandler();
   recommendationSubmit();
   loginListener();
-
 });
 
 
@@ -106,7 +105,7 @@ var recommendationSubmit = function() {
 }
 
 var loginListener = function (){
-  $('.curtains').on('click', '#login-link', function(event){
+  $('.curtains').on('click','#user-show-login-signup', function(event){
     event.preventDefault();
     $("#splash-box-1").delay(100).fadeIn();
   })

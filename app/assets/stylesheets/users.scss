@@ -257,39 +257,47 @@ backbround-size: cover;
 //styling for user#new
 
 .user-signedit-container {
-  padding-bottom: 100px;
+  font-family: 'Yanone Kaffeesatz';
   margin-top: 100px;
+}
+
+.user-signedit-container h1 {
+  font-family: 'Yanone Kaffeesatz';
+  text-align:center;
+  font-weight: 400;
+  color: rgba(24,102,88, 0.8);
+}
+
+.user-signedit-box h2 {
+  font-family: 'Yanone Kaffeesatz';
+  text-align:center;
+  font-weight: 400;
+  color: rgba(24,102,88, 0.8);
 }
 
 .user-signedit-box {
   margin: 0px auto;
   padding-top: 20px;
-  padding-bottom: 50px;
-  width: 700px;
+  padding-bottom: 20px;
+  width: 40%;
   background-color: rgba(255, 255, 255, .9);
   padding-right: 75px;
   padding-left: 75px;
   border-radius: 10px;
-  -webkit-box-shadow: 7px 8px 18px 0px rgba(12, 85, 98, 1);
-  -moz-box-shadow:    7px 8px 18px 0px rgba(12, 85, 98, 1);
-  box-shadow:         7px 8px 18px 0px rgba(12, 85, 98, 1);
-  /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#feb590+0,d38b26+13,e16d01+13,fcfcfc+13,fcfcfc+19,993401+19,e16d01+19,fcfcfc+19 */
-  background: rgb(254,181,144); /* Old browsers */
-  background: -moz-linear-gradient(top,  rgba(254,181,144,1) 0%, rgba(211,139,38,1) 13%, rgba(225,109,1,1) 13%, rgba(252,252,252,1) 13%, rgba(252,252,252,1) 19%, rgba(153,52,1,1) 19%, rgba(225,109,1,1) 19%, rgba(252,252,252,1) 19%); /* FF3.6-15 */
-  background: -webkit-linear-gradient(top,  rgba(254,181,144,1) 0%,rgba(211,139,38,1) 13%,rgba(225,109,1,1) 13%,rgba(252,252,252,1) 13%,rgba(252,252,252,1) 19%,rgba(153,52,1,1) 19%,rgba(225,109,1,1) 19%,rgba(252,252,252,1) 19%); /* Chrome10-25,Safari5.1-6 */
-  background: linear-gradient(to bottom,  rgba(254,181,144,1) 0%,rgba(211,139,38,1) 13%,rgba(225,109,1,1) 13%,rgba(252,252,252,1) 13%,rgba(252,252,252,1) 19%,rgba(153,52,1,1) 19%,rgba(225,109,1,1) 19%,rgba(252,252,252,1) 19%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#feb590', endColorstr='#fcfcfc',GradientType=0 ); /* IE6-9 */
-
 }
 
-.user-signedit-box h1{
-  font-family: 'Alegreya Sans', sans-serif;
+.user-signedit-container p{
   text-align: center;
-  color: white;
-  font-size: 4em;
-  text-shadow: 2px 2px 2px rgba(150, 150, 150, 0.49);
-  padding-bottom: 50px; 
+  font-size: 2em;
+  margin-bottom: 0;
+}
 
+.user-signedit-container #login {
+  color: #FF8B47;
+}
+
+#signup{
+  color: #FF8B47 !important ;
 }
 
 #user-signedit-form label{
