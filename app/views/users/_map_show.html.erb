@@ -48,8 +48,8 @@ map.on('locationfound', function(e) {
     // And hide the geolocation button
     geolocate.parentNode.removeChild(geolocate);
     // fill in form with latitude and longitude
-    $('#latitude-val').val(e.latlng.lat);
-    $('#longitude-val').val(e.latlng.lng);
+    $('.latitude-val').val(e.latlng.lat);
+    $('.longitude-val').val(e.latlng.lng);
 });
 // If the user chooses not to allow their location to be shared, display an error message.
 map.on('locationerror', function() {

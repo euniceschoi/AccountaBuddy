@@ -1,5 +1,6 @@
 class UsersController < ApplicationController
   before_action :load_user, only: [:show, :edit, :update]
+  before_filter :get_mapbox_token, only: [:new, :edit]
 
   def index
     if params[:search].present?
@@ -14,7 +15,6 @@ class UsersController < ApplicationController
   end
 
   def new
-    @mapbox_token = ENV['MAPBOX_TOKEN']
   end
 
   def create
@@ -85,6 +85,10 @@ class UsersController < ApplicationController
 
   def load_user
     @user = User.find(params[:id])
+  end
+
+  def get_mapbox_token
+    @mapbox_token = ENV['MAPBOX_TOKEN']
   end
 
   def user_params
