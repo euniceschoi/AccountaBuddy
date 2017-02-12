@@ -1,19 +1,17 @@
 <div class="user-signedit-container">
+	<h1><%= link_to "AccountaBuddy", '/'%></h1>
 	<div class="user-signedit-box">
-
-		<h1>Log In</h1>
+			<h2>Log In</h2>
 
       <div class="row">
         <div id="user-signedit-form" class="large-12">
-        	
         	<%= form_tag '/login' do %>
 				  	Email: <%= text_field_tag :email %>
 				  	Password: <%= password_field_tag :password %>
 				  	<%= submit_tag "Submit" %>
 					<% end %>
-       
         </div>
       </div>
-
 	</div>
+	<p>New to Accountabuddy? <span id="signup"><%= link_to 'Signup', '/signup' %></span></p>
 </div>
