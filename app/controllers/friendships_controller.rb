@@ -9,9 +9,9 @@ class FriendshipsController < ApplicationController
 
   def create
     @friendship = Friendship.new(user_params)
+
     if @friendship.save
       redirect_to user_path(friendship.id)
-    else
     end
   end
 
@@ -21,9 +21,9 @@ class FriendshipsController < ApplicationController
     @conversation = Conversation.find_by(sender_id: @friendship.user_id, recipient_id: @friendship.friend_id ) || Conversation.find_by(recipient_id: @friendship.user_id, sender_id: @friendship.friend_id)
     @friend = User.find(@friendship.friend_id)
     @user = User.find(@friendship.user_id)
+    
     if @conversation && @conversation.messages
       @messages = @conversation.messages.order("created_at DESC")
-    else
     end
   end
 
