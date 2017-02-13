@@ -27,6 +27,8 @@ class AccountabuddyRequestsController < ApplicationController
     end
   end
 
+  private
+
   def request_params
     params.require(:recipient).permit(:recipient_id, :friendship_id)
   end

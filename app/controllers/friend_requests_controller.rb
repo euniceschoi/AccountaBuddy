@@ -1,13 +1,16 @@
 class FriendRequestsController < ApplicationController
 
   def create
-    @category_id = params[:recipientid][:category_id].to_i
-    @friend_request = FriendRequest.new(user_id: current_user.id, recipient_id: params[:recipientid][:recipient_id], category_id: @category_id)
+    @friend_request = FriendRequest.new(
+      user_id: current_user.id, 
+      recipient_id: friend_request_params[:recipient_id], 
+      category_id: friend_request_params[:category_id].to_i
+    )
 
     if @friend_request.save
       redirect_to user_path(current_user.id)
     else
-      redirect categories_path(@category_id)
+      redirect categories_path(friend_request_params[:category_id].to_i)
     end
   end
 
@@ -27,4 +30,9 @@ class FriendRequestsController < ApplicationController
     redirect_to user_path(current_user.id)
   end
 
+  private
+
+  def friend_request_params
+    params.require(:recipientid).permit(:category_id, :recipient_id)
+  end
 end
