@@ -62,27 +62,29 @@
               </div>
             </div>
 
+
             <div class="row">
               <div class="large-4 columns"><label for="right-label" class="right">Latitude:</label>
               </div>
-              <div class="large-8 columns" id="latitude-fill"><%= f.text_field :latitude %>
+              <div class="large-8 columns" id="latitude-fill">
+              <%= f.text_field :latitude, class: 'latitude-val'%>
               </div>
             </div>
 
              <div class="row">
               <div class="large-4 columns"><label for="right-label" class="right">Longitude:</label>
               </div>
-              <div class="large-8 columns" id="longitude-fill"><%= f.text_field :longitude %>
+              <div class="large-8 columns" id="longitude-fill">
+              <%= f.text_field :longitude, class: 'longitude-val'%>
               </div>
             </div>         
 
              <div class="row">
               <div class="large-4 columns"><label for="right-label" class="right"></label>
               </div>
-              <div class="large-8 columns" id="longitude-fill"><%= render 'map_show' %>
+              <div class="large-8 columns"><%= render 'map_show' %>
               </div>
-            </div>             
-
+            </div> 
 
              <div class="row">
               <div class="large-4 columns"><label for="right-label" class="right">Password:</label>

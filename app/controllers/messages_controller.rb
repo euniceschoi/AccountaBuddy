@@ -3,17 +3,22 @@ class MessagesController < ApplicationController
   end
 
   def create
-    body = params[:message][:body]
-    conversation_id = params[:message][:conversation].to_i
-    friendship_id = params[:message][:friendship].to_i
-
-    message = Message.new(body: body, user_id: current_user.id, conversation_id: conversation_id)
+    message = Message.new(
+      body: message_params[:body], 
+      user_id: current_user.id, 
+      conversation_id: message_params[:conversation].to_i)
 
     if message.save
       render "messages/_show_messages", locals: {message: message}, layout: false
     else
       flash[:error] = "Message was not sent"
-      redirect_to friendship_path(friendship_id)
+      redirect_to friendship_path(message_params[:friendship].to_i)
     end
+  end
+
+  private 
+
+  def message_params
+    params.require(:message).permit(:body, :conversation, :friendship)
   end
 end
