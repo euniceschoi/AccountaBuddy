@@ -8,8 +8,6 @@ class UsersControllerTest < ActionController::TestCase
   end
 
   test '#create creates user' do
-
-
     assert_routing({ method: 'post', path: '/users' }, { controller: "users", action: "create" })
    
     user_params = {
@@ -28,8 +26,6 @@ class UsersControllerTest < ActionController::TestCase
     end
      
     assert_redirected_to user_path(assigns(:user))
-
-
   end
 
   test '#update updates user' do
